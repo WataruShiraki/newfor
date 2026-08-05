@@ -853,6 +853,8 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
 .vhint{margin-top:11px;text-align:center;font-size:13px;font-weight:800;color:#fff;
  background:var(--accent);border:0;border-radius:22px;padding:11px 16px;
  box-shadow:0 6px 18px -8px rgba(47,59,214,.7)}
+.pcard .thumb{display:none}
+.pcard .pbody{padding-top:18px}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script>
@@ -874,7 +876,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
 
 <header>
   <div class="wrap hd">
-    <a class="brand" href="#top">
+    <a class="brand" href="/">
       <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>
       <span class="wm">NEW<b>FOR</b></span>
     </a>
@@ -925,7 +927,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
       </div>
       <div class="mcol">
         <h5>数字で見る</h5>
-        <a href="#monthly">期待度ランキング</a>
+        <a href="#monthly">記録ランキング</a>
         <a href="#monthly">2026年 新規事業発表数</a>
         <a href="#alltime">通算新規事業ランキング</a>
         <a href="#vote">今週の投票</a>
@@ -951,18 +953,10 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
       </div>
       <div class="hrank">
         <div class="hrk-top">
-          <div><div class="cap">READERS' PICK</div><div class="ttl">期待度ランキング</div></div>
-          <span class="wkb mono">7月集計</span>
+          <div><div class="cap">NEWFOR RECORDS</div><div class="ttl">記録した新規事業</div></div>
+          <span class="wkb mono">2026.08時点</span>
         </div>
-        <a class="hrk" href="#monthly"><span class="n mono">1</span><span class="t">SyncMe<em>NTTドコモ</em></span><span class="bw"><i style="width:100%"></i></span><span class="v mono">68<small>%</small></span></a>
-        <a class="hrk" href="#monthly"><span class="n mono">2</span><span class="t">共同輸送基盤<em>三井物産</em></span><span class="bw"><i style="width:90%"></i></span><span class="v mono">61<small>%</small></span></a>
-        <a class="hrk" href="#monthly"><span class="n mono">3</span><span class="t">肌診断AI外販<em>資生堂</em></span><span class="bw"><i style="width:84%"></i></span><span class="v mono">57<small>%</small></span></a>
-        <a class="hrk" href="#monthly"><span class="n mono">4</span><span class="t">農業ロボ協業<em>ヤマハ発動機</em></span><span class="bw"><i style="width:76%"></i></span><span class="v mono">52<small>%</small></span></a>
-        <a class="hrk" href="#monthly"><span class="n mono">5</span><span class="t">駅ナカ無人リユース<em>JR東日本</em></span><span class="bw"><i style="width:69%"></i></span><span class="v mono">47<small>%</small></span></a>
-        <a class="hrkf" href="#vote">
-          <svg width="14" height="14" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>
-          読者の投票でできています →
-        </a>
+        <a class="hrk" href="/companies/docomo/"><span class="n mono">1</span><span class="t">NTTドコモ<em>公開情報から記録</em></span><span class="bw"><i style="width:100%"></i></span><span class="v mono">25<small>件</small></span></a><a class="hrk" href="/companies/sony/"><span class="n mono">2</span><span class="t">ソニーグループ<em>公開情報から記録</em></span><span class="bw"><i style="width:84%"></i></span><span class="v mono">21<small>件</small></span></a><a class="hrk" href="/companies/fujifilm/"><span class="n mono">3</span><span class="t">富士フイルム<em>公開情報から記録</em></span><span class="bw"><i style="width:80%"></i></span><span class="v mono">20<small>件</small></span></a><a class="hrk" href="/companies/kddi/"><span class="n mono">4</span><span class="t">KDDI<em>公開情報から記録</em></span><span class="bw"><i style="width:72%"></i></span><span class="v mono">18<small>件</small></span></a><a class="hrk" href="/companies/recruit/"><span class="n mono">5</span><span class="t">リクルートHD<em>公開情報から記録</em></span><span class="bw"><i style="width:64%"></i></span><span class="v mono">16<small>件</small></span></a>
       </div>
     </div>
 
@@ -979,15 +973,15 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
 
     <div class="expl">
       <a class="ex" href="/companies/">
-        <span class="ex-k">分析した大企業数</span>
-        <span class="ex-n">24<em>社</em></span>
+        <span class="ex-k">記録した企業</span>
+        <span class="ex-n">10<em>社</em></span>
         <span class="ex-s">1社ずつ、いま続く事業と次へ渡した事業を全部。</span>
         <span class="ex-go">企業を探す<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="ex" href="#monthly">
-        <span class="ex-k">取り上げた新規事業数</span>
-        <span class="ex-n">400<em>事業</em></span>
-        <span class="ex-s">2015年からの発表を、1件ずつ拾って記録。</span>
+        <span class="ex-k">記録した新規事業</span>
+        <span class="ex-n">170<em>件</em></span>
+        <span class="ex-s">1999年からの発表を、1件ずつ公開情報で確認。</span>
         <span class="ex-go">ランキングを見る<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="ex" href="#featured">
@@ -996,11 +990,11 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
         <span class="ex-s">1社を、始まりから今まで丸ごと読み解く。</span>
         <span class="ex-go">レポートを読む<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="ex" href="#vote">
-        <span class="ex-k">新規事業の投票者数</span>
-        <span class="ex-n">1,208<em>ユーザー</em></span>
-        <span class="ex-s">次に来る事業は、読者の投票で決まる。</span>
-        <span class="ex-go">投票する<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <a class="ex" href="/reports/">
+        <span class="ex-k">参照した一次情報</span>
+        <span class="ex-n">97<em>件</em></span>
+        <span class="ex-s">プレスリリース・IR資料・報道を1件ずつ確認。</span>
+        <span class="ex-go">レポートを読む<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
     </div>
   </div>
@@ -1016,7 +1010,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
         <h3>NTTドコモは、25年かけて「iモード」に帰ってきたのではないか</h3>
         <p class="hook">27年続いたものと、1年9カ月で役目を終えたもの。この二つが同じ年に消えたことには、意味があると思う。</p>
         <div class="meta">
-          <span class="expect">期待度 68%</span><span class="mono">2026.07.31</span><span>12分</span><span class="mono">通信 ／ 金融</span>
+          <span class="recent">期待度 68%</span><span class="mono">2026.07.31</span><span>12分</span><span class="mono">通信 ／ 金融</span>
         </div>
       </div>
       <div class="r">
@@ -1045,10 +1039,10 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
       <div class="vote" id="voteCard">
         <div class="vhead">
           <span class="vwho">新規事業に取り組んでいる、あなたへ</span>
-          <span class="vleft">今週の投票　あと3日</span>
+          <span class="vleft">今週の投票</span>
         </div>
         <p class="q">ドコモが2026年夏に出すAIエージェント「SyncMe」。あなたの期待度は？</p>
-        <p class="vask">タップすると、<b>いま何%の人が期待しているか</b>がその場で表示されます。ログインもメールも要りません。<b>1タップだけ。</b></p>
+        <p class="vask">この投票は、サイト公開にあわせて<b>いま集計を始めたところ</b>です。あなたの1票が最初の数字になります。ログインもメールも要りません。<b>1タップだけ。</b></p>
         <div class="opts">
           <button class="opt a" data-k="a"><span class="fill"></span>
             <span class="top"><span class="em">🚀</span><span class="nm">めちゃくちゃ期待！</span><span class="you">あなた</span><span class="arw">→</span><span class="pct" data-p></span></span></button>
@@ -1056,7 +1050,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
             <span class="top"><span class="em">👀</span><span class="nm">今は様子見！</span><span class="you">あなた</span><span class="arw">→</span><span class="pct" data-p></span></span></button>
         </div>
         <div class="vfoot"><span id="vcount"></span><span class="ok">✓ 受け付けました</span></div>
-        <div class="vhint">👆 どちらかを選ぶと、全体の割合が出ます</div>
+        <div class="vhint">👆 集計はこれから。結果は毎週月曜に更新します</div>
         <div class="vthx">ありがとうございます。<b>あなたの1票が、この事業への応援になりました。</b>結果は毎週月曜に更新して、記事の中でも紹介します。</div>
       </div>
       <div class="vwhy">
@@ -1066,8 +1060,8 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
           <dd>期待度は社内を通すときの材料になります。世の中がどう見ているかは、数字にしないと伝わりません。</dd>
           <dt>否定の選択肢は置きません</dt>
           <dd>「様子見」は保留という意味です。どちらに入れても、誰かを下げることにはなりません。</dd>
-          <dt>読者の8割が新規事業の当事者</dt>
-          <dd>だからこの数字は、公開情報からは作れません。NEWFORにしかない、あなたたちの声です。</dd>
+          <dt>この数字は、ここにしかありません</dt>
+          <dd>期待度は、決算書にもプレスリリースにも載っていません。読んだ人が1票ずつ入れることでしか作れない数字です。</dd>
         </dl>
       </div>
     </div>
@@ -1082,15 +1076,15 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
     <div class="rk">
       <div class="rk-top">
         <div class="seg" id="mSeg">
-          <button class="on" data-m="expect">期待度</button>
-          <button data-m="new">新規事業発表数</button>
-          <button data-m="deal">スタートアップ提携数</button>
+          <button class="on" data-m="recent">2015年以降の発表数</button>
+          <button data-m="live">いま続いている</button>
+          <button data-m="done">次へ渡した</button>
         </div>
       </div>
       <div class="rk-note" id="mNote"></div>
       <div id="mBody"></div>
     </div>
-    <p class="mini-note"><span class="sample">⚠ サンプル</span> 数値はダミーです。</p>
+    <p class="mini-note"></p>
   </div>
 </section>
 
@@ -1098,34 +1092,30 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
 <div class="band vio">
 <section class="blk" id="press">
   <div class="wrap">
-    <div class="shd"><h2>今週の新規事業</h2><span class="sub">07.25 - 07.31</span><a class="more" href="#press">バックナンバー →</a></div>
+    <div class="shd"><h2>最近の動き</h2><span class="sub">記録した10社から、日付の新しい順に</span><a class="more" href="/reports/">レポート一覧 →</a></div>
     <div class="pgrid">
-      <a class="pcard" href="#press">
-        <span class="thumb t1"><span class="ph">リリース画像</span></span>
-        <span class="pbody"><span class="pmeta"><b>JR東日本</b><span class="dt mono">07.29</span></span>
-          <span class="ptitle">駅ナカの空きスペースを活用した無人リユース店舗の実証を開始</span>
-          <span class="ptags"><span>小売</span><span>リテールテック</span></span></span>
+      <a class="pcard" href="/reports/docomo-newbusiness/">
+        <span class="pbody"><span class="pmeta"><b>NTTドコモ</b><span class="dt mono">2026.07</span></span>
+          <span class="ptitle">NTTドコモ・フィナンシャルグループ 設立</span>
+          <span class="ptags"><span>通信</span><span>いま続いている</span></span></span>
       </a>
-      <a class="pcard" href="#press">
-        <span class="thumb t2"><span class="ph">リリース画像</span></span>
-        <span class="pbody"><span class="pmeta"><b>三井物産</b><span class="dt mono">07.27</span></span>
-          <span class="ptitle">荷主横断の共同輸送を担う物流データ基盤の新会社を設立</span>
-          <span class="ptags"><span>物流・運輸</span><span>SaaS</span></span></span>
+      <a class="pcard" href="/reports/sony-newbusiness/">
+        <span class="pbody"><span class="pmeta"><b>ソニーグループ</b><span class="dt mono">2026.04</span></span>
+          <span class="ptitle">Sony Innovation Fund 4 運用開始</span>
+          <span class="ptags"><span>電機</span><span>いま続いている</span></span></span>
       </a>
-      <a class="pcard" href="#press">
-        <span class="thumb t3"><span class="ph">リリース画像</span></span>
-        <span class="pbody"><span class="pmeta"><b>資生堂</b><span class="dt mono">07.25</span></span>
-          <span class="ptitle">肌診断AIを外販モデルへ転換し、BtoB提供を開始</span>
-          <span class="ptags"><span>化粧品</span><span>AI</span><span>BtoB転換</span></span></span>
+      <a class="pcard" href="/reports/docomo-newbusiness/">
+        <span class="pbody"><span class="pmeta"><b>NTTドコモ</b><span class="dt mono">2026.03</span></span>
+          <span class="ptitle">iモード／FOMA が終了</span>
+          <span class="ptags"><span>通信</span><span>次へ渡した</span></span></span>
       </a>
-      <a class="pcard" href="#press">
-        <span class="thumb t4"><span class="ph">リリース画像</span></span>
-        <span class="pbody"><span class="pmeta"><b>ヤマハ発動機</b><span class="dt mono">07.24</span></span>
-          <span class="ptitle">農業ロボットのスタートアップへ出資し、協業を開始</span>
-          <span class="ptags"><span>製造</span><span>アグリテック</span><span>CVC</span></span></span>
+      <a class="pcard" href="/reports/kddi-newbusiness/">
+        <span class="pbody"><span class="pmeta"><b>KDDI</b><span class="dt mono">2026.01</span></span>
+          <span class="ptitle">大阪堺データセンター 稼働</span>
+          <span class="ptags"><span>通信</span><span>いま続いている</span></span></span>
       </a>
     </div>
-    <p class="mini-note">画像は配信元リリースからの引用。メディアユーザー登録を通じて取得し、出典と元リリースへのリンクを併記します。現在はプレースホルダ表示です。</p>
+    <p class="mini-note">各社の公開情報から確認した日付順です。カードを押すと、その企業のレポートに移動します。</p>
   </div>
 </section>
 </div>
@@ -1156,10 +1146,10 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
     <div class="rk">
       <div class="rk-top">
         <div class="seg" id="aSeg">
-          <button class="on" data-a="challenge">新規事業発表数</button>
-          <button data-a="partner">提携数</button>
-          <button data-a="invest">投資額</button>
-          <button data-a="longest">最長稼働年数</button>
+          <button class="on" data-a="challenge">記録した新規事業</button>
+          <button data-a="live">いま続いている</button>
+          <button data-a="done">次へ渡した</button>
+          
         </div>
       </div>
       <div class="rk-note" id="aNote"></div>
@@ -1189,7 +1179,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
   <div class="wrap">
     <div class="ft">
       <div class="ab">
-        <a class="brand" href="#top">
+        <a class="brand" href="/">
           <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>
           <span class="wm">NEW<b>FOR</b></span></a>
         <p>大企業の新規事業を、始めた年から今まで記録する専門メディアです。書いているのは「新規事業マニア」。</p>
@@ -1232,15 +1222,15 @@ document.addEventListener("click",function(e){
 document.addEventListener("keydown",function(e){if(e.key==="Escape")mega.classList.remove("open");});
 
 /* vote */
-var votes={a:824,b:384},hasVoted=false,card=document.getElementById("voteCard");
+var votes={a:0,b:0},hasVoted=false,card=document.getElementById("voteCard");
 function vrender(){
   var t=votes.a+votes.b;
   if(hasVoted){Array.prototype.forEach.call(document.querySelectorAll(".opt"),function(o){
     var p=Math.round(votes[o.getAttribute("data-k")]/t*100);
     o.querySelector(".fill").style.width=p+"%";o.querySelector("[data-p]").textContent=p+"%";});}
   document.getElementById("vcount").textContent=hasVoted
-    ?"期待度 "+Math.round(votes.a/t*100)+"%　あなたを含む "+t.toLocaleString()+"ユーザーが応援"
-    :t.toLocaleString()+"ユーザーが投票済み　結果を見るには、あなたも1票を";
+    ?(t>0?"期待度 "+Math.round(votes.a/t*100)+"%　現在 "+t.toLocaleString()+"票":"1票目、ありがとうございます")
+    :(t>0?t.toLocaleString()+"票が入っています":"まだ票がありません。あなたが最初の1票です");
 }
 Array.prototype.forEach.call(document.querySelectorAll(".opt"),function(o){
   o.addEventListener("click",function(){
@@ -1249,7 +1239,7 @@ Array.prototype.forEach.call(document.querySelectorAll(".opt"),function(o){
 });
 
 /* rankings */
-var PAGES={"KDDI":"/companies/kddi/"};
+var PAGES={"KDDI": "/companies/kddi/", "NTTドコモ": "/companies/docomo/", "ソニーグループ": "/companies/sony/", "富士フイルム": "/companies/fujifilm/", "トヨタ自動車": "/companies/toyota/", "パナソニックHD": "/companies/panasonic/", "三菱商事": "/companies/mitsubishi/", "JR東日本": "/companies/jreast/", "セブン&アイ": "/companies/sevenandi/", "リクルートHD": "/companies/recruit/"};
 function draw(target,noteEl,d){
   var max=Math.max.apply(null,d.rows.map(function(r){return r[2];}));
   document.getElementById(noteEl).textContent=d.note;
@@ -1261,24 +1251,8 @@ function draw(target,noteEl,d){
       +'<span class="val">'+r[2].toLocaleString()+'<small>'+d.unit+'</small></span></a>';
   }).join("");
 }
-var MONTH={
- expect:{note:"2026年7月の投票で「めちゃくちゃ期待！」の割合が高かった事業。",unit:"%",
-  rows:[["SyncMe（NTTドコモ）","AIエージェント",68],["共同輸送基盤（三井物産）","物流",61],["肌診断AI外販（資生堂）","製造／BtoB",57],["農業ロボ協業（ヤマハ発動機）","製造",52],["駅ナカ無人リユース（JR東日本）","小売",47],["d NEOBANK（NTTドコモ）","金融",44],["法人向けドローン点検（KDDI）","通信",39],["社食サブスク（キリンHD）","食品",31]]},
- new:{note:"2026年1月〜7月に新規事業としてリリースが出た件数。年内は毎月積み上がります。",unit:"件",
-  rows:[["KDDI","通信",31],["JR東日本","鉄道",27],["ソニーグループ","電機",24],["三井物産","商社",19],["NTTドコモ","通信",17],["資生堂","化粧品",14],["ヤマハ発動機","輸送機器",11],["キリンHD","食品",9]]},
- deal:{note:"2026年1月〜7月に公表されたスタートアップとの提携件数。CVC経由の出資を含む。",unit:"件",
-  rows:[["KDDI","通信",22],["三菱UFJ FG","金融",16],["伊藤忠商事","商社",14],["JR東日本","鉄道",11],["ヤマハ発動機","輸送機器",8],["東京海上HD","保険",7],["味の素","食品",5],["ANAHD","運輸",4]]}
-};
-var ALL={
- challenge:{note:"2015年以降に新規事業としてリリースされた件数の累計。対象は主要上場企業120社。",unit:"件",
-  rows:[["ソニーグループ","電機",47],["NTTドコモ","通信",41],["リクルートHD","人材",38],["KDDI","通信",34],["パナソニックHD","電機",29],["三菱商事","商社",26],["JR東日本","鉄道",24],["トヨタ自動車","自動車",22],["セブン&アイ","小売",19],["味の素","食品",17]]},
- partner:{note:"スタートアップとの資本業務提携としてリリースされた件数の累計。",unit:"件",
-  rows:[["KDDI","通信",63],["三菱UFJ FG","金融",51],["NTTドコモ","通信",44],["伊藤忠商事","商社",39],["ソニーグループ","電機",36],["JR東日本","鉄道",28],["東京海上HD","保険",25],["三井不動産","不動産",23],["ANAHD","運輸",19],["キリンHD","食品",16]]},
- invest:{note:"新規事業・CVC領域で公表された投資・買収の総額（公表額のみ）。",unit:"億円",
-  rows:[["NTTドコモ","通信",6180],["KDDI","通信",3420],["ソフトバンクG","通信",2890],["三菱UFJ FG","金融",1960],["伊藤忠商事","商社",1540],["ソニーグループ","電機",1280],["セブン&アイ","小売",980],["トヨタ自動車","自動車",870],["リクルートHD","人材",640],["JR東日本","鉄道",410]]},
- longest:{note:"新規事業として立ち上がり、いまも続いているサービスの稼働年数。2026年7月時点。",unit:"年",
-  rows:[["セブン銀行","金融／小売発",25],["Suica（JR東日本）","交通",25],["おサイフケータイ（ドコモ）","通信",22],["楽天カード","金融／EC発",21],["dアニメストア（ドコモ）","エンタメ",14],["宅急便コンパクト（ヤマト）","物流",13],["dマガジン（ドコモ）","エンタメ",12],["au PAY マーケット","EC",11],["dポイント（ドコモ）","決済",10],["d払い（ドコモ）","決済",8]]}
-};
+var MONTH={"recent": {"note": "2015年以降に発表された新規事業の件数。NEWFORが記録を完成させた10社が対象です。", "unit": "件", "rows": [["ソニーグループ", "電機", 17], ["リクルートHD", "人材", 16], ["セブン&アイ", "小売", 15], ["KDDI", "通信", 14], ["トヨタ自動車", "自動車", 14], ["パナソニックHD", "電機", 14], ["JR東日本", "鉄道", 14], ["NTTドコモ", "通信", 13], ["三菱商事", "商社", 13], ["富士フイルム", "化学", 10]]}, "live": {"note": "いま続いている新規事業の件数。各企業ページの一覧と一致します。", "unit": "件", "rows": [["富士フイルム", "化学", 18], ["ソニーグループ", "電機", 17], ["KDDI", "通信", 15], ["NTTドコモ", "通信", 14], ["トヨタ自動車", "自動車", 13], ["リクルートHD", "人材", 13], ["三菱商事", "商社", 11], ["JR東日本", "鉄道", 11], ["セブン&アイ", "小売", 9], ["パナソニックHD", "電機", 8]]}, "done": {"note": "役目を終えた、または次へ渡した事業の件数。挑戦の量としても読めます。", "unit": "件", "rows": [["NTTドコモ", "通信", 11], ["パナソニックHD", "電機", 6], ["セブン&アイ", "小売", 6], ["ソニーグループ", "電機", 4], ["KDDI", "通信", 3], ["JR東日本", "鉄道", 3], ["リクルートHD", "人材", 3], ["富士フイルム", "化学", 2], ["三菱商事", "商社", 2], ["トヨタ自動車", "自動車", 1]]}};
+var ALL={"challenge": {"note": "記録した新規事業の総件数。最も古いものは1999年のiモードです。", "unit": "件", "rows": [["NTTドコモ", "通信", 25], ["ソニーグループ", "電機", 21], ["富士フイルム", "化学", 20], ["KDDI", "通信", 18], ["リクルートHD", "人材", 16], ["セブン&アイ", "小売", 15], ["トヨタ自動車", "自動車", 14], ["パナソニックHD", "電機", 14], ["JR東日本", "鉄道", 14], ["三菱商事", "商社", 13]]}, "live": {"note": "いま続いている新規事業の件数。2026年8月時点。", "unit": "件", "rows": [["富士フイルム", "化学", 18], ["ソニーグループ", "電機", 17], ["KDDI", "通信", 15], ["NTTドコモ", "通信", 14], ["トヨタ自動車", "自動車", 13], ["リクルートHD", "人材", 13], ["三菱商事", "商社", 11], ["JR東日本", "鉄道", 11], ["セブン&アイ", "小売", 9], ["パナソニックHD", "電機", 8]]}, "done": {"note": "次へ渡した事業の件数。多いことは、それだけ試したということでもあります。", "unit": "件", "rows": [["NTTドコモ", "通信", 11], ["パナソニックHD", "電機", 6], ["セブン&アイ", "小売", 6], ["ソニーグループ", "電機", 4], ["KDDI", "通信", 3], ["JR東日本", "鉄道", 3], ["リクルートHD", "人材", 3], ["富士フイルム", "化学", 2], ["三菱商事", "商社", 2], ["トヨタ自動車", "自動車", 1]]}};
 function bind(id,map,body,note,attr){
   var btns=document.querySelectorAll("#"+id+" button");
   Array.prototype.forEach.call(btns,function(b){
@@ -1333,14 +1307,14 @@ document.addEventListener("click",function(e){
 
 /* today */
 var TODAY=[
- ["KDDI","au Starlink Direct が接続数400万人を突破。空が見えればつながる","2025年4月開始"],
- ["NTTドコモ","dポイントマーケットが1年9カ月で役目を終え、d払い経済圏へ集約","2024年10月開始"],
- ["KDDI","Syn.構想で組んだ約120億円と提携網は、その後のau経済圏づくりへ","2014年10月 - 2018年7月"],
- ["JR東日本","駅ナカの空きスペースで無人リユース店舗を実証","2026年7月開始"],
- ["三井物産","荷主横断の共同輸送を担う新会社を設立","2026年7月設立"],
- ["資生堂","肌診断AIをBtoB外販モデルへ転換","2026年7月開始"],
- ["ソニーグループ","社内起業制度から生まれた事業が累計47件","2015年以降"],
- ["KDDI","GeForce NOW Powered by au が5年間の提供を走り切った","2020年9月 - 2025年10月"]
+ ["NTTドコモ","NTTドコモ・フィナンシャルグループ 設立。2030年度に金融事業 売上収益1.2兆円を掲げる","2026年07月"],
+ ["ソニーグループ","Sony Innovation Fund 4 運用開始。200億円超を目標。SIF全体で850億円超の見込み","2026年04月"],
+ ["NTTドコモ","iモード／FOMA が終了。1999年2月22日から27年1カ月","2026年03月"],
+ ["KDDI","大阪堺データセンター 稼働。AI向けの大規模データセンター。通信の次の柱として建てた","2026年01月"],
+ ["NTTドコモ","住信SBIネット銀行を連結子会社化。「d NEOBANK」として展開。銀行免許を手に入れた","2025年10月"],
+ ["ソニーグループ","ソニーフィナンシャルグループ 再上場。日本初のパーシャル・スピンオフ。東証プライムへ","2025年09月"],
+ ["富士フイルム","米ノースカロライナ工場 開設。北米最大級の抗体医薬受託生産拠点","2025年09月"],
+ ["セブン&アイ","ヨークHDの譲渡が完了。ベインへ8,147億円。セブン&アイは35.07%の少数株主として残る","2025年09月"]
 ];
 var tix=-1;
 var tTxt=document.getElementById("todayTxt"),tNo=document.getElementById("todayNo"),
@@ -1372,7 +1346,7 @@ if(tStrip){
 document.addEventListener("visibilitychange",function(){document.hidden?tStop():tStart();});
 document.getElementById("reroll").addEventListener("click",function(){roll(1);tStart();});
 
-tix=0;tPaint();tStart();vrender();draw("mBody","mNote",MONTH.expect);draw("aBody","aNote",ALL.challenge);drawList();
+tix=0;tPaint();tStart();vrender();draw("mBody","mNote",MONTH.recent);draw("aBody","aNote",ALL.challenge);drawList();
 })();
 
 /* アフィリエイト枠のタブ */

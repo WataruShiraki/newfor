@@ -1,4 +1,75 @@
 {
- "updated": "2026-08-05",
- "items": []
+ "updated": "2026-08-06",
+ "items": [
+  {
+   "id": "2026-08-06-itochu-1",
+   "found": "2026-08-06",
+   "company": "伊藤忠商事",
+   "date": "2026.08",
+   "title": "米航空機リース大手Aviation Capital Groupの共同経営に参画",
+   "url": "https://www.itochu.co.jp/ja/news/press/2026/260803_2.html",
+   "why": "東京センチュリー傘下会社の持分50%を約19.5億米ドルで取得する出資参画のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-06-rakuten-1",
+   "found": "2026-08-06",
+   "company": "楽天グループ",
+   "date": "2026.08",
+   "title": "ポータルサイト「楽天ふるさと住民」を2027年春に新設と発表",
+   "url": "https://corp.rakuten.co.jp/news/press/2026/0804_01.html",
+   "why": "ふるさと住民登録制度を受け皿とする新サービスの立ち上げ発表のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-06-rakuten-2",
+   "found": "2026-08-06",
+   "company": "楽天グループ",
+   "date": "2026.08",
+   "title": "ジェイフロンティアとオンライン診療・服薬指導の普及で連携開始",
+   "url": "https://corp.rakuten.co.jp/news/press/2026/0803_03.html",
+   "why": "医療領域での他社との事業連携のため（資本関係の記載はなし）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-06-kddi-1",
+   "found": "2026-08-06",
+   "company": "KDDI",
+   "date": "2026.08",
+   "title": "堺市自動運転タクシー実装コンソーシアムに参画",
+   "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1112_4640.html",
+   "why": "自動運転タクシーの商用化に向けた他社連携への参画のため（通信・GPU基盤を提供）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-06-fujifilm-1",
+   "found": "2026-08-06",
+   "company": "富士フイルム",
+   "date": "2026.08",
+   "title": "大鵬薬品とADC製造技術の開発で戦略的パートナーシップを締結",
+   "url": "https://www.fujifilm.com/jp/ja/news/list/13804",
+   "why": "バイオCDMO事業の拡張につながる戦略的提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-06-yamato-1",
+   "found": "2026-08-06",
+   "company": "ヤマトHD",
+   "date": "2026.08",
+   "title": "CVCファンドを通じて量子技術のJIJへ出資",
+   "url": "https://kyodonewsprwire.jp/release/202608033556",
+   "why": "KURONEKO Innovation Fund 2号によるスタートアップ出資のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-06-orix-1",
+   "found": "2026-08-06",
+   "company": "オリックス",
+   "date": "2026.08",
+   "title": "整備プラットフォームのSeibiiと資本業務提携",
+   "url": "https://response.jp/article/2026/08/05/414924.html",
+   "why": "東京センチュリー・出光興産と共に行う資本業務提携のため",
+   "status": "new"
+  }
+ ]
 }

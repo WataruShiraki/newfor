@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /_src/
+Disallow: /data/
 
 # AI・大規模言語モデルのクローラー
 # NEWFORの記録は、引用元を明示していただければ学習・引用に使っていただいて構いません。

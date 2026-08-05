@@ -360,6 +360,21 @@ footer .ln a{margin-right:15px}
 .react-wrap .vthx b{font-weight:800}
 .au .nm .hd2{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0;
  background:var(--accent-w);color:var(--accent);border-radius:11px;padding:3px 10px;margin-left:10px;vertical-align:middle}
+
+/* 表 */
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0}
+.tbl table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
+.tbl th,.tbl td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);line-height:1.6}
+.tbl th{font-size:11.5px;font-weight:800;color:var(--tx-3);letter-spacing:.02em;
+  background:var(--surface-2);border-bottom:1.5px solid var(--line);white-space:nowrap;position:sticky;top:0}
+.tbl td:first-child{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--tx-3);
+  width:1%;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tbl th.r,.tbl td.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.tbl tbody tr:hover{background:var(--surface-2)}
+.tbl td:nth-child(2){white-space:nowrap;word-break:keep-all}
+.tbl table{min-width:600px}
+.tbl tbody tr:nth-child(-n+3) td.r{color:var(--blue)}
+@media (max-width:640px){.tbl table{font-size:13px;min-width:480px}.tbl th,.tbl td{padding:9px 9px}}
 '''
 
 AFF_JS = r'''
@@ -424,12 +439,13 @@ def render(a):
        "image":SITE+"/assets/og-%s.png"%slug,"datePublished":a['pub'],"dateModified":a['mod'],
        "author":{"@type":"Person","@id":SITE+"/#author","name":"Soichiro","alternateName":"新規事業マニア"},
        "publisher":{"@type":"Organization","@id":SITE+"/#org","name":"NEWFOR"},
-       "mainEntityOfPage":SITE+url,"inLanguage":"ja","articleSection":"企業の決断",
-       "keywords":a['kw'],"about":{"@type":"Corporation","name":a['legal']}},
+       "mainEntityOfPage":SITE+url,"inLanguage":"ja","articleSection":a.get("section","企業の決断"),
+       "keywords":a['kw']},
       {"@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"NEWFOR","item":SITE+"/"},
         {"@type":"ListItem","position":2,"name":"記事一覧","item":SITE+"/articles/"},
         {"@type":"ListItem","position":3,"name":a['company'],"item":SITE+url}]}]}
+    if a.get('legal'): ld["@graph"][0]["about"]={"@type":"Corporation","name":a['legal']}
 
     # KPIs
     def _kpi(t):

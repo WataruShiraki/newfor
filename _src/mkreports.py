@@ -15,7 +15,8 @@ GENRES=[
 ]
 
 MODS=['a001_docomo','a002_kddi','a003_sony','a004_fujifilm','a005_toyota','a006_panasonic',
-      'a007_mitsubishi','a008_jreast','a009_sevenandi','a010_recruit','a011_ajinomoto','a012_softbank']
+      'a007_mitsubishi','a008_jreast','a009_sevenandi','a010_recruit','a011_ajinomoto','a012_softbank',
+      'a013_money','a014_partners','a015_words']
 
 # 業種ごとの色（ライト/ダークで別指定）
 HUE={
@@ -54,8 +55,8 @@ def learn_of(A):
 CARDS=[]
 for m in MODS:
     A=importlib.import_module(m).A
-    ind=IND.get(A['company'],'通信')
-    c1,c2,cw,cd=HUE[ind]
+    ind=A.get('ind') or IND.get(A['company'],'通信')
+    c1,c2,cw,cd=HUE.get(ind,HUE['通信'])
     k=A['kpis'][0]
     hero=(k[0],k[1],k[2])
     # いちばん数字が目を引くKPIを選ぶ
@@ -63,13 +64,13 @@ for m in MODS:
         if any(u in kk[2] for u in ['兆円','億円']) and len(kk[1])<=6:
             hero=(kk[0],kk[1],kk[2]); break
     CARDS.append(dict(
-      genre='decisions',
+      genre=A.get('genre','decisions'), meta=A.get('cardmeta'),
       no=A['no'], slug=A['slug'], company=A['company'], ind=ind,
       c1=c1,c2=c2,cw=cw,cd=cd,
       h1=A['h1'].replace('<br>',''), read=A['read'],
       hero=hero, tags=[tag_of(x) for x in A.get('forwho',[])][:3],
-      learn=learn_of(A), nbiz=len(A['timeline']),
-      nlive=sum(1 for r in A['timeline'] if r[3]),
+      learn=learn_of(A), nbiz=len(A.get('timeline') or []),
+      nlive=sum(1 for r in (A.get('timeline') or []) if r[3]),
     ))
 
 def card(c):
@@ -77,7 +78,7 @@ def card(c):
     learn=''.join('<li>%s</li>'%x for x in c['learn'])
     return '''<a class="rcard" data-g="%(genre)s" href="/articles/%(slug)s/" style="--c1:%(c1)s;--c2:%(c2)s;--cw:%(cw)s;--cd:%(cd)s">
   <span class="rc-hd">
-    <span class="rc-no">DECISIONS %(no)s</span>
+    <span class="rc-no">%(gen)s %(no)s</span>
     <span class="rc-co">%(company)s<em>%(ind)s</em></span>
   </span>
   <span class="rc-body">
@@ -87,10 +88,12 @@ def card(c):
     <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span>%(tags)s</span>
   </span>
   <span class="rc-foot">
-    <span class="rc-meta">記録した新規事業 <b>%(nbiz)d</b>件　じっくり読んで <b>約%(read)s分</b></span>
+    <span class="rc-meta">%(meta)s</span>
     <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
   </span>
-</a>'''%dict(c,hv=c['hero'][1],hu=c['hero'][2],hk=c['hero'][0],tags=tags,learn=learn)
+</a>'''%dict(c,hv=c['hero'][1],hu=c['hero'][2],hk=c['hero'][0],tags=tags,learn=learn,
+       gen=c['genre'].upper(),
+       meta=c.get('meta') or ('記録した新規事業 <b>%d</b>件　じっくり読んで <b>約%s分</b>'%(c['nbiz'],c['read'])))
 
 EXTRA='''
 

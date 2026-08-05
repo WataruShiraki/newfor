@@ -325,35 +325,55 @@ footer .ln a{margin-right:15px}
 .affmini .btn-a{white-space:normal;line-height:1.4;text-align:center;max-width:200px;font-size:12px;padding:10px 14px}
 @media(max-width:640px){.affmini .btn-a{max-width:none;width:100%}}
 
-/* ── 感想投票 ── */
-.react-wrap{background:var(--surface);border:1px solid var(--accent-l);border-radius:18px;padding:26px 28px;margin:40px 0;box-shadow:var(--sh)}
-@media(max-width:640px){.react-wrap{padding:19px 16px;border-radius:14px}}
-.react-hd .k{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700}
-.react-hd h3{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:7px 0 8px}
-.react-hd p{font-size:14px;line-height:1.9;color:var(--tx-2);margin:0 0 18px}
-.react-wrap .vhead{display:none}
-.react-wrap .q{font-size:16px;font-weight:800;letter-spacing:-.01em;margin:0 0 12px;line-height:1.6}
-.react-wrap .vask{font-size:13px;color:var(--tx-2);margin:0 0 14px;line-height:1.8}
-.react-wrap .vask b{color:var(--gold);font-weight:800}
-.react-wrap .opts{display:flex;flex-direction:column;gap:9px}
+/* ── 感想投票（帯で目立たせる） ── */
+.react-band{background:linear-gradient(168deg,#2730CE 0%,#2F3BD6 46%,#4350EE 100%);
+ margin:52px 0;padding:40px 34px;border-radius:22px;position:relative;overflow:hidden;
+ box-shadow:0 10px 40px -18px rgba(47,59,214,.75)}
+:root[data-theme="dark"] .react-band{background:linear-gradient(168deg,#141433 0%,#1B1B4A 50%,#242463 100%)}
+.react-band::before{content:"";position:absolute;right:-90px;top:-70px;width:340px;height:340px;
+ border-radius:50%;background:rgba(255,255,255,.07)}
+@media(max-width:640px){.react-band{margin:38px 0;padding:26px 17px;border-radius:16px}}
+.react-wrap{position:relative;z-index:1}
+.react-hd{text-align:center;margin-bottom:26px}
+.react-hd .k{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.19em;
+ color:rgba(255,255,255,.72);font-weight:700}
+.react-hd h3{font-size:27px;font-weight:800;letter-spacing:-.03em;margin:9px 0 12px;color:#fff;line-height:1.4}
+@media(max-width:640px){.react-hd h3{font-size:21px}}
+.react-hd p{font-size:14.5px;line-height:1.95;color:rgba(255,255,255,.9);margin:0}
+@media(max-width:640px){.react-hd p{font-size:13.5px}}
+.react-hd p b{font-weight:800;color:#fff;background:linear-gradient(transparent 60%,rgba(255,255,255,.26) 60%)}
+.react-wrap .vhead,.react-wrap .q{display:none}
+.react-wrap .vask{display:none}
+.react-wrap .opts{display:flex;flex-direction:column;gap:11px;max-width:660px;margin:0 auto}
 .react-wrap .opt{position:relative;display:block;width:100%;text-align:left;font:inherit;cursor:pointer;
- background:var(--bg);border:2px solid var(--border);border-radius:13px;padding:14px 16px;overflow:hidden;
- transition:transform .12s ease,border-color .12s ease}
-.react-wrap .vote:not(.voted) .opt:hover{transform:translateY(-2px);border-color:var(--accent)}
-.react-wrap .opt .fill{position:absolute;left:0;top:0;bottom:0;background:var(--accent-w);transition:width .5s ease;z-index:0}
-.react-wrap .opt .top{position:relative;z-index:1;display:flex;align-items:center;gap:10px}
-.react-wrap .opt .em{font-size:20px;flex:0 0 auto}
-.react-wrap .opt .nm{font-size:15px;font-weight:700;flex:1 1 auto}
-@media(max-width:640px){.react-wrap .opt .nm{font-size:14px}}
-.react-wrap .opt .you{font-size:10px;font-weight:800;background:var(--accent);color:#fff;border-radius:10px;padding:3px 8px}
-.react-wrap .opt .pct{font-size:15px;font-weight:800;color:var(--accent);font-family:ui-monospace,Menlo,monospace}
-.react-wrap .opt.chosen{border-color:var(--accent)}
-.react-wrap .vote:not(.voted) .opt::after{content:"タップ";position:absolute;right:14px;top:50%;transform:translateY(-50%);
- font-size:10px;font-weight:800;color:var(--accent);background:var(--accent-w);border:1px solid var(--accent-l);
- border-radius:10px;padding:3px 8px;z-index:1}
-.react-wrap .vfoot{margin-top:13px;font-size:12.5px;color:var(--tx-3)}
-.react-wrap .vthx{margin-top:11px;background:var(--accent-w);border-radius:11px;padding:13px 15px;font-size:13px;line-height:1.85;color:var(--tx-1)}
-.react-wrap .vthx b{font-weight:700}
+ background:#fff;border:0;border-radius:15px;padding:18px 20px;overflow:hidden;
+ box-shadow:0 3px 0 rgba(0,0,0,.16);transition:transform .13s ease,box-shadow .13s ease}
+:root[data-theme="dark"] .react-wrap .opt{background:#1A1A24}
+.react-wrap .vote:not(.voted) .opt:hover{transform:translateY(-3px);box-shadow:0 8px 0 rgba(0,0,0,.2)}
+.react-wrap .vote:not(.voted) .opt:active{transform:translateY(0);box-shadow:0 2px 0 rgba(0,0,0,.16)}
+.react-wrap .opt .fill{position:absolute;left:0;top:0;bottom:0;width:0;
+ background:linear-gradient(90deg,rgba(47,59,214,.20),rgba(47,59,214,.09));
+ transition:width .85s cubic-bezier(.22,1,.36,1);z-index:0}
+:root[data-theme="dark"] .react-wrap .opt .fill{background:linear-gradient(90deg,rgba(124,140,255,.32),rgba(124,140,255,.12))}
+.react-wrap .opt .top{position:relative;z-index:1;display:flex;align-items:center;gap:12px}
+.react-wrap .opt .em{display:none}
+.react-wrap .opt .nm{font-size:17px;font-weight:800;letter-spacing:-.02em;flex:1 1 auto;color:var(--tx-1)}
+@media(max-width:640px){.react-wrap .opt{padding:15px 16px}.react-wrap .opt .nm{font-size:15px}}
+.react-wrap .opt .you{font-size:10.5px;font-weight:800;background:var(--accent);color:#fff;
+ border-radius:11px;padding:4px 10px;white-space:nowrap}
+.react-wrap .opt .pct{font-size:22px;font-weight:800;color:var(--accent);
+ font-family:ui-monospace,Menlo,monospace;letter-spacing:-.03em;min-width:56px;text-align:right}
+@media(max-width:640px){.react-wrap .opt .pct{font-size:18px;min-width:46px}}
+.react-wrap .vote:not(.voted) .opt::after{content:"選ぶ";position:absolute;right:18px;top:50%;
+ transform:translateY(-50%);font-size:11.5px;font-weight:800;color:#fff;background:var(--accent);
+ border-radius:20px;padding:6px 15px;z-index:1;box-shadow:0 2px 8px -2px rgba(47,59,214,.6)}
+.react-wrap .opt.chosen{outline:3px solid #fff;outline-offset:2px}
+.react-wrap .vfoot{margin:18px auto 0;max-width:660px;font-size:13px;color:rgba(255,255,255,.86);
+ text-align:center;font-weight:600}
+.react-wrap .vthx{margin:14px auto 0;max-width:660px;background:rgba(255,255,255,.15);
+ border:1px solid rgba(255,255,255,.24);border-radius:13px;padding:15px 18px;
+ font-size:13.5px;line-height:1.9;color:#fff;text-align:center}
+.react-wrap .vthx b{font-weight:800}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -436,10 +456,15 @@ footer .ln a{margin-right:15px}
 <p>新規事業の予算を「新しく認めてもらうもの」と考えるか、「既存資産の組み替えで作るもの」と考えるかで、動ける幅はかなり変わる。<strong>この会社の7年は、後者で説明がつく。</strong></p>
   </article>
 
-  <div class="react-wrap">
-    <div class="react-hd"><span class="k">READERS' VOICE</span><h3>読み終えた方へ</h3>
-      <p>ここまで読んでくださって、ありがとうございます。<b>ひとつ選ぶと、ほかの読者が何を選んだかが見えます。</b>この記録がどう受け取られたのかを、みんなで確かめる場所です。</p></div>
-    <div class="vote-slot" data-poll="reaction-panasonic-newbusiness"></div>
+  <div class="react-band">
+    <div class="react-wrap">
+      <div class="react-hd">
+        <span class="k">READERS' VOICE</span>
+        <h3>ここまで読んだ、あなたへ</h3>
+        <p><b>ひとつ選ぶと、ほかの読者が何を選んだかが、その場で見えます。</b><br>この記録がどう受け取られたのかを、みんなで確かめる場所です。</p>
+      </div>
+      <div class="vote-slot" data-poll="reaction-panasonic-newbusiness"></div>
+    </div>
   </div>
 
   <div class="memo" id="memo" style="scroll-margin-top:84px">
@@ -546,5 +571,5 @@ Array.prototype.forEach.call(document.querySelectorAll(".affmini-slot"),affMini)
 
 })();
 </script>
-<script src="/assets/vote.js" defer></script>
+<script src="/assets/vote.js?v=3" defer></script>
 </body></html>

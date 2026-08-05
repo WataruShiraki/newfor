@@ -21,7 +21,17 @@ a{display:inline-block;background:#F04E0C;color:#fff;text-decoration:none;font-w
 <!-- Search Console はドメイン単位で登録する場合、この meta は不要です。
      HTMLタグで所有権を確認する場合だけ、下の行のコメントを外して content を差し替えてください。
 <meta name="google-site-verification" content="ここに確認コード"> -->
-</head><body><div>
+</head><body>
+<header><div class="wrap hd">
+  <a class="brand" href="/"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg><span class="wm">NEW<b>FOR</b></span></a>
+  <nav class="main"><a href="/articles/">記事一覧</a><a href="/companies/">企業を探す</a><a href="/#monthly">ランキング</a><a href="/about/">About</a></nav>
+  <button class="tgl" id="tgl" aria-label="配色を切り替える">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path id="ic-moon" d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+  </button>
+</div></header><div>
 <svg viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>
 <h1>このページは、まだ未確認です。</h1><p>お探しのページが見つかりませんでした。<br>企業から探すか、トップへ戻ってください。</p>
-<a href="/">トップへ戻る</a></div></body></html>
+<a href="/">トップへ戻る</a></div><script>(function(){var t=document.getElementById("tgl"),r=document.documentElement;
+t&&t.addEventListener("click",function(){r.setAttribute("data-theme",r.getAttribute("data-theme")==="dark"?"light":"dark");});})();</script>
+</body></html>

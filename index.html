@@ -874,67 +874,14 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
 </head>
 <body>
 
-<header>
-  <div class="wrap hd">
-    <a class="brand" href="/">
-      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>
-      <span class="wm">NEW<b>FOR</b></span>
-    </a>
-    <div class="hsearch">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input type="search" placeholder="企業・事業を探す" aria-label="検索">
-    </div>
-    <nav class="main">
-      <button id="megaBtn" aria-expanded="false">探す
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <a href="/companies/">企業を探す</a>
-      <a href="#featured">レポート</a>
-      <a href="#monthly">ランキング</a>
-      <a href="#mission">About</a>
-    </nav>
-    <div class="right">
-      <a class="mini" href="#vote">投票する</a>
-      <button class="tgl" id="tgl" aria-label="配色を切り替える">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <path id="ic-moon" d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
-      </button>
-    </div>
-  </div>
-  <div class="mega" id="mega">
-    <div class="wrap"><div class="in">
-      <div class="mcol">
-        <h5>企業から探す</h5>
-        <a href="/companies/kddi/">KDDI<span>18事業</span></a>
-        <a href="/companies/">ソニーグループ<span>47事業</span></a>
-        <a href="/companies/">リクルートHD<span>38事業</span></a>
-        <a href="/companies/">NTTドコモ<span>14事業</span></a>
-        <a href="/companies/">→ 全24社を見る</a>
-      </div>
-      <div class="mcol">
-        <h5>業界から探す</h5>
-        <a href="/companies/">通信<span>3社</span></a>
-        <a href="/companies/">金融・保険<span>3社</span></a>
-        <a href="/companies/">商社<span>3社</span></a>
-        <a href="/companies/">電機・IT<span>5社</span></a>
-        <a href="/companies/">→ 全15業界</a>
-      </div>
-      <div class="mcol">
-        <h5>テーマから探す</h5>
-        <a href="#list">生成AI</a><a href="#list">フィンテック</a>
-        <a href="#list">社内起業</a><a href="#list">転換</a>
-        <a href="#list">→ 全62タグ</a>
-      </div>
-      <div class="mcol">
-        <h5>数字で見る</h5>
-        <a href="#monthly">記録ランキング</a>
-        <a href="#monthly">2026年 新規事業発表数</a>
-        <a href="#alltime">通算新規事業ランキング</a>
-        <a href="#vote">今週の投票</a>
-      </div>
-    </div></div>
-  </div>
-</header>
+<header><div class="wrap hd">
+  <a class="brand" href="/"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg><span class="wm">NEW<b>FOR</b></span></a>
+  <nav class="main"><a href="/articles/">記事一覧</a><a href="/companies/">企業を探す</a><a href="/#monthly">ランキング</a><a href="/about/">About</a></nav>
+  <button class="tgl" id="tgl" aria-label="配色を切り替える">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path id="ic-moon" d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+  </button>
+</div></header>
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="top">
@@ -990,7 +937,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
         <span class="ex-s">1社を、始まりから今まで丸ごと読み解く。</span>
         <span class="ex-go">レポートを読む<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="ex" href="/reports/">
+      <a class="ex" href="/articles/">
         <span class="ex-k">参照した一次情報</span>
         <span class="ex-n">97<em>件</em></span>
         <span class="ex-s">プレスリリース・IR資料・報道を1件ずつ確認。</span>
@@ -1003,8 +950,8 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
 <!-- ══ FEATURED ══ -->
 <section class="blk" id="featured">
   <div class="wrap">
-    <div class="shd"><h2>今週の一本</h2><span class="sub">新規事業レポート</span><a class="more" href="/reports/">一覧 →</a></div>
-    <a class="feat" href="/reports/docomo-newbusiness/">
+    <div class="shd"><h2>今週の一本</h2><span class="sub">新規事業レポート</span><a class="more" href="/articles/">一覧 →</a></div>
+    <a class="feat" href="/articles/docomo-newbusiness/">
       <div class="l">
         <span class="serie">新規事業レポート ／ #001</span>
         <h3>NTTドコモは、25年かけて「iモード」に帰ってきたのではないか</h3>
@@ -1092,24 +1039,24 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
 <div class="band vio">
 <section class="blk" id="press">
   <div class="wrap">
-    <div class="shd"><h2>最近の動き</h2><span class="sub">記録した10社から、日付の新しい順に</span><a class="more" href="/reports/">レポート一覧 →</a></div>
+    <div class="shd"><h2>最近の動き</h2><span class="sub">記録した10社から、日付の新しい順に</span><a class="more" href="/articles/">レポート一覧 →</a></div>
     <div class="pgrid">
-      <a class="pcard" href="/reports/docomo-newbusiness/">
+      <a class="pcard" href="/articles/docomo-newbusiness/">
         <span class="pbody"><span class="pmeta"><b>NTTドコモ</b><span class="dt mono">2026.07</span></span>
           <span class="ptitle">NTTドコモ・フィナンシャルグループ 設立</span>
           <span class="ptags"><span>通信</span><span>いま続いている</span></span></span>
       </a>
-      <a class="pcard" href="/reports/sony-newbusiness/">
+      <a class="pcard" href="/articles/sony-newbusiness/">
         <span class="pbody"><span class="pmeta"><b>ソニーグループ</b><span class="dt mono">2026.04</span></span>
           <span class="ptitle">Sony Innovation Fund 4 運用開始</span>
           <span class="ptags"><span>電機</span><span>いま続いている</span></span></span>
       </a>
-      <a class="pcard" href="/reports/docomo-newbusiness/">
+      <a class="pcard" href="/articles/docomo-newbusiness/">
         <span class="pbody"><span class="pmeta"><b>NTTドコモ</b><span class="dt mono">2026.03</span></span>
           <span class="ptitle">iモード／FOMA が終了</span>
           <span class="ptags"><span>通信</span><span>次へ渡した</span></span></span>
       </a>
-      <a class="pcard" href="/reports/kddi-newbusiness/">
+      <a class="pcard" href="/articles/kddi-newbusiness/">
         <span class="pbody"><span class="pmeta"><b>KDDI</b><span class="dt mono">2026.01</span></span>
           <span class="ptitle">大阪堺データセンター 稼働</span>
           <span class="ptags"><span>通信</span><span>いま続いている</span></span></span>
@@ -1273,16 +1220,16 @@ document.getElementById("indTags").outerHTML='<button class="tg on" data-t="all"
 document.getElementById("thmTags").outerHTML=chips(THM,9)+'<button class="tgmore" data-more>＋'+(THM.length-9)+'</button>';
 
 var ARTS=[
- {n:"001",t:"NTTドコモは、25年かけて「iモード」に帰ってきたのではないか",d:"海外で1兆円超を投じ、生活サービスを次々と組み替え、いま金融に全額を張る25年。",tags:["通信","金融・銀行","フィンテック","事業転換","M&A"],st:"pub",u:"/reports/docomo-newbusiness/"},
- {n:"002",t:"KDDIは、自分ひとりで新規事業を始めたことがほとんどない",d:"18件のうち14件に、組む相手がいた。銀行、コンビニ、そして衛星まで。",tags:["通信","金融・銀行","小売","JV・合弁","オープンイノベーション"],st:"pub",u:"/reports/kddi-newbusiness/"},
- {n:"003",t:"ソニーがいちばんうまく作ったのは、事業ではなく「事業の作り方」だった",d:"社内制度から生まれた事業は20数件。その制度自体は1,050件超の他社支援になった。",tags:["電機","社内起業","CVC","アクセラレータ"],st:"pub",u:"/reports/sony-newbusiness/"},
- {n:"004",t:"富士フイルムが買ってきた新規事業より、買わなかった事業のほうが儲かっている",d:"買った柱776億円、買わなかった柱1,392億円。同じ会社で比べる。",tags:["化学・素材","医薬・ヘルスケア","化粧品","事業転換","M&A"],st:"pub",u:"/reports/fujifilm-newbusiness/"},
- {n:"005",t:"トヨタは新規事業のたびに会社をつくる。2021年だけで3つ",d:"KINTOは設立6年目で初の黒字。事業より先に会社ができる10年。",tags:["自動車","モビリティ","MaaS","CVC","出向起業"],st:"pub",u:"/reports/toyota-newbusiness/"},
- {n:"006",t:"パナソニックは「家庭のOS」という同じ問いに、3回挑んだ",d:"HomeX、Yohana、Panasonic Well。その裏で71億ドルが動いていた。",tags:["電機","IoT","社内起業","カーブアウト","M&A"],st:"pub",u:"/reports/panasonic-newbusiness/"},
- {n:"007",t:"三菱商事は、同じ会社の持ち方を10年で2回つくり替えた",d:"ローソンを1,440億円で子会社化し、8年後にKDDIへ半分を渡した。",tags:["商社","小売","GX・脱炭素","JV・合弁","CVC"],st:"pub",u:"/reports/mitsubishi-newbusiness/"},
- {n:"008",t:"JR東日本の新規事業は、ほぼ全部が「持て余していた資産」から始まっている",d:"駅の売店、列車の空席、車両基地の跡地。素材は前からそこにあった。",tags:["鉄道","小売","決済","リテールテック","オープンイノベーション"],st:"pub",u:"/reports/jreast-newbusiness/"},
- {n:"009",t:"セブン&アイのこの10年は、足し算ではなく引き算だった",d:"買収2.2兆円、売却8,147億円。社内発の新事業は桁が3つ小さい。",tags:["小売","コンビニ","EC","事業転換","M&A"],st:"pub",u:"/reports/sevenandi-newbusiness/"},
- {n:"010",t:"リクルートは12億ドルで買ったブランドを、7年後に自社サービスへ畳んだ",d:"海外を買うリズムと、国内を積むリズム。同じ会社で速度が違う。",tags:["人材","HRテック","SaaS","M&A","海外展開"],st:"pub",u:"/reports/recruit-newbusiness/"}
+ {n:"001",t:"NTTドコモは、25年かけて「iモード」に帰ってきたのではないか",d:"海外で1兆円超を投じ、生活サービスを次々と組み替え、いま金融に全額を張る25年。",tags:["通信","金融・銀行","フィンテック","事業転換","M&A"],st:"pub",u:"/articles/docomo-newbusiness/"},
+ {n:"002",t:"KDDIは、自分ひとりで新規事業を始めたことがほとんどない",d:"18件のうち14件に、組む相手がいた。銀行、コンビニ、そして衛星まで。",tags:["通信","金融・銀行","小売","JV・合弁","オープンイノベーション"],st:"pub",u:"/articles/kddi-newbusiness/"},
+ {n:"003",t:"ソニーがいちばんうまく作ったのは、事業ではなく「事業の作り方」だった",d:"社内制度から生まれた事業は20数件。その制度自体は1,050件超の他社支援になった。",tags:["電機","社内起業","CVC","アクセラレータ"],st:"pub",u:"/articles/sony-newbusiness/"},
+ {n:"004",t:"富士フイルムが買ってきた新規事業より、買わなかった事業のほうが儲かっている",d:"買った柱776億円、買わなかった柱1,392億円。同じ会社で比べる。",tags:["化学・素材","医薬・ヘルスケア","化粧品","事業転換","M&A"],st:"pub",u:"/articles/fujifilm-newbusiness/"},
+ {n:"005",t:"トヨタは新規事業のたびに会社をつくる。2021年だけで3つ",d:"KINTOは設立6年目で初の黒字。事業より先に会社ができる10年。",tags:["自動車","モビリティ","MaaS","CVC","出向起業"],st:"pub",u:"/articles/toyota-newbusiness/"},
+ {n:"006",t:"パナソニックは「家庭のOS」という同じ問いに、3回挑んだ",d:"HomeX、Yohana、Panasonic Well。その裏で71億ドルが動いていた。",tags:["電機","IoT","社内起業","カーブアウト","M&A"],st:"pub",u:"/articles/panasonic-newbusiness/"},
+ {n:"007",t:"三菱商事は、同じ会社の持ち方を10年で2回つくり替えた",d:"ローソンを1,440億円で子会社化し、8年後にKDDIへ半分を渡した。",tags:["商社","小売","GX・脱炭素","JV・合弁","CVC"],st:"pub",u:"/articles/mitsubishi-newbusiness/"},
+ {n:"008",t:"JR東日本の新規事業は、ほぼ全部が「持て余していた資産」から始まっている",d:"駅の売店、列車の空席、車両基地の跡地。素材は前からそこにあった。",tags:["鉄道","小売","決済","リテールテック","オープンイノベーション"],st:"pub",u:"/articles/jreast-newbusiness/"},
+ {n:"009",t:"セブン&アイのこの10年は、足し算ではなく引き算だった",d:"買収2.2兆円、売却8,147億円。社内発の新事業は桁が3つ小さい。",tags:["小売","コンビニ","EC","事業転換","M&A"],st:"pub",u:"/articles/sevenandi-newbusiness/"},
+ {n:"010",t:"リクルートは12億ドルで買ったブランドを、7年後に自社サービスへ畳んだ",d:"海外を買うリズムと、国内を積むリズム。同じ会社で速度が違う。",tags:["人材","HRテック","SaaS","M&A","海外展開"],st:"pub",u:"/articles/recruit-newbusiness/"}
 ];
 var active="all";
 function drawList(){
@@ -1290,7 +1237,7 @@ function drawList(){
   document.getElementById("hitCount").textContent=l.length+"件"+(active==="all"?"":"／"+active);
   var el=document.getElementById("alist");
   el.innerHTML=l.length?l.map(function(a){
-    return '<a class="arow" href="'+(a.u||"/reports/")+'"><span class="id">#'+a.n+'</span>'
+    return '<a class="arow" href="'+(a.u||"/articles/")+'"><span class="id">#'+a.n+'</span>'
       +'<span><h4>'+a.t+'</h4><p>'+a.d+'</p><span class="tags">'
       +a.tags.map(function(t){return "<span>"+t+"</span>";}).join("")+"</span></span>"
       +'<span class="st '+a.st+'">'+(a.st==="pub"?"公開中":"準備中")+"</span></a>";}).join("")

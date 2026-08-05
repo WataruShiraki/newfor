@@ -5,6 +5,40 @@ name='ソニーグループ',
 legal='ソニーグループ株式会社',
 ind='電機',
 article='sony-newbusiness',
+evsrc={
+ "2015": [
+  "https://sony.co.jp/SonyInfo/News/Press/201507/15-061",
+  "ソニー ニュースリリース"
+ ],
+ "2021.08": [
+  "https://www.prnewswire.com/news-releases/sonys-funimation-global-group-completes-acquisition-of-crunchyroll-from-att-301351462.html",
+  "ソニー公式リリース"
+ ],
+ "2022.02": [
+  "https://sie.com/jp/corporate/release/2022/220201.html",
+  "SIE プレスリリース"
+ ],
+ "2022.10": [
+  "https://www.shm-afeela.com/ja/news/2022-10-13/",
+  "ソニー・ホンダモビリティ"
+ ],
+ "2023.01": [
+  "https://www.shm-afeela.com/ja/news/2023-01-04/",
+  "ソニー・ホンダモビリティ"
+ ],
+ "2025.09": [
+  "https://www.sonyfg.co.jp/ja/news/article/250929_05.pdf",
+  "ソニーFG お知らせ"
+ ],
+ "2026.04": [
+  "https://www.shm-afeela.com/ja/news/2026-04-21/",
+  "ソニー・ホンダモビリティ"
+ ],
+ "2014": [
+  "https://xtech.nikkei.com/dm/article/MAG/20140801/368441/",
+  "日経クロステック"
+ ]
+},
 timeline=[
  ('2000','ソネット・エムスリー 設立','医師向けポータル。のちにエムスリーとして独立し、いまは持分法適用関連会社',True),
  ('2001.04','ソニー銀行 設立','個人向けネット銀行。翌6月に営業開始',True),

@@ -8,10 +8,13 @@ Vercel が main ブランチを見て自動で公開します。
 
 1. `companies/<slug>.py` を作る。中身は `C=dict(slug, name, legal, ind, article, timeline, sources)`
 2. `timeline` は `('2026.03','事業名','説明（数字を1つ以上）', 継続中かどうか)` の並び
-3. **年表が10件以上ないと、検索エンジンに載りません**（noindex になります）。
+3. `evsrc` に、出来事ごとの出典を書けます（任意）。年月をキーにして
+   `evsrc={"2016.09":["https://...","ソフトバンクG プレスリリース"]}` の形。
+   書いておくと、年表のその行に「出典」リンクが出ます。構造化データにも入ります
+4. **年表が10件以上ないと、検索エンジンに載りません**（noindex になります）。
    これは、中身の薄いページを量産するとサイト全体の評価が下がるためです
-4. `python3 mkcomp.py` を実行するとページができます
-5. `companies/index.html` の `C` `BARS` `RANGE` `LATEST` も作り直してください
+5. `python3 mkcomp.py` を実行するとページができます
+6. `companies/index.html` の `C` `BARS` `RANGE` `LATEST` も作り直してください
 
 記事（`articles/a0NN_*.py`）は、書けた企業にだけ足します。`C` の `article` に
 記事の slug を入れると、企業ページから記事への導線が出ます。

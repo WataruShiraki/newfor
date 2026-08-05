@@ -5,6 +5,136 @@ name='楽天グループ',
 legal='楽天グループ株式会社',
 ind='EC',
 article=None,
+evsrc={
+ "2000.12": [
+  "https://corp.rakuten.co.jp/news/press/2000/1126.html",
+  "楽天グループ ニュース"
+ ],
+ "2001.03": [
+  "https://corp.rakuten.co.jp/news/press/2001/0327.html",
+  "楽天グループ ニュース"
+ ],
+ "2003.11": [
+  "https://corp.rakuten.co.jp/news/press/2003/1120.html",
+  "楽天グループ ニュース"
+ ],
+ "2004.10": [
+  "https://corp.rakuten.co.jp/news/press/2004/1116_1.html",
+  "楽天グループ ニュース"
+ ],
+ "2005.06": [
+  "https://corp.rakuten.co.jp/news/press/2005/0620.html",
+  "楽天グループ ニュース"
+ ],
+ "2008.05": [
+  "https://corp.rakuten.co.jp/news/press/2007/1129.html",
+  "楽天グループ ニュース"
+ ],
+ "2009.02": [
+  "https://corp.rakuten.co.jp/news/press/2009/0210.html",
+  "楽天グループ ニュース"
+ ],
+ "2010.01": [
+  "https://corp.rakuten.co.jp/news/press/2009/1105.html",
+  "楽天グループ ニュース"
+ ],
+ "2011.11": [
+  "https://corp.rakuten.co.jp/news/press/2011/1109_02.html",
+  "楽天グループ ニュース"
+ ],
+ "2012.10": [
+  "https://corp.rakuten.co.jp/news/press/2012/0920_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2014.02": [
+  "https://corp.rakuten.co.jp/news/press/2014/0214_04.html",
+  "楽天グループ ニュース"
+ ],
+ "2015.01": [
+  "https://corp.rakuten.co.jp/news/press/2014/1206_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2016.10": [
+  "https://corp.rakuten.co.jp/news/press/2016/1027_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2018.03": [
+  "https://corp.rakuten.co.jp/news/press/2018/0314_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2018.10": [
+  "https://corp.rakuten.co.jp/news/press/2018/1001_02.html",
+  "楽天グループ ニュース"
+ ],
+ "2019.07": [
+  "https://corp.rakuten.co.jp/news/press/2019/0802_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2019.09": [
+  "https://corp.rakuten.co.jp/news/press/2019/0919_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2019.10": [
+  "https://corp.rakuten.co.jp/news/press/2019/0906_02.html",
+  "楽天グループ ニュース"
+ ],
+ "2020.03": [
+  "https://corp.rakuten.co.jp/news/press/2020/0303_02.html",
+  "楽天グループ ニュース"
+ ],
+ "2020.04": [
+  "https://corp.rakuten.co.jp/news/press/2020/0408_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2020.11": [
+  "https://corp.rakuten.co.jp/news/press/2020/1116_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2021.03": [
+  "https://corp.rakuten.co.jp/news/press/2021/0312_02.html",
+  "楽天グループ ニュース"
+ ],
+ "2021.07": [
+  "https://corp.rakuten.co.jp/news/press/2021/0630_02.html",
+  "楽天グループ ニュース"
+ ],
+ "2021.08": [
+  "https://corp.rakuten.co.jp/news/press/2021/0804_02.html",
+  "楽天グループ ニュース"
+ ],
+ "2022.01": [
+  "https://corp.rakuten.co.jp/news/press/2021/0930_03.html",
+  "楽天グループ ニュース"
+ ],
+ "2022.02": [
+  "https://corp.rakuten.co.jp/news/press/2022/0225_07.html",
+  "楽天グループ ニュース"
+ ],
+ "2023.04": [
+  "https://corp.rakuten.co.jp/news/press/2023/0421_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2023.11": [
+  "https://corp.rakuten.co.jp/news/press/2023/1109_08.html",
+  "楽天グループ ニュース"
+ ],
+ "2024.11": [
+  "https://corp.rakuten.co.jp/news/press/2024/1113_12.html",
+  "楽天グループ ニュース"
+ ],
+ "2026.03": [
+  "https://corp.rakuten.co.jp/news/press/2026/0317_01.html",
+  "楽天グループ ニュース"
+ ],
+ "2026.05": [
+  "https://corp.rakuten.co.jp/news/press/2026/0520_11.html",
+  "楽天グループ ニュース"
+ ],
+ "2014.10": [
+  "https://corp.rakuten.co.jp/news/press/2014/1010_01.html",
+  "楽天グループ ニュース"
+ ]
+},
 timeline=[
  ('1997.02','株式会社エム・ディー・エム 設立','楽天市場の運営会社として設立。従業員6人でのスタート。1999年6月に楽天株式会社へ、2021年4月に楽天グループ株式会社へ商号変更',True),
  ('1997.05','楽天市場 開設','13店舗でのスタート。テナント型のオンラインショッピングモール。2011年12月に年間流通総額1兆円、2022年1月にEC流通総額5兆円を突破',True),

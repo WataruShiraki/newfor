@@ -80,6 +80,11 @@ EXTRA_CSS='''
 .crep .k2{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700}
 .crep .t2{font-size:17px;font-weight:800;letter-spacing:-.02em;margin-top:6px;line-height:1.55}
 .crep .d2{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.8}
+.src2{display:inline-flex;align-items:center;gap:5px;margin-top:7px;font-size:11.5px;
+  color:var(--tx-3);text-decoration:none;border:1px solid var(--line);border-radius:100px;
+  padding:3px 10px 3px 8px;transition:.14s;white-space:nowrap;max-width:100%;overflow:hidden}
+.src2 svg{width:11px;height:11px;flex-shrink:0}
+.src2:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-w)}
 .cfaq{list-style:none;padding:0;margin:0}
 .cfaq>li{border-bottom:1px solid var(--line);padding:15px 0}
 .cfaq>li:last-child{border-bottom:0;padding-bottom:0}
@@ -236,9 +241,15 @@ def render(c):
     for n,s,e,live,note in biz:
         bd='<span class="bd2 live">継続中</span>' if live else '<span class="bd2 done">終了・譲渡</span>'
         y='%d.%02d'%(int(s),round((s-int(s))*12)+1)
+        ES=c.get('evsrc') or {}
+        hit=ES.get(y) or ES.get('%d'%int(s))
+        lk=('<a class="src2" href="%s" rel="noopener nofollow" target="_blank" title="出典を開く">'
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
+            '<path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>'
+            '%s</a>')%(hit[0],hit[1]) if hit else ''
         note='<em>%s</em>'%note if note else ''
-        items.append('<li data-s="%s"><span class="y2">%s</span><span class="ev2">%s%s</span>%s</li>'%(
-          'live' if live else 'done',y,n,note,bd))
+        items.append('<li data-s="%s"><span class="y2">%s</span><span class="ev2">%s%s%s</span>%s</li>'%(
+          'live' if live else 'done',y,n,note,lk,bd))
     nlive=sum(1 for b in biz if b[3]); ndone=len(biz)-nlive
     stat=''.join('<div class="c"><span class="l">%s</span><span class="v">%s<small>%s</small></span></div>'%(l,v,u)
         for l,v,u in [('記録した新規事業',len(biz),'件'),('記録の範囲','%d–'%lo,'2026')])
@@ -277,9 +288,11 @@ def render(c):
        "itemListOrder":"https://schema.org/ItemListOrderAscending",
        "itemListElement":[
          {"@type":"ListItem","position":i+1,
-          "item":{"@type":"CreativeWork","name":n,"description":note,
+          "item":dict({"@type":"CreativeWork","name":n,"description":note,
                   "datePublished":"%d"%int(st),
-                  "provider":{"@type":"Organization","name":c['legal']}}}
+                  "provider":{"@type":"Organization","name":c['legal']}},
+                 **({"subjectOf":{"@type":"WebPage","url":(c.get('evsrc') or {}).get('%d.%02d'%(int(st),round((st-int(st))*12)+1),[None])[0]}}
+                    if (c.get('evsrc') or {}).get('%d.%02d'%(int(st),round((st-int(st))*12)+1)) else {}))}
          for i,(n,st,e,lv,note) in enumerate(biz)]},
       {"@type":"FAQPage","@id":U+"#faq","mainEntity":[
         {"@type":"Question","name":q,

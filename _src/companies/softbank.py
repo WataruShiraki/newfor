@@ -5,6 +5,124 @@ name='ソフトバンクグループ',
 legal='ソフトバンクグループ株式会社',
 ind='通信',
 article='softbank-newbusiness',
+evsrc={
+ "1995.11": [
+  "https://group.softbank/news/press/19951109",
+  "ソフトバンクG プレスリリース"
+ ],
+ "1996.01": [
+  "https://group.softbank/news/press/19960111",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2000.04": [
+  "https://group.softbank/news/press/19991207",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2000.10": [
+  "https://www.paypay-bank.co.jp/company/press/2000/1011.html",
+  "PayPay銀行 プレスリリース"
+ ],
+ "2001.09": [
+  "https://group.softbank/news/press/20010829",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2004.05": [
+  "https://group.softbank/news/press/20040527_0",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2004.11": [
+  "https://group.softbank/news/press/20041130_0",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2006.03": [
+  "https://group.softbank/news/press/20060317",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2008.07": [
+  "https://www.softbank.jp/corp/group/sbm/news/press/2008/20080708_01/",
+  "ソフトバンクモバイル"
+ ],
+ "2013.07": [
+  "https://group.softbank/news/press/20130711",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2013.10": [
+  "https://group.softbank/news/press/20131015_0",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2014.06": [
+  "https://www.softbank.jp/corp/group/sbm/news/press/2014/20140605_01/",
+  "ソフトバンクモバイル"
+ ],
+ "2016.09": [
+  "https://group.softbank/news/press/20160905",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2017.02": [
+  "https://group.softbank/news/press/20170215",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2017.05": [
+  "https://group.softbank/news/press/20170522",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2017.06": [
+  "https://group.softbank/news/press/20170609_0",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2018.10": [
+  "https://image.paypay.ne.jp/pdf/pr20181005.pdf",
+  "PayPay プレスリリース"
+ ],
+ "2018.12": [
+  "https://www.softbank.jp/corp/news/press/sbkk/2018/20181219_01/",
+  "ソフトバンク プレスリリース"
+ ],
+ "2019.11": [
+  "https://www.softbank.jp/corp/news/press/sbkk/2019/20191114_02/",
+  "ソフトバンク プレスリリース"
+ ],
+ "2020.04": [
+  "https://group.softbank/news/press/20200402",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2021.03": [
+  "https://www.itmedia.co.jp/news/articles/2103/02/news051.html",
+  "ITmedia"
+ ],
+ "2024.07": [
+  "https://www.graphcore.ai/posts/graphcore-joins-softbank-group-to-build-next-generation-of-ai-compute",
+  "Graphcore 公式発表"
+ ],
+ "2025.01": [
+  "https://group.softbank/news/press/20250122",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2025.03": [
+  "https://www.softbank.jp/corp/news/press/sbkk/2025/20250314_01/",
+  "ソフトバンク プレスリリース"
+ ],
+ "2025.04": [
+  "https://group.softbank/news/press/20250401",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2025.08": [
+  "https://group.softbank/news/press/20250819",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2025.10": [
+  "https://group.softbank/news/press/20251008",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2025.11": [
+  "https://group.softbank/news/press/20251126",
+  "ソフトバンクG プレスリリース"
+ ],
+ "2026.03": [
+  "https://about.paypay.ne.jp/pr/20260312/01/",
+  "PayPay プレスリリース"
+ ]
+},
 timeline=[
  ('1981.09','日本ソフトバンク 設立','24歳の孫正義氏がパソコン用ソフトの流通で創業。この事業はSB C&Sとしていまも続いている',True),
  ('1982.05','出版事業に参入','『Oh!PC』などパソコン雑誌を創刊。現在はSBクリエイティブとして書籍中心に続く',True),

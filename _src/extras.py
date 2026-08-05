@@ -74,7 +74,7 @@ Soichiro（新規事業マニア／40代・事業開発）。20代でスター�
 
 manifest={"name":"NEWFOR","short_name":"NEWFOR","lang":"ja","start_url":"/","display":"standalone",
  "background_color":"#F6F5F2","theme_color":"#2F3BD6",
- "description":"大企業の新規事業を、公開情報から一件ずつ掘り起こして記録する新規事業メディア。",
+ "description":"新規事業ヒストリーメディア。日本の大企業28社が手がけた新規事業758件を、開始年・継続状況・出典つきで年表にしました。過去を知るためではなく、次の一手の前例を見つけるために。",
  "icons":[{"src":"/assets/favicon-192.png","sizes":"192x192","type":"image/png"},
           {"src":"/assets/favicon-512.png","sizes":"512x512","type":"image/png"},
           {"src":"/assets/favicon-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}]}

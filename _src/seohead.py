@@ -99,7 +99,7 @@ def head_block(src,p):
     h.append('<meta property="og:image" content="%s">'%img)
     h.append('<meta property="og:image:width" content="1200">')
     h.append('<meta property="og:image:height" content="630">')
-    h.append('<meta property="og:image:alt" content="NEWFOR ─ 新規事業メディア">')
+    h.append('<meta property="og:image:alt" content="NEWFOR ─ 新規事業ヒストリーメディア">')
     if p['type']=='article':
         h.append('<meta property="article:published_time" content="2026-07-28T09:00:00+09:00">')
         h.append('<meta property="article:modified_time" content="2026-08-04T09:00:00+09:00">')

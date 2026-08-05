@@ -38,9 +38,16 @@ header{background:var(--blue);color:#fff;position:sticky;top:0;z-index:9}
 .hd svg{width:32px;height:32px;color:#fff}
 .wm{font-family:ui-monospace,Menlo,monospace;font-size:19.5px;font-weight:800;letter-spacing:.16em}
 .wm b{color:#FF8A45}
-.hd nav{margin-left:auto;display:flex;gap:5px}
-.hd nav a{font-size:13px;padding:7px 11px;border-radius:8px;color:rgba(255,255,255,.9)}
+.hd nav{margin-left:auto;display:flex;gap:3px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.hd nav::-webkit-scrollbar{display:none}
+.hd nav a{font-size:13px;padding:7px 11px;border-radius:8px;color:rgba(255,255,255,.9);white-space:nowrap}
 .hd nav a:hover{background:rgba(255,255,255,.15);color:#fff}
+@media (max-width:760px){
+ .hd{height:auto;min-height:58px;padding:9px 16px 7px;flex-wrap:wrap;gap:7px}
+ .hd svg{width:27px;height:27px}
+ .wm{font-size:17px;letter-spacing:.13em}
+ .hd nav{order:3;width:100%;margin-left:0;gap:1px}
+ .hd nav a{font-size:12.5px;padding:6px 9px}}
 .top{background:linear-gradient(170deg,#2730CE,#3843E6);color:#fff;padding:44px 0 50px;position:relative;overflow:hidden}
 .top .bg{position:absolute;right:-30px;bottom:-46px;width:230px;color:#fff;opacity:.13}
 .top .crumb{font-size:12px;color:rgba(255,255,255,.78);margin-bottom:12px}
@@ -177,7 +184,7 @@ main .wrap{max-width:1180px}
   </span>
   <span class="rc-body">
     <span class="rc-ttl">NTTドコモは、25年かけて「iモード」に帰ってきたのではないか</span>
-    <span class="rc-hero"><b>1兆778</b><i>億円</i><span class="rc-hk">海外へ出て、失ったお金</span></span>
+    <span class="rc-hero"><b>1兆778</b><i>億円</i><span class="rc-hk">海外に張って、減損した額</span></span>
     <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>ドコモがiモードで稼いだのは、コンテンツではなく「課金代行」の手数料だった</li><li>25年で数十の事業を試した結果、残ったのは「毎月、自動で回るもの」</li></ul></span>
     <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">企画が社内で通らない方</span><span class="rt">大企業で新規事業を任されたばかりの方</span><span class="rt">強みが分からなくなっている方</span></span>
   </span>

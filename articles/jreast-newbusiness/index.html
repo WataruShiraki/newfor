@@ -57,6 +57,13 @@ header{position:sticky;top:0;z-index:95;background:var(--accent);border-bottom:1
 :root[data-theme="dark"] header{background:color-mix(in srgb,var(--page) 88%,transparent);
  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--border)}
 .hd{display:flex;align-items:center;gap:12px;height:66px}
+@media (max-width:760px){
+ .hd{height:auto;min-height:58px;padding:9px 0 7px;flex-wrap:wrap;gap:7px}
+ .brand .mark{width:27px;height:27px}
+ .brand .wm{font-size:17px;letter-spacing:.13em}
+ nav.main{order:3;width:100%;margin-left:0;gap:1px}
+ nav.main a{font-size:12.5px;padding:6px 9px}
+ .hd .tgl{margin-left:auto}}
 .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .brand .mark{width:32px;height:32px;color:#fff}
 :root[data-theme="dark"] .brand .mark{color:var(--accent)}
@@ -483,7 +490,7 @@ footer .ln a{margin-right:15px}
     </div>
   </div>
 
-  <div class="next"><a href="/articles/sevenandi-newbusiness/"><div class="k">NEXT REPORT</div><div class="t">セブン&アイのこの10年は、足し算ではなく引き算だった</div></a><a href="/articles/mitsubishi-newbusiness/"><div class="k">REPORT</div><div class="t">三菱商事は、同じ会社の持ち方を10年で2回つくり替えた</div></a></div>
+  <div class="next"><a href="/articles/sevenandi-newbusiness/"><div class="k">NEXT｜企業の決断</div><div class="t">セブン&アイのこの10年は、足し算ではなく引き算だった</div></a><a href="/articles/mitsubishi-newbusiness/"><div class="k">企業の決断</div><div class="t">三菱商事は、同じ会社の持ち方を10年で2回つくり替えた</div></a></div>
 
   <div class="src">
     <h3>出典</h3>
@@ -494,7 +501,7 @@ footer .ln a{margin-right:15px}
 </main>
 
 <footer><div class="wrap">
-  <div class="ln"><a href="/">トップ</a><a href="/companies/">企業を探す</a><a href="/articles/">レポート</a><a href="/about/">運営者情報</a><a href="/ads/">広告について</a><a href="/privacy/">プライバシーポリシー</a></div>
+  <div class="ln"><a href="/">トップ</a><a href="/companies/">企業を探す</a><a href="/articles/">記事一覧</a><a href="/about/">運営者情報</a><a href="/ads/">広告について</a><a href="/privacy/">プライバシーポリシー</a></div>
   <div>NEWFOR ／ ニューフォー　公開情報に基づく筆者の見解であり、各社の公式見解ではありません。<br>本サイトはアフィリエイトプログラムによる収益を得ています。詳しくは<a href="/ads/">広告について</a>。<br><a href="/about/">運営者情報</a>　<a href="/privacy/">プライバシーポリシー</a>　© 2026 NEWFOR</div>
 </div></footer>
 
@@ -519,7 +526,7 @@ document.getElementById("tgl").addEventListener("click",function(){
 var ARROW='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
 var G={
  job:{tab:"転職・採用",title:"新規事業に強い採用サービス BEST 3",who:"これから新規事業に携わりたい方へ！",cta:"無料登録して求人提案を受ける",
-   items:[{n:"ビズリーチ",best:1,d:"新規事業責任者・事業開発ポジションの掲載が最も多い。大企業の非公開求人が中心。",t:["ハイクラス","スカウト型","年収600万〜"]},
+   items:[{n:"ビズリーチ",best:1,d:"新規事業責任者・事業開発ポジションの掲載が多い。大企業の非公開求人が中心。",t:["ハイクラス","スカウト型","年収600万〜"]},
     {n:"フォースタートアップス",d:"スタートアップ・成長企業に特化。大企業からの越境転職の支援実績が多い。",t:["スタートアップ","エージェント型","CxO・事業責任者"]},
     {n:"doda X",d:"ヘッドハンター経由のスカウト。事業会社の新規事業部門からの声がかかりやすい。",t:["ハイクラス","ヘッドハンター","年収800万〜"]}]},
  pro:{tab:"顧問・プロ人材",title:"新規事業の顧問・プロ人材が探せるサービス BEST 3",who:"社内に足りない知見を、外から借りたい方へ！",cta:"無料で相談して人を探す",
@@ -528,7 +535,7 @@ var G={
     {n:"HiPro Biz",d:"経営顧問・プロ人材の紹介。大企業の新規事業部門でのプロジェクト単位の活用が中心。",t:["経営顧問","プロジェクト型","大企業"]}]},
  learn:{tab:"学ぶ",title:"新規事業の学びに使えるサービス",who:"新規事業の担当になったばかりの方へ！",cta:"無料で試してみる",
    items:[{n:"グロービス学び放題",best:1,d:"事業開発・マーケ・ファイナンスを動画で。担当になった最初の3カ月の土台づくりに。",t:["動画学習","定額","ビジネス基礎"]},
-    {n:"flier（フライヤー）",d:"ビジネス書の要約。レポートの参考文献を、読む前にあたりをつけたいときに。",t:["書籍要約","10分","定額"]},
+    {n:"flier（フライヤー）",d:"ビジネス書の要約。記事の参考文献を、読む前にあたりをつけたいときに。",t:["書籍要約","10分","定額"]},
     {n:"クラウドワークス",d:"検証フェーズの手を借りる。リサーチ、LP制作、資料づくりを外に出せる。",t:["外部リソース","単発","検証フェーズ"]}]},
  biz:{tab:"別会社で始める",title:"別会社で始めるときに使うサービス",who:"会社を出て、自分の事業を始めたい方へ！",cta:"条件を見てみる",
    items:[{n:"officee",best:1,d:"オフィス・レンタルオフィスの仲介。数人のチームで始めるときの拠点探しから。",t:["拠点","仲介無料","小規模〜"]},

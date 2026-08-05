@@ -57,6 +57,13 @@ header{position:sticky;top:0;z-index:95;background:var(--accent);border-bottom:1
 :root[data-theme="dark"] header{background:color-mix(in srgb,var(--page) 88%,transparent);
  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--border)}
 .hd{display:flex;align-items:center;gap:12px;height:66px}
+@media (max-width:760px){
+ .hd{height:auto;min-height:58px;padding:9px 0 7px;flex-wrap:wrap;gap:7px}
+ .brand .mark{width:27px;height:27px}
+ .brand .wm{font-size:17px;letter-spacing:.13em}
+ nav.main{order:3;width:100%;margin-left:0;gap:1px}
+ nav.main a{font-size:12.5px;padding:6px 9px}
+ .hd .tgl{margin-left:auto}}
 .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .brand .mark{width:32px;height:32px;color:#fff}
 :root[data-theme="dark"] .brand .mark{color:var(--accent)}
@@ -421,10 +428,10 @@ footer .ln a{margin-right:15px}
 <h2 id="s0">金額順に並べると、上位が全部「手放した／買った」</h2>
 <p>セブン&アイの2015年以降の動きを、金額の大きい順に並べてみる。</p>
 <ul><li>Speedway買収（2020年発表）── 210億ドル、約2.2兆円</li><li>ヨーク・ホールディングス譲渡（2025年完了）── 8,147億円</li><li>Sunocoからの事業取得（2017年）── 約3,650億円</li><li>そごう・西武譲渡（2023年）── 2,200億円</li><li>豪7-Eleven買収（2023年発表）── 約1,670〜1,700億円</li></ul>
-<p>新規事業のレポートを書いているのに、上位に社内発の事業がひとつも入ってこない。<strong>この会社の10年は、事業を作る話ではなく、事業を出し入れする話だった。</strong></p>
+<p>新規事業の記事を書いているのに、上位に社内発の事業がひとつも入ってこない。<strong>この会社の10年は、事業を作る話ではなく、事業を出し入れする話だった。</strong></p>
 <p>では社内発の新事業はどこにいるか。7NOWの2030年度目標が約1,200億円、SIPストアは1店舗、7payは3か月で終わった。桁が2つから3つ違う。</p>
 <div class="fig"><div class="cap">TIMELINE</div><h4>未確認事業年表</h4><div class="sub">セブン&アイが公開情報で発表した主な動き（2015年以降）</div><div class="tlf"><button class="on" data-f="all">すべて</button><button data-f="live">いま続いている</button><button data-f="done">次へ渡した</button></div><ul class="tl" id="tl"><li data-s="done"><span class="y">2015.11</span><span class="ev">オムニ7 開始<em>グループ各社のECを1つに束ねた総合通販。2023年1月に提供を終えた</em></span><span class="bd done">次へ渡した</span></li><li data-s="live"><span class="y">2017.04</span><span class="ev">米Sunocoから小売事業を取得<em>ガソリンスタンド併設1,030店。報道ベースで約3,650億円</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2017.10</span><span class="ev">7NOW 実証開始<em>札幌・小樽の15店から。全国展開は2025年2月</em></span><span class="bd live">いま続いている</span></li><li data-s="done"><span class="y">2019.07</span><span class="ev">7pay 開始<em>セブン-イレブンアプリ内のコード決済。同年9月30日に提供を終えた</em></span><span class="bd done">次へ渡した</span></li><li data-s="live"><span class="y">2020.08</span><span class="ev">Speedway買収を発表<em>米Marathonから約3,900店。210億ドル、約2.2兆円</em></span><span class="bd live">いま続いている</span></li><li data-s="done"><span class="y">2023.08</span><span class="ev">そごう・西武の譲渡を決定<em>フォートレスへ全株式を譲渡。譲渡額2,200億円</em></span><span class="bd done">次へ渡した</span></li><li data-s="live"><span class="y">2023.11</span><span class="ev">豪7-Eleven運営会社の買収を発表<em>約750店。約1,670〜1,700億円</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2024.02</span><span class="ev">SIPストア 開店<em>セブン-イレブンとイトーヨーカ堂を掛け合わせた大型テスト店</em></span><span class="bd live">いま続いている</span></li><li data-s="done"><span class="y">2024.08</span><span class="ev">クシュタールが買収を提案<em>カナダのコンビニ大手から。9月に拒否、10月に増額提案</em></span><span class="bd done">次へ渡した</span></li><li data-s="live"><span class="y">2024.10</span><span class="ev">ヨーク・ホールディングス 設立<em>非コンビニ29社を束ねる中間持株会社。増額提案の翌日に発表</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2025.02</span><span class="ev">7NOW 全国展開が完了<em>最短20分の即配。約3,000品目</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2025.03</span><span class="ev">北米コンビニのIPOと2兆円の自社株買いを発表<em>社長交代も同時に発表。2030年度までに総額2兆円</em></span><span class="bd live">いま続いている</span></li><li data-s="done"><span class="y">2025.07</span><span class="ev">クシュタールが買収提案を撤回<em>約1年で終結。増額後の提案は約470億ドル規模だった</em></span><span class="bd done">次へ渡した</span></li><li data-s="done"><span class="y">2025.09</span><span class="ev">ヨークHDの譲渡が完了<em>ベインへ8,147億円。セブン&アイは35.07%の少数株主として残る</em></span><span class="bd done">次へ渡した</span></li><li data-s="live"><span class="y">2025.08</span><span class="ev">国内コンビニへの集中投資を発表<em>2030年度までに約1,000店増、5,000店以上の改装に3,000億円</em></span><span class="bd live">いま続いている</span></li></ul></div>
-<div class="voice"><span class="av"><svg viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".22"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".32"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg></span><div><span class="k">新規事業マニアの解説</span><p>新規事業のレポートを書いているのに、金額の上位に社内発の事業がひとつも入ってこない。</p><p><strong>これを並べ終えたとき、正直に言うと少し戸惑いました。</strong>Speedway 2.2兆円、ヨークHD 8,147億円、Sunoco 3,650億円、そごう・西武 2,200億円。対して7NOWの2030年度目標が約1,200億円です。桁が2つから3つ違います。</p><p>ただ、これは悪い話ではないと思っています。<strong>会社によって、新規事業に期待されている役割はまるで違う。</strong>その事実を先に知っておけるかどうかは、担当者にとってかなり大きいはずです。</p></div></div>
+<div class="voice"><span class="av"><svg viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".22"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".32"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg></span><div><span class="k">新規事業マニアの解説</span><p>新規事業の記事を書いているのに、金額の上位に社内発の事業がひとつも入ってこない。</p><p><strong>これを並べ終えたとき、正直に言うと少し戸惑いました。</strong>Speedway 2.2兆円、ヨークHD 8,147億円、Sunoco 3,650億円、そごう・西武 2,200億円。対して7NOWの2030年度目標が約1,200億円です。桁が2つから3つ違います。</p><p>ただ、これは悪い話ではないと思っています。<strong>会社によって、新規事業に期待されている役割はまるで違う。</strong>その事実を先に知っておけるかどうかは、担当者にとってかなり大きいはずです。</p></div></div>
 <h2 id="s7">社内発の新事業は、コンビニの半径30分にある</h2>
 <p>その社内発の3つを並べると、置かれている場所がきれいに揃っている。</p>
 <p>7payはレジの中。SIPストアは売場の中。7NOWは店から届ける30分の中。<strong>どれもコンビニの店舗を起点にして、そこから半径30分ぶんだけ広げたものだ。</strong></p>
@@ -485,7 +492,7 @@ footer .ln a{margin-right:15px}
     </div>
   </div>
 
-  <div class="next"><a href="/articles/recruit-newbusiness/"><div class="k">NEXT REPORT</div><div class="t">リクルートは、12億ドルで買ったブランドを7年後に畳んだ</div></a><a href="/articles/jreast-newbusiness/"><div class="k">REPORT</div><div class="t">JR東日本の新規事業は、ほぼ全部が「持て余していた資産」</div></a></div>
+  <div class="next"><a href="/articles/recruit-newbusiness/"><div class="k">NEXT｜企業の決断</div><div class="t">リクルートは、12億ドルで買ったブランドを7年後に畳んだ</div></a><a href="/articles/jreast-newbusiness/"><div class="k">企業の決断</div><div class="t">JR東日本の新規事業は、ほぼ全部が「持て余していた資産」</div></a></div>
 
   <div class="src">
     <h3>出典</h3>
@@ -496,7 +503,7 @@ footer .ln a{margin-right:15px}
 </main>
 
 <footer><div class="wrap">
-  <div class="ln"><a href="/">トップ</a><a href="/companies/">企業を探す</a><a href="/articles/">レポート</a><a href="/about/">運営者情報</a><a href="/ads/">広告について</a><a href="/privacy/">プライバシーポリシー</a></div>
+  <div class="ln"><a href="/">トップ</a><a href="/companies/">企業を探す</a><a href="/articles/">記事一覧</a><a href="/about/">運営者情報</a><a href="/ads/">広告について</a><a href="/privacy/">プライバシーポリシー</a></div>
   <div>NEWFOR ／ ニューフォー　公開情報に基づく筆者の見解であり、各社の公式見解ではありません。<br>本サイトはアフィリエイトプログラムによる収益を得ています。詳しくは<a href="/ads/">広告について</a>。<br><a href="/about/">運営者情報</a>　<a href="/privacy/">プライバシーポリシー</a>　© 2026 NEWFOR</div>
 </div></footer>
 
@@ -521,7 +528,7 @@ document.getElementById("tgl").addEventListener("click",function(){
 var ARROW='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
 var G={
  job:{tab:"転職・採用",title:"新規事業に強い採用サービス BEST 3",who:"これから新規事業に携わりたい方へ！",cta:"無料登録して求人提案を受ける",
-   items:[{n:"ビズリーチ",best:1,d:"新規事業責任者・事業開発ポジションの掲載が最も多い。大企業の非公開求人が中心。",t:["ハイクラス","スカウト型","年収600万〜"]},
+   items:[{n:"ビズリーチ",best:1,d:"新規事業責任者・事業開発ポジションの掲載が多い。大企業の非公開求人が中心。",t:["ハイクラス","スカウト型","年収600万〜"]},
     {n:"フォースタートアップス",d:"スタートアップ・成長企業に特化。大企業からの越境転職の支援実績が多い。",t:["スタートアップ","エージェント型","CxO・事業責任者"]},
     {n:"doda X",d:"ヘッドハンター経由のスカウト。事業会社の新規事業部門からの声がかかりやすい。",t:["ハイクラス","ヘッドハンター","年収800万〜"]}]},
  pro:{tab:"顧問・プロ人材",title:"新規事業の顧問・プロ人材が探せるサービス BEST 3",who:"社内に足りない知見を、外から借りたい方へ！",cta:"無料で相談して人を探す",
@@ -530,7 +537,7 @@ var G={
     {n:"HiPro Biz",d:"経営顧問・プロ人材の紹介。大企業の新規事業部門でのプロジェクト単位の活用が中心。",t:["経営顧問","プロジェクト型","大企業"]}]},
  learn:{tab:"学ぶ",title:"新規事業の学びに使えるサービス",who:"新規事業の担当になったばかりの方へ！",cta:"無料で試してみる",
    items:[{n:"グロービス学び放題",best:1,d:"事業開発・マーケ・ファイナンスを動画で。担当になった最初の3カ月の土台づくりに。",t:["動画学習","定額","ビジネス基礎"]},
-    {n:"flier（フライヤー）",d:"ビジネス書の要約。レポートの参考文献を、読む前にあたりをつけたいときに。",t:["書籍要約","10分","定額"]},
+    {n:"flier（フライヤー）",d:"ビジネス書の要約。記事の参考文献を、読む前にあたりをつけたいときに。",t:["書籍要約","10分","定額"]},
     {n:"クラウドワークス",d:"検証フェーズの手を借りる。リサーチ、LP制作、資料づくりを外に出せる。",t:["外部リソース","単発","検証フェーズ"]}]},
  biz:{tab:"別会社で始める",title:"別会社で始めるときに使うサービス",who:"会社を出て、自分の事業を始めたい方へ！",cta:"条件を見てみる",
    items:[{n:"officee",best:1,d:"オフィス・レンタルオフィスの仲介。数人のチームで始めるときの拠点探しから。",t:["拠点","仲介無料","小規模〜"]},

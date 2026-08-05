@@ -320,10 +320,40 @@ footer .ln a{margin-right:15px}
 .forwho li::before{content:"";position:absolute;left:4px;top:.55em;width:9px;height:9px;border-radius:50%;
  border:2.4px solid var(--accent)}
 
-.aff-r .btn-a{white-space:normal;line-height:1.45;text-align:center;min-width:170px;max-width:230px;padding:11px 15px;font-size:12.5px}
-@media(max-width:640px){.aff-r .btn-a{max-width:none;width:100%;font-size:12px}}
+.aff-r .btn-a{white-space:nowrap;line-height:1.4;text-align:center;padding:12px 18px;font-size:12.5px;flex:0 0 auto}
+@media(max-width:640px){.aff-r .btn-a{width:100%;font-size:12px;white-space:normal}}
 .affmini .btn-a{white-space:normal;line-height:1.4;text-align:center;max-width:200px;font-size:12px;padding:10px 14px}
 @media(max-width:640px){.affmini .btn-a{max-width:none;width:100%}}
+
+/* ── 感想投票 ── */
+.react-wrap{background:var(--surface);border:1px solid var(--accent-l);border-radius:18px;padding:26px 28px;margin:40px 0;box-shadow:var(--sh)}
+@media(max-width:640px){.react-wrap{padding:19px 16px;border-radius:14px}}
+.react-hd .k{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700}
+.react-hd h3{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:7px 0 8px}
+.react-hd p{font-size:14px;line-height:1.9;color:var(--tx-2);margin:0 0 18px}
+.react-wrap .vhead{display:none}
+.react-wrap .q{font-size:16px;font-weight:800;letter-spacing:-.01em;margin:0 0 12px;line-height:1.6}
+.react-wrap .vask{font-size:13px;color:var(--tx-2);margin:0 0 14px;line-height:1.8}
+.react-wrap .vask b{color:var(--gold);font-weight:800}
+.react-wrap .opts{display:flex;flex-direction:column;gap:9px}
+.react-wrap .opt{position:relative;display:block;width:100%;text-align:left;font:inherit;cursor:pointer;
+ background:var(--bg);border:2px solid var(--border);border-radius:13px;padding:14px 16px;overflow:hidden;
+ transition:transform .12s ease,border-color .12s ease}
+.react-wrap .vote:not(.voted) .opt:hover{transform:translateY(-2px);border-color:var(--accent)}
+.react-wrap .opt .fill{position:absolute;left:0;top:0;bottom:0;background:var(--accent-w);transition:width .5s ease;z-index:0}
+.react-wrap .opt .top{position:relative;z-index:1;display:flex;align-items:center;gap:10px}
+.react-wrap .opt .em{font-size:20px;flex:0 0 auto}
+.react-wrap .opt .nm{font-size:15px;font-weight:700;flex:1 1 auto}
+@media(max-width:640px){.react-wrap .opt .nm{font-size:14px}}
+.react-wrap .opt .you{font-size:10px;font-weight:800;background:var(--accent);color:#fff;border-radius:10px;padding:3px 8px}
+.react-wrap .opt .pct{font-size:15px;font-weight:800;color:var(--accent);font-family:ui-monospace,Menlo,monospace}
+.react-wrap .opt.chosen{border-color:var(--accent)}
+.react-wrap .vote:not(.voted) .opt::after{content:"タップ";position:absolute;right:14px;top:50%;transform:translateY(-50%);
+ font-size:10px;font-weight:800;color:var(--accent);background:var(--accent-w);border:1px solid var(--accent-l);
+ border-radius:10px;padding:3px 8px;z-index:1}
+.react-wrap .vfoot{margin-top:13px;font-size:12.5px;color:var(--tx-3)}
+.react-wrap .vthx{margin-top:11px;background:var(--accent-w);border-radius:11px;padding:13px 15px;font-size:13px;line-height:1.85;color:var(--tx-1)}
+.react-wrap .vthx b{font-weight:700}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -404,6 +434,12 @@ footer .ln a{margin-right:15px}
 <p>そして、記録全体から言えることがひとつ。<strong>この会社は事業を作る前に、事業を置く場所を作っている。</strong>本体の中に事業部を立てる形が、14件のうちほとんど出てこない。制度が理由で新規事業が進まないなら、事業の中身をいじるより器を分けるほうが早い、という判断が一貫している。</p>
   </article>
 
+  <div class="react-wrap">
+    <div class="react-hd"><span class="k">READERS' VOICE</span><h3>読み終えた方へ</h3>
+      <p>ここまで読んでくださって、ありがとうございます。よかったら、いまの気持ちをひとつ選んでいってください。<b>ログインもメールも要りません。</b></p></div>
+    <div class="vote-slot" data-poll="reaction-toyota-newbusiness"></div>
+  </div>
+
   <div class="memo" id="memo" style="scroll-margin-top:84px">
     <div class="mh">
       <span class="av"><svg width="16" height="16" viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg></span>
@@ -459,19 +495,19 @@ document.getElementById("tgl").addEventListener("click",function(){
 
 var ARROW='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
 var G={
- job:{tab:"転職・採用",title:"新規事業に強い採用サービス BEST 3",who:"これから新規事業に携わりたい方へ！",cta:"無料登録して新規事業の求人提案を受ける",
+ job:{tab:"転職・採用",title:"新規事業に強い採用サービス BEST 3",who:"これから新規事業に携わりたい方へ！",cta:"無料登録して求人提案を受ける",
    items:[{n:"ビズリーチ",best:1,d:"新規事業責任者・事業開発ポジションの掲載が最も多い。大企業の非公開求人が中心。",t:["ハイクラス","スカウト型","年収600万〜"]},
     {n:"フォースタートアップス",d:"スタートアップ・成長企業に特化。大企業からの越境転職の支援実績が多い。",t:["スタートアップ","エージェント型","CxO・事業責任者"]},
     {n:"doda X",d:"ヘッドハンター経由のスカウト。事業会社の新規事業部門からの声がかかりやすい。",t:["ハイクラス","ヘッドハンター","年収800万〜"]}]},
- pro:{tab:"顧問・プロ人材",title:"新規事業の顧問・プロ人材が探せるサービス BEST 3",who:"社内に足りない知見を、外から借りたい方へ！",cta:"無料で相談して知見のある人を探す",
+ pro:{tab:"顧問・プロ人材",title:"新規事業の顧問・プロ人材が探せるサービス BEST 3",who:"社内に足りない知見を、外から借りたい方へ！",cta:"無料で相談して人を探す",
    items:[{n:"サーキュレーション（プロシェアリング）",best:1,d:"事業開発の実務経験者に、月数日から入ってもらう形。立ち上げの伴走で使われることが多い。",t:["プロシェアリング","月数日〜","事業開発"]},
     {n:"ビザスク",d:"1時間から有識者に話を聞ける。市場を調べる段階や、仮説をぶつけたい初期に向く。",t:["スポット相談","1時間〜","リサーチ"]},
     {n:"HiPro Biz",d:"経営顧問・プロ人材の紹介。大企業の新規事業部門でのプロジェクト単位の活用が中心。",t:["経営顧問","プロジェクト型","大企業"]}]},
- learn:{tab:"学ぶ",title:"新規事業の学びに使えるサービス",who:"新規事業の担当になったばかりの方へ！",cta:"無料で試して学習をはじめる",
+ learn:{tab:"学ぶ",title:"新規事業の学びに使えるサービス",who:"新規事業の担当になったばかりの方へ！",cta:"無料で試してみる",
    items:[{n:"グロービス学び放題",best:1,d:"事業開発・マーケ・ファイナンスを動画で。担当になった最初の3カ月の土台づくりに。",t:["動画学習","定額","ビジネス基礎"]},
     {n:"flier（フライヤー）",d:"ビジネス書の要約。レポートの参考文献を、読む前にあたりをつけたいときに。",t:["書籍要約","10分","定額"]},
     {n:"クラウドワークス",d:"検証フェーズの手を借りる。リサーチ、LP制作、資料づくりを外に出せる。",t:["外部リソース","単発","検証フェーズ"]}]},
- biz:{tab:"別会社で始める",title:"別会社で始めるときに使うサービス",who:"会社を出て、自分の事業を始めたい方へ！",cta:"条件を見て準備をはじめる",
+ biz:{tab:"別会社で始める",title:"別会社で始めるときに使うサービス",who:"会社を出て、自分の事業を始めたい方へ！",cta:"条件を見てみる",
    items:[{n:"officee",best:1,d:"オフィス・レンタルオフィスの仲介。数人のチームで始めるときの拠点探しから。",t:["拠点","仲介無料","小規模〜"]},
     {n:"ラクスルバンク",d:"法人口座。会社をつくったら最初に必要になるもの。オンラインで完結。",t:["法人口座","ネット銀行","開設無料"]},
     {n:"GMOオフィスサポート",d:"バーチャルオフィス。登記できる住所だけ先に押さえたいときに。",t:["登記可","月額制","住所のみ"]},
@@ -508,4 +544,5 @@ Array.prototype.forEach.call(document.querySelectorAll(".affmini-slot"),affMini)
 
 })();
 </script>
+<script src="/assets/vote.js" defer></script>
 </body></html>

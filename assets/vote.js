@@ -10,8 +10,8 @@
 (function () {
   "use strict";
 
-  var SUPABASE_URL = "https://xxxxxxxxxxxx.supabase.co";     // ← 置き換える
-  var SUPABASE_ANON_KEY = "eyJhbGciOi...";                    // ← 置き換える（anonキーは公開して問題ありません）
+  var SUPABASE_URL = "https://jakwntemjkwqwaqujffh.supabase.co";
+  var SUPABASE_ANON_KEY = "sb_publishable_bQ84WCmRiFUbpPemMcO9xQ_Dj9Mh1mQ";  /* publishableキー。公開前提で、RLSで守っています */
 
   /* 端末を大まかに識別するハッシュ。個人は特定しません。
      ログイン不要のまま、同じ端末からの二重投票だけを防ぐためのものです。 */
@@ -46,11 +46,11 @@
   }
 
   function results(pollId) {
-    return api("poll_results?poll_id=eq." + encodeURIComponent(pollId) + "&order=sort.asc");
+    return api("newfor_poll_results?poll_id=eq." + encodeURIComponent(pollId) + "&order=sort.asc");
   }
 
   function vote(pollId, optionKey) {
-    return api("rpc/cast_vote", {
+    return api("rpc/newfor_cast_vote", {
       p_poll_id: pollId, p_option_key: optionKey, p_voter_hash: voterHash()
     });
   }
@@ -61,11 +61,16 @@
 
   function render(el, rows, voted, chosen) {
     var t = total(rows);
+    var isReact = (el.getAttribute("data-poll") || "").indexOf("reaction-") === 0;
+    var who = isReact ? "ここまで読んでくださった、あなたへ" : "新規事業に取り組んでいる、あなたへ";
+    var ask = isReact
+      ? 'タップすると、<b>ほかの読者がどう感じたか</b>がその場で出ます。ログインもメールも要りません。<b>1タップだけ。</b>'
+      : 'タップすると、<b>いま何%の人が期待しているか</b>がその場で出ます。ログインもメールも要りません。<b>1タップだけ。</b>';
     el.innerHTML =
-      '<div class="vote' + (voted ? " voted" : "") + '">' +
-        '<div class="vhead"><span class="vwho">新規事業に取り組んでいる、あなたへ</span></div>' +
+      '<div class="vote' + (voted ? " voted" : "") + (isReact ? " vreact" : "") + '">' +
+        '<div class="vhead"><span class="vwho">' + who + '</span></div>' +
         '<p class="q">' + (rows[0] && rows[0].question ? rows[0].question : "") + '</p>' +
-        (voted ? "" : '<p class="vask">1タップで、この事業を応援できます。ログインもメールも要りません。<b>今すぐ投票！</b></p>') +
+        (voted ? "" : '<p class="vask">' + ask + '</p>') +
         '<div class="opts">' + rows.map(function (r) {
           var pct = Number(r.pct || 0);
           return '<button class="opt' + (chosen === r.option_key ? " chosen" : "") + '" data-k="' + r.option_key + '">' +
@@ -76,9 +81,11 @@
             '<span class="pct" data-p>' + (voted ? pct + "%" : "") + '</span></span></button>';
         }).join("") + '</div>' +
         '<div class="vfoot"><span>' + (voted
-            ? "あなたを含む " + t.toLocaleString() + "ユーザーが応援"
-            : "すでに " + t.toLocaleString() + "ユーザーが応援しています　1タップで結果も見られます") + '</span></div>' +
-        (voted ? '<div class="vthx">ありがとうございます。<b>あなたの1票が、この事業への応援になりました。</b></div>' : "") +
+            ? (t > 1 ? "あなたを含む " + t.toLocaleString() + "人が回答" : "1人目の回答、ありがとうございます")
+            : (t > 0 ? t.toLocaleString() + "人が回答済み" : "まだ回答がありません。あなたが最初のひとりです")) + '</span></div>' +
+        (voted ? '<div class="vthx">' + (isReact
+            ? 'ありがとうございます。<b>この一票が、次にどんな記録を掘り起こすかの判断材料になります。</b>'
+            : 'ありがとうございます。<b>あなたの1票が、この事業への応援になりました。</b>') + '</div>' : "") +
       '</div>';
 
     if (!voted) {

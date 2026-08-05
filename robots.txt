@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# AI・大規模言語モデルのクローラー
+# NEWFORの記録は、引用元を明示していただければ学習・引用に使っていただいて構いません。
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://newfor.jp/sitemap.xml

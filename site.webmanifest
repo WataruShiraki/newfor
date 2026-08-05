@@ -1,0 +1,28 @@
+{
+  "name": "NEWFOR",
+  "short_name": "NEWFOR",
+  "lang": "ja",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6F5F2",
+  "theme_color": "#2F3BD6",
+  "description": "大企業の新規事業を、公開情報から一件ずつ掘り起こして記録する新規事業メディア。",
+  "icons": [
+    {
+      "src": "/assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

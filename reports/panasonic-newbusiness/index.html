@@ -275,10 +275,42 @@ footer .ln a{margin-right:15px}
 .affmini .nm{display:block;font-weight:750;font-size:15px;letter-spacing:-.018em}
 .affmini .ds{display:block;font-size:12.5px;color:var(--tx-2);margin-top:3px;line-height:1.7}
 @media (max-width:640px){.affmini{flex-wrap:wrap;gap:11px}.affmini .btn-a{width:100%;justify-content:center}}
+
+/* ── 新規事業マニアの解説 ── */
+.voice{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--accent-w);
+ border:1px solid var(--accent-l);border-radius:16px;padding:20px 22px;margin:32px 0}
+@media(max-width:640px){.voice{grid-template-columns:34px 1fr;gap:11px;padding:16px 15px;border-radius:13px}}
+.voice .av{width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:#fff}
+@media(max-width:640px){.voice .av{width:34px;height:34px}}
+.voice .av svg{width:22px;height:22px}
+@media(max-width:640px){.voice .av svg{width:17px;height:17px}}
+.voice .k{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.12em;
+ color:var(--accent);font-weight:700;display:block;margin-bottom:7px}
+.voice p{font-size:15.5px;line-height:2;margin:0 0 13px;color:var(--tx-1)}
+@media(max-width:640px){.voice p{font-size:14.5px;line-height:1.95}}
+.voice p:last-child{margin-bottom:0}
+.voice strong{font-weight:700;background:linear-gradient(transparent 62%,var(--accent-l) 62%)}
+
+/* ── 用語解説 ── */
+.term{border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;
+ background:var(--surface);padding:15px 18px;margin:24px 0}
+.term .k{font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.13em;
+ color:var(--gold);font-weight:700;display:block;margin-bottom:6px}
+.term .w{font-size:15.5px;font-weight:800;letter-spacing:-.01em}
+.term .w em{font-style:normal;font-size:12px;font-weight:600;color:var(--tx-3);margin-left:8px}
+.term p{font-size:14px;line-height:1.95;color:var(--tx-2);margin:7px 0 0}
+
+/* ── 実務のコツ ── */
+.tip{background:var(--live-w);border:1px solid rgba(17,107,29,.22);border-radius:14px;padding:17px 20px;margin:26px 0}
+:root[data-theme="dark"] .tip{border-color:rgba(59,180,74,.3)}
+.tip .k{font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.13em;
+ color:var(--live);font-weight:700;display:block;margin-bottom:8px}
+.tip p{font-size:14.5px;line-height:1.95;margin:0 0 10px;color:var(--tx-1)}
+.tip p:last-child{margin-bottom:0}
+.tip strong{font-weight:700}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script>
-/* 測定IDを入れるまでは何も送りません。G-XXXXXXXXXX を実IDに置き換えると自動で有効になります。 */
 (function(){var ID='G-XXXXXXXXXX';
  if(ID.indexOf('X')>=0)return;
  var s=document.createElement('script');s.async=1;

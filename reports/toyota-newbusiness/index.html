@@ -319,6 +319,11 @@ footer .ln a{margin-right:15px}
 @media(max-width:640px){.forwho li{font-size:13.5px;padding-left:23px}}
 .forwho li::before{content:"";position:absolute;left:4px;top:.55em;width:9px;height:9px;border-radius:50%;
  border:2.4px solid var(--accent)}
+
+.aff-r .btn-a{white-space:normal;line-height:1.45;text-align:center;min-width:170px;max-width:230px;padding:11px 15px;font-size:12.5px}
+@media(max-width:640px){.aff-r .btn-a{max-width:none;width:100%;font-size:12px}}
+.affmini .btn-a{white-space:normal;line-height:1.4;text-align:center;max-width:200px;font-size:12px;padding:10px 14px}
+@media(max-width:640px){.affmini .btn-a{max-width:none;width:100%}}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script>
@@ -450,29 +455,29 @@ document.getElementById("tgl").addEventListener("click",function(){
 
 var ARROW='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
 var G={
- job:{tab:"転職・採用",title:"新規事業に強い採用サービス BEST 3",who:"新規事業のポジションを探している方へ",cta:"無料登録へ",
+ job:{tab:"転職・採用",title:"新規事業に強い採用サービス BEST 3",who:"これから新規事業に携わりたい方へ！",cta:"無料登録して新規事業の求人提案を受ける",
    items:[{n:"ビズリーチ",best:1,d:"新規事業責任者・事業開発ポジションの掲載が最も多い。大企業の非公開求人が中心。",t:["ハイクラス","スカウト型","年収600万〜"]},
     {n:"フォースタートアップス",d:"スタートアップ・成長企業に特化。大企業からの越境転職の支援実績が多い。",t:["スタートアップ","エージェント型","CxO・事業責任者"]},
     {n:"doda X",d:"ヘッドハンター経由のスカウト。事業会社の新規事業部門からの声がかかりやすい。",t:["ハイクラス","ヘッドハンター","年収800万〜"]}]},
- pro:{tab:"顧問・プロ人材",title:"新規事業の顧問・プロ人材が探せるサービス BEST 3",who:"社内に足りない知見を、外から借りたい方へ",cta:"相談してみる",
+ pro:{tab:"顧問・プロ人材",title:"新規事業の顧問・プロ人材が探せるサービス BEST 3",who:"社内に足りない知見を、外から借りたい方へ！",cta:"無料で相談して知見のある人を探す",
    items:[{n:"サーキュレーション（プロシェアリング）",best:1,d:"事業開発の実務経験者に、月数日から入ってもらう形。立ち上げの伴走で使われることが多い。",t:["プロシェアリング","月数日〜","事業開発"]},
     {n:"ビザスク",d:"1時間から有識者に話を聞ける。市場を調べる段階や、仮説をぶつけたい初期に向く。",t:["スポット相談","1時間〜","リサーチ"]},
     {n:"HiPro Biz",d:"経営顧問・プロ人材の紹介。大企業の新規事業部門でのプロジェクト単位の活用が中心。",t:["経営顧問","プロジェクト型","大企業"]}]},
- learn:{tab:"学ぶ",title:"新規事業の学びに使えるサービス",who:"新規事業の担当になったばかりの方へ",cta:"無料で試す",
+ learn:{tab:"学ぶ",title:"新規事業の学びに使えるサービス",who:"新規事業の担当になったばかりの方へ！",cta:"無料で試して学習をはじめる",
    items:[{n:"グロービス学び放題",best:1,d:"事業開発・マーケ・ファイナンスを動画で。担当になった最初の3カ月の土台づくりに。",t:["動画学習","定額","ビジネス基礎"]},
     {n:"flier（フライヤー）",d:"ビジネス書の要約。レポートの参考文献を、読む前にあたりをつけたいときに。",t:["書籍要約","10分","定額"]},
     {n:"クラウドワークス",d:"検証フェーズの手を借りる。リサーチ、LP制作、資料づくりを外に出せる。",t:["外部リソース","単発","検証フェーズ"]}]},
- biz:{tab:"別会社で始める",title:"別会社で始めるときに使うサービス",who:"出向起業・カーブアウト・独立で、自分の会社をつくる方へ",cta:"詳しく見る",
+ biz:{tab:"別会社で始める",title:"別会社で始めるときに使うサービス",who:"会社を出て、自分の事業を始めたい方へ！",cta:"条件を見て準備をはじめる",
    items:[{n:"officee",best:1,d:"オフィス・レンタルオフィスの仲介。数人のチームで始めるときの拠点探しから。",t:["拠点","仲介無料","小規模〜"]},
     {n:"ラクスルバンク",d:"法人口座。会社をつくったら最初に必要になるもの。オンラインで完結。",t:["法人口座","ネット銀行","開設無料"]},
     {n:"GMOオフィスサポート",d:"バーチャルオフィス。登記できる住所だけ先に押さえたいときに。",t:["登記可","月額制","住所のみ"]},
     {n:"freee会計",d:"設立直後の経理。クレジットカードや口座と繋いで、記帳を止めない。",t:["クラウド会計","法人向け","無料期間あり"]}]}};
 var ORDER=["job","pro","learn","biz"];
-var MLEAD={job:"新規事業のポジションを探しているなら",pro:"社内に知見が足りない、と感じているなら",
+var MLEAD={job:"これから新規事業に携わりたいなら",pro:"社内に知見が足りない、と感じているなら",
  learn:"担当になったばかりで、何から手をつけるか迷っているなら",biz:"会社を出て、別会社で始めるなら"};
 function affRows(k){return G[k].items.map(function(it,i){
   return '<div class="aff-r'+(i===0?' top':'')+'"><span class="rk">'+(i+1)+'</span><span>'
-   +'<span class="nm">'+it.n+(it.best?' <span class="best">マニアのおすすめ</span>':'')+'</span>'
+   +'<span class="nm">'+it.n+(it.best?' <span class="best">NEWFORのおすすめ</span>':'')+'</span>'
    +'<span class="ds">'+it.d+'</span><span class="tg2">'+it.t.map(function(x){return '<span>'+x+'</span>'}).join('')+'</span></span>'
    +'<a class="btn-a" href="#aff" rel="nofollow sponsored">'+G[k].cta+ARROW+'</a></div>';}).join('');}
 function affBuild(el){

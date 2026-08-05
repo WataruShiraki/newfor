@@ -46,7 +46,8 @@
   }
 
   function results(pollId) {
-    return api("newfor_poll_results?poll_id=eq." + encodeURIComponent(pollId) + "&order=sort.asc");
+    return api("newfor_poll_results?poll_id=eq." + encodeURIComponent(pollId) + "&order=sort.asc")
+      .then(function (rows) { return rows.filter(function (r) { return r.option_key !== "flat"; }); });
   }
 
   function vote(pollId, optionKey) {
@@ -64,8 +65,8 @@
     var isReact = (el.getAttribute("data-poll") || "").indexOf("reaction-") === 0;
     var who = isReact ? "ここまで読んでくださった、あなたへ" : "新規事業に取り組んでいる、あなたへ";
     var ask = isReact
-      ? 'タップすると、<b>ほかの読者がどう感じたか</b>がその場で出ます。ログインもメールも要りません。<b>1タップだけ。</b>'
-      : 'タップすると、<b>いま何%の人が期待しているか</b>がその場で出ます。ログインもメールも要りません。<b>1タップだけ。</b>';
+      ? 'あなたが選ぶと、<b>ほかの読者が何を選んだかが、その場で見えます。</b>ログインもメールも要りません。'
+      : 'あなたが選ぶと、<b>いま何%の人が期待しているかが、その場で見えます。</b>ログインもメールも要りません。';
     el.innerHTML =
       '<div class="vote' + (voted ? " voted" : "") + (isReact ? " vreact" : "") + '">' +
         '<div class="vhead"><span class="vwho">' + who + '</span></div>' +
@@ -81,8 +82,8 @@
             '<span class="pct" data-p>' + (voted ? pct + "%" : "") + '</span></span></button>';
         }).join("") + '</div>' +
         '<div class="vfoot"><span>' + (voted
-            ? (t > 1 ? "あなたを含む " + t.toLocaleString() + "人が回答" : "1人目の回答、ありがとうございます")
-            : (t > 0 ? t.toLocaleString() + "人が回答済み" : "まだ回答がありません。あなたが最初のひとりです")) + '</span></div>' +
+            ? (t > 1 ? "あなたを含む " + t.toLocaleString() + "人の回答です" : "1人目の回答、ありがとうございます")
+            : (t > 0 ? "すでに " + t.toLocaleString() + "人が回答しています。選ぶと、その内訳が見えます" : "まだ回答がありません。あなたが最初のひとりです")) + '</span></div>' +
         (voted ? '<div class="vthx">' + (isReact
             ? 'ありがとうございます。<b>この一票が、次にどんな記録を掘り起こすかの判断材料になります。</b>'
             : 'ありがとうございます。<b>あなたの1票が、この事業への応援になりました。</b>') + '</div>' : "") +

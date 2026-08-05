@@ -1,0 +1,146 @@
+[
+ {
+  "company": "NTTドコモ",
+  "slug": "docomo",
+  "news": "https://www.docomo.ne.jp/info/news_release/",
+  "state": "記事あり"
+ },
+ {
+  "company": "KDDI",
+  "slug": "kddi",
+  "news": "https://newsroom.kddi.com/",
+  "state": "記事あり"
+ },
+ {
+  "company": "ソニーグループ",
+  "slug": "sony",
+  "news": "https://www.sony.com/ja/SonyInfo/News/",
+  "state": "記事あり"
+ },
+ {
+  "company": "富士フイルム",
+  "slug": "fujifilm",
+  "news": "https://holdings.fujifilm.com/ja/news",
+  "state": "記事あり"
+ },
+ {
+  "company": "トヨタ自動車",
+  "slug": "toyota",
+  "news": "https://global.toyota/jp/newsroom/",
+  "state": "記事あり"
+ },
+ {
+  "company": "パナソニック",
+  "slug": "panasonic",
+  "news": "https://news.panasonic.com/jp/press",
+  "state": "記事あり"
+ },
+ {
+  "company": "三菱商事",
+  "slug": "mitsubishi",
+  "news": "https://www.mitsubishicorp.com/jp/ja/pr/archive/",
+  "state": "記事あり"
+ },
+ {
+  "company": "JR東日本",
+  "slug": "jreast",
+  "news": "https://www.jreast.co.jp/press/",
+  "state": "記事あり"
+ },
+ {
+  "company": "セブン&アイ",
+  "slug": "sevenandi",
+  "news": "https://www.7andi.com/company/news.html",
+  "state": "記事あり"
+ },
+ {
+  "company": "リクルート",
+  "slug": "recruit",
+  "news": "https://recruit-holdings.com/ja/newsroom/",
+  "state": "記事あり"
+ },
+ {
+  "company": "味の素",
+  "slug": "ajinomoto",
+  "news": "https://www.ajinomoto.co.jp/company/jp/presscenter/",
+  "state": "記事あり"
+ },
+ {
+  "company": "ソフトバンクグループ",
+  "slug": "softbank",
+  "news": "https://group.softbank/news/press",
+  "state": "記事あり"
+ },
+ {
+  "company": "日立製作所",
+  "slug": "hitachi",
+  "news": "https://www.hitachi.co.jp/New/cnews/",
+  "state": "候補"
+ },
+ {
+  "company": "楽天グループ",
+  "slug": "rakuten",
+  "news": "https://corp.rakuten.co.jp/news/",
+  "state": "候補"
+ },
+ {
+  "company": "本田技研工業",
+  "slug": "honda",
+  "news": "https://global.honda/jp/news/",
+  "state": "候補"
+ },
+ {
+  "company": "伊藤忠商事",
+  "slug": "itochu",
+  "news": "https://www.itochu.co.jp/ja/news/press/",
+  "state": "候補"
+ },
+ {
+  "company": "三井物産",
+  "slug": "mitsui",
+  "news": "https://www.mitsui.com/jp/ja/release/",
+  "state": "候補"
+ },
+ {
+  "company": "資生堂",
+  "slug": "shiseido",
+  "news": "https://corp.shiseido.com/jp/news/",
+  "state": "候補"
+ },
+ {
+  "company": "富士通",
+  "slug": "fujitsu",
+  "news": "https://pr.fujitsu.com/jp/news/",
+  "state": "候補"
+ },
+ {
+  "company": "NEC",
+  "slug": "nec",
+  "news": "https://jpn.nec.com/press/",
+  "state": "候補"
+ },
+ {
+  "company": "東京海上HD",
+  "slug": "tokiomarine",
+  "news": "https://www.tokiomarinehd.com/release/",
+  "state": "候補"
+ },
+ {
+  "company": "三菱UFJ FG",
+  "slug": "mufg",
+  "news": "https://www.mufg.jp/pressrelease/",
+  "state": "候補"
+ },
+ {
+  "company": "ANAHD",
+  "slug": "ana",
+  "news": "https://www.anahd.co.jp/group/pr/",
+  "state": "候補"
+ },
+ {
+  "company": "ヤマハ発動機",
+  "slug": "yamaha",
+  "news": "https://global.yamaha-motor.com/jp/news/",
+  "state": "候補"
+ }
+]

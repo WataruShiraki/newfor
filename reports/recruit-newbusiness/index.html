@@ -308,15 +308,24 @@ footer .ln a{margin-right:15px}
 .tip p{font-size:14.5px;line-height:1.95;margin:0 0 10px;color:var(--tx-1)}
 .tip p:last-child{margin-bottom:0}
 .tip strong{font-weight:700}
+
+.kpi .kn{font-size:11px;line-height:1.7;opacity:.78;margin-top:6px;letter-spacing:0}
+@media(max-width:640px){.kpi .kn{font-size:10.5px}}
+.forwho{background:var(--surface);border:1px solid var(--accent-l);border-radius:15px;padding:20px 24px;margin:0 0 20px;box-shadow:var(--sh)}
+@media(max-width:640px){.forwho{padding:16px 16px;border-radius:13px}}
+.forwho .k{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700;margin-bottom:11px}
+.forwho ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.forwho li{font-size:14.5px;line-height:1.75;padding-left:26px;position:relative;color:var(--tx-1)}
+@media(max-width:640px){.forwho li{font-size:13.5px;padding-left:23px}}
+.forwho li::before{content:"";position:absolute;left:4px;top:.55em;width:9px;height:9px;border-radius:50%;
+ border:2.4px solid var(--accent)}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script>
-(function(){var ID='G-XXXXXXXXXX';
- if(ID.indexOf('X')>=0)return;
+(function(){var ID='G-XXXXXXXXXX';if(ID.indexOf('X')>=0)return;
  var s=document.createElement('script');s.async=1;
  s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);
- window.dataLayer=window.dataLayer||[];
- window.gtag=function(){dataLayer.push(arguments);};
+ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};
  gtag('js',new Date());gtag('config',ID);})();
 </script>
 <!-- ▲ 計測タグ ここまで ▲ -->
@@ -340,13 +349,14 @@ footer .ln a{margin-right:15px}
     <div class="crumb"><a href="/">NEWFOR</a> ／ <a href="/reports/">新規事業レポート</a> ／ #010　リクルート</div>
     <h1>リクルートは<br>12億ドルで買ったブランドを、<br>7年後に自社へ畳んだ</h1>
     <p class="dek">海外は2015年から数年で一気に買い、国内は2013年から毎年1本ずつ積んでいる。同じ会社の中で、新規事業のリズムが2つ走っています。</p>
-    <div class="meta"><span>新規事業マニア</span><span><b>2026年8月5日</b></span><span>読了 約8分</span></div>
+    <div class="meta"><span>新規事業マニア</span><span><b>2026年8月5日</b></span><span>じっくり読んで 8</span></div>
     <div class="kpis"><div class="kpi"><div class="k">記録した新規事業</div><div class="v">16<em>件</em></div></div><div class="kpi"><div class="k">Glassdoor買収額</div><div class="v">12<em>億ドル</em></div></div><div class="kpi"><div class="k">Airレジのアカウント数</div><div class="v">90.4<em>万</em></div></div><div class="kpi"><div class="k">HRテクノロジー売上</div><div class="v">1.46<em>兆円</em></div></div></div>
   </div>
 </div>
 
 <main>
 <div class="rd">
+  <div class="forwho"></div>
   <div class="sum"><div class="k">3行でいうと</div><ol><li>Glassdoorを2018年に12億ドルで買い、2025年7月にIndeedへ統合した。買ったのはブランドではなくデータだったのではないか、と読める。</li><li>海外は2015〜2018年に集中して買い、国内はAirレジ（2013年）以降ほぼ毎年1〜2本ずつ機能を足している。同じ会社で新規事業のリズムが2つ走っている。</li><li>買ったものの名前を消すことに躊躇がない。USG People→RGF Staffing、Recruit Institute of Technology→Megagon Labs、Glassdoor→Indeed。</li></ol></div>
   <div class="toc"><div class="k">目次</div><ol><li><a href="#s0">2つのリズムが、同じ会社で走っている</a></li><li><a href="#s6">12億ドルのブランドを、7年後に畳んだ</a></li><li><a href="#s12">名前を消すことに、躊躇がない</a></li><li><a href="#s16">Airレジは、いちばん地味で、いちばん長い</a></li><li><a href="#s21">2024年からは、入口を1つに寄せている</a></li><li><a href="#s26">担当者の視点で見ると</a></li><li><a href="#memo">新規事業マニアのメモ ─ 自分が担当だったら</a></li></ol></div>
 

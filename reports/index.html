@@ -72,12 +72,10 @@ footer a{margin-right:14px}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script>
-(function(){var ID='G-XXXXXXXXXX';
- if(ID.indexOf('X')>=0)return;
+(function(){var ID='G-XXXXXXXXXX';if(ID.indexOf('X')>=0)return;
  var s=document.createElement('script');s.async=1;
  s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);
- window.dataLayer=window.dataLayer||[];
- window.gtag=function(){dataLayer.push(arguments);};
+ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};
  gtag('js',new Date());gtag('config',ID);})();
 </script>
 <!-- ▲ 計測タグ ここまで ▲ -->

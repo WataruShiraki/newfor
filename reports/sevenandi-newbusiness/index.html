@@ -308,15 +308,24 @@ footer .ln a{margin-right:15px}
 .tip p{font-size:14.5px;line-height:1.95;margin:0 0 10px;color:var(--tx-1)}
 .tip p:last-child{margin-bottom:0}
 .tip strong{font-weight:700}
+
+.kpi .kn{font-size:11px;line-height:1.7;opacity:.78;margin-top:6px;letter-spacing:0}
+@media(max-width:640px){.kpi .kn{font-size:10.5px}}
+.forwho{background:var(--surface);border:1px solid var(--accent-l);border-radius:15px;padding:20px 24px;margin:0 0 20px;box-shadow:var(--sh)}
+@media(max-width:640px){.forwho{padding:16px 16px;border-radius:13px}}
+.forwho .k{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700;margin-bottom:11px}
+.forwho ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.forwho li{font-size:14.5px;line-height:1.75;padding-left:26px;position:relative;color:var(--tx-1)}
+@media(max-width:640px){.forwho li{font-size:13.5px;padding-left:23px}}
+.forwho li::before{content:"";position:absolute;left:4px;top:.55em;width:9px;height:9px;border-radius:50%;
+ border:2.4px solid var(--accent)}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script>
-(function(){var ID='G-XXXXXXXXXX';
- if(ID.indexOf('X')>=0)return;
+(function(){var ID='G-XXXXXXXXXX';if(ID.indexOf('X')>=0)return;
  var s=document.createElement('script');s.async=1;
  s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);
- window.dataLayer=window.dataLayer||[];
- window.gtag=function(){dataLayer.push(arguments);};
+ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};
  gtag('js',new Date());gtag('config',ID);})();
 </script>
 <!-- ▲ 計測タグ ここまで ▲ -->
@@ -340,13 +349,14 @@ footer .ln a{margin-right:15px}
     <div class="crumb"><a href="/">NEWFOR</a> ／ <a href="/reports/">新規事業レポート</a> ／ #009　セブン&アイ</div>
     <h1>セブン&アイのこの10年は、<br>足し算ではなく<br>引き算だった</h1>
     <p class="dek">新規事業の記事のはずなのに、いちばん大きな箱が「手放した事業」になる。セブン&アイの10年を金額順に並べると、そういう絵になりました。</p>
-    <div class="meta"><span>新規事業マニア</span><span><b>2026年8月5日</b></span><span>読了 約8分</span></div>
+    <div class="meta"><span>新規事業マニア</span><span><b>2026年8月5日</b></span><span>じっくり読んで 8</span></div>
     <div class="kpis"><div class="kpi"><div class="k">記録した動き</div><div class="v">15<em>件</em></div></div><div class="kpi"><div class="k">Speedway買収額</div><div class="v">2.2<em>兆円</em></div></div><div class="kpi"><div class="k">ヨークHD売却額</div><div class="v">8,147<em>億円</em></div></div><div class="kpi"><div class="k">7NOWの2030年目標</div><div class="v">1,200<em>億円</em></div></div></div>
   </div>
 </div>
 
 <main>
 <div class="rd">
+  <div class="forwho"></div>
   <div class="sum"><div class="k">3行でいうと</div><ol><li>金額順に並べると上位は買収と売却で埋まる。Speedway 2.2兆円、ヨークHD 8,147億円、そごう・西武 2,200億円。社内発の新規事業は桁が2〜3つ小さい。</li><li>社内発の新事業は7pay（レジ）、SIPストア（売場）、7NOW（配送）と、いずれもコンビニの半径30分の中にある。コンビニから遠いものは他社へ移すか提供を終えた。</li><li>ヨークHDの設立が発表されたのは2024年10月10日。クシュタールが約7兆円へ増額提案した翌日だった。</li></ol></div>
   <div class="toc"><div class="k">目次</div><ol><li><a href="#s0">金額順に並べると、上位が全部「手放した／買った」</a></li><li><a href="#s6">社内発の新事業は、コンビニの半径30分にある</a></li><li><a href="#s12">7NOWは8年かけて全国に届いた</a></li><li><a href="#s17">2024年10月9日と、10月10日</a></li><li><a href="#s23">いま、コンビニに全部を寄せている</a></li><li><a href="#s26">担当者の視点で見ると</a></li><li><a href="#memo">新規事業マニアのメモ ─ 自分が担当だったら</a></li></ol></div>
 
@@ -380,7 +390,7 @@ footer .ln a{margin-right:15px}
 <h2 id="s26">担当者の視点で見ると</h2>
 <p>この10年の並べ方から、担当者として先に確かめておきたいことが2つある。</p>
 <p>ひとつ。<strong>自分の会社が、どちらのタイプかを知っておく。</strong>金額の上位はSpeedway買収2.2兆円、ヨーク・ホールディングス譲渡8,147億円、Sunocoからの取得3,650億円、そごう・西武譲渡2,200億円。対して社内発は、7NOWの2030年度目標が約1,200億円、SIPストアは1店舗、7payは3か月で終わった。桁が2つから3つ違う。<strong>事業の出し入れで動く会社で社内発の新規事業を担当するなら、自分に期待されている役割が何なのかは、早い段階で握っておいたほうがいい。</strong></p>
-<p>ふたつ。<strong>中核からの距離が、そのまま生死を分けている。</strong>7payはレジの中、SIPストアは売場の中、7NOWは店から届く30分の中にある。どれもコンビニを起点にした半径30分の内側だ。逆にオムニ7も、そごう・西武も、ヨーク・ホールディングスも、コンビニから遠かった。</p>
+<p>ふたつ。<strong>中核からの距離が、そのまま明暗を分けている。</strong>7payはレジの中、SIPストアは売場の中、7NOWは店から届く30分の中にある。どれもコンビニを起点にした半径30分の内側だ。逆にオムニ7も、そごう・西武も、ヨーク・ホールディングスも、コンビニから遠かった。</p>
 <p>10年ぶんの動きが、この一本の線でほぼ説明できてしまう。<strong>自社の中核から自分の企画がどれだけ離れているかは、通しやすさにも、続けやすさにも直結する。</strong>遠いところで勝負するなとは思わないが、遠いことを自覚しないまま進めると、行方は会社の都合で決まる。</p>
   </article>
 

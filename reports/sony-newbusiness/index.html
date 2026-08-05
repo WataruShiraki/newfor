@@ -308,15 +308,24 @@ footer .ln a{margin-right:15px}
 .tip p{font-size:14.5px;line-height:1.95;margin:0 0 10px;color:var(--tx-1)}
 .tip p:last-child{margin-bottom:0}
 .tip strong{font-weight:700}
+
+.kpi .kn{font-size:11px;line-height:1.7;opacity:.78;margin-top:6px;letter-spacing:0}
+@media(max-width:640px){.kpi .kn{font-size:10.5px}}
+.forwho{background:var(--surface);border:1px solid var(--accent-l);border-radius:15px;padding:20px 24px;margin:0 0 20px;box-shadow:var(--sh)}
+@media(max-width:640px){.forwho{padding:16px 16px;border-radius:13px}}
+.forwho .k{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700;margin-bottom:11px}
+.forwho ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.forwho li{font-size:14.5px;line-height:1.75;padding-left:26px;position:relative;color:var(--tx-1)}
+@media(max-width:640px){.forwho li{font-size:13.5px;padding-left:23px}}
+.forwho li::before{content:"";position:absolute;left:4px;top:.55em;width:9px;height:9px;border-radius:50%;
+ border:2.4px solid var(--accent)}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script>
-(function(){var ID='G-XXXXXXXXXX';
- if(ID.indexOf('X')>=0)return;
+(function(){var ID='G-XXXXXXXXXX';if(ID.indexOf('X')>=0)return;
  var s=document.createElement('script');s.async=1;
  s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);
- window.dataLayer=window.dataLayer||[];
- window.gtag=function(){dataLayer.push(arguments);};
+ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};
  gtag('js',new Date());gtag('config',ID);})();
 </script>
 <!-- ▲ 計測タグ ここまで ▲ -->
@@ -340,13 +349,14 @@ footer .ln a{margin-right:15px}
     <div class="crumb"><a href="/">NEWFOR</a> ／ <a href="/reports/">新規事業レポート</a> ／ #003　ソニーグループ</div>
     <h1>ソニーがいちばん<br>うまく作ったのは、<br>事業ではなく「作り方」だった</h1>
     <p class="dek">2026年の12か月で、wena、AFEELA、aiboが相次いで区切りを迎えました。その同じ年に、200億円超のファンドが立ち上がっています。止めるものと張るものが並んだ1年から、ソニーの新規事業の型を読みます。</p>
-    <div class="meta"><span>新規事業マニア</span><span><b>2026年8月5日</b></span><span>読了 約12分</span></div>
+    <div class="meta"><span>新規事業マニア</span><span><b>2026年8月5日</b></span><span>じっくり読んで 12</span></div>
     <div class="kpis"><div class="kpi"><div class="k">記録した新規事業</div><div class="v">24<em>件</em></div></div><div class="kpi"><div class="k">社内制度からの事業化</div><div class="v">20<em>数件</em></div></div><div class="kpi"><div class="k">制度の他社支援実績</div><div class="v">1,050<em>件超</em></div></div><div class="kpi"><div class="k">CVC運用総額</div><div class="v">850<em>億円超</em></div></div></div>
   </div>
 </div>
 
 <main>
 <div class="rd">
+  <div class="forwho"></div>
   <div class="sum"><div class="k">3行でいうと</div><ol><li>社内起業制度SSAPから事業化されたのは20数件。一方その制度自体を外販したところ、27業種・1,050件超の支援実績になった。</li><li>2026年はwena（2月）、AFEELA（3月）、ソニー・ホンダモビリティの事業縮小（4月）、aiboの国内販売終了（6月）が並んだ年。同じ年の4月に200億円超のファンドを立ち上げている。</li><li>エムスリー、SREホールディングス、nasne。ソニーが外に出した事業が、外に出てから伸びた例が複数ある。</li></ol></div>
   <div class="toc"><div class="k">目次</div><ol><li><a href="#s0">2026年、4つの区切りが並んだ</a></li><li><a href="#s5">制度を作って、制度を売った</a></li><li><a href="#s13">外に出してから伸びたもの</a></li><li><a href="#s17">金融は、上場と非公開を往復した</a></li><li><a href="#s22">ハードは、第1号機で終えることをためらわない</a></li><li><a href="#s27">2024年以降、持分を取る動きが増えた</a></li><li><a href="#s31">担当者の視点で見ると</a></li><li><a href="#memo">新規事業マニアのメモ ─ 自分が担当だったら</a></li></ol></div>
 
@@ -384,7 +394,7 @@ footer .ln a{margin-right:15px}
 <p>同じ時期に、自社で立ち上げたAFEELA、aibo、wenaが止まっている。この2つは無関係ではないだろう。限られた資源を、確度の高いところへ寄せているように見える。</p>
 <h2 id="s31">担当者の視点で見ると</h2>
 <p>ソニーの記録で実務に効くのは、<strong>新規事業部門をどう評価するか</strong>という論点だと思う。</p>
-<p>SSAPが自社で事業化したのは20数件。応募は年間で数十件から100件程度。この数字だけを持って役員会に行けば、たいていの会社では「歩留まりが悪い」という評価になる。ところが同じ制度の社外支援実績は、27業種1,050件超である。<strong>事業の数では負けている指標が、ノウハウの提供数では50倍近くになっている。</strong></p>
+<p>SSAPが自社で事業化したのは20数件。応募は年間で数十件から100件程度。この数字だけを持って役員会に行けば、たいていの会社では「歩留まりが悪い」という評価になる。ところが同じ制度の社外支援実績は、27業種1,050件超である。<strong>事業の数では及ばない指標が、ノウハウの提供数では50倍近くになっている。</strong></p>
 <p>2026年の見え方も同じ構造をしている。2月から6月までの4か月でwena 3、AFEELA 1、ソニー・ホンダモビリティ、aiboと4つの区切りが並んだ。ここだけ切り取れば撤退の年に見える。だが同じ年の4月に、運用総額850億円超になるファンドの運用が始まっている。</p>
 <p><strong>どの数字を成果として置くかで、同じ部門がまったく違って見える。</strong>新規事業の担当者にとって、これは他人事ではないと思う。事業の件数だけを成果に置いた瞬間、制度も、止めた判断も、外に出した事業も、全部マイナスとして数えられることになる。</p>
   </article>

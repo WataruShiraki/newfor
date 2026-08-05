@@ -308,15 +308,24 @@ footer .ln a{margin-right:15px}
 .tip p{font-size:14.5px;line-height:1.95;margin:0 0 10px;color:var(--tx-1)}
 .tip p:last-child{margin-bottom:0}
 .tip strong{font-weight:700}
+
+.kpi .kn{font-size:11px;line-height:1.7;opacity:.78;margin-top:6px;letter-spacing:0}
+@media(max-width:640px){.kpi .kn{font-size:10.5px}}
+.forwho{background:var(--surface);border:1px solid var(--accent-l);border-radius:15px;padding:20px 24px;margin:0 0 20px;box-shadow:var(--sh)}
+@media(max-width:640px){.forwho{padding:16px 16px;border-radius:13px}}
+.forwho .k{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700;margin-bottom:11px}
+.forwho ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.forwho li{font-size:14.5px;line-height:1.75;padding-left:26px;position:relative;color:var(--tx-1)}
+@media(max-width:640px){.forwho li{font-size:13.5px;padding-left:23px}}
+.forwho li::before{content:"";position:absolute;left:4px;top:.55em;width:9px;height:9px;border-radius:50%;
+ border:2.4px solid var(--accent)}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script>
-(function(){var ID='G-XXXXXXXXXX';
- if(ID.indexOf('X')>=0)return;
+(function(){var ID='G-XXXXXXXXXX';if(ID.indexOf('X')>=0)return;
  var s=document.createElement('script');s.async=1;
  s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);
- window.dataLayer=window.dataLayer||[];
- window.gtag=function(){dataLayer.push(arguments);};
+ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};
  gtag('js',new Date());gtag('config',ID);})();
 </script>
 <!-- ▲ 計測タグ ここまで ▲ -->
@@ -340,13 +349,14 @@ footer .ln a{margin-right:15px}
     <div class="crumb"><a href="/">NEWFOR</a> ／ <a href="/reports/">新規事業レポート</a> ／ #004　富士フイルム</div>
     <h1>富士フイルムが買ってきた新規事業より、<br>買わなかった事業のほうが<br>儲かっている</h1>
     <p class="dek">新規事業の作り方は、大きく2つあります。外から買うか、自社の技術を別の市場へ持っていくか。富士フイルムは25年で両方をやりました。だから、同じ会社の中で比べられます。</p>
-    <div class="meta"><span>新規事業マニア</span><span><b>2026年8月5日</b></span><span>読了 約12分</span></div>
+    <div class="meta"><span>新規事業マニア</span><span><b>2026年8月5日</b></span><span>じっくり読んで 12</span></div>
     <div class="kpis"><div class="kpi"><div class="k">買って作った柱の営業利益</div><div class="v">776<em>億円</em></div></div><div class="kpi"><div class="k">買わなかった柱の営業利益</div><div class="v">1,392<em>億円</em></div></div><div class="kpi"><div class="k">M&amp;A最大額</div><div class="v">2,530<em>億円</em></div></div><div class="kpi"><div class="k">バイオCDMO累計投資</div><div class="v">1<em>兆円超</em></div></div></div>
   </div>
 </div>
 
 <main>
 <div class="rd">
+  <div class="forwho"></div>
   <div class="sum"><div class="k">3行でいうと</div><ol><li>ヘルスケアはほぼ買収で組み立てた柱。富山化学、和光純薬、日立の画像診断など。2024年度の営業利益は776億円。</li><li>イメージングは買収でつくっていない。自社の光学技術の出口を、フィルムからチェキ・放送用レンズ・検査用レンズへ替えた柱。営業利益は1,392億円で、買った柱の1.8倍。</li><li>ただし買収組はまだ回収途中。バイオCDMOの設備投資は累計1兆円超で、M&A最大額2,530億円の4倍。この会社の賭けは買収ではなく工場だった。</li></ol></div>
   <div class="toc"><div class="k">目次</div><ol><li><a href="#s0">同じ会社の中に、作り方が2つある</a></li><li><a href="#s9">移し替えた先は、写真ではなかった</a></li><li><a href="#s17">2000年をピークに、10分の1以下へ</a></li><li><a href="#s23">語られる成功譚と、実際の柱がずれている</a></li><li><a href="#s29">新しい柱は、ほぼ全部買ってきた</a></li><li><a href="#s33">買収額より、工場のほうが大きい</a></li><li><a href="#s39">受託製造という、真逆の立ち位置</a></li><li><a href="#s44">買って、育てて、切り出す</a></li><li><a href="#s48">残ったのは、フィルムではなく「その隣」だった</a></li><li><a href="#s54">担当者の視点で見ると</a></li><li><a href="#memo">新規事業マニアのメモ ─ 自分が担当だったら</a></li></ol></div>
 
@@ -407,7 +417,7 @@ footer .ln a{margin-right:15px}
 <p><strong>25年の記録を通して読むと、この会社がやったのは「写真を残すこと」ではない。フィルムという製品は手放したうえで、その隣にあった技術を別の市場へ移し替えたということだ。</strong>そして移し替えた先が、いまいちばん利益を出している。</p>
 <h2 id="s54">担当者の視点で見ると</h2>
 <p>新規事業の担当者として読むなら、この会社の25年からは3つ取り出せると思う。</p>
-<p>ひとつ。<strong>買うほうが速いが、効いてくるのが早いとは限らない。</strong>ヘルスケアは25年かけて1兆円規模の売上になったが、営業利益では買わなかった柱に負けている。買収は事業の形を早く手に入れる手段であって、利益を早く手に入れる手段ではない。</p>
+<p>ひとつ。<strong>買うほうが速いが、効いてくるのが早いとは限らない。</strong>ヘルスケアは25年かけて1兆円規模の売上になったが、営業利益では買わなかった柱に及んでいない。買収は事業の形を早く手に入れる手段であって、利益を早く手に入れる手段ではない。</p>
 <p>ふたつ。<strong>手放すのは事業で、残すのは技術。</strong>この切り分けができるかどうかが分岐点になる。「写真フィルムを守る」と考えた瞬間に打ち手はなくなるが、「この技術の出口を替える」と考えれば、放送用レンズも検査用レンズもチェキも候補に入る。社内で守るべき対象を製品名で語っているうちは、たぶん出口が見つからない。</p>
 <p>みっつ。<strong>時間の桁が、そもそも違う。</strong>2006年の構造改革から数えて、いま営業利益で1番になっている事業が形になるまでに、それだけかかっている。バイオCDMOにいたっては2011年参入で、北米工場の追加分の稼働が2028年である。3年で判断を求められる新規事業の現場に対して、この会社の記録はひとつの反証になっていると思う。</p>
 <p>どれも、25年ぶんの記録を通しで並べないと見えてこないことばかりだった。<strong>単年の決算や、成功事例集からは出てこない。</strong></p>

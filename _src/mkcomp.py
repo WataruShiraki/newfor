@@ -1,41 +1,57 @@
 # -*- coding: utf-8 -*-
-"""企業ページ（/companies/<slug>/）を、記事データから生成する"""
-import io,re,sys,os,importlib
+"""企業ページ（/companies/<slug>/）を、companies/ 以下のデータから生成する
+
+記事の有無とは切り離してある。年表が10件以上ある企業だけを公開する。
+"""
+import io,re,sys,os,glob,importlib,json
+sys.path.insert(0,'companies')
 sys.path.insert(0,'articles')
 import compgen
 from compgen import ym,find_end
 
-# (企業ページのslug, 表示名, 正式名, 記事モジュール, OGP画像のslug)
-MAP=[
- ('docomo','NTTドコモ','株式会社NTTドコモ','a001_docomo','og-docomo'),
- ('kddi','KDDI','KDDI株式会社','a002_kddi','og-kddi-newbusiness'),
- ('sony','ソニーグループ','ソニーグループ株式会社','a003_sony','og-sony-newbusiness'),
- ('fujifilm','富士フイルム','富士フイルムホールディングス株式会社','a004_fujifilm','og-fujifilm-newbusiness'),
- ('toyota','トヨタ自動車','トヨタ自動車株式会社','a005_toyota','og-toyota-newbusiness'),
- ('panasonic','パナソニック','パナソニック ホールディングス株式会社','a006_panasonic','og-panasonic-newbusiness'),
- ('mitsubishi','三菱商事','三菱商事株式会社','a007_mitsubishi','og-mitsubishi-newbusiness'),
- ('jreast','JR東日本','東日本旅客鉄道株式会社','a008_jreast','og-jreast-newbusiness'),
- ('sevenandi','セブン&アイ','株式会社セブン&アイ・ホールディングス','a009_sevenandi','og-sevenandi-newbusiness'),
- ('recruit','リクルート','株式会社リクルートホールディングス','a010_recruit','og-recruit-newbusiness'),
- ('ajinomoto','味の素','味の素株式会社','a011_ajinomoto','og-ajinomoto-newbusiness'),
- ('softbank','ソフトバンクグループ','ソフトバンクグループ株式会社','a012_softbank','og-softbank-newbusiness'),
-]
+MIN=10   # これ未満の企業は、検索エンジンに載せない
+
+# 記事のある企業は、記事のOGP画像を使う
+OG={'docomo':'og-docomo','kddi':'og-kddi-newbusiness','sony':'og-sony-newbusiness',
+ 'fujifilm':'og-fujifilm-newbusiness','toyota':'og-toyota-newbusiness',
+ 'panasonic':'og-panasonic-newbusiness','mitsubishi':'og-mitsubishi-newbusiness',
+ 'jreast':'og-jreast-newbusiness','sevenandi':'og-sevenandi-newbusiness',
+ 'recruit':'og-recruit-newbusiness','ajinomoto':'og-ajinomoto-newbusiness',
+ 'softbank':'og-softbank-newbusiness'}
+
+CO=[]
+for f in sorted(glob.glob('companies/*.py')):
+    n=os.path.basename(f)[:-3]
+    if n.startswith('_'): continue
+    CO.append(importlib.import_module(n).C)
+
+ART={}
+for f in sorted(glob.glob('articles/a0*.py')):
+    A=importlib.import_module(os.path.basename(f)[:-3]).A
+    ART[A.get('slug')]=A
 
 made=[]
-for slug,name,legal,mod,ogslug in MAP:
-    A=importlib.import_module(mod).A
-    biz=[(ev,ym(y),None if live else find_end(note,ym(y)),live,note) for y,ev,note,live in A['timeline']]
+for C in sorted(CO,key=lambda c:-len(c['timeline'])):
+    slug=C['slug']; name=C['name']; tl=C['timeline']
+    biz=[(ev,ym(y),None if live else find_end(note,ym(y)),live,note) for y,ev,note,live in tl]
     biz.sort(key=lambda b:b[1])
     nl=sum(1 for b in biz if b[3])
-    c=dict(slug=slug,name=name,legal=legal,ogslug=ogslug,
-      rep='/articles/%s/'%A['slug'],rept=A['h1'].replace('<br>',''),biz=biz,
+    lo=int(min(b[1] for b in biz)); hi=int(max(b[1] for b in biz))
+    A=ART.get(C.get('article'))
+    c=dict(slug=slug,name=name,legal=C['legal'],ogslug=OG.get(slug,'og-docomo'),
+      rep=('/articles/%s/'%A['slug']) if A else '',
+      rept=A['h1'].replace('<br>','') if A else '',
+      biz=biz,thin=len(biz)<MIN,srcs=C.get('sources',[]),ind=C['ind'],
       title='%sの新規事業 一覧｜%d件を開始年から記録 ｜ NEWFOR'%(name,len(biz)),
-      desc='%sが手がけた新規事業%d件を、公開情報から開始年つきで一覧にしました。いつ始まって、いまどうなっているかを、稼働チャートと年表で確認できます。'%(name,len(biz)),
+      desc='%sが手がけた新規事業%d件を、公開情報から開始年つきで一覧にしました。%d年から%d年まで、いつ始まって、いまどうなっているかを、稼働チャートと年表で確認できます。'%(name,len(biz),lo,hi),
       lead='公開情報から拾った%d件を、開始年の古い順に並べています。いま提供が続いているものは青、終了または他社へ譲渡したものは紫で示しています。'%len(biz),
-      others=[(s,n) for s,n,_,_,_ in MAP if s!=slug])
+      others=[(x['slug'],x['name']) for x in sorted(CO,key=lambda c:-len(c['timeline']))
+              if x['slug']!=slug and len(x['timeline'])>=MIN][:11])
     os.makedirs('gh/companies/%s'%slug,exist_ok=True)
     io.open('gh/companies/%s/index.html'%slug,'w',encoding='utf-8').write(compgen.render(c))
-    made.append((slug,name,len(biz),nl))
-    print('  OK %-12s %-14s %2d件（継続%d）'%(slug,name,len(biz),nl))
-print('\n%dページ生成'%len(made))
-io.open('/tmp/comps.json','w',encoding='utf-8').write(repr(made))
+    made.append(dict(slug=slug,name=name,ind=C['ind'],n=len(biz),live=nl,lo=lo,hi=hi,
+                     art=A['slug'] if A else None,thin=len(biz)<MIN))
+    print('  %-12s %-14s %2d件（継続%2d）%s%s'%(slug,name,len(biz),nl,
+          ' 記事あり' if A else '',' ※10件未満' if len(biz)<MIN else ''))
+print('\n%d社 / 合計%d件'%(len(made),sum(m['n'] for m in made)))
+io.open('/tmp/comps.json','w',encoding='utf-8').write(json.dumps(made,ensure_ascii=False))

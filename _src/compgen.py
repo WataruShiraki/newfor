@@ -80,6 +80,12 @@ EXTRA_CSS='''
 .crep .k2{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700}
 .crep .t2{font-size:17px;font-weight:800;letter-spacing:-.02em;margin-top:6px;line-height:1.55}
 .crep .d2{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.8}
+.csrc{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.csrc li{padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.7}
+.csrc li:last-child{border-bottom:0}
+.csrc a{color:var(--tx-2);text-decoration:none;display:inline-flex;align-items:baseline;gap:7px}
+.csrc a:hover{color:var(--accent)}
+.csrc a::before{content:"→";color:var(--tx-3);font-size:11px}
 .cothers{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .cothers a{font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:19px;border:1px solid var(--line);
   background:var(--bg);text-decoration:none;color:var(--muted)}
@@ -94,7 +100,7 @@ TPL='''<!DOCTYPE html>
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="robots" content="{robots}">
 <meta name="theme-color" content="#2F3BD6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#08080B" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
@@ -156,11 +162,12 @@ TPL='''<!DOCTYPE html>
     <ul class="clist" id="clist">{list}</ul>
   </div>
 
-  <a class="crep" href="{rep}">
-    <span class="k2">企業の決断</span>
-    <span class="t2">{rept}</span>
-    <span class="d2">この一覧の背景を、{yspan}年分の記録として読み解いた記事です。</span>
-  </a>
+  {rep}
+  <div class="cbox">
+    <h2>この一覧の出どころ</h2>
+    <div class="sub">1件ずつ、次の公開情報にあたって記録しています</div>
+    <ul class="csrc">{srcs}</ul>
+  </div>
 
   <div class="affslot" data-aff="learn"></div>
 
@@ -222,15 +229,37 @@ def render(c):
     stat=''.join('<div class="c"><span class="l">%s</span><span class="v">%s<small>%s</small></span></div>'%(l,v,u)
         for l,v,u in [('記録した新規事業',len(biz),'件'),('記録の範囲','%d–'%lo,'2026')])
     others=''.join('<a href="/companies/%s/">%s</a>'%(s,n) for s,n in c['others'])
-    ld={"@context":"https://schema.org","@type":"CollectionPage","name":"%sの新規事業"%c['name'],
-        "url":SITE+'/companies/%s/'%c['slug'],"description":c['desc'],
-        "isPartOf":{"@type":"WebSite","name":"NEWFOR","url":SITE},
-        "about":{"@type":"Organization","name":c['legal']}}
+    srcs=''.join('<li><a href="%s" rel="noopener nofollow" target="_blank">%s</a></li>'%(u,t)
+                 for t,u in c.get('srcs',[]))
+    rep=('<a class="crep" href="%s"><span class="k2">企業の決断</span>'
+         '<span class="t2">%s</span><span class="d2">この一覧の背景を、%d年分の記録として読み解いた記事です。</span></a>'
+         %(c['rep'],c['rept'],2026-lo)) if c.get('rep') else ''
+    U=SITE+'/companies/%s/'%c['slug']
+    ld={"@context":"https://schema.org","@graph":[
+      {"@type":"CollectionPage","@id":U+"#page","name":"%sの新規事業 一覧"%c['name'],
+       "url":U,"description":c['desc'],"inLanguage":"ja",
+       "isPartOf":{"@type":"WebSite","name":"NEWFOR","url":SITE},
+       "about":{"@type":"Organization","name":c['legal'],"alternateName":c['name']},
+       "mainEntity":{"@id":U+"#list"}},
+      {"@type":"ItemList","@id":U+"#list",
+       "name":"%sが手がけた新規事業"%c['name'],"numberOfItems":len(biz),
+       "itemListOrder":"https://schema.org/ItemListOrderAscending",
+       "itemListElement":[
+         {"@type":"ListItem","position":i+1,
+          "item":{"@type":"CreativeWork","name":n,"description":note,
+                  "datePublished":"%d"%int(st),
+                  "provider":{"@type":"Organization","name":c['legal']}}}
+         for i,(n,st,e,lv,note) in enumerate(biz)]},
+      {"@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"NEWFOR","item":SITE+"/"},
+        {"@type":"ListItem","position":2,"name":"企業を探す","item":SITE+"/companies/"},
+        {"@type":"ListItem","position":3,"name":c['name'],"item":U}]}]}
     return TPL.format(title=c['title'],desc=c['desc'],url=SITE+'/companies/%s/'%c['slug'],
         ogslug=c['ogslug'],name=c['name'],lead=c['lead'],stat=stat,lo=lo,yspan=2026-lo,
         chart=''.join(rows),list=''.join(items),n=len(biz),nlive=nlive,ndone=ndone,
         unklg='<span><i class="unk"></i>その年だけの出来事</span>' if unk else '',
         unknote='<div class="cnote">丸い印で示しているのは、譲渡の決定や買収の提案など、その年で完結した出来事です。期間のある事業は帯で示しています。終了した年が公表されていない事業も、同じ丸い印にしています。</div>' if unk else '',
-        rep=c['rep'],rept=c['rept'],others=others,
+        rep=rep,others=others,srcs=srcs,
+        robots=('noindex,follow' if c.get('thin') else 'index,follow,max-image-preview:large,max-snippet:-1'),
         ld=json.dumps(ld,ensure_ascii=False,separators=(',',':')),
         css=CSS,ecss=EXTRA_CSS,ufo=UFO,affjs=AFF_JS)

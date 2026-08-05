@@ -1,5 +1,265 @@
 [
  {
+  "company": "味の素",
+  "date": "1998.09",
+  "title": "味の素ファインテクノ 設立"
+ },
+ {
+  "company": "味の素",
+  "date": "1999.01",
+  "title": "ABF（味の素ビルドアップフィルム）発売"
+ },
+ {
+  "company": "味の素",
+  "date": "1999.10",
+  "title": "味の素ファルマ 設立"
+ },
+ {
+  "company": "味の素",
+  "date": "2003.04",
+  "title": "J-オイルミルズ 設立"
+ },
+ {
+  "company": "味の素",
+  "date": "2005.04",
+  "title": "味の素メディカル 設立"
+ },
+ {
+  "company": "味の素",
+  "date": "2011.04",
+  "title": "アミノインデックス 事業開始"
+ },
+ {
+  "company": "味の素",
+  "date": "2014.09",
+  "title": "StemFit 開発成功"
+ },
+ {
+  "company": "味の素",
+  "date": "2015.08",
+  "title": "欧州甘味料事業を譲渡"
+ },
+ {
+  "company": "味の素",
+  "date": "2015.08",
+  "title": "ブラジル合弁を完全子会社化"
+ },
+ {
+  "company": "味の素",
+  "date": "2015.10",
+  "title": "味の素ゼネラルフーヅを完全子会社化"
+ },
+ {
+  "company": "味の素",
+  "date": "2016.04",
+  "title": "EAファーマ 発足"
+ },
+ {
+  "company": "味の素",
+  "date": "2016.11",
+  "title": "Promasidorへ33.33%出資"
+ },
+ {
+  "company": "味の素",
+  "date": "2016.12",
+  "title": "ジーンデザインを買収"
+ },
+ {
+  "company": "味の素",
+  "date": "2017.11",
+  "title": "キャンブルックを買収"
+ },
+ {
+  "company": "味の素",
+  "date": "2018.11",
+  "title": "香港アモイ・フードを譲渡"
+ },
+ {
+  "company": "味の素",
+  "date": "2020.12",
+  "title": "Nualtraを子会社化"
+ },
+ {
+  "company": "味の素",
+  "date": "2023.11",
+  "title": "Forge Biologicsを買収"
+ },
+ {
+  "company": "味の素",
+  "date": "2025.04",
+  "title": "味の素アルテアを譲渡"
+ },
+ {
+  "company": "味の素",
+  "date": "2026.03",
+  "title": "電子材料が事業利益の3割へ"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "1998.03",
+  "title": "サイバーエージェント 創業"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2004.09",
+  "title": "Ameba（アメーバブログ）開始"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2006",
+  "title": "あした会議 開始"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2006.04",
+  "title": "サイバー・バズ 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2009.02",
+  "title": "アメーバピグ 開始"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2009.04",
+  "title": "CyberZ 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2010.02",
+  "title": "グレンジ 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2011.05",
+  "title": "Cygames 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2013.01",
+  "title": "サイバーエージェントFX 譲渡"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2013.05",
+  "title": "マクアケ 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2014.05",
+  "title": "タップル 開始"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2014.12",
+  "title": "AWA 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2015.04",
+  "title": "AbemaTV 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2016.01",
+  "title": "AI Lab 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2016.04",
+  "title": "ABEMA 本開局"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2017.09",
+  "title": "DDTプロレスリング 子会社化"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2018.10",
+  "title": "FC町田ゼルビア 子会社化"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2018.10",
+  "title": "CAAnimation 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2018.11",
+  "title": "WinTicket 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2019.09",
+  "title": "AI事業本部 発足"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2020.09",
+  "title": "CyberFight 始動"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2021.06",
+  "title": "CASM 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2021.07",
+  "title": "リアルゲイト 子会社化"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2022.06",
+  "title": "Prism Partner 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2023.02",
+  "title": "OPENREC 譲渡"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2023.09",
+  "title": "極AIお台場スタジオ 開設"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2023.10",
+  "title": "AIオペレーション室 新設"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2024.02",
+  "title": "メディア・IP事業本部 発足"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2024.07",
+  "title": "ニトロプラス 子会社化"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2024.12",
+  "title": "AIクリエイティブBPO事業部 新設"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2025.01",
+  "title": "CA Soa 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2025.11",
+  "title": "サイバーグリップ 設立"
+ },
+ {
+  "company": "サイバーエージェント",
+  "date": "2026.07",
+  "title": "AI SCREAM 外部提供開始"
+ },
+ {
   "company": "NTTドコモ",
   "date": "1999.02",
   "title": "iモード 開始"
@@ -125,201 +385,6 @@
   "title": "NTTドコモ・フィナンシャルグループ 設立"
  },
  {
-  "company": "KDDI",
-  "date": "2008.07",
-  "title": "auじぶん銀行 開業"
- },
- {
-  "company": "KDDI",
-  "date": "2010.12",
-  "title": "au損害保険 開業"
- },
- {
-  "company": "KDDI",
-  "date": "2011.08",
-  "title": "KDDI ∞ Labo 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2014.10",
-  "title": "Syn.構想 発表"
- },
- {
-  "company": "KDDI",
-  "date": "2015.04",
-  "title": "au WALLET Market 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2016.04",
-  "title": "auでんき 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2017.05",
-  "title": "au HOME 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2019.04",
-  "title": "au PAY 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2019.12",
-  "title": "auカブコム証券 誕生"
- },
- {
-  "company": "KDDI",
-  "date": "2020.06",
-  "title": "GeForce NOW Powered by au 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2021.03",
-  "title": "povo 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2021.09",
-  "title": "au Style 開店"
- },
- {
-  "company": "KDDI",
-  "date": "2022.09",
-  "title": "KDDIスマートドローン 設立"
- },
- {
-  "company": "KDDI",
-  "date": "2023.03",
-  "title": "αU 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2023.09",
-  "title": "auマネ活プラン 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2024.09",
-  "title": "ローソン共同経営 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2025.04",
-  "title": "au Starlink Direct 開始"
- },
- {
-  "company": "KDDI",
-  "date": "2026.01",
-  "title": "大阪堺データセンター 稼働"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2000",
-  "title": "ソネット・エムスリー 設立"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2001.04",
-  "title": "ソニー銀行 設立"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2014.04",
-  "title": "ソニー不動産 設立"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2014",
-  "title": "社内起業制度 SAP 開始"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2015",
-  "title": "First Flight 開始"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2015.08",
-  "title": "エアロセンス 設立"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2016",
-  "title": "Sony Innovation Fund 設立"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2016.06",
-  "title": "wena wrist 発売"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2018.01",
-  "title": "aibo（ERS-1000）発売"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2018.08",
-  "title": "Ginza Sony Park 第1期開園"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2019.03",
-  "title": "toio 発売"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2019.07",
-  "title": "REON POCKET クラウドファンディング"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2020.04",
-  "title": "Sony AI 設立"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2021.09",
-  "title": "Airpeak S1 発売"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2021.08",
-  "title": "Crunchyroll 買収"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2022.02",
-  "title": "Bungie 買収"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2022.10",
-  "title": "ソニー・ホンダモビリティ 設立"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2023.01",
-  "title": "mocopi 発売"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2024.12",
-  "title": "KADOKAWA へ約500億円を追加出資"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2025.09",
-  "title": "ソニーフィナンシャルグループ 再上場"
- },
- {
-  "company": "ソニーグループ",
-  "date": "2026.04",
-  "title": "Sony Innovation Fund 4 運用開始"
- },
- {
   "company": "富士フイルム",
   "date": "2001.03",
   "title": "富士ゼロックスを連結子会社化"
@@ -420,209 +485,624 @@
   "title": "米ノースカロライナ工場 開設"
  },
  {
-  "company": "トヨタ自動車",
-  "date": "2015.11",
-  "title": "Toyota Research Institute 発表"
+  "company": "富士通",
+  "date": "1999.10",
+  "title": "富士通シーメンス・コンピュータズ設立"
  },
  {
-  "company": "トヨタ自動車",
-  "date": "2017.07",
-  "title": "Toyota AI Ventures 設立"
+  "company": "富士通",
+  "date": "2009.04",
+  "title": "HDD事業を東芝へ譲渡"
  },
  {
-  "company": "トヨタ自動車",
+  "company": "富士通",
+  "date": "2009.04",
+  "title": "富士通シーメンスを完全子会社化"
+ },
+ {
+  "company": "富士通",
+  "date": "2010.10",
+  "title": "富士通東芝モバイルコミュニケーションズ設立"
+ },
+ {
+  "company": "富士通",
+  "date": "2015",
+  "title": "富士通アクセラレーター開始"
+ },
+ {
+  "company": "富士通",
+  "date": "2015.03",
+  "title": "システムLSI事業をソシオネクストへ統合"
+ },
+ {
+  "company": "富士通",
+  "date": "2017.01",
+  "title": "ニフティの個人向け事業をノジマへ譲渡"
+ },
+ {
+  "company": "富士通",
+  "date": "2017.04",
+  "title": "富士通テン株式をデンソーへ譲渡"
+ },
+ {
+  "company": "富士通",
+  "date": "2017.11",
+  "title": "PC事業をレノボとの合弁へ移管"
+ },
+ {
+  "company": "富士通",
   "date": "2018.01",
-  "title": "e-Palette 発表"
+  "title": "携帯端末事業をポラリスへ譲渡"
  },
  {
-  "company": "トヨタ自動車",
+  "company": "富士通",
+  "date": "2018.05",
+  "title": "デジタルアニーラ提供開始"
+ },
+ {
+  "company": "富士通",
   "date": "2018.06",
-  "title": "Grabへ10億ドル出資"
+  "title": "三重富士通セミコンダクターを譲渡"
  },
  {
-  "company": "トヨタ自動車",
-  "date": "2018.09",
-  "title": "MONET Technologies 設立"
+  "company": "富士通",
+  "date": "2019.07",
+  "title": "Ontenna イベント支援サービス開始"
  },
  {
-  "company": "トヨタ自動車",
-  "date": "2019.01",
-  "title": "KINTO 設立"
- },
- {
-  "company": "トヨタ自動車",
+  "company": "富士通",
   "date": "2020.01",
-  "title": "Woven City 構想 公表"
+  "title": "Ridgelinez 設立"
  },
  {
-  "company": "トヨタ自動車",
-  "date": "2020.01",
-  "title": "Joby Aviationへ出資"
+  "company": "富士通",
+  "date": "2020.10",
+  "title": "富士通Japan 発足"
  },
  {
-  "company": "トヨタ自動車",
-  "date": "2020.12",
-  "title": "C+pod 発売"
- },
- {
-  "company": "トヨタ自動車",
-  "date": "2021.01",
-  "title": "Woven Planet Holdings 設立"
- },
- {
-  "company": "トヨタ自動車",
-  "date": "2021.04",
-  "title": "Lyftの自動運転部門を買収"
- },
- {
-  "company": "トヨタ自動車",
-  "date": "2021.04",
-  "title": "CJPT 設立"
- },
- {
-  "company": "トヨタ自動車",
-  "date": "2023.07",
-  "title": "水素ファクトリー 発足"
- },
- {
-  "company": "トヨタ自動車",
-  "date": "2025.04",
-  "title": "北米電池工場 生産開始"
- },
- {
-  "company": "パナソニック",
-  "date": "2016",
-  "title": "ゲームチェンジャー・カタパルト 開始"
- },
- {
-  "company": "パナソニック",
-  "date": "2017.07",
-  "title": "100BANCH 開設"
- },
- {
-  "company": "パナソニック",
-  "date": "2018.03",
-  "title": "BeeEdge 設立"
- },
- {
-  "company": "パナソニック",
-  "date": "2018.10",
-  "title": "HomeX 本格始動"
- },
- {
-  "company": "パナソニック",
-  "date": "2020.01",
-  "title": "プライム ライフ テクノロジーズ 設立"
- },
- {
-  "company": "パナソニック",
-  "date": "2021.02",
-  "title": "太陽電池の生産終了を発表"
- },
- {
-  "company": "パナソニック",
-  "date": "2021.04",
-  "title": "Blue Yonder 完全子会社化を発表"
- },
- {
-  "company": "パナソニック",
-  "date": "2021.06",
-  "title": "保有テスラ株を全売却"
- },
- {
-  "company": "パナソニック",
-  "date": "2021.09",
-  "title": "Yohana 米国で開始"
- },
- {
-  "company": "パナソニック",
-  "date": "2022.04",
-  "title": "パナソニック コネクト 発足"
- },
- {
-  "company": "パナソニック",
-  "date": "2022.07",
-  "title": "Vieureka 営業開始"
- },
- {
-  "company": "パナソニック",
-  "date": "2024.03",
-  "title": "車載機器事業の持分をアポロへ"
- },
- {
-  "company": "パナソニック",
-  "date": "2025.01",
-  "title": "AIサービス「Umi」発表"
- },
- {
-  "company": "パナソニック",
-  "date": "2025.07",
-  "title": "カンザス電池工場 量産開始"
- },
- {
-  "company": "三菱商事",
-  "date": "2016.09",
-  "title": "ローソンの子会社化を発表"
- },
- {
-  "company": "三菱商事",
-  "date": "2018.10",
-  "title": "ローソン銀行 業務開始"
- },
- {
-  "company": "三菱商事",
-  "date": "2019.09",
-  "title": "MC Digital 設立"
- },
- {
-  "company": "三菱商事",
-  "date": "2020.03",
-  "title": "Eneco 買収完了"
- },
- {
-  "company": "三菱商事",
+  "company": "富士通",
   "date": "2021.03",
-  "title": "Industry One 設立"
+  "title": "スーパーコンピュータ富岳 共用開始"
  },
  {
-  "company": "三菱商事",
-  "date": "2021.12",
-  "title": "洋上風力3海域の事業者に選定"
+  "company": "富士通",
+  "date": "2021.04",
+  "title": "コーポレートベンチャーキャピタル開始"
  },
  {
-  "company": "三菱商事",
+  "company": "富士通",
+  "date": "2021.10",
+  "title": "Fujitsu Uvance 開始"
+ },
+ {
+  "company": "富士通",
   "date": "2023.04",
-  "title": "波方ターミナル アンモニア協議会 設置"
+  "title": "Fujitsu Kozuchi 公開"
  },
  {
-  "company": "三菱商事",
-  "date": "2023.06",
-  "title": "Eneco Diamond Hydrogen 設立"
+  "company": "富士通",
+  "date": "2023.10",
+  "title": "64量子ビット超伝導量子コンピュータ"
  },
  {
-  "company": "三菱商事",
+  "company": "富士通",
+  "date": "2023.12",
+  "title": "新光電気工業株式をJIC連合へ譲渡"
+ },
+ {
+  "company": "富士通",
   "date": "2024.02",
-  "title": "ローソンのKDDIとの共同経営を発表"
+  "title": "Uvance Wayfinders 開始"
  },
  {
-  "company": "三菱商事",
-  "date": "2024.02",
-  "title": "米レイクチャールズ クリーンアンモニア"
+  "company": "富士通",
+  "date": "2024.07",
+  "title": "Cohereへ出資し生成AIで提携"
  },
  {
-  "company": "三菱商事",
+  "company": "富士通",
   "date": "2024.09",
-  "title": "ExxonMobil Baytown 水素・アンモニア"
+  "title": "大規模言語モデル Takane 提供開始"
  },
  {
-  "company": "三菱商事",
-  "date": "2025.05",
-  "title": "MCグローバルイノベーション 設立"
+  "company": "富士通",
+  "date": "2024.10",
+  "title": "Fujitsu Kozuchi AI Agent 提供開始"
  },
  {
-  "company": "三菱商事",
+  "company": "富士通",
+  "date": "2025.04",
+  "title": "256量子ビット超伝導量子コンピュータ"
+ },
+ {
+  "company": "富士通",
+  "date": "2025.07",
+  "title": "CVC2号ファンド 運用開始"
+ },
+ {
+  "company": "富士通",
   "date": "2025.08",
-  "title": "洋上風力3海域の開発取り止めを公表"
+  "title": "1万量子ビット超の研究開発を開始"
+ },
+ {
+  "company": "富士通",
+  "date": "2025.08",
+  "title": "富岳NEXT の開発体制始動"
+ },
+ {
+  "company": "富士通",
+  "date": "2025.08",
+  "title": "富士通ゼネラル株式を譲渡"
+ },
+ {
+  "company": "富士通",
+  "date": "2026.01",
+  "title": "富士通Japanの民需事業を承継"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2012.11",
+  "title": "英ホライズン・ニュークリア・パワー買収"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2015.02",
+  "title": "伊アンサルドSTS・アンサルドブレダ買収"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2016.05",
+  "title": "Lumada 提供開始"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2017.03",
+  "title": "日立工機をKKRへ譲渡"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2017.09",
+  "title": "Hitachi Vantara 発足"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2018.10",
+  "title": "クラリオンを仏フォルシアへ譲渡"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2019.04",
+  "title": "米JR Automation 買収"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2019.06",
+  "title": "CVC「Hitachi Ventures」設立"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2020.01",
+  "title": "日立ハイテクを完全子会社化"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2020.07",
+  "title": "ABBのパワーグリッド事業を買収"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2020.09",
+  "title": "三菱日立パワーシステムズ株を譲渡"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2021.01",
+  "title": "日立Astemo 発足"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2021.03",
+  "title": "米GlobalLogic を買収"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2021.03",
+  "title": "画像診断関連事業を富士フイルムへ譲渡"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2022.01",
+  "title": "日立建機株26%を伊藤忠連合へ売却"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2023.01",
+  "title": "日立金属をベインキャピタル連合へ譲渡"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2023.03",
+  "title": "日立物流をKKRへ譲渡"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2023.04",
+  "title": "CVC第3号ファンド設立"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2023.05",
+  "title": "Generative AI センター設立"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2023.12",
+  "title": "日立エナジーを完全子会社化"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2024.04",
+  "title": "三菱電機の配電用変圧器事業を取得"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2024.06",
+  "title": "仏タレスの鉄道信号事業を買収"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2024.07",
+  "title": "空調合弁の持ち分を独ボッシュへ譲渡"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2025.01",
+  "title": "米Joliet を買収"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2025.09",
+  "title": "独synvert の買収に合意"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2025.10",
+  "title": "OpenAIと戦略提携の覚書"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2025.11",
+  "title": "日立建機株の追加売却"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2025.12",
+  "title": "Astemo株21%をホンダへ譲渡"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2026.01",
+  "title": "AI事業ブランド HMAX 発表"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2026.04",
+  "title": "家電事業をノジマへ譲渡"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2026.04",
+  "title": "分散型AIデータセンターの共同検討"
+ },
+ {
+  "company": "日立製作所",
+  "date": "2026.07",
+  "title": "国産AI新会社Noetraへ出資"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "1986",
+  "title": "航空機と二足歩行ロボットの研究に着手"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2000.11",
+  "title": "人型ロボットASIMOを発表"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2004.10",
+  "title": "GE Honda Aero Engines 設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2006.03",
+  "title": "HondaJetの事業化を決定"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2006.08",
+  "title": "ホンダ エアクラフト カンパニー 設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2006.12",
+  "title": "ホンダソルテック 設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2015.12",
+  "title": "HondaJet 型式証明を取得"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2017",
+  "title": "Honda R&D Innovations を設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2017.01",
+  "title": "GMと燃料電池合弁FCSMを設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2018.10",
+  "title": "GM Cruiseへ27.5億ドルを出資"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2021.01",
+  "title": "日立Astemo 発足"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2021.09",
+  "title": "新領域への挑戦を公表"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2022.04",
+  "title": "Gachaco 設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2022.09",
+  "title": "ソニー・ホンダモビリティ 設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2022.10",
+  "title": "米オハイオ州にEV電池工場を決定"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2023",
+  "title": "Honda Xcelerator Ventures を設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2023.01",
+  "title": "LGとEV電池合弁を正式設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2023.07",
+  "title": "八千代工業の株式譲渡で基本合意"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2024.01",
+  "title": "GM合弁で燃料電池システムの生産開始"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2024.07",
+  "title": "ALTNA 設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2024.12",
+  "title": "日産と経営統合の基本合意書を締結"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2025.06",
+  "title": "再使用型ロケットの離着陸実験に成功"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2025.12",
+  "title": "Astemoを連結子会社化"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2026.01",
+  "title": "アルゼンチンに販売金融子会社を設立"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2026.04",
+  "title": "インドにデジタルサービス新会社"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2026.04",
+  "title": "Gachacoを連結子会社化"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2026.05",
+  "title": "電池材料のネクシオンへ出資"
+ },
+ {
+  "company": "本田技研工業",
+  "date": "2026.07",
+  "title": "Noetraへ出資しAI基盤モデル開発"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2009.12",
+  "title": "デサント株式を追加取得"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2011.06",
+  "title": "コロンビアのDrummond炭鉱に出資"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2012.12",
+  "title": "米Doleのアジア青果物・加工食品事業を買収"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2014.07",
+  "title": "ほけんの窓口グループへ出資"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2015.01",
+  "title": "CITIC・CPグループとの戦略的業務・資本提携"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2017.05",
+  "title": "ヤナセをTOBで子会社化"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2018.04",
+  "title": "ユニー・ファミリーマートHDへのTOB"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2019.01",
+  "title": "デサントへの公開買付け"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2019.02",
+  "title": "中古スマホのBelongを設立"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2019.10",
+  "title": "ほけんの窓口グループを連結子会社化"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2020.05",
+  "title": "伊藤忠テクノロジーベンチャーズ5号ファンドを設立"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2020.07",
+  "title": "ファミリーマートを完全子会社化"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2021.08",
+  "title": "ファミマ店頭のメディア事業で新会社を設立"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2022.08",
+  "title": "蓄電池メーカーのパワーエックスへ出資"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2023.01",
+  "title": "資源循環のecommitへ出資"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2023.02",
+  "title": "伊藤忠サイバー＆インテリジェンスを設立"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2023.03",
+  "title": "国産混合SAFのサプライチェーンを構築"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2023.05",
+  "title": "オリエンタル白石と資本業務提携"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2023.07",
+  "title": "北米で再生可能エネルギーファンドを設立"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2023.08",
+  "title": "大建工業へのTOBを実施"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2024.03",
+  "title": "アニメ事業へ参入"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2024.05",
+  "title": "ビッグモーターの事業を承継する新会社WECARSを発足"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2024.09",
+  "title": "デサントを完全子会社化するTOBを開始"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2024.09",
+  "title": "日本初の系統用蓄電池専業ファンドを運営開始"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2024.10",
+  "title": "米メイプロ社へ出資"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2025.01",
+  "title": "NEON Group Limitedと資本業務提携"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2025.03",
+  "title": "伊藤忠テクノロジーベンチャーズ6号ファンドを組成"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2025.04",
+  "title": "タイCPグループとの相互出資を解消"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2025.08",
+  "title": "プレミアグループと資本業務提携"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2025.09",
+  "title": "セブン銀行と資本業務提携"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2025.10",
+  "title": "IPコンテンツ中核会社アイライツポートを設立"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2026.03",
+  "title": "IT機器の循環型ビジネスを構築"
+ },
+ {
+  "company": "伊藤忠商事",
+  "date": "2026.04",
+  "title": "アイチコーポレーション株式を追加取得"
  },
  {
   "company": "JR東日本",
@@ -695,79 +1175,554 @@
   "title": "グループ経営ビジョン「勇翔2034」発表"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2015.11",
-  "title": "オムニ7 開始"
+  "company": "KDDI",
+  "date": "2008.07",
+  "title": "auじぶん銀行 開業"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2017.04",
-  "title": "米Sunocoから小売事業を取得"
+  "company": "KDDI",
+  "date": "2010.12",
+  "title": "au損害保険 開業"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2017.10",
-  "title": "7NOW 実証開始"
+  "company": "KDDI",
+  "date": "2011.08",
+  "title": "KDDI ∞ Labo 開始"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2019.07",
-  "title": "7pay 開始"
+  "company": "KDDI",
+  "date": "2014.10",
+  "title": "Syn.構想 発表"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2020.08",
-  "title": "Speedway買収を発表"
+  "company": "KDDI",
+  "date": "2015.04",
+  "title": "au WALLET Market 開始"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2023.08",
-  "title": "そごう・西武の譲渡を決定"
+  "company": "KDDI",
+  "date": "2016.04",
+  "title": "auでんき 開始"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2023.11",
-  "title": "豪7-Eleven運営会社の買収を発表"
+  "company": "KDDI",
+  "date": "2017.05",
+  "title": "au HOME 開始"
  },
  {
-  "company": "セブン&アイ",
+  "company": "KDDI",
+  "date": "2019.04",
+  "title": "au PAY 開始"
+ },
+ {
+  "company": "KDDI",
+  "date": "2019.12",
+  "title": "auカブコム証券 誕生"
+ },
+ {
+  "company": "KDDI",
+  "date": "2020.06",
+  "title": "GeForce NOW Powered by au 開始"
+ },
+ {
+  "company": "KDDI",
+  "date": "2021.03",
+  "title": "povo 開始"
+ },
+ {
+  "company": "KDDI",
+  "date": "2021.09",
+  "title": "au Style 開店"
+ },
+ {
+  "company": "KDDI",
+  "date": "2022.09",
+  "title": "KDDIスマートドローン 設立"
+ },
+ {
+  "company": "KDDI",
+  "date": "2023.03",
+  "title": "αU 開始"
+ },
+ {
+  "company": "KDDI",
+  "date": "2023.09",
+  "title": "auマネ活プラン 開始"
+ },
+ {
+  "company": "KDDI",
+  "date": "2024.09",
+  "title": "ローソン共同経営 開始"
+ },
+ {
+  "company": "KDDI",
+  "date": "2025.04",
+  "title": "au Starlink Direct 開始"
+ },
+ {
+  "company": "KDDI",
+  "date": "2026.01",
+  "title": "大阪堺データセンター 稼働"
+ },
+ {
+  "company": "三菱商事",
+  "date": "2016.09",
+  "title": "ローソンの子会社化を発表"
+ },
+ {
+  "company": "三菱商事",
+  "date": "2018.10",
+  "title": "ローソン銀行 業務開始"
+ },
+ {
+  "company": "三菱商事",
+  "date": "2019.09",
+  "title": "MC Digital 設立"
+ },
+ {
+  "company": "三菱商事",
+  "date": "2020.03",
+  "title": "Eneco 買収完了"
+ },
+ {
+  "company": "三菱商事",
+  "date": "2021.03",
+  "title": "Industry One 設立"
+ },
+ {
+  "company": "三菱商事",
+  "date": "2021.12",
+  "title": "洋上風力3海域の事業者に選定"
+ },
+ {
+  "company": "三菱商事",
+  "date": "2023.04",
+  "title": "波方ターミナル アンモニア協議会 設置"
+ },
+ {
+  "company": "三菱商事",
+  "date": "2023.06",
+  "title": "Eneco Diamond Hydrogen 設立"
+ },
+ {
+  "company": "三菱商事",
   "date": "2024.02",
-  "title": "SIPストア 開店"
+  "title": "ローソンのKDDIとの共同経営を発表"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2024.08",
-  "title": "クシュタールが買収を提案"
+  "company": "三菱商事",
+  "date": "2024.02",
+  "title": "米レイクチャールズ クリーンアンモニア"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2024.10",
-  "title": "ヨーク・ホールディングス 設立"
+  "company": "三菱商事",
+  "date": "2024.09",
+  "title": "ExxonMobil Baytown 水素・アンモニア"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2025.02",
-  "title": "7NOW 全国展開が完了"
+  "company": "三菱商事",
+  "date": "2025.05",
+  "title": "MCグローバルイノベーション 設立"
  },
  {
-  "company": "セブン&アイ",
-  "date": "2025.03",
-  "title": "北米コンビニのIPOと2兆円の自社株買いを発表"
- },
- {
-  "company": "セブン&アイ",
-  "date": "2025.07",
-  "title": "クシュタールが買収提案を撤回"
- },
- {
-  "company": "セブン&アイ",
-  "date": "2025.09",
-  "title": "ヨークHDの譲渡が完了"
- },
- {
-  "company": "セブン&アイ",
+  "company": "三菱商事",
   "date": "2025.08",
-  "title": "国内コンビニへの集中投資を発表"
+  "title": "洋上風力3海域の開発取り止めを公表"
+ },
+ {
+  "company": "NEC",
+  "date": "2010.04",
+  "title": "半導体事業をルネサスへ統合"
+ },
+ {
+  "company": "NEC",
+  "date": "2011.01",
+  "title": "パソコン事業でレノボと合弁"
+ },
+ {
+  "company": "NEC",
+  "date": "2013.07",
+  "title": "スマートフォンの提供を終えた"
+ },
+ {
+  "company": "NEC",
+  "date": "2014.01",
+  "title": "BIGLOBEを日本産業パートナーズへ譲渡"
+ },
+ {
+  "company": "NEC",
+  "date": "2016.03",
+  "title": "携帯電話端末の開発事業を終えた"
+ },
+ {
+  "company": "NEC",
+  "date": "2016.07",
+  "title": "レノボ合弁の持株比率を引き下げ"
+ },
+ {
+  "company": "NEC",
+  "date": "2018.01",
+  "title": "英Northgate Public Servicesを買収"
+ },
+ {
+  "company": "NEC",
+  "date": "2018.04",
+  "title": "AI企業dotDataを米国に設立"
+ },
+ {
+  "company": "NEC",
+  "date": "2018.06",
+  "title": "NEC Xをシリコンバレーに設立"
+ },
+ {
+  "company": "NEC",
+  "date": "2018.08",
+  "title": "リチウムイオン電池事業を譲渡"
+ },
+ {
+  "company": "NEC",
+  "date": "2018.10",
+  "title": "顔認証ソリューション for オフィス"
+ },
+ {
+  "company": "NEC",
+  "date": "2019.01",
+  "title": "デンマークKMDを買収"
+ },
+ {
+  "company": "NEC",
+  "date": "2019.04",
+  "title": "照明事業をホタルクスへ承継"
+ },
+ {
+  "company": "NEC",
+  "date": "2020.03",
+  "title": "映像ディスプレイ事業をシャープと合弁化"
+ },
+ {
+  "company": "NEC",
+  "date": "2020.06",
+  "title": "NTTと資本業務提携"
+ },
+ {
+  "company": "NEC",
+  "date": "2020.09",
+  "title": "BIRD INITIATIVEを6社で設立"
+ },
+ {
+  "company": "NEC",
+  "date": "2020.12",
+  "title": "スイスAvaloqを買収"
+ },
+ {
+  "company": "NEC",
+  "date": "2021.09",
+  "title": "NEC Energy Solutionsを譲渡"
+ },
+ {
+  "company": "NEC",
+  "date": "2022.07",
+  "title": "太平洋横断光海底ケーブルJUNOを受注"
+ },
+ {
+  "company": "NEC",
+  "date": "2023.03",
+  "title": "欧州にAI創薬の統括会社を設立"
+ },
+ {
+  "company": "NEC",
+  "date": "2023.12",
+  "title": "生成AI cotomi で事業化"
+ },
+ {
+  "company": "NEC",
+  "date": "2024.05",
+  "title": "DX新ブランド BluStellar"
+ },
+ {
+  "company": "NEC",
+  "date": "2025.07",
+  "title": "NESICホールディングスを設立"
+ },
+ {
+  "company": "NEC",
+  "date": "2025.10",
+  "title": "米CSG Systems Internationalを買収"
+ },
+ {
+  "company": "NEC",
+  "date": "2025.11",
+  "title": "KDDIとサイバーセキュリティ合弁"
+ },
+ {
+  "company": "NEC",
+  "date": "2026.01",
+  "title": "NECフィールディングをNESIC傘下へ"
+ },
+ {
+  "company": "NEC",
+  "date": "2026.03",
+  "title": "光通信衛星コンステレーションの実証衛星"
+ },
+ {
+  "company": "NEC",
+  "date": "2026.05",
+  "title": "軌道間輸送機の実用化プロジェクト"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2016",
+  "title": "ゲームチェンジャー・カタパルト 開始"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2017.07",
+  "title": "100BANCH 開設"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2018.03",
+  "title": "BeeEdge 設立"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2018.10",
+  "title": "HomeX 本格始動"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2020.01",
+  "title": "プライム ライフ テクノロジーズ 設立"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2021.02",
+  "title": "太陽電池の生産終了を発表"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2021.04",
+  "title": "Blue Yonder 完全子会社化を発表"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2021.06",
+  "title": "保有テスラ株を全売却"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2021.09",
+  "title": "Yohana 米国で開始"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2022.04",
+  "title": "パナソニック コネクト 発足"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2022.07",
+  "title": "Vieureka 営業開始"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2024.03",
+  "title": "車載機器事業の持分をアポロへ"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2025.01",
+  "title": "AIサービス「Umi」発表"
+ },
+ {
+  "company": "パナソニック",
+  "date": "2025.07",
+  "title": "カンザス電池工場 量産開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "1997.02",
+  "title": "株式会社エム・ディー・エム 設立"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "1997.05",
+  "title": "楽天市場 開設"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "1998.07",
+  "title": "楽天スーパーオークション 開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2000.04",
+  "title": "日本証券業協会へ株式を店頭登録"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2000.12",
+  "title": "インフォシーク 完全子会社化"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2001.03",
+  "title": "楽天トラベル 開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2003.11",
+  "title": "楽天証券の前身を子会社化"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2004.10",
+  "title": "株式会社楽天野球団 設立"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2005.06",
+  "title": "楽天カード 発行開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2008.05",
+  "title": "台湾楽天市場 開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2009.02",
+  "title": "イーバンク銀行 子会社化"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2010.01",
+  "title": "ビットワレット 子会社化"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2011.11",
+  "title": "Kobo社 買収"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2012.10",
+  "title": "アイリオ生命保険 子会社化"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2014.02",
+  "title": "Viber Media 買収"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2014.10",
+  "title": "Ebates 完全子会社化"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2014.10",
+  "title": "楽天モバイル 開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2015.01",
+  "title": "ヴィッセル神戸 全株式取得"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2016.10",
+  "title": "楽天ペイ 提供開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2018.03",
+  "title": "朝日火災海上保険 子会社化"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2018.10",
+  "title": "楽天でんき 提供開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2019.07",
+  "title": "楽天メディカルへ追加出資"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2019.09",
+  "title": "台湾プロ野球球団 取得"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2019.10",
+  "title": "楽天モバイル 携帯キャリア事業開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2020.03",
+  "title": "AST & Science 出資"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2020.04",
+  "title": "楽天モバイル 本格サービス開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2020.11",
+  "title": "西友 株式取得"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2021.03",
+  "title": "日本郵政グループと資本・業務提携"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2021.07",
+  "title": "JP楽天ロジスティクス 設立"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2021.08",
+  "title": "アルティオスター 完全子会社化"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2022.01",
+  "title": "楽天シンフォニー 設立"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2022.02",
+  "title": "Rakuten NFT 提供開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2023.04",
+  "title": "楽天銀行 東証プライム市場 上場"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2023.11",
+  "title": "楽天証券株式をみずほ証券へ追加譲渡"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2024.11",
+  "title": "楽天カードとみずほFGの資本業務提携"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2026.03",
+  "title": "Rakuten AI 3.0 提供開始"
+ },
+ {
+  "company": "楽天グループ",
+  "date": "2026.05",
+  "title": "フィンテック事業再編 最終合意"
  },
  {
   "company": "リクルート",
@@ -850,99 +1805,204 @@
   "title": "GlassdoorをIndeedへ統合"
  },
  {
-  "company": "味の素",
-  "date": "1998.09",
-  "title": "味の素ファインテクノ 設立"
+  "company": "セブン&アイ",
+  "date": "2015.11",
+  "title": "オムニ7 開始"
  },
  {
-  "company": "味の素",
-  "date": "1999.01",
-  "title": "ABF（味の素ビルドアップフィルム）発売"
+  "company": "セブン&アイ",
+  "date": "2017.04",
+  "title": "米Sunocoから小売事業を取得"
  },
  {
-  "company": "味の素",
-  "date": "1999.10",
-  "title": "味の素ファルマ 設立"
+  "company": "セブン&アイ",
+  "date": "2017.10",
+  "title": "7NOW 実証開始"
  },
  {
-  "company": "味の素",
-  "date": "2003.04",
-  "title": "J-オイルミルズ 設立"
+  "company": "セブン&アイ",
+  "date": "2019.07",
+  "title": "7pay 開始"
  },
  {
-  "company": "味の素",
-  "date": "2005.04",
-  "title": "味の素メディカル 設立"
+  "company": "セブン&アイ",
+  "date": "2020.08",
+  "title": "Speedway買収を発表"
  },
  {
-  "company": "味の素",
-  "date": "2011.04",
-  "title": "アミノインデックス 事業開始"
+  "company": "セブン&アイ",
+  "date": "2023.08",
+  "title": "そごう・西武の譲渡を決定"
  },
  {
-  "company": "味の素",
-  "date": "2014.09",
-  "title": "StemFit 開発成功"
- },
- {
-  "company": "味の素",
-  "date": "2015.08",
-  "title": "欧州甘味料事業を譲渡"
- },
- {
-  "company": "味の素",
-  "date": "2015.08",
-  "title": "ブラジル合弁を完全子会社化"
- },
- {
-  "company": "味の素",
-  "date": "2015.10",
-  "title": "味の素ゼネラルフーヅを完全子会社化"
- },
- {
-  "company": "味の素",
-  "date": "2016.04",
-  "title": "EAファーマ 発足"
- },
- {
-  "company": "味の素",
-  "date": "2016.11",
-  "title": "Promasidorへ33.33%出資"
- },
- {
-  "company": "味の素",
-  "date": "2016.12",
-  "title": "ジーンデザインを買収"
- },
- {
-  "company": "味の素",
-  "date": "2017.11",
-  "title": "キャンブルックを買収"
- },
- {
-  "company": "味の素",
-  "date": "2018.11",
-  "title": "香港アモイ・フードを譲渡"
- },
- {
-  "company": "味の素",
-  "date": "2020.12",
-  "title": "Nualtraを子会社化"
- },
- {
-  "company": "味の素",
+  "company": "セブン&アイ",
   "date": "2023.11",
-  "title": "Forge Biologicsを買収"
+  "title": "豪7-Eleven運営会社の買収を発表"
  },
  {
-  "company": "味の素",
-  "date": "2025.04",
-  "title": "味の素アルテアを譲渡"
+  "company": "セブン&アイ",
+  "date": "2024.02",
+  "title": "SIPストア 開店"
  },
  {
-  "company": "味の素",
-  "date": "2026.03",
-  "title": "電子材料が事業利益の3割へ"
+  "company": "セブン&アイ",
+  "date": "2024.08",
+  "title": "クシュタールが買収を提案"
+ },
+ {
+  "company": "セブン&アイ",
+  "date": "2024.10",
+  "title": "ヨーク・ホールディングス 設立"
+ },
+ {
+  "company": "セブン&アイ",
+  "date": "2025.02",
+  "title": "7NOW 全国展開が完了"
+ },
+ {
+  "company": "セブン&アイ",
+  "date": "2025.03",
+  "title": "北米コンビニのIPOと2兆円の自社株買いを発表"
+ },
+ {
+  "company": "セブン&アイ",
+  "date": "2025.07",
+  "title": "クシュタールが買収提案を撤回"
+ },
+ {
+  "company": "セブン&アイ",
+  "date": "2025.09",
+  "title": "ヨークHDの譲渡が完了"
+ },
+ {
+  "company": "セブン&アイ",
+  "date": "2025.08",
+  "title": "国内コンビニへの集中投資を発表"
+ },
+ {
+  "company": "資生堂",
+  "date": "2010.01",
+  "title": "米ベアエッセンシャルを買収"
+ },
+ {
+  "company": "資生堂",
+  "date": "2015.06",
+  "title": "アユーララボラトリーズを譲渡"
+ },
+ {
+  "company": "資生堂",
+  "date": "2016.06",
+  "title": "米ガーウィッチ プロダクツを買収"
+ },
+ {
+  "company": "資生堂",
+  "date": "2016.10",
+  "title": "ドルチェ&ガッバーナ事業を開始"
+ },
+ {
+  "company": "資生堂",
+  "date": "2016.12",
+  "title": "資生堂ベンチャーパートナーズ設立"
+ },
+ {
+  "company": "資生堂",
+  "date": "2017.05",
+  "title": "キナリ（草花木果）を譲渡"
+ },
+ {
+  "company": "資生堂",
+  "date": "2017.08",
+  "title": "資生堂医理化テクノロジーを譲渡"
+ },
+ {
+  "company": "資生堂",
+  "date": "2017.10",
+  "title": "米ゾートスを独ヘンケルへ譲渡"
+ },
+ {
+  "company": "資生堂",
+  "date": "2017.11",
+  "title": "米Giaranを買収"
+ },
+ {
+  "company": "資生堂",
+  "date": "2017.11",
+  "title": "IoTスキンケアOptuneを発表"
+ },
+ {
+  "company": "資生堂",
+  "date": "2018.01",
+  "title": "Second Skin事業を取得"
+ },
+ {
+  "company": "資生堂",
+  "date": "2019.07",
+  "title": "Optuneを本格展開"
+ },
+ {
+  "company": "資生堂",
+  "date": "2019.08",
+  "title": "トリーバーチとライセンス契約"
+ },
+ {
+  "company": "資生堂",
+  "date": "2019.10",
+  "title": "米ドランクエレファントを買収"
+ },
+ {
+  "company": "資生堂",
+  "date": "2021.02",
+  "title": "パーソナルケア事業を譲渡"
+ },
+ {
+  "company": "資生堂",
+  "date": "2021.07",
+  "title": "資生堂インタラクティブビューティー設立"
+ },
+ {
+  "company": "資生堂",
+  "date": "2021.08",
+  "title": "ベアミネラルなど3ブランドを譲渡"
+ },
+ {
+  "company": "資生堂",
+  "date": "2021.08",
+  "title": "中国で資悦ファンドを設立"
+ },
+ {
+  "company": "資生堂",
+  "date": "2022.01",
+  "title": "資生堂クリエイティブを設立"
+ },
+ {
+  "company": "資生堂",
+  "date": "2022.02",
+  "title": "プロフェッショナル事業を譲渡"
+ },
+ {
+  "company": "資生堂",
+  "date": "2022.08",
+  "title": "パーソナルケア生産事業を譲渡"
+ },
+ {
+  "company": "資生堂",
+  "date": "2023.09",
+  "title": "インナービューティー事業を開始"
+ },
+ {
+  "company": "資生堂",
+  "date": "2023.12",
+  "title": "米Dr. Dennis Grossを買収"
+ },
+ {
+  "company": "資生堂",
+  "date": "2024.06",
+  "title": "ファイントゥデイHD株式を譲渡"
+ },
+ {
+  "company": "資生堂",
+  "date": "2025.07",
+  "title": "エトバスを吸収合併"
  },
  {
   "company": "ソフトバンクグループ",
@@ -1123,5 +2183,180 @@
   "company": "ソフトバンクグループ",
   "date": "2026.03",
   "title": "純利益5兆22億円"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2000",
+  "title": "ソネット・エムスリー 設立"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2001.04",
+  "title": "ソニー銀行 設立"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2014.04",
+  "title": "ソニー不動産 設立"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2014",
+  "title": "社内起業制度 SAP 開始"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2015",
+  "title": "First Flight 開始"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2015.08",
+  "title": "エアロセンス 設立"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2016",
+  "title": "Sony Innovation Fund 設立"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2016.06",
+  "title": "wena wrist 発売"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2018.01",
+  "title": "aibo（ERS-1000）発売"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2018.08",
+  "title": "Ginza Sony Park 第1期開園"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2019.03",
+  "title": "toio 発売"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2019.07",
+  "title": "REON POCKET クラウドファンディング"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2020.04",
+  "title": "Sony AI 設立"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2021.09",
+  "title": "Airpeak S1 発売"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2021.08",
+  "title": "Crunchyroll 買収"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2022.02",
+  "title": "Bungie 買収"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2022.10",
+  "title": "ソニー・ホンダモビリティ 設立"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2023.01",
+  "title": "mocopi 発売"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2024.12",
+  "title": "KADOKAWA へ約500億円を追加出資"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2025.09",
+  "title": "ソニーフィナンシャルグループ 再上場"
+ },
+ {
+  "company": "ソニーグループ",
+  "date": "2026.04",
+  "title": "Sony Innovation Fund 4 運用開始"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2015.11",
+  "title": "Toyota Research Institute 発表"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2017.07",
+  "title": "Toyota AI Ventures 設立"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2018.01",
+  "title": "e-Palette 発表"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2018.06",
+  "title": "Grabへ10億ドル出資"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2018.09",
+  "title": "MONET Technologies 設立"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2019.01",
+  "title": "KINTO 設立"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2020.01",
+  "title": "Woven City 構想 公表"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2020.01",
+  "title": "Joby Aviationへ出資"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2020.12",
+  "title": "C+pod 発売"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2021.01",
+  "title": "Woven Planet Holdings 設立"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2021.04",
+  "title": "Lyftの自動運転部門を買収"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2021.04",
+  "title": "CJPT 設立"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2023.07",
+  "title": "水素ファクトリー 発足"
+ },
+ {
+  "company": "トヨタ自動車",
+  "date": "2025.04",
+  "title": "北米電池工場 生産開始"
  }
 ]

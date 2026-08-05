@@ -102,11 +102,17 @@
     }
   }
 
+  /* 投票が用意できていない／通信できないときは、枠ごと隠して空欄を見せない */
+  function hide(el) {
+    var band = el.closest ? el.closest(".react-band") : null;
+    (band || el).style.display = "none";
+  }
+
   Array.prototype.forEach.call(document.querySelectorAll(".vote-slot"), function (el) {
     var pollId = el.getAttribute("data-poll");
-    if (!pollId) return;
+    if (!pollId) return hide(el);
     results(pollId)
-      .then(function (rows) { if (rows.length) render(el, rows, false, null); })
-      .catch(function (e) { console.warn("[NEWFOR vote]", e); });  // 取れなければ何も出さない
+      .then(function (rows) { rows.length ? render(el, rows, false, null) : hide(el); })
+      .catch(function (e) { console.warn("[NEWFOR vote]", e); hide(el); });
   });
 })();

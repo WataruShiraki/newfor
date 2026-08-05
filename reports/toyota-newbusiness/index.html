@@ -326,12 +326,12 @@ footer .ln a{margin-right:15px}
 @media(max-width:640px){.affmini .btn-a{max-width:none;width:100%}}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-(function(){var ID='G-XXXXXXXXXX';if(ID.indexOf('X')>=0)return;
- var s=document.createElement('script');s.async=1;
- s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);
- window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};
- gtag('js',new Date());gtag('config',ID);})();
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XXXXXXXXXX');
 </script>
 <!-- ▲ 計測タグ ここまで ▲ -->
 <!-- Search Console はドメイン単位で登録する場合、この meta は不要です。
@@ -361,39 +361,43 @@ footer .ln a{margin-right:15px}
 
 <main>
 <div class="rd">
-  <div class="forwho"></div>
+  <div class="forwho"><div class="k">この記事はこんな方に</div><ul><li><strong>社内の制度や稟議に阻まれている方へ。</strong>事業の中身をいじるより器を分けるほうが早い、という選択肢を見ていきます</li><li><strong>黒字化までの時間を社内で説明できずにいる方へ。</strong>6年かかった事業が、なぜ6年待ってもらえたのかを分解します</li><li><strong>出資比率の決め方に迷っている方へ。</strong>過半を取らないことが相手の本気度を上げる、という考え方をご紹介します</li></ul></div>
   <div class="sum"><div class="k">3行でいうと</div><ol><li>2015年以降の新規事業14件のうち、6件が新しい会社や専任組織の設立から始まっている。本体の組織改編ではなく、別法人を立てる形が繰り返される。</li><li>KINTOは2019年1月設立、2024年度に売上587億円で初の黒字。大企業の新規事業がどれくらいの時間で黒字化するかの、数字がそろった珍しい例。</li><li>Woven Cityは2020年の発表時「実証都市」、2025年の実証開始時には「モビリティのテストコース」。5年で言葉が変わっている。</li></ol></div>
-  <div class="toc"><div class="k">目次</div><ol><li><a href="#s0">事業より先に、会社ができる</a></li><li><a href="#s4">なぜ本体でやらないのか</a></li><li><a href="#s9">KINTOは6年目で黒字になった</a></li><li><a href="#s14">「実証都市」が「テストコース」になった</a></li><li><a href="#s19">買うのではなく、出す</a></li><li><a href="#s23">いちばん大きいのは、やはり工場</a></li><li><a href="#s27">担当者の視点で見ると</a></li><li><a href="#memo">新規事業マニアのメモ ─ 自分が担当だったら</a></li></ol></div>
+  <div class="toc"><div class="k">目次</div><ol><li><a href="#s0">事業より先に、会社ができる</a></li><li><a href="#s5">なぜ本体でやらないのか</a></li><li><a href="#s10">KINTOは6年目で黒字になった</a></li><li><a href="#s17">「実証都市」が「テストコース」になった</a></li><li><a href="#s22">買うのではなく、出す</a></li><li><a href="#s27">いちばん大きいのは、やはり工場</a></li><li><a href="#s31">担当者の視点で見ると</a></li><li><a href="#memo">新規事業マニアのメモ ─ 自分が担当だったら</a></li></ol></div>
 
   <article>
 <h2 id="s0">事業より先に、会社ができる</h2>
 <p>トヨタが2015年以降に始めた新規事業を14件ならべて、最初に目についたのは事業の中身ではなかった。<strong>始め方が、ほぼ全部同じなのだ。</strong></p>
 <p>Toyota Research Institute（2015年）、MONET Technologies（2018年）、KINTO（2019年）、Woven Planet Holdings（2021年）、CJPT（2021年）、水素ファクトリー（2023年）。いずれも新しい会社か、専任の組織を立ち上げるところから始まっている。</p>
 <p>本体の中に事業部を作る、という形はほとんど出てこない。</p>
-<h2 id="s4">なぜ本体でやらないのか</h2>
+<div class="voice"><span class="av"><svg viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".22"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".32"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg></span><div><span class="k">新規事業マニアの解説</span><p>14件を並べ終えて、私が最初に思ったのは「事業の中身の話が出てこないな」ということでした。</p><p><strong>普通、新規事業の記録を追うと「何を作ったか」が並びます。ところがトヨタの場合、先に目に入るのは会社名なのです。</strong>Toyota Research Institute、MONET、KINTO、Woven Planet、CJPT、水素ファクトリー。</p><p>本体の中に事業部を作る、という形がほとんど出てきません。これは何を意味しているのか。ここから先は記録を読んだうえでの私の仮説になりますが、かなり実務的な示唆があると思っています。</p></div></div>
+<h2 id="s5">なぜ本体でやらないのか</h2>
 <p>理由は書かれていないので、ここからは記録を読んだうえでの仮説になる。</p>
 <p>別法人にすると、人事の制度と意思決定の速度を、本体から切り離せる。年功で決まる給与テーブルも、稟議の階層も、新会社なら別に設計できる。<strong>組織を分けるのは、事業を分けたいからではなく、ルールを分けたいからではないか。</strong></p>
 <p>もうひとつ、外から人と金を入れやすくなる。MONETはソフトバンクとの合弁で、開始時の出資比率はソフトバンク50.25%、トヨタ49.75%。トヨタが過半を取っていない。KINTOも、トヨタファイナンシャルサービス66.6%、住友三井オートサービス33.4%という構成である。</p>
 <div class="fig"><div class="cap">TIMELINE</div><h4>未確認事業年表</h4><div class="sub">トヨタが公開情報で発表した主な新規事業（2015年以降）</div><div class="tlf"><button class="on" data-f="all">すべて</button><button data-f="live">いま続いている</button><button data-f="done">次へ渡した</button></div><ul class="tl" id="tl"><li data-s="live"><span class="y">2015.11</span><span class="ev">Toyota Research Institute 発表<em>米国のAI・ロボティクス研究拠点。5年間で約10億ドル、当初約200名</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2017.07</span><span class="ev">Toyota AI Ventures 設立<em>CVC。2021年にToyota Venturesへ改称し、累計運用5億ドル超</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2018.01</span><span class="ev">e-Palette 発表<em>移動・物流・物販を1台で担うMaaS専用のEV。CES 2018で公開</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2018.06</span><span class="ev">Grabへ10億ドル出資<em>東南アジア最大の配車事業者へのリード出資と車両ケアの提供</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2018.09</span><span class="ev">MONET Technologies 設立<em>ソフトバンクとの合弁。オンデマンド交通とAutono-MaaS</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2019.01</span><span class="ev">KINTO 設立<em>クルマのサブスクリプション。保険・税・メンテ込みの月額制</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2020.01</span><span class="ev">Woven City 構想 公表<em>静岡・裾野の実証都市。2025年9月に実証を開始</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2020.01</span><span class="ev">Joby Aviationへ出資<em>eVTOLの米新興へ。2024年の追加分とあわせ累計8億9,400万ドル</em></span><span class="bd live">いま続いている</span></li><li data-s="done"><span class="y">2020.12</span><span class="ev">C+pod 発売<em>2人乗りの超小型EV。約4年半で生産を終えた</em></span><span class="bd done">次へ渡した</span></li><li data-s="live"><span class="y">2021.01</span><span class="ev">Woven Planet Holdings 設立<em>ソフトウェアと自動運転を束ねる子会社。2023年にWoven by Toyotaへ</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2021.04</span><span class="ev">Lyftの自動運転部門を買収<em>5億5,000万ドル。自社のソフト開発を加速</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2021.04</span><span class="ev">CJPT 設立<em>いすゞ・日野らと商用車のCASEを共同で社会実装する合弁</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2023.07</span><span class="ev">水素ファクトリー 発足<em>水素・FC事業を一本化した専任組織。発足時1,350人</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2025.04</span><span class="ev">北米電池工場 生産開始<em>日本国外で初の自社電池工場。投資額約139億ドル</em></span><span class="bd live">いま続いている</span></li></ul></div>
-<h2 id="s9">KINTOは6年目で黒字になった</h2>
+<h2 id="s10">KINTOは6年目で黒字になった</h2>
 <p>大企業の新規事業がいつ黒字になるのか。これは誰もが知りたいのに、数字がほとんど出てこない問いだ。</p>
 <p>KINTOは珍しく、その数字が公表されている。2019年1月設立。<strong>2024年度に売上587.07億円、当期純利益7.95億円で、初の黒字を計上した。</strong>累計申込は約13.7万件（2024年12月末時点）。</p>
 <p>設立から黒字まで6年。クルマのサブスクという、月額の積み上げで成り立つ事業としては、順当な時間の使い方に見える。ただ社内で6年待てるかというと、それは別の話だ。KINTOが別会社だったことは、この6年に関係していると思う。</p>
 <div class="affmini-slot" data-aff="pro"></div>
-<h2 id="s14">「実証都市」が「テストコース」になった</h2>
+<div class="term"><span class="k">用語</span><span class="w">サブスクリプション<em>ていがくかきん</em></span><p>商品を売り切るのではなく、月額や年額で使ってもらう売り方。売上が毎月少しずつ積み上がるかわり、立ち上がりは必ず遅くなります。KINTOが黒字まで6年かかったのは、この形の事業としては順当な時間の使い方です。</p></div>
+<div class="tip"><span class="k">実務のコツ</span><p>企画書に、次の2行を並べて書いてみてください。</p><p><strong>①この事業は何年目に黒字化する見込みか。②その年数を、本体の中で守れるか。</strong></p><p>KINTOは6年かかりました。本体の一事業部として6年間の赤字を続けられる会社は、そう多くありません。<strong>守れないなら、器を分けるしかない</strong>ということです。別会社にするのは面倒ですが、その面倒は「時間を守るための盾」を買う対価だと考えると、見え方が変わります。</p></div>
+<h2 id="s17">「実証都市」が「テストコース」になった</h2>
 <p>Woven Cityは2020年のCESで公表された。当時の説明は「実証都市」だった。</p>
 <p>2024年10月にPhase 1が竣工し、2025年9月25日に実証が始まった。このときのリリースで、トヨタはWoven Cityを<strong>「モビリティのテストコース」</strong>と表現している。</p>
 <p>言葉が変わったことを、後退と読む必要はないと思う。むしろ、5年かけて「これは何なのか」の定義が具体的になった、と読むほうが自然だ。街をつくるのではなく、試す場をつくる。最終的に約360名が住み、20社・団体がInventorsとして参加する規模になった。</p>
 <div class="note">Woven Cityの総投資額について、トヨタの公式資料では確認できませんでした。海外メディアは100億ドル規模と報じていますが、一次情報での裏取りは取れていません。</div>
-<h2 id="s19">買うのではなく、出す</h2>
+<h2 id="s22">買うのではなく、出す</h2>
 <p>金額の使い方にも、はっきりした傾向がある。</p>
 <p>完全買収と言えるのは2021年のLyft自動運転部門（5億5,000万ドル）くらいで、あとは経営権を取らない出資が並ぶ。Grabに10億ドル、Joby Aviationに累計8億9,400万ドル、インターステラテクノロジズに約70億円。</p>
 <p><strong>相手を自分のものにするのではなく、相手が伸びる場所に金を置いておく。</strong>自動車という、10年かけて仕様が決まる産業の会社らしい距離の取り方に見える。</p>
-<h2 id="s23">いちばん大きいのは、やはり工場</h2>
+<div class="voice"><span class="av"><svg viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".22"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".32"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg></span><div><span class="k">新規事業マニアの解説</span><p>出資比率の話は、地味ですがとても大事だと思っています。</p><p>MONETはソフトバンク50.25%・トヨタ49.75%。<strong>トヨタが過半を取っていません。</strong>KINTOもトヨタファイナンシャルサービス66.6%・住友三井オートサービス33.4%です。</p><p>自社の持分を減らすことは、支配を手放すことです。でも同時に、<strong>相手が本気で関わる理由をつくることでもあります。</strong>「過半を取りにいった瞬間に断られた」という話は、実際によく聞きます。どちらを取るかを、先に決めておくといいと思います。</p></div></div>
+<h2 id="s27">いちばん大きいのは、やはり工場</h2>
 <p>ソフトやCVCの金額と、リアルな設備の金額には、はっきり桁の差がある。</p>
 <p>Toyota Venturesの累計運用が5億ドル超。一方、2025年4月に生産を始めた北米電池工場（ノースカロライナ）への投資は約139億ドル。20倍以上ある。</p>
 <p>新規事業の記事を書いていると、つい新しい概念のほうに目が行く。しかし数字で見ると、この会社がいちばん大きく張っているのは、いまも「作る場所」なのだった。</p>
-<h2 id="s27">担当者の視点で見ると</h2>
+<h2 id="s31">担当者の視点で見ると</h2>
 <p>14件の始め方から、企画に落とせることが2つある。</p>
 <p>ひとつは<strong>出資比率の使い方</strong>だ。MONETはソフトバンク50.25%・トヨタ49.75%で、トヨタが過半を取っていない。KINTOもトヨタファイナンシャルサービス66.6%・住友三井オートサービス33.4%である。自社の持分を減らすことは支配を手放すことだが、同時に<strong>相手が本気で関わる理由をつくることでもある。</strong>過半を取りにいった瞬間に断られる話は、実際によくある。</p>
 <p>もうひとつは<strong>金額の桁を、社内向けの説明で混同しないこと</strong>。Toyota Venturesの累計運用は5億ドル超、一方で北米電池工場への投資は約139億ドル。20倍以上ある。CVCは入口として有効だが、この会社が本当に張っている場所ではない。自社のCVC予算を「新規事業への投資額」として説明すると、規模の議論がずれる。</p>

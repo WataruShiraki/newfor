@@ -326,12 +326,12 @@ footer .ln a{margin-right:15px}
 @media(max-width:640px){.affmini .btn-a{max-width:none;width:100%}}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-(function(){var ID='G-XXXXXXXXXX';if(ID.indexOf('X')>=0)return;
- var s=document.createElement('script');s.async=1;
- s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);
- window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};
- gtag('js',new Date());gtag('config',ID);})();
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XXXXXXXXXX');
 </script>
 <!-- ▲ 計測タグ ここまで ▲ -->
 <!-- Search Console はドメイン単位で登録する場合、この meta は不要です。
@@ -361,9 +361,9 @@ footer .ln a{margin-right:15px}
 
 <main>
 <div class="rd">
-  <div class="forwho"></div>
+  <div class="forwho"><div class="k">この記事はこんな方に</div><ul><li><strong>他社と組む企画が社内で通らない方へ。</strong>「自社で内製できないのか」と言われたときに使える、18件ぶんの反証をご用意しました</li><li><strong>自社の強みが何なのか整理したい方へ。</strong>持っているものより「持っていないもの」を先に数える、という考え方をご紹介します</li><li><strong>提携がうまく進まない方へ。</strong>相手に何を差し出せるかを一行で言えるかどうかが分かれ目になります</li></ul></div>
   <div class="sum"><div class="k">3行でいうと</div><ol><li>KDDIが2008年以降に始めた新規事業18件のうち、他社と組んで始めたものが14件。単独で始めたものは4件しかない。</li><li>組む相手は毎回ちがう。三菱UFJ、損保ジャパン、三菱商事、SpaceX。同じ相手と何度も組むより、領域ごとに一番強い相手を選んでいる。</li><li>18年のあいだに一度も変わらなかったのは「auという看板を、通信の外へ貸し出す」というやり方だった。</li></ol></div>
-  <div class="toc"><div class="k">目次</div><ol><li><a href="#s0">ひとりで始めたものが、4件しかない</a></li><li><a href="#s5">2008年、通信会社が銀行を持った</a></li><li><a href="#s10">2014年、うまくいかなかったように見える連合</a></li><li><a href="#s15">2019年、決済で見せた変わった手</a></li><li><a href="#s18">2024年、4,971億円で買ったのは店舗ではない</a></li><li><a href="#s23">2025年、空にも相手がいた</a></li><li><a href="#s26">では、自分では何を作っているのか</a></li><li><a href="#s30">2026年、次の柱は建物になった</a></li><li><a href="#s33">担当者の視点で見ると</a></li><li><a href="#memo">新規事業マニアのメモ ─ 自分が担当だったら</a></li></ol></div>
+  <div class="toc"><div class="k">目次</div><ol><li><a href="#s0">ひとりで始めたものが、4件しかない</a></li><li><a href="#s6">2008年、通信会社が銀行を持った</a></li><li><a href="#s12">2014年、うまくいかなかったように見える連合</a></li><li><a href="#s17">2019年、決済で見せた変わった手</a></li><li><a href="#s21">2024年、4,971億円で買ったのは店舗ではない</a></li><li><a href="#s26">2025年、空にも相手がいた</a></li><li><a href="#s29">では、自分では何を作っているのか</a></li><li><a href="#s33">2026年、次の柱は建物になった</a></li><li><a href="#s36">担当者の視点で見ると</a></li><li><a href="#memo">新規事業マニアのメモ ─ 自分が担当だったら</a></li></ol></div>
 
   <article>
 <h2 id="s0">ひとりで始めたものが、4件しかない</h2>
@@ -371,35 +371,38 @@ footer .ln a{margin-right:15px}
 <p><strong>18件のうち、他社と組んで始めたものが14件ある。</strong>auじぶん銀行は三菱東京UFJ銀行と、au損保はあいおいニッセイ同和損保と、auカブコム証券は三菱UFJフィナンシャル・グループと、ローソンは三菱商事と、au Starlink DirectはSpaceXと。単独で始めたと言えるのは、povo、au Style、auでんき、そして大阪堺データセンターくらいのものだ。</p>
 <p>これは偶然ではない。18年、社長が3人替わっても、この始め方だけは変わっていない。</p>
 <div class="fig"><div class="cap">CHART</div><h4>事業稼働チャート</h4><div class="sub">各事業が始まってから、いまも続いているか（横棒は提供期間）</div><div class="chart"><div class="crow"><span class="n" title="auじぶん銀行">auじぶん銀行</span><span class="trk"><span class="bar live" style="left:0.00%;width:100.00%"></span></span><span class="yr">2008–</span></div><div class="crow"><span class="n" title="au損保">au損保</span><span class="trk"><span class="bar live" style="left:10.53%;width:89.47%"></span></span><span class="yr">2010–</span></div><div class="crow"><span class="n" title="KDDI ∞ Labo">KDDI ∞ Labo</span><span class="trk"><span class="bar live" style="left:15.79%;width:84.21%"></span></span><span class="yr">2011–</span></div><div class="crow"><span class="n" title="Syn.構想">Syn.構想</span><span class="trk"><span class="bar done" style="left:31.58%;width:21.05%"></span></span><span class="yr">2014–2018</span></div><div class="crow"><span class="n" title="au WALLET Market">au WALLET Market</span><span class="trk"><span class="bar done" style="left:36.84%;width:31.58%"></span></span><span class="yr">2015–2021</span></div><div class="crow"><span class="n" title="auでんき">auでんき</span><span class="trk"><span class="bar live" style="left:42.11%;width:57.89%"></span></span><span class="yr">2016–</span></div><div class="crow"><span class="n" title="au HOME">au HOME</span><span class="trk"><span class="bar live" style="left:47.37%;width:52.63%"></span></span><span class="yr">2017–</span></div><div class="crow"><span class="n" title="au PAY">au PAY</span><span class="trk"><span class="bar live" style="left:57.89%;width:42.11%"></span></span><span class="yr">2019–</span></div><div class="crow"><span class="n" title="auカブコム証券">auカブコム証券</span><span class="trk"><span class="bar live" style="left:57.89%;width:42.11%"></span></span><span class="yr">2019–</span></div><div class="crow"><span class="n" title="GeForce NOW Powered by au">GeForce NOW Powered by au</span><span class="trk"><span class="bar done" style="left:63.16%;width:26.32%"></span></span><span class="yr">2020–2025</span></div><div class="crow"><span class="n" title="povo">povo</span><span class="trk"><span class="bar live" style="left:68.42%;width:31.58%"></span></span><span class="yr">2021–</span></div><div class="crow"><span class="n" title="au Style">au Style</span><span class="trk"><span class="bar live" style="left:68.42%;width:31.58%"></span></span><span class="yr">2021–</span></div><div class="crow"><span class="n" title="KDDIスマートドローン">KDDIスマートドローン</span><span class="trk"><span class="bar live" style="left:73.68%;width:26.32%"></span></span><span class="yr">2022–</span></div><div class="crow"><span class="n" title="αU">αU</span><span class="trk"><span class="bar live" style="left:78.95%;width:21.05%"></span></span><span class="yr">2023–</span></div><div class="crow"><span class="n" title="auマネ活プラン">auマネ活プラン</span><span class="trk"><span class="bar live" style="left:78.95%;width:21.05%"></span></span><span class="yr">2023–</span></div><div class="crow"><span class="n" title="ローソン共同経営">ローソン共同経営</span><span class="trk"><span class="bar live" style="left:84.21%;width:15.79%"></span></span><span class="yr">2024–</span></div><div class="crow"><span class="n" title="au Starlink Direct">au Starlink Direct</span><span class="trk"><span class="bar live" style="left:89.47%;width:10.53%"></span></span><span class="yr">2025–</span></div><div class="crow"><span class="n" title="大阪堺データセンター">大阪堺データセンター</span><span class="trk"><span class="bar live" style="left:94.74%;width:5.26%"></span></span><span class="yr">2026–</span></div></div><div class="axis"><span>2008</span><span>2012</span><span>2016</span><span>2020</span><span>2024</span><span>2027</span></div><div class="lg"><span><i class="live"></i>いま続いている</span><span><i class="done"></i>次へ渡した</span></div></div>
-<h2 id="s5">2008年、通信会社が銀行を持った</h2>
+<div class="voice"><span class="av"><svg viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".22"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".32"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg></span><div><span class="k">新規事業マニアの解説</span><p>この「18件のうち14件」という数字を数え終えたとき、私は少し笑ってしまいました。</p><p><strong>これ、偶然ではありません。18年で社長が3人替わっても、始め方だけが変わっていないのです。</strong>個人の趣味ではなく、会社の型としてそこにある、ということだと思います。</p><p>新規事業の相談を受けていると、「他社と組むのは逃げでは」という言葉によく出会います。でもこの18件を見たあとでは、私はもうそう思えません。順番に見ていきましょう。</p></div></div>
+<h2 id="s6">2008年、通信会社が銀行を持った</h2>
 <p>起点は2008年7月のauじぶん銀行だ。三菱東京UFJ銀行との共同出資で、携帯電話から使うことを前提にした銀行をつくった。いまでこそ通信会社が金融を持つのは当たり前だが、当時これは異例だった。</p>
 <p>注目したいのは出資の形である。KDDIは自前で銀行免許を取りにいかなかった。銀行のことは銀行に任せ、自分は顧客との接点と、通信のブランドを出した。<strong>足りないものを買うのではなく、持っている会社と組む。</strong>この判断が、その後18年の型になる。</p>
 <p>2010年のau損保も同じ形だ。2019年のauカブコム証券にいたっては、既にあるカブドットコム証券に資本参加して社名を変えた。ゼロから証券会社をつくることはしていない。</p>
 <div class="note">金融3社に共通するのは、相手が「その領域で既に強い会社」であること。銀行は三菱UFJ、損保はあいおいニッセイ同和、証券も三菱UFJ系。KDDIが持ち込んだのは、免許でも運用ノウハウでもなく、auという看板と顧客基盤だった。</div>
-<h2 id="s10">2014年、うまくいかなかったように見える連合</h2>
+<div class="term"><span class="k">用語</span><span class="w">合弁（ジョイントベンチャー）<em>ごうべん</em></span><p>複数の会社がお金を出し合って、新しい会社を1つつくること。出資比率で発言力が決まります。片方が過半を持てば意思決定は速くなりますが、もう一方の本気度は下がりがちです。auじぶん銀行やau損保は、この形で始まりました。</p></div>
+<h2 id="s12">2014年、うまくいかなかったように見える連合</h2>
 <p>Syn.構想は2014年10月に発表された。他社のサービスを横につなぎ、ひとつの入口から使えるようにするという構想で、KDDIは約120億円を出資して提携網を築いた。ナビタイム、Retty、クックパッド、ぐるなびといった名前が並んだ。</p>
 <p>この構想そのものは2018年に姿を消している。だが、ここで組んだ相手と学んだことが、その後のau PAYやau経済圏づくりに引き継がれた。<strong>Syn.構想は、KDDIが「他社と組んで面をつくる」ことを大規模に試した最初の実験だった。</strong></p>
 <p>ひとつ確かめておきたいのは、この構想が「うまくいかなかった」と片づけられがちなことだ。しかし当時のKDDIには、自社サービスだけで生活領域を埋める資産がなかった。埋められないなら借りる、という判断自体は、後のローソン共同経営とまったく同じ発想である。規模と相手が変わっただけだ。</p>
 <div class="affmini-slot" data-aff="pro"></div>
-<h2 id="s15">2019年、決済で見せた変わった手</h2>
+<h2 id="s17">2019年、決済で見せた変わった手</h2>
 <p>au PAYが始まったのは2019年4月。コード決済の後発である。ここでKDDIが打った手が面白い。<strong>2020年、楽天ペイと加盟店を相互開放した。</strong>競合の決済網を、そのまま自社の決済網として使えるようにしたのだ。</p>
 <p>後発で加盟店を増やすには、自分で営業して回るしかない。ふつうはそう考える。KDDIはそこで、加盟店を持っている会社と組むほうを選んだ。じぶん銀行のときと同じ判断である。</p>
-<h2 id="s18">2024年、4,971億円で買ったのは店舗ではない</h2>
+<div class="tip"><span class="k">実務のコツ</span><p>提携から入るなら、企画書の1ページ目に<strong>「自社が持っているもの」と「持っていないもの」を並べた表</strong>を置いてみてください。</p><p>KDDIの18件は、全部その表の形で説明できてしまいます。銀行免許も、損保の査定能力も、コンビニの運営も、衛星も持っていない。持っていないと認めたうえで、持っている会社を探しにいっている。</p><p><strong>そして「持っているもの」の欄が埋まらないなら、まだ提携の話をする段階ではありません。</strong>相手に差し出せるものがない状態では、話が始まらないからです。</p></div>
+<h2 id="s21">2024年、4,971億円で買ったのは店舗ではない</h2>
 <p>2024年、KDDIは三菱商事とともにローソンの共同経営に入った。買付総額は約4,971億円。三菱商事とKDDIが議決権を50%ずつ持つ形になった。</p>
 <p>通信会社がコンビニを持つ理由は、単に物を売るためではないだろう。ローソンは全国に約1万4,000の店舗を持ち、毎日人が来る。<strong>通信契約は2年に一度しか触らないが、コンビニには週に何度も来る。</strong>接点の頻度がまるで違う。</p>
 <p>ここでも単独ではない。三菱商事は2016年からローソンを子会社にしていた会社で、小売の経営はそちらが持つ。KDDIが持ち込むのは、やはりauの顧客基盤とデジタルの技術である。2008年の銀行から、構図が一切変わっていない。</p>
 <div class="fig"><div class="cap">TIMELINE</div><h4>未確認事業年表</h4><div class="sub">KDDIが公開情報で発表した新規事業を、始めた順に</div><div class="tlf"><button class="on" data-f="all">すべて</button><button data-f="live">いま続いている</button><button data-f="done">次へ渡した</button></div><ul class="tl" id="tl"><li data-s="live"><span class="y">2008.07</span><span class="ev">auじぶん銀行 開業<em>三菱東京UFJ銀行との共同出資。通信会社が銀行を持った最初期の例</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2010.12</span><span class="ev">au損害保険 開業<em>あいおいニッセイ同和損保との共同出資。自転車保険で知られる</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2011.08</span><span class="ev">KDDI ∞ Labo 開始<em>スタートアップ支援プログラム。出資と事業共創の入口をつくった</em></span><span class="bd live">いま続いている</span></li><li data-s="done"><span class="y">2014.10</span><span class="ev">Syn.構想 発表<em>他社サービスを横につなぐ連合構想。約120億円を出資し提携網を築いた</em></span><span class="bd done">次へ渡した</span></li><li data-s="done"><span class="y">2015.04</span><span class="ev">au WALLET Market 開始<em>通信の顧客基盤に物販を乗せる試み。2021年に役目を終えた</em></span><span class="bd done">次へ渡した</span></li><li data-s="live"><span class="y">2016.04</span><span class="ev">auでんき 開始<em>電力小売の全面自由化と同時に参入。通信とのセット割で伸ばした</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2017.05</span><span class="ev">au HOME 開始<em>家庭内のIoT。センサーとカメラを通信契約に紐づけた</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2019.04</span><span class="ev">au PAY 開始<em>コード決済。楽天ペイとの加盟店相互開放という珍しい形をとった</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2019.12</span><span class="ev">auカブコム証券 誕生<em>三菱UFJ側と組み、カブドットコム証券を社名変更。証券を手に入れた</em></span><span class="bd live">いま続いている</span></li><li data-s="done"><span class="y">2020.06</span><span class="ev">GeForce NOW Powered by au 開始<em>NVIDIAと組んだクラウドゲーム。5年間の提供を走り切った</em></span><span class="bd done">次へ渡した</span></li><li data-s="live"><span class="y">2021.03</span><span class="ev">povo 開始<em>オンライン専用の料金プラン。トッピング型という独自の形をとった</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2021.09</span><span class="ev">au Style 開店<em>売る場所から、相談する場所へ。店舗の役割を組み替えた</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2022.09</span><span class="ev">KDDIスマートドローン 設立<em>ドローンの運航管理。通信網を空へ広げる新会社</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2023.03</span><span class="ev">αU 開始<em>メタバース、ウォレット、ライブ配信を束ねたWeb3サービス群</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2023.09</span><span class="ev">auマネ活プラン 開始<em>通信と金融を1つの料金プランに束ねた。金融15年の集大成</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2024.09</span><span class="ev">ローソン共同経営 開始<em>三菱商事と50%ずつ。約4,971億円を投じてリアル店舗を手に入れた</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2025.04</span><span class="ev">au Starlink Direct 開始<em>SpaceXと組み、圏外でもスマホが衛星と直接つながる</em></span><span class="bd live">いま続いている</span></li><li data-s="live"><span class="y">2026.01</span><span class="ev">大阪堺データセンター 稼働<em>AI向けの大規模データセンター。通信の次の柱として建てた</em></span><span class="bd live">いま続いている</span></li></ul></div>
-<h2 id="s23">2025年、空にも相手がいた</h2>
+<h2 id="s26">2025年、空にも相手がいた</h2>
 <p>2025年4月に始まったau Starlink Directは、SpaceXの衛星とスマートフォンが直接つながる仕組みだ。専用の機器を持たなくても、空が見えれば圏外でメッセージが送れる。</p>
 <p>衛星を自社で打ち上げるという選択肢は、現実的ではない。だからここでも相手を選んだ。選んだ相手が、たまたま世界でいちばん多く衛星を上げている会社だった、というだけの話である。</p>
-<h2 id="s26">では、自分では何を作っているのか</h2>
+<h2 id="s29">では、自分では何を作っているのか</h2>
 <p>ここまで読むと、KDDIは他社の力ばかり借りている会社に見えるかもしれない。だが単独で始めた4件を見ると、そうではないことがわかる。</p>
 <p>povo（2021年）は、料金プランの形そのものを作り替えたものだ。基本料をゼロにして、必要なぶんだけ「トッピング」で足す。この設計を他社から借りることはできない。au Style（2021年）も、店舗を「売る場所」から「相談する場所」へ組み替える試みで、これも自社の店舗網がなければ成立しない。</p>
 <p><strong>KDDIが自分でやるのは、通信そのものの形を変えるときだ。</strong>それ以外の領域では、その領域で一番強い相手を探す。18件を並べてみると、この線引きが驚くほどはっきりしている。</p>
-<h2 id="s30">2026年、次の柱は建物になった</h2>
+<h2 id="s33">2026年、次の柱は建物になった</h2>
 <p>2026年1月に稼働した大阪堺データセンターは、AI向けの大規模施設である。これは珍しく単独の投資だ。通信インフラの延長線上にあるから、という説明はつく。</p>
 <p>ただ、ここには別の見方もできる。組む相手を探すのは、自分に足りないものがあるときだ。データセンターは、通信会社がもともと持っている土地・電力・回線の運用能力がそのまま効く領域である。<strong>足りないものがないから、ひとりで建てた。</strong>そう読むほうが、18年の記録には合っている。</p>
-<h2 id="s33">担当者の視点で見ると</h2>
+<h2 id="s36">担当者の視点で見ると</h2>
 <p>この18件を自分の企画に引き写すなら、押さえどころは「線引き」だと思う。</p>
 <p>KDDIが単独で始めた4件は、povo、au Style、auでんき、データセンター。<strong>どれも通信そのものの形を変える話である。</strong>それ以外の領域では、そこでいちばん強い相手を探しにいく。この線が先に引かれているから、14件の提携が場当たりに見えない。逆に、線引きのないまま提携を増やすと、社内に「結局この会社は何をやりたいのか」が残らなくなる。</p>
 <p>もうひとつ。<strong>終わった提携を、失敗として棚に上げないこと。</strong>Syn.構想は約120億円を投じて2018年に姿を消したが、そこで組んだ相手と学んだことがau PAYと経済圏づくりへ引き継がれている。提携を事業単体の採算で評価すると失敗に見える。だが関係と知見は残り、次に組むときの速さが変わる。</p>

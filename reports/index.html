@@ -71,12 +71,12 @@ footer a{margin-right:14px}
 .up{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--tx-3);letter-spacing:.04em;margin-top:34px}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-(function(){var ID='G-XXXXXXXXXX';if(ID.indexOf('X')>=0)return;
- var s=document.createElement('script');s.async=1;
- s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);
- window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};
- gtag('js',new Date());gtag('config',ID);})();
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XXXXXXXXXX');
 </script>
 <!-- ▲ 計測タグ ここまで ▲ -->
 <!-- Search Console はドメイン単位で登録する場合、この meta は不要です。

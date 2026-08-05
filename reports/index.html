@@ -69,6 +69,55 @@ footer a{margin-right:14px}
 .reveal:hover{background:var(--blue-2)}
 .mini{font-size:12.5px;color:var(--tx-3);margin-top:-8px}
 .up{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--tx-3);letter-spacing:.04em;margin-top:34px}
+
+.rgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:34px 0 10px}
+@media(max-width:900px){.rgrid{grid-template-columns:1fr;gap:17px}}
+.rcard{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);
+ border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--sh);
+ transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.rcard:hover{transform:translateY(-4px);border-color:var(--c1);box-shadow:0 16px 42px -20px rgba(20,16,40,.5)}
+.rc-hd{background:linear-gradient(112deg,var(--c1),var(--c2));padding:16px 22px;display:flex;
+ flex-direction:column;gap:5px;position:relative;overflow:hidden}
+.rc-hd::after{content:"";position:absolute;right:-40px;top:-46px;width:150px;height:150px;
+ border-radius:50%;background:rgba(255,255,255,.09)}
+.rc-no{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.18em;
+ color:rgba(255,255,255,.78);font-weight:700;position:relative;z-index:1}
+.rc-co{font-size:19px;font-weight:800;letter-spacing:-.02em;color:#fff;position:relative;z-index:1}
+.rc-co em{font-style:normal;font-size:11.5px;font-weight:600;background:rgba(255,255,255,.2);
+ border-radius:10px;padding:3px 9px;margin-left:9px;vertical-align:middle}
+.rc-body{padding:20px 22px 6px;flex:1 1 auto;display:flex;flex-direction:column}
+.rc-ttl{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1.6;margin-bottom:15px}
+@media(max-width:640px){.rc-ttl{font-size:16.5px}}
+.rc-hero{display:flex;align-items:baseline;gap:3px;background:var(--cw);border-radius:13px;
+ padding:13px 16px;margin-bottom:15px;flex-wrap:wrap}
+:root[data-theme="dark"] .rc-hero{background:rgba(255,255,255,.06)}
+.rc-hero b{font-size:30px;font-weight:800;letter-spacing:-.04em;color:var(--c1);
+ font-family:ui-monospace,Menlo,monospace;line-height:1}
+:root[data-theme="dark"] .rc-hero b{color:var(--cd)}
+.rc-hero i{font-style:normal;font-size:13px;font-weight:800;color:var(--c1);margin-right:9px}
+:root[data-theme="dark"] .rc-hero i{color:var(--cd)}
+.rc-hk{font-size:12px;color:var(--muted);font-weight:600;line-height:1.5}
+.rc-lk{display:block;font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.13em;
+ color:var(--muted);font-weight:700;margin-bottom:8px}
+.rc-learn{margin-bottom:15px}
+.rc-learn ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.rc-learn li{font-size:13.5px;line-height:1.75;padding-left:19px;position:relative;color:var(--tx-2)}
+.rc-learn li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;
+ border-radius:2px;background:var(--c1)}
+:root[data-theme="dark"] .rc-learn li::before{background:var(--cd)}
+.rc-tags{display:block;margin-bottom:6px}
+.rt{display:inline-block;font-size:11.5px;font-weight:700;background:var(--cw);color:var(--c1);
+ border-radius:20px;padding:5px 12px;margin:0 6px 6px 0;line-height:1.5}
+:root[data-theme="dark"] .rt{background:rgba(255,255,255,.08);color:var(--cd)}
+.rc-foot{border-top:1px solid var(--line);padding:13px 22px;display:flex;align-items:center;
+ justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rc-meta{font-size:11.5px;color:var(--muted);line-height:1.7}
+.rc-meta b{color:var(--tx-1);font-weight:800}
+.rc-go{font-size:13px;font-weight:800;color:var(--c1);display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+:root[data-theme="dark"] .rc-go{color:var(--cd)}
+.rcard:hover .rc-go svg{transform:translateX(3px)}
+.rc-go svg{transition:transform .16s ease}
+.rlead{font-size:15px;line-height:1.95;color:var(--tx-2);max-width:720px;margin:0 0 4px}
 </style>
 <!-- ▼ 計測タグ：G-XXXXXXXXXX を実際の測定IDに置き換えてください（Googleアナリティクス）▼ -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -97,51 +146,171 @@ footer a{margin-right:14px}
   </div>
 </div>
 <main><div class="wrap">
-
-<div class="box">
-<h3><a href="/reports/docomo-newbusiness/">#001　NTTドコモは、25年かけて「iモード」に帰ってきたのではないか</a></h3>
-<p>海外で1兆円超を投じ、生活サービスを次々と組み替え、いま金融に全額を張る25年。公開情報だけで年表にして読み解きました。</p>
+<p class="rlead">1社の新規事業を、始めた年から今まで丸ごと並べて読み解いた記録です。すべて公開情報だけで作っています。<b>気になる会社から、どうぞ。</b></p>
+<div class="rgrid">
+<a class="rcard" href="/reports/docomo-newbusiness/" style="--c1:#2F3BD6;--c2:#1E2599;--cw:rgba(47,59,214,.10);--cd:#7C8CFF">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 001</span>
+    <span class="rc-co">NTTドコモ<em>通信</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">NTTドコモは、25年かけて「iモード」に帰ってきたのではないか</span>
+    <span class="rc-hero"><b>1兆778</b><i>億円</i><span class="rc-hk">海外へ出て、失ったお金</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>ドコモがiモードで稼いだのは、コンテンツではなく「課金代行」の手数料だった</li><li>25年で数十の事業を試した結果、残ったのは「毎月、自動で回るもの」</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">企画が社内で通らない方</span><span class="rt">大企業で新規事業を任されたばかりの方</span><span class="rt">強みが分からなくなっている方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>25</b>件　いま続いている <b>14</b>件　じっくり読んで <b>約15分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
+<a class="rcard" href="/reports/kddi-newbusiness/" style="--c1:#2F3BD6;--c2:#1E2599;--cw:rgba(47,59,214,.10);--cd:#7C8CFF">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 002</span>
+    <span class="rc-co">KDDI<em>通信</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">KDDIは、自分ひとりで新規事業を始めたことがほとんどない</span>
+    <span class="rc-hero"><b>18</b><i>件</i><span class="rc-hk">記録した新規事業</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>KDDIが2008年以降に始めた新規事業18件のうち、他社と組んで始めたものが14件</li><li>組む相手は毎回ちがう</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">他社と組む企画が社内で通らない方</span><span class="rt">強みが何なのか整理したい方</span><span class="rt">提携がうまく進まない方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>18</b>件　いま続いている <b>15</b>件　じっくり読んで <b>約6分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
+<a class="rcard" href="/reports/sony-newbusiness/" style="--c1:#6D3BD6;--c2:#4E2699;--cw:rgba(109,59,214,.10);--cd:#A98CFF">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 003</span>
+    <span class="rc-co">ソニーグループ<em>電機</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">ソニーがいちばんうまく作ったのは、事業ではなく「作り方」だった</span>
+    <span class="rc-hero"><b>850</b><i>億円超</i><span class="rc-hk">CVCの運用総額</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>社内起業制度SSAPから事業化されたのは20数件</li><li>2026年はwena（2月）、AFEELA（3月）、ソニー・ホンダモビリティの事業縮小（4月）、aibo…</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">新規事業部門の成果をどう説明するか悩んでいる方</span><span class="rt">止める判断ができずに困っている方</span><span class="rt">社内で事業を抱え込みがちな方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>21</b>件　いま続いている <b>17</b>件　じっくり読んで <b>約7分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
+<a class="rcard" href="/reports/fujifilm-newbusiness/" style="--c1:#0E8478;--c2:#0A5E55;--cw:rgba(14,132,120,.11);--cd:#3FC9B8">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 004</span>
+    <span class="rc-co">富士フイルム<em>化学</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">富士フイルムが買ってきた新規事業より、買わなかった事業のほうが儲かっている</span>
+    <span class="rc-hero"><b>776</b><i>億円</i><span class="rc-hk">買って作った柱の営業利益</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>ヘルスケアはほぼ買収で組み立てた柱</li><li>イメージングは買収でつくっていない</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">買うか作るかで迷っている方</span><span class="rt">既存事業が縮んでいく現場にいる方</span><span class="rt">10年先の投資を社内で通したい方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>20</b>件　いま続いている <b>18</b>件　じっくり読んで <b>約9分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
+<a class="rcard" href="/reports/toyota-newbusiness/" style="--c1:#C63E08;--c2:#8F2C05;--cw:rgba(198,62,8,.10);--cd:#FF8A4C">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 005</span>
+    <span class="rc-co">トヨタ自動車<em>自動車</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">トヨタは新規事業のたびに会社をつくる。2021年だけで3つ</span>
+    <span class="rc-hero"><b>14</b><i>件</i><span class="rc-hk">記録した新規事業</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>2015年以降の新規事業14件のうち、6件が新しい会社や専任組織の設立から始まっている</li><li>KINTOは2019年1月設立、2024年度に売上587億円で初の黒字</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">制度や稟議に阻まれている方</span><span class="rt">黒字化までの時間を社内で説明できずにいる方</span><span class="rt">出資比率の決め方に迷っている方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>14</b>件　いま続いている <b>13</b>件　じっくり読んで <b>約5分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
+<a class="rcard" href="/reports/panasonic-newbusiness/" style="--c1:#2F3BD6;--c2:#1E2599;--cw:rgba(47,59,214,.10);--cd:#7C8CFF">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 006</span>
+    <span class="rc-co">パナソニック<em>通信</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">パナソニックは「家庭のOS」という同じ問いに、3回挑んだ</span>
+    <span class="rc-hero"><b>約4,000</b><i>億円</i><span class="rc-hk">テスラ株の売却額</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>HomeX（2018年）、Yohana（2021年）、Panasonic Well（2024年）</li><li>同じ期間に、Blue Yonder買収（71億ドル）とカンザス電池工場（約40億ドル）が動いている</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">一度うまくいかなかったテーマに、もう一度挑みたい方</span><span class="rt">予算が取れない方</span><span class="rt">話題性と金額を混同しがちな場にいる方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>14</b>件　いま続いている <b>8</b>件　じっくり読んで <b>約5分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
+<a class="rcard" href="/reports/mitsubishi-newbusiness/" style="--c1:#9A6800;--c2:#6E4A00;--cw:rgba(154,104,0,.12);--cd:#E5A93A">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 007</span>
+    <span class="rc-co">三菱商事<em>商社</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">三菱商事は、同じ会社の持ち方を10年で2回つくり替えた</span>
+    <span class="rc-hero"><b>1,440</b><i>億円</i><span class="rc-hk">ローソン子会社化の金額</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>2016年に約1,440億円でローソンを子会社化し、2024年にKDDIが約4,971億円で半分を取得し…</li><li>DXは自社100%のMC Digital（2019年）で技術を内製化してから、NTTと51:49のInd…</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">新規事業は「作るもの」だと思っている方</span><span class="rt">DXの内製化に取り組んでいる方</span><span class="rt">10年単位の長期案件を抱えている方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>13</b>件　いま続いている <b>11</b>件　じっくり読んで <b>約5分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
+<a class="rcard" href="/reports/jreast-newbusiness/" style="--c1:#166B34;--c2:#0F4A24;--cw:rgba(22,107,52,.11);--cd:#46B872">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 008</span>
+    <span class="rc-co">JR東日本<em>鉄道</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">JR東日本の新規事業は、ほぼ全部が「持て余していた資産」だった</span>
+    <span class="rc-hero"><b>5,800</b><i>億円</i><span class="rc-hk">高輪の再開発の事業費</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>TOUCH TO GO（駅の売店）、STATION WORK（駅の空きスペース）、はこビュン（列車の空席…</li><li>2018年に発表した10年ビジョン「変革2027」は、7年後の2025年に「勇翔2034」へ差し替えられ…</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">ネタが見つからない方</span><span class="rt">企画が途中で止まった経験のある方</span><span class="rt">自社サービスの規模を活かしたい方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>14</b>件　いま続いている <b>11</b>件　じっくり読んで <b>約5分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
+<a class="rcard" href="/reports/sevenandi-newbusiness/" style="--c1:#B02060;--c2:#7C1743;--cw:rgba(176,32,96,.10);--cd:#F272A8">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 009</span>
+    <span class="rc-co">セブン&アイ<em>小売</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">セブン&アイのこの10年は、足し算ではなく引き算だった</span>
+    <span class="rc-hero"><b>2.2</b><i>兆円</i><span class="rc-hk">Speedway買収の金額</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>金額順に並べると上位は買収と売却で埋まる</li><li>社内発の新事業は7pay（レジ）、SIPストア（売場）、7NOW（配送）と、いずれもコンビニの半径30分…</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">社内発の新規事業を担当している方</span><span class="rt">企画が通らない理由が分からない方</span><span class="rt">短期で結果を求められている方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>15</b>件　いま続いている <b>9</b>件　じっくり読んで <b>約5分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
+<a class="rcard" href="/reports/recruit-newbusiness/" style="--c1:#2F3BD6;--c2:#1E2599;--cw:rgba(47,59,214,.10);--cd:#7C8CFF">
+  <span class="rc-hd">
+    <span class="rc-no">REPORT 010</span>
+    <span class="rc-co">リクルート<em>通信</em></span>
+  </span>
+  <span class="rc-body">
+    <span class="rc-ttl">リクルートは12億ドルで買ったブランドを、7年後に自社へ畳んだ</span>
+    <span class="rc-hero"><b>12</b><i>億ドル</i><span class="rc-hk">Glassdoorの買収額</span></span>
+    <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul><li>Glassdoorを2018年に12億ドルで買い、2025年7月にIndeedへ統合した</li><li>海外は2015〜2018年に集中して買い、国内はAirレジ（2013年）以降ほぼ毎年1〜2本ずつ機能を足…</li></ul></span>
+    <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span><span class="rt">M&A型か内製型かで社内が割れている方</span><span class="rt">買収を検討している方</span><span class="rt">地味な積み上げが評価されずに悩んでいる方</span></span>
+  </span>
+  <span class="rc-foot">
+    <span class="rc-meta">記録した事業 <b>16</b>件　いま続いている <b>13</b>件　じっくり読んで <b>約5分</b></span>
+    <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+</a>
 </div>
-<div class="box">
-<h3><a href="/reports/kddi-newbusiness/">#002　KDDIは、自分ひとりで新規事業を始めたことがほとんどない</a></h3>
-<p>18件のうち14件に、組む相手がいた。auじぶん銀行からローソン共同経営、Starlinkとの衛星直接通信まで。</p>
 </div>
-<div class="box">
-<h3><a href="/reports/sony-newbusiness/">#003　ソニーがいちばんうまく作ったのは、事業ではなく「事業の作り方」だった</a></h3>
-<p>社内制度から生まれた事業は20数件。その制度自体は27業種1,050件超の他社支援になった。2026年に4つの区切りが並んだ年から読みます。</p>
-</div>
-<div class="box">
-<h3><a href="/reports/fujifilm-newbusiness/">#004　富士フイルムが買ってきた新規事業より、買わなかった事業のほうが儲かっている</a></h3>
-<p>買って組み立てたヘルスケアは営業利益776億円。買わずに技術の出口を替えたイメージングは1,392億円。同じ会社で「買う」と「移し替える」を比べる。</p>
-</div>
-<div class="box">
-<h3><a href="/reports/toyota-newbusiness/">#005　トヨタは新規事業のたびに会社をつくる。2021年だけで3つ</a></h3>
-<p>TRI、KINTO、MONET、Woven by Toyota、CJPT。事業より先に会社ができる10年と、KINTOが6年目で黒字になった記録。</p>
-</div>
-<div class="box">
-<h3><a href="/reports/panasonic-newbusiness/">#006　パナソニックは「家庭のOS」という同じ問いに、3回挑んだ</a></h3>
-<p>HomeX、Yohana、Panasonic Well。7年で3回、方法を変えて同じ問いに向かった記録。その裏で71億ドルが動いていました。</p>
-</div>
-<div class="box">
-<h3><a href="/reports/mitsubishi-newbusiness/">#007　三菱商事は、同じ会社の持ち方を10年で2回つくり替えた</a></h3>
-<p>2016年に約1,440億円でローソンを子会社化し、2024年にKDDIへ半分を渡して折半経営へ。商社の新規事業は「どう持つか」の話でした。</p>
-</div>
-<div class="box">
-<h3><a href="/reports/jreast-newbusiness/">#008　JR東日本の新規事業は、ほぼ全部が「持て余していた資産」から始まっている</a></h3>
-<p>駅の売店、駅の空きスペース、列車の空席、車両基地の跡地。Suica1億枚と高輪5,800億円まで、素材はすべて前からそこにありました。</p>
-</div>
-<div class="box">
-<h3><a href="/reports/sevenandi-newbusiness/">#009　セブン&アイのこの10年は、足し算ではなく引き算だった</a></h3>
-<p>金額順に並べると上位は買収と売却で埋まる。社内発の新事業は、すべてコンビニの半径30分の中にありました。</p>
-</div>
-<div class="box">
-<h3><a href="/reports/recruit-newbusiness/">#010　リクルートは12億ドルで買ったブランドを、7年後に自社サービスへ畳んだ</a></h3>
-<p>海外を買うリズムと、国内を積むリズム。GlassdoorのIndeed統合と、Airレジ10年で90万アカウントの対比。</p>
-</div>
-<p>レポートは順次追加します。次に読みたい企業のリクエストは<a href="/about/">運営者情報</a>の連絡先までどうぞ。企業ごとの記録は<a href="/companies/">大企業の新規事業データベース</a>から探せます。</p>
-
-<div class="up">最終更新：2026年8月5日</div>
-</div></main>
+</main>
 <footer><div class="wrap">
   <p><a href="/">トップ</a><a href="/companies/">企業を探す</a><a href="/reports/">レポート</a><a href="/about/">運営者情報</a><a href="/ads/">広告について</a><a href="/privacy/">プライバシーポリシー</a></p>
   <p>公開情報に基づく筆者の見解であり、各社の公式見解ではありません。<br>© 2026 NEWFOR</p>

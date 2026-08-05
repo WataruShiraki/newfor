@@ -992,23 +992,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
   <div class="wrap">
     <div class="shd"><h2>今週の投票</h2><span class="sub">ログイン不要・1タップ</span></div>
     <div class="vgrid">
-      <div class="vote" id="voteCard">
-        <div class="vhead">
-          <span class="vwho">新規事業に取り組んでいる、あなたへ</span>
-          <span class="vleft">今週の投票</span>
-        </div>
-        <p class="q">ドコモが2026年夏に出すAIエージェント「SyncMe」。あなたの期待度は？</p>
-        <p class="vask">あなたが選ぶと、<b>いま何%の人が期待しているかが、その場で見えます。</b>集計は公開と同時に始めたばかりです。ログインもメールも要りません。</p>
-        <div class="opts">
-          <button class="opt a" data-k="a"><span class="fill"></span>
-            <span class="top"><span class="nm">めちゃくちゃ期待している</span><span class="you">あなた</span><span class="arw">→</span><span class="pct" data-p></span></span></button>
-          <button class="opt b" data-k="b"><span class="fill"></span>
-            <span class="top"><span class="nm">いまは様子を見たい</span><span class="you">あなた</span><span class="arw">→</span><span class="pct" data-p></span></span></button>
-        </div>
-        <div class="vfoot"><span id="vcount"></span><span class="ok">受け付けました</span></div>
-        <div class="vhint">選ぶと、みんなの内訳がその場で見えます</div>
-        <div class="vthx">ありがとうございます。<b>あなたの1票が、この事業への応援になりました。</b>結果は毎週月曜に更新して、記事の中でも紹介します。</div>
-      </div>
+      <div class="vote-slot" data-poll="weekly-2026-08-05"></div>
       <div class="vwhy">
         <h4>あなたの1票でできること</h4>
         <dl>
@@ -1170,23 +1154,6 @@ document.getElementById("tgl").addEventListener("click",function(){
 /* mega menu */
 
 
-/* vote */
-var votes={a:0,b:0},hasVoted=false,card=document.getElementById("voteCard");
-function vrender(){
-  var t=votes.a+votes.b;
-  if(hasVoted){Array.prototype.forEach.call(document.querySelectorAll(".opt"),function(o){
-    var p=Math.round(votes[o.getAttribute("data-k")]/t*100);
-    o.querySelector(".fill").style.width=p+"%";o.querySelector("[data-p]").textContent=p+"%";});}
-  document.getElementById("vcount").textContent=hasVoted
-    ?(t>0?"期待度 "+Math.round(votes.a/t*100)+"%　現在 "+t.toLocaleString()+"票":"1票目、ありがとうございます")
-    :(t>0?t.toLocaleString()+"票が入っています":"まだ票がありません。あなたが最初の1票です");
-}
-Array.prototype.forEach.call(document.querySelectorAll(".opt"),function(o){
-  o.addEventListener("click",function(){
-    if(hasVoted)return;hasVoted=true;votes[o.getAttribute("data-k")]++;
-    o.classList.add("chosen");card.classList.add("voted");vrender();});
-});
-
 /* rankings */
 var PAGES={"NTTドコモ": "/companies/docomo/", "KDDI": "/companies/kddi/", "ソニーグループ": "/companies/sony/", "富士フイルム": "/companies/fujifilm/", "トヨタ自動車": "/companies/toyota/", "パナソニック": "/companies/panasonic/", "三菱商事": "/companies/mitsubishi/", "JR東日本": "/companies/jreast/", "セブン&アイ": "/companies/sevenandi/", "リクルート": "/companies/recruit/", "味の素": "/companies/ajinomoto/", "ソフトバンクグループ": "/companies/softbank/"};
 function draw(target,noteEl,d){
@@ -1297,7 +1264,7 @@ if(tStrip){
 document.addEventListener("visibilitychange",function(){document.hidden?tStop():tStart();});
 document.getElementById("reroll").addEventListener("click",function(){roll(1);tStart();});
 
-tix=0;tPaint();tStart();vrender();draw("mBody","mNote",MONTH.recent);draw("aBody","aNote",ALL.challenge);drawList();
+tix=0;tPaint();tStart();draw("mBody","mNote",MONTH.recent);draw("aBody","aNote",ALL.challenge);drawList();
 })();
 
 /* アフィリエイト枠のタブ */
@@ -1396,5 +1363,6 @@ Array.prototype.forEach.call(document.querySelectorAll(".affslot"),build);
 Array.prototype.forEach.call(document.querySelectorAll(".affmini-slot"),buildMini);
 })();
 </script>
+<script src="/assets/vote.js?v=4" defer></script>
 </body>
 </html>

@@ -42,8 +42,9 @@ for C in sorted(CO,key=lambda c:-len(c['timeline'])):
       rep=('/articles/%s/'%A['slug']) if A else '',
       rept=A['h1'].replace('<br>','') if A else '',
       biz=biz,thin=len(biz)<MIN,srcs=C.get('sources',[]),ind=C['ind'],
-      title='%sの新規事業 一覧｜%d件を開始年から記録 ｜ NEWFOR'%(name,len(biz)),
-      desc='%sが手がけた新規事業%d件を、公開情報から開始年つきで一覧にしました。%d年から%d年まで、いつ始まって、いまどうなっているかを、稼働チャートと年表で確認できます。'%(name,len(biz),lo,hi),
+      title='%sの新規事業一覧｜%d件を%d年から記録 | NEWFOR'%(name,len(biz),lo),
+      desc='%sが手がけた新規事業%d件を、開始年・継続状況・出典つきで一覧にしました。%d年から%d年まで、うち継続中%d件、終了または譲渡%d件。いつ始めていまどうなっているかが、稼働チャートと年表で分かります。'
+           %(name,len(biz),lo,hi,nl,len(biz)-nl),
       lead='公開情報から拾った%d件を、開始年の古い順に並べています。いま提供が続いているものは青、終了または他社へ譲渡したものは紫で示しています。'%len(biz),
       others=[(x['slug'],x['name']) for x in sorted(CO,key=lambda c:-len(c['timeline']))
               if x['slug']!=slug and len(x['timeline'])>=MIN][:11])

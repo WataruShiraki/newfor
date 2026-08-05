@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 A = dict(
 slug='panasonic-newbusiness', no='006', company='パナソニック', legal='パナソニック ホールディングス株式会社',
-title='パナソニックは「家庭のOS」という同じ問いに、3回挑んだ ｜ NEWFOR',
+title='パナソニックの新規事業14件｜カーブアウトと社内公募の記録 | NEWFOR',
 h1='パナソニックは<br>「家庭のOS」という同じ問いに、<br>3回挑んだ',
 desc='HomeX、Yohana、Panasonic Well。創業100周年で掲げた「くらしアップデート業」の7年を公開情報から記録。同じ時期に71億ドルのBlue Yonder買収と40億ドルの電池工場が動いていた。',
 dek='2018年のHomeX、2021年のYohana、2024年のPanasonic Well。3つとも「家庭の中を誰が束ねるか」という同じ問いに向かっていました。その7年を記録します。',

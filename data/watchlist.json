@@ -123,7 +123,7 @@
   "company": "三井物産",
   "slug": "mitsui",
   "news": "https://www.mitsui.com/jp/ja/release/",
-  "state": "候補"
+  "state": "記録あり"
  },
  {
   "company": "丸紅",
@@ -147,7 +147,7 @@
   "company": "三菱UFJ FG",
   "slug": "mufg",
   "news": "https://www.mufg.jp/pressrelease/",
-  "state": "候補"
+  "state": "記録あり"
  },
  {
   "company": "三井住友FG",
@@ -207,7 +207,7 @@
   "company": "ファーストリテイリング",
   "slug": "fastretailing",
   "news": "https://www.fastretailing.com/jp/ir/news/",
-  "state": "候補"
+  "state": "記録あり"
  },
  {
   "company": "ニトリHD",
@@ -411,7 +411,7 @@
   "company": "武田薬品工業",
   "slug": "takeda",
   "news": "https://www.takeda.com/ja-jp/newsroom/",
-  "state": "候補"
+  "state": "記録あり"
  },
  {
   "company": "第一三共",
@@ -495,13 +495,13 @@
   "company": "デンソー",
   "slug": "denso",
   "news": "https://www.denso.com/jp/ja/news/",
-  "state": "候補"
+  "state": "記録あり"
  },
  {
   "company": "日産自動車",
   "slug": "nissan",
   "news": "https://global.nissan-newsroom.com/JP/",
-  "state": "候補"
+  "state": "記録あり"
  },
  {
   "company": "スズキ",
@@ -615,7 +615,7 @@
   "company": "任天堂",
   "slug": "nintendo",
   "news": "https://www.nintendo.co.jp/corporate/release/",
-  "state": "候補"
+  "state": "記録あり"
  },
  {
   "company": "バンダイナムコHD",
@@ -633,7 +633,7 @@
   "company": "LINEヤフー",
   "slug": "lycorp",
   "news": "https://www.lycorp.co.jp/ja/news/",
-  "state": "候補"
+  "state": "記録あり"
  },
  {
   "company": "メルカリ",

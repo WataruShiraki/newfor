@@ -80,6 +80,15 @@ EXTRA_CSS='''
 .crep .k2{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700}
 .crep .t2{font-size:17px;font-weight:800;letter-spacing:-.02em;margin-top:6px;line-height:1.55}
 .crep .d2{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.8}
+.cfaq{list-style:none;padding:0;margin:0}
+.cfaq>li{border-bottom:1px solid var(--line);padding:15px 0}
+.cfaq>li:last-child{border-bottom:0;padding-bottom:0}
+.cfaq .q{display:block;font-size:14.5px;font-weight:750;letter-spacing:-.01em;line-height:1.65;margin-bottom:7px}
+.cfaq .q::before{content:"Q";font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--accent);
+  margin-right:8px;font-weight:800}
+.cfaq .a{display:block;font-size:13.5px;line-height:1.95;color:var(--tx-2)}
+.cfaq .a::before{content:"A";font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--tx-3);
+  margin-right:8px;font-weight:800}
 .csrc{list-style:none;padding:0;margin:0;display:grid;gap:2px}
 .csrc li{padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.7}
 .csrc li:last-child{border-bottom:0}
@@ -164,6 +173,11 @@ TPL='''<!DOCTYPE html>
 
   {rep}
   <div class="cbox">
+    <h2>よくある質問</h2>
+    <ul class="cfaq">{faq}</ul>
+  </div>
+
+  <div class="cbox">
     <h2>この一覧の出どころ</h2>
     <div class="sub">1件ずつ、次の公開情報にあたって記録しています</div>
     <ul class="csrc">{srcs}</ul>
@@ -231,6 +245,23 @@ def render(c):
     others=''.join('<a href="/companies/%s/">%s</a>'%(s,n) for s,n in c['others'])
     srcs=''.join('<li><a href="%s" rel="noopener nofollow" target="_blank">%s</a></li>'%(u,t)
                  for t,u in c.get('srcs',[]))
+    # ── よくある質問（検索とAIの引用に向けて、事実だけで組み立てる） ──
+    nm=c['name']; hi=int(max(b[1] for b in biz))
+    lv=[b for b in biz if b[3]]; dn=[b for b in biz if not b[3]]
+    rec=sorted(biz,key=lambda b:-b[1])
+    ex=lambda L,k=3: '、'.join('「%s」（%d年）'%(b[0],int(b[1])) for b in L[:k])
+    QA=[("%sはどんな新規事業を手がけていますか？"%nm,
+      "NEWFORでは公開情報から%d件を記録しています。%d年から%d年までの記録で、直近は%d年の%sです。ほかに%sなどがあります。"
+      %(len(biz),lo,hi,int(rec[0][1]),'「%s」'%rec[0][0],ex(rec[1:],3))),
+     ("%sの新規事業のうち、いま提供が続いているものは何件ですか？"%nm,
+      "記録した%d件のうち%d件が継続中です。%sなどが該当します。"%(len(biz),len(lv),ex(sorted(lv,key=lambda b:-b[1]),3)))]
+    if dn: QA.append(("%sが終了または他社へ譲渡した事業はありますか？"%nm,
+      "%d件を記録しています。%sなどが、すでに提供を終えたか他社へ譲渡ずみです。年表では、それぞれの開始年と終了年を帯の長さで確認できます。"
+      %(len(dn),ex(sorted(dn,key=lambda b:-b[1]),3))))
+    QA.append(("この一覧はどこの情報をもとにしていますか？",
+      "%sのプレスリリース、IR資料、公式サイトなど、公開されている情報だけを使っています。出典は%d件を明記しています。日付が確認できない出来事は載せていません。網羅を保証するものではありません。"
+      %(nm,len(c.get('srcs',[])))))
+    faq=''.join('<li><span class="q">%s</span><span class="a">%s</span></li>'%(q,a) for q,a in QA)
     rep=('<a class="crep" href="%s"><span class="k2">企業の決断</span>'
          '<span class="t2">%s</span><span class="d2">この一覧の背景を、%d年分の記録として読み解いた記事です。</span></a>'
          %(c['rep'],c['rept'],2026-lo)) if c.get('rep') else ''
@@ -250,6 +281,9 @@ def render(c):
                   "datePublished":"%d"%int(st),
                   "provider":{"@type":"Organization","name":c['legal']}}}
          for i,(n,st,e,lv,note) in enumerate(biz)]},
+      {"@type":"FAQPage","@id":U+"#faq","mainEntity":[
+        {"@type":"Question","name":q,
+         "acceptedAnswer":{"@type":"Answer","text":a}} for q,a in QA]},
       {"@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"NEWFOR","item":SITE+"/"},
         {"@type":"ListItem","position":2,"name":"企業を探す","item":SITE+"/companies/"},
@@ -259,7 +293,7 @@ def render(c):
         chart=''.join(rows),list=''.join(items),n=len(biz),nlive=nlive,ndone=ndone,
         unklg='<span><i class="unk"></i>その年だけの出来事</span>' if unk else '',
         unknote='<div class="cnote">丸い印で示しているのは、譲渡の決定や買収の提案など、その年で完結した出来事です。期間のある事業は帯で示しています。終了した年が公表されていない事業も、同じ丸い印にしています。</div>' if unk else '',
-        rep=rep,others=others,srcs=srcs,
+        rep=rep,others=others,srcs=srcs,faq=faq,
         robots=('noindex,follow' if c.get('thin') else 'index,follow,max-image-preview:large,max-snippet:-1'),
         ld=json.dumps(ld,ensure_ascii=False,separators=(',',':')),
         css=CSS,ecss=EXTRA_CSS,ufo=UFO,affjs=AFF_JS)

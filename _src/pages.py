@@ -60,7 +60,10 @@ footer a{margin-right:14px}
 .up{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--tx-3);letter-spacing:.04em;margin-top:34px}
 '''
 
-def page(path,title,desc,h1,lead,crumb,body,noindex=False):
+def page(path,title,desc,h1,lead,crumb,body,noindex=False,og=None):
+    # OGP画像はページごとに1枚。ogspec.py が og-p-<name>.png を作ります。
+    # 以前はぜんぶ og-top.png を指していて、SNSに貼るとどのページも同じ絵でした。
+    ogname = og or ('p-'+(path.strip('/').replace('/','-') or 'top'))
     ld={"@context":"https://schema.org","@type":"WebPage","url":SITE+path,"name":title,
         "description":desc,"inLanguage":"ja","isPartOf":{"@id":SITE+"/#site"},
         "publisher":{"@id":SITE+"/#org"}}
@@ -80,8 +83,12 @@ def page(path,title,desc,h1,lead,crumb,body,noindex=False):
 <meta property="og:url" content="{SITE}{path}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="{SITE}/assets/og-top.png">
+<meta property="og:image" content="{SITE}/assets/og-{ogname}.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{SITE}/assets/og-{ogname}.png">
+<meta name="author" content="Soichiro">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png">

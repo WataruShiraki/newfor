@@ -14,8 +14,12 @@
 <meta property="og:url" content="https://newfor.jp/ads/">
 <meta property="og:title" content="広告について｜アフィリエイトの扱い | NEWFOR">
 <meta property="og:description" content="NEWFORにおける広告とアフィリエイトプログラムの扱いについてまとめています。記事の内容と広告の関係、掲載の判断基準、収益の使いみちについて書いています。">
-<meta property="og:image" content="https://newfor.jp/assets/og-top.png">
+<meta property="og:image" content="https://newfor.jp/assets/og-p-ads.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="広告について｜アフィリエイトの扱い | NEWFOR">
+<meta name="twitter:description" content="NEWFORにおける広告とアフィリエイトプログラムの扱いについてまとめています。記事の内容と広告の関係、掲載の判断基準、収益の使いみちについて書いています。">
+<meta name="twitter:image" content="https://newfor.jp/assets/og-p-ads.png">
+<meta name="author" content="Soichiro">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png">
@@ -93,6 +97,39 @@ footer a{margin-right:14px}
   <a href="/"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg><span class="wm">NEW<b>FOR</b></span></a>
   <nav class="main"><a href="/articles/">記事一覧</a><a href="/companies/">企業を探す</a><a href="/#monthly">ランキング</a><a href="/about/">About</a></nav>
 </div></header>
+<style id="nf-pickup-css">
+/* ピックアップの帯。ヘッダーのすぐ下に置きます */
+#nf-pickup{position:relative;overflow:hidden;background:#FFF3EA;border-bottom:1px solid rgba(224,74,12,.16);
+ display:flex;align-items:center;gap:14px;height:38px;padding-left:14px;font-size:12.5px;line-height:1}
+#nf-pickup .nf-pk-tag{flex:0 0 auto;background:#E04A0C;color:#fff;font-weight:800;font-size:10.5px;
+ letter-spacing:.12em;padding:5px 9px;border-radius:5px}
+#nf-pickup .nf-pk-win{position:relative;flex:1 1 auto;overflow:hidden;height:100%;
+ -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 42px),transparent 100%);
+ mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 42px),transparent 100%)}
+#nf-pickup .nf-pk-track{display:flex;align-items:center;height:100%;width:max-content;
+ animation:nf-pk-flow 40s linear infinite}
+#nf-pickup:hover .nf-pk-track{animation-play-state:paused}
+#nf-pickup .nf-pk-item{display:inline-flex;align-items:center;gap:7px;padding:0 22px;
+ white-space:nowrap;text-decoration:none;color:#57536D}
+#nf-pickup .nf-pk-item:hover .nf-pk-w{text-decoration:underline}
+#nf-pickup .nf-pk-d{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#9A93AE}
+#nf-pickup .nf-pk-w{color:#2F3BD6;font-weight:700}
+@keyframes nf-pk-flow{from{transform:translateX(0)}to{transform:translateX(calc(var(--nf-pk-w,1000px) * -1))}}
+@media (prefers-reduced-motion:reduce){
+  #nf-pickup .nf-pk-track{animation:none}
+  #nf-pickup .nf-pk-win{overflow-x:auto}
+}
+html[data-theme="dark"] #nf-pickup,
+[data-theme="dark"] #nf-pickup{background:#171525;border-bottom-color:rgba(255,255,255,.08)}
+[data-theme="dark"] #nf-pickup .nf-pk-item{color:#A9A3BC}
+[data-theme="dark"] #nf-pickup .nf-pk-w{color:#9AA6FF}
+@media (max-width:640px){#nf-pickup{height:34px;font-size:11.5px}
+  #nf-pickup .nf-pk-tag{font-size:9.5px;padding:4px 7px}}
+</style>
+<div id="nf-pickup" hidden aria-label="直近の投票"><span class="nf-pk-tag">PICKUP</span><div class="nf-pk-win"><div class="nf-pk-track"></div></div></div>
+<script src="/assets/pickup-map.js" defer></script>
+<script src="/assets/pickup.js" defer></script>
+
 <div class="top">
   <svg class="bg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>
   <div class="wrap">

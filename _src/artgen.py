@@ -377,56 +377,62 @@ footer .ln a{margin-right:15px}
 @media (max-width:640px){.tbl table{font-size:13px;min-width:480px}.tbl th,.tbl td{padding:9px 9px}}
 '''
 
+from afflinks import END as AFFEND, END_DEFAULT as AFFEND_DEFAULT
+
 AFF_JS = r'''
+
+/* ============================================================
+   NEWFOR 広告枠
+
+   タブはやめました。広告枠の中のタブを押す人は、まずいないからです。
+   代わりに、そのページを読んでいる人がいま何を思っているかで、
+   出すものを1種類に決めています（data-aff で指定）。
+
+   リンクが空のものは出しません。グループが全部空なら、枠ごと消します。
+   押しても何も起きないリンクを置くと、メディアの信用が落ちるためです。
+   ============================================================ */
 var ARROW='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
-var G={
- job:{tab:"転職・採用",title:"新規事業に強い採用サービス BEST 3",who:"これから新規事業に携わりたい方へ！",cta:"無料登録して求人提案を受ける",
-   items:[{n:"ビズリーチ",best:1,d:"新規事業責任者・事業開発ポジションの掲載が多い。大企業の非公開求人が中心。",t:["ハイクラス","スカウト型","年収600万〜"]},
-    {n:"フォースタートアップス",d:"スタートアップ・成長企業に特化。大企業からの越境転職の支援実績が多い。",t:["スタートアップ","エージェント型","CxO・事業責任者"]},
-    {n:"doda X",d:"ヘッドハンター経由のスカウト。事業会社の新規事業部門からの声がかかりやすい。",t:["ハイクラス","ヘッドハンター","年収800万〜"]}]},
- pro:{tab:"顧問・プロ人材",title:"新規事業の顧問・プロ人材が探せるサービス BEST 3",who:"社内に足りない知見を、外から借りたい方へ！",cta:"無料で相談して人を探す",
-   items:[{n:"サーキュレーション（プロシェアリング）",best:1,d:"事業開発の実務経験者に、月数日から入ってもらう形。立ち上げの伴走で使われることが多い。",t:["プロシェアリング","月数日〜","事業開発"]},
-    {n:"ビザスク",d:"1時間から有識者に話を聞ける。市場を調べる段階や、仮説をぶつけたい初期に向く。",t:["スポット相談","1時間〜","リサーチ"]},
-    {n:"HiPro Biz",d:"経営顧問・プロ人材の紹介。大企業の新規事業部門でのプロジェクト単位の活用が中心。",t:["経営顧問","プロジェクト型","大企業"]}]},
- learn:{tab:"学ぶ",title:"新規事業の学びに使えるサービス",who:"新規事業の担当になったばかりの方へ！",cta:"無料で試してみる",
-   items:[{n:"グロービス学び放題",best:1,d:"事業開発・マーケ・ファイナンスを動画で。担当になった最初の3カ月の土台づくりに。",t:["動画学習","定額","ビジネス基礎"]},
-    {n:"flier（フライヤー）",d:"ビジネス書の要約。記事の参考文献を、読む前にあたりをつけたいときに。",t:["書籍要約","10分","定額"]},
-    {n:"クラウドワークス",d:"検証フェーズの手を借りる。リサーチ、LP制作、資料づくりを外に出せる。",t:["外部リソース","単発","検証フェーズ"]}]},
- biz:{tab:"別会社で始める",title:"別会社で始めるときに使うサービス",who:"会社を出て、自分の事業を始めたい方へ！",cta:"条件を見てみる",
-   items:[{n:"officee",best:1,d:"オフィス・レンタルオフィスの仲介。数人のチームで始めるときの拠点探しから。",t:["拠点","仲介無料","小規模〜"]},
-    {n:"ラクスルバンク",d:"法人口座。会社をつくったら最初に必要になるもの。オンラインで完結。",t:["法人口座","ネット銀行","開設無料"]},
-    {n:"GMOオフィスサポート",d:"バーチャルオフィス。登記できる住所だけ先に押さえたいときに。",t:["登記可","月額制","住所のみ"]},
-    {n:"freee会計",d:"設立直後の経理。クレジットカードや口座と繋いで、記帳を止めない。",t:["クラウド会計","法人向け","無料期間あり"]}]}};
-var ORDER=["job","pro","learn","biz"];
-var MLEAD={job:"これから新規事業に携わりたいなら",pro:"社内に知見が足りない、と感じているなら",
- learn:"担当になったばかりで、何から手をつけるか迷っているなら",biz:"会社を出て、別会社で始めるなら"};
-function affRows(k){return G[k].items.map(function(it,i){
+var G=__AFFDATA__;
+var A8='https://px.a8.net/svt/ejp?a8mat=';
+var A8IMG='https://www13.a8.net/0.gif?a8mat=';
+function affLive(k){var g=G[k];if(!g)return null;
+  var it=g.items.filter(function(x){return x.mat&&x.mat.length>8});
+  return it.length?{g:g,items:it}:null;}
+/* 成果計測の1×1画像。A8の規定どおり、リンクと一緒に置きます */
+function px(m){return '<img border="0" width="1" height="1" src="'+A8IMG+m+'" alt="" loading="lazy">';}
+function affRow(it,i){
   return '<div class="aff-r'+(i===0?' top':'')+'"><span class="rk">'+(i+1)+'</span><span>'
    +'<span class="nm">'+it.n+(it.best?' <span class="best">NEWFORのおすすめ</span>':'')+'</span>'
    +'<span class="ds">'+it.d+'</span><span class="tg2">'+it.t.map(function(x){return '<span>'+x+'</span>'}).join('')+'</span></span>'
-   +'<a class="btn-a" href="#aff" rel="nofollow sponsored">'+G[k].cta+ARROW+'</a></div>';}).join('');}
+   +'<a class="btn-a" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+CTA+ARROW+'</a>'+px(it.mat)+'</div>';}
+var CTA='';
 function affBuild(el){
-  var def=el.getAttribute("data-aff")||"job";
-  el.innerHTML='<div class="aff"><div class="aff-h"><span class="pr">広告</span><span class="t"></span>'
-   +'<span class="aff-tab">'+ORDER.map(function(k){return '<button data-af="'+k+'"'+(k===def?' class="on"':'')+'>'+G[k].tab+'</button>'}).join('')
-   +'</span></div><div class="aff-who"></div>'
-   +ORDER.map(function(k){return '<div class="aff-pane" data-af="'+k+'"'+(k===def?'':' hidden')+'>'+affRows(k)+'</div>'}).join('')
-   +'<div class="aff-f">本枠は広告（アフィリエイトプログラムを含みます）。順位は筆者が新規事業関連の求人・支援実績の傾向をもとに決めており、報酬額では変えません。</div></div>';
-  var box=el.querySelector(".aff"),ttl=box.querySelector(".aff-h .t"),who=box.querySelector(".aff-who");
-  function set(k){ttl.textContent=G[k].title;who.textContent=G[k].who;
-    Array.prototype.forEach.call(box.querySelectorAll(".aff-tab button"),function(x){x.classList.toggle("on",x.getAttribute("data-af")===k)});
-    Array.prototype.forEach.call(box.querySelectorAll(".aff-pane"),function(p){p.hidden=p.getAttribute("data-af")!==k});}
-  Array.prototype.forEach.call(box.querySelectorAll(".aff-tab button"),function(b){
-    b.addEventListener("click",function(){set(b.getAttribute("data-af"))});});
-  set(def);
+  var live=affLive(el.getAttribute("data-aff")||"job");
+  if(!live){el.remove();return;}
+  CTA=live.g.cta;
+  el.innerHTML='<div class="aff"><div class="aff-h"><span class="pr">広告</span>'
+   +'<span class="t">'+live.g.title+'</span></div>'
+   +'<div class="aff-who">'+live.g.who+'</div>'
+   +live.items.map(affRow).join('')
+   +'<div class="aff-f">本枠は広告（アフィリエイトプログラムを含みます）。並び順は、この記事を読んでいる方との近さで決めており、報酬額では変えません。</div></div>';
 }
-function affMini(el){var k=el.getAttribute("data-aff")||"pro",it=G[k].items[0];
-  el.innerHTML='<div class="affmini"><span class="bd"><span class="lead"><span class="pr">広告</span>'+MLEAD[k]+'</span>'
+function affMini(el){
+  var live=affLive(el.getAttribute("data-aff")||"pro");
+  if(!live){el.remove();return;}
+  var it=live.items[0];
+  el.innerHTML='<div class="affmini"><span class="bd"><span class="lead"><span class="pr">広告</span>'+live.g.who+'</span>'
    +'<span class="nm">'+it.n+'</span><span class="ds">'+it.d+'</span></span>'
-   +'<a class="btn-a" href="#aff" rel="nofollow sponsored">'+G[k].cta+ARROW+'</a></div>';}
+   +'<a class="btn-a" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+live.g.cta+ARROW+'</a>'+px(it.mat)+'</div>';}
 Array.prototype.forEach.call(document.querySelectorAll(".affslot"),affBuild);
 Array.prototype.forEach.call(document.querySelectorAll(".affmini-slot"),affMini);
 '''
+
+# 広告の中身は afflinks.py が持っています。ここで焼き込むと、
+# afflinks.py を直しても反映されません（実際に1度そうなりました）。
+import json as _json
+from afflinks import G as _AFFG
+AFF_JS = AFF_JS.replace('__AFFDATA__', _json.dumps(_AFFG, ensure_ascii=False, separators=(',',':')))
+
 print("artgen part1 written")
 
 def esc(s): return s
@@ -436,7 +442,7 @@ def render(a):
     slug=a['slug']; url='/articles/%s/'%slug
     ld={"@context":"https://schema.org","@graph":[
       {"@type":"Article","@id":SITE+url+"#article","headline":a['title'],"description":a['desc'],
-       "image":SITE+"/assets/og-%s.png"%slug,"datePublished":a['pub'],"dateModified":a['mod'],
+       "image":SITE+"/assets/og-a-%s.png"%slug,"datePublished":a['pub'],"dateModified":a['mod'],
        "author":{"@type":"Person","@id":SITE+"/#author","name":"Soichiro","alternateName":"新規事業マニア"},
        "publisher":{"@type":"Organization","@id":SITE+"/#org","name":"NEWFOR"},
        "mainEntityOfPage":SITE+url,"inLanguage":"ja","articleSection":a.get("section","新規事業ヒストリー"),
@@ -494,7 +500,7 @@ def render(a):
       forwho=('<div class="k">この記事はこんな方に</div><ul>%s</ul>'
         %''.join('<li>%s</li>'%x for x in a.get('forwho',[])) if a.get('forwho') else ''),
       body=body,memo=memo,memo_t=a['memo_t'],src=src,nxt=nxt,ld=json.dumps(ld,ensure_ascii=False,separators=(',',':')),
-      css=CSS,affjs=AFF_JS,ufo=UFO,tljs=TL_JS if any(t=='timeline' for t,_ in a['body']) else '')
+      css=CSS,affjs=AFF_JS,affend=AFFEND.get(slug,AFFEND_DEFAULT),ufo=UFO,tljs=TL_JS if any(t=='timeline' for t,_ in a['body']) else '')
 
 def chart_html(a):
     lo,hi=a['span']
@@ -553,13 +559,13 @@ TPL = '''<!DOCTYPE html>
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://newfor.jp/assets/og-{slug}.png">
+<meta property="og:image" content="https://newfor.jp/assets/og-a-{slug}.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{desc}">
-<meta name="twitter:image" content="https://newfor.jp/assets/og-{slug}.png">
+<meta name="twitter:image" content="https://newfor.jp/assets/og-a-{slug}.png">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png">
@@ -618,7 +624,7 @@ TPL = '''<!DOCTYPE html>
     {memo}
   </div>
 
-  <div class="affslot" data-aff="job"></div>
+  <div class="affslot" data-aff="{affend}"></div>
 
   <div class="au">
     <span class="av"><svg width="26" height="26" viewBox="0 0 32 32" fill="none">{ufo}</svg></span>

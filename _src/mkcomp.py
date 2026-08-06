@@ -11,13 +11,8 @@ from compgen import ym,find_end
 
 MIN=10   # これ未満の企業は、検索エンジンに載せない
 
-# 記事のある企業は、記事のOGP画像を使う
-OG={'docomo':'og-docomo','kddi':'og-kddi-newbusiness','sony':'og-sony-newbusiness',
- 'fujifilm':'og-fujifilm-newbusiness','toyota':'og-toyota-newbusiness',
- 'panasonic':'og-panasonic-newbusiness','mitsubishi':'og-mitsubishi-newbusiness',
- 'jreast':'og-jreast-newbusiness','sevenandi':'og-sevenandi-newbusiness',
- 'recruit':'og-recruit-newbusiness','ajinomoto':'og-ajinomoto-newbusiness',
- 'softbank':'og-softbank-newbusiness'}
+# OGP画像は企業ごとに1枚。ogspec.py が og-c-<slug>.png を作ります。
+# 以前はここで記事の画像を使い回していて、24社が同じ画像でした。
 
 
 def wlen(t):
@@ -52,7 +47,7 @@ for C in sorted(CO,key=lambda c:-len(c['timeline'])):
     nl=sum(1 for b in biz if b[3])
     lo=int(min(b[1] for b in biz)); hi=int(max(b[1] for b in biz))
     A=ART.get(C.get('article'))
-    c=dict(slug=slug,name=name,legal=C['legal'],ogslug=OG.get(slug,'og-docomo'),
+    c=dict(slug=slug,name=name,legal=C['legal'],ogslug='c-%s'%slug,
       rep=('/articles/%s/'%A['slug']) if A else '',
       rept=A['h1'].replace('<br>','') if A else '',
       biz=biz,thin=len(biz)<MIN,srcs=C.get('sources',[]),ind=C['ind'],evsrc=C.get('evsrc') or {},

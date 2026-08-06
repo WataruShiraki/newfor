@@ -121,8 +121,9 @@ def header_x():
 put('header-x', header_x())
 
 # ══ 6. note のヘッダー 1280×670 ══
-def header_note():
-    b='<rect width="1280" height="670" fill="%s"/>'%PAPER
+def header_note(W=1280,H=670):
+    k=W/1280.0
+    b='<rect width="%d" height="%d" fill="%s"/>'%(W,H,PAPER)
     b+='<rect x="0" y="0" width="1280" height="14" fill="%s"/>'%BLUE
     b+=scaled_mark(96,150,110,BLUE)
     b+=wordmark(230,262,84,INK,ORANGE)
@@ -139,6 +140,33 @@ def header_note():
         'fill="#57536D" letter-spacing="1.2">公開情報だけを使って記録しています　／　newfor.jp</text>'%FONT)
     return svg(1280,670,b)
 put('header-note', header_note())
+
+# ══ 6b. note のヘッダー 1920×1006（実機で切れない版） ══
+def header_note_wide(W=1920,H=1006):
+    """noteのクリエイターページは、ヘッダーの入れ物が横に細長い。
+    パソコンで見ると 1202×203（＝横5.9倍）の枠に object-fit:cover で入るため、
+    1920×1006 の画像は「まん中の32%だけ」しか映らない（実際に上下が切れた）。
+    そこで、文字と絵は必ず y=340〜666 の帯の中に収める。
+    外側は背景だけにしておけば、スマホの少し縦長な切り抜きでも破綻しない。
+    """
+    Y0,Y1=340,666            # 見せたいものを置ける帯
+    L,R=200,1720             # 左右の余白
+    b='<rect width="%d" height="%d" fill="%s"/>'%(W,H,PAPER)
+    # 帯の外は「どこで切られても同じ」に見えるよう、色を変えない
+    b+=scaled_mark(L,382,104,BLUE)
+    b+=wordmark(L+136,478,88,INK,ORANGE)
+    b+=('<text x="%d" y="478" text-anchor="end" font-family="%s" font-size="26" '
+        'font-weight="700" fill="#57536D" letter-spacing="1.4">newfor.jp</text>'%(R,FONT))
+    b+=('<text x="%d" y="542" font-family="%s" font-size="33" font-weight="800" '
+        'fill="%s">新規事業ヒストリーメディア</text>'%(L+2,FONT,BLUE))
+    b+=('<text x="%d" y="588" font-family="%s" font-size="24" font-weight="500" '
+        'fill="#403C55">大企業が何を始めて、いまどうなっているか。'
+        '開始年・継続状況・出典つきの年表で記録しています。</text>'%(L+2,FONT))
+    b+='<rect x="%d" y="622" width="%d" height="5" rx="2" fill="%s" fill-opacity=".2"/>'%(L+2,R-L-2,BLUE)
+    for x,w,c in [(0,430,BLUE),(480,220,ORANGE),(760,400,BLUE),(1210,170,ORANGE),(1430,88,BLUE)]:
+        b+='<rect x="%d" y="622" width="%d" height="5" rx="2" fill="%s"/>'%(L+2+x,w,c)
+    return svg(W,H,b)
+put('header-note-wide', header_note_wide())
 
 # ══ 7. 正方形の投稿用テンプレ 1080×1080（Instagram） ══
 def post_square():

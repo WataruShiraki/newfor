@@ -18,7 +18,8 @@ python3 mkpages.py        # /about/ /ads/ /privacy/
 python3 buildarticles.py  # /articles/<slug>/        ← articles/a0*.py
 python3 assets.py
 node png.js
-node og.js
+python3 ogspec.py       # OGP画像の中身を実データから組み立てる（og.js より先に）
+node og.js              # 全ページぶんのOGP画像 1200×630
 python3 extras.py         # llms.txt / sitemap.xml / robots.txt ← companies/ と articles/
 python3 fixlinks.py
 # サイト直下の favicon.ico（古い環境とクローラ向けの保険）
@@ -42,6 +43,8 @@ python3 mkcomp.py         # gh/companies/<slug>/  ← companies/*.py
 python3 mklist.py         # gh/articles/          ← articles/a0*.py
 python3 mktop.py          # gh/index.html の中の数と一覧
 python3 mkcompidx.py      # gh/companies/index.html の中の数と一覧
+
+python3 pickup.py        # ヘッダー下の「ピックアップ」帯（直近の投票が流れる）
 
 # ── いちばん最後。ページを作り直したあとでないと、タグが消えます ──
 python3 analytics.py      # Search Console の所有権確認タグ／GA4 の計測タグ

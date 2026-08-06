@@ -91,6 +91,59 @@ for p in sorted(glob.glob('gh/companies/*/index.html')):
         if m and int(m.group(1))!=len(C['timeline']):
             bad.append('%s のタイトルは「%s件」だが、年表は%d件'%(p,m.group(1),len(C['timeline'])))
 
+# ── 記事タイトルの「N件」が、その企業の年表と合っているか ──
+#
+# 年表に1件足したときに、記事のタイトルだけが古いまま残ります。
+# 実際にKDDIが「18件」のまま残っていて、年表は19件になっていました。
+for f in sorted(glob.glob('articles/a0*.py')):
+    A=importlib.import_module(os.path.basename(f)[:-3]).A
+    cs=A['slug'].replace('-newbusiness','')
+    C=BYSLUG.get(cs)
+    if not C: continue
+    m=re.search(r'(\d+)件',A.get('title') or '')
+    if m and int(m.group(1))!=len(C['timeline']):
+        bad.append('%s のタイトルは「%s件」だが、%s の年表は%d件'
+                   %(f,m.group(1),cs,len(C['timeline'])))
+
+# ── 広告リンクが、記事に入っているか ──
+#
+# afflinks.py の mat を空にすると広告は静かに消えます。消えたことに
+# 気づけないと、そのぶん売上が落ちます。だから毎回数えます。
+import afflinks as _af
+_empty=[i['n'] for g in _af.G.values() for i in g['items'] if not i.get('mat')]
+if _empty: bad.append('広告リンクが空のまま: %s'%('・'.join(_empty)))
+for p2 in sorted(glob.glob('gh/articles/*/index.html')):
+    if p2.endswith('articles/index.html'): continue
+    s2=txt(p2)
+    if 'a8mat=' not in s2:
+        bad.append('%s に広告リンクが1つも入っていない'%p2)
+
+# ── OGP画像（SNSに貼ったときの絵）が、実在するか ──
+#
+# 参照名がズレていて、57ページぜんぶが存在しないファイルを指していたことがあります。
+# ページを見ても気づけません。SNSに貼ったときだけ絵が出ない、という壊れ方をします。
+seen={}
+for p in sorted(glob.glob('gh/**/*.html',recursive=True)):
+    if p.startswith('gh/_src/'): continue
+    s=txt(p)
+    if '</head>' not in s: continue
+    m=re.search(r'<meta property="og:image" content="(.*?)"',s)
+    if not m: bad.append('%s に og:image がない'%p); continue
+    url=m.group(1); f='gh'+url.replace('https://newfor.jp','')
+    if not os.path.exists(f): bad.append('%s の og:image %s が存在しない'%(p,url))
+    seen.setdefault(url,[]).append(p)
+    t=re.search(r'<meta name="twitter:image" content="(.*?)"',s)
+    if t and t.group(1)!=url: bad.append('%s の twitter:image が og:image と違う'%p)
+for url,ps in seen.items():
+    if len(ps)>3: bad.append('OGP画像 %s を %d ページで使い回している'%(url,len(ps)))
+
+# ── ピックアップの帯が全ページに入っているか ──
+for p in sorted(glob.glob('gh/**/*.html',recursive=True)):
+    if p.startswith('gh/_src/'): continue
+    s=txt(p)
+    if '</header>' in s and 'id="nf-pickup"' not in s:
+        bad.append('%s にピックアップの帯がない（pickup.py を流し直す）'%p)
+
 # ── 3. 生成元のないファイル ──
 for p in sorted(glob.glob('gh/**/*',recursive=True)):
     if not os.path.isfile(p) or p.startswith('gh/_src/'): continue

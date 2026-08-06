@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 A = dict(
 slug='toyota-newbusiness', no='005', company='トヨタ自動車', legal='トヨタ自動車株式会社',
-title='トヨタの新規事業14件｜KINTO・ウーブンなど会社ごとの記録 | NEWFOR',
+title='トヨタの新規事業14件｜事業ごとに会社を作る | NEWFOR',
 h1='トヨタは新規事業のたびに<br>会社をつくる。<br>2021年だけで3つ',
 desc='TRI、KINTO、MONET、Woven by Toyota、CJPT。トヨタが2015年以降に始めた新規事業を並べると、本体の組織改編ではなく別法人を立てる形が繰り返される。KINTOの6年目初黒字まで、公開情報から記録。',
 dek='Woven City、KINTO、MONET、CJPT。トヨタの新規事業を並べていくと、事業そのものより先に「会社」ができています。なぜ本体でやらないのか。10年分の記録から読みます。',

@@ -49,3 +49,26 @@ for f in sorted(set(glob.glob('dist/**/*.html',recursive=True)+glob.glob('gh/**/
     if s!=orig: io.open(f,'w',encoding='utf-8').write(s)
 print('所有権確認タグ: 新たに%dページへ / 計測タグ: %s'
       %(nv,'%dページへ'%ng if GA4 else '測定IDが未設定のため入れていません'))
+
+# ── ファビコンの参照をそろえる ──
+#
+# Googleの検索結果に出るファビコンは「48×48、またはその倍数」でないと拾われない。
+# 32×32だけを渡していたころ、検索結果が地球儀の代替アイコンになっていた。
+# 手で管理しているページ（トップ・企業DB・404）も含めて、ここで毎回そろえ直す。
+FAVLINKS=('<link rel="icon" href="/favicon.ico" sizes="48x48">\n'
+ '<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">\n'
+ '<link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png">\n'
+ '<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">\n'
+ '<link rel="manifest" href="/site.webmanifest">\n')
+FAVOLD=re.compile(r'(<link rel="icon"[^>]*>\s*|<link rel="apple-touch-icon"[^>]*>\s*|<link rel="manifest"[^>]*>\s*)+')
+nf=0
+for f in sorted(set(glob.glob('dist/**/*.html',recursive=True)+glob.glob('gh/**/*.html',recursive=True))):
+    if '/_src/' in f: continue
+    s=io.open(f,encoding='utf-8').read()
+    if '</head>' not in s: continue
+    o=s
+    m=FAVOLD.search(s)
+    if m: s=s[:m.start()]+FAVLINKS+s[m.end():]
+    else: s=s.replace('</head>',FAVLINKS+'</head>',1)
+    if s!=o: io.open(f,'w',encoding='utf-8').write(s); nf+=1
+print('ファビコンの参照をそろえたページ: %d'%nf)

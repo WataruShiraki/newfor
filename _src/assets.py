@@ -8,9 +8,15 @@ UFO = ('<path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="{c}" opacity=".
  '<path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="{c}" stroke-width="2.3" stroke-linecap="round" fill="none"/>')
 
 # favicon.svg : 角丸の青地に白抜きUFO
+#
+# 小さく表示されるので、余白を詰めてマークを大きく見せる。
+# UFOの絵の見た目の中心は (16, 18.75)。それを正方形の中心に合わせている。
+K=0.82
+CX=16-16*K
+CY=16-18.75*K
 fav = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">'
  '<rect width="32" height="32" rx="7" fill="#2F3BD6"/>'
- '<g transform="translate(16 16.6) scale(.80) translate(-16 -16)">'+UFO.format(c='#ffffff')+'</g>'
+ '<g transform="translate(%.3f %.3f) scale(%.3f)">'%(CX,CY,K)+UFO.format(c='#ffffff')+'</g>'
  '</svg>')
 io.open('dist/assets/favicon.svg','w',encoding='utf-8').write(fav)
 
@@ -21,3 +27,7 @@ apple = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="1
  '</svg>')
 io.open('dist/assets/apple.svg','w',encoding='utf-8').write(apple)
 print('svg ok')
+
+# Googleの検索結果に出すファビコンは「48×48、またはその倍数」でないと拾われない。
+# 32×32だけを渡していたころ、検索結果が地球儀の代替アイコンになっていた。
+# サイト直下の favicon.ico は、古い環境とクローラ向けの保険。

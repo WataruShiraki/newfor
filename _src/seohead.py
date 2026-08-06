@@ -26,8 +26,10 @@ LINKMAP = {
  'newfor-site.html':'/articles/docomo-newbusiness/',
 }
 
-FAV = ('<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">\n'
- '<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">\n'
+# Googleは48px（またはその倍数）の正方形しか検索結果のファビコンに使わない
+FAV = ('<link rel="icon" href="/favicon.ico" sizes="48x48">\n'
+ '<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">\n'
+ '<link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png">\n'
  '<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">\n'
  '<link rel="manifest" href="/site.webmanifest">\n')
 

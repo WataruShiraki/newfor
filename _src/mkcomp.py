@@ -19,6 +19,20 @@ OG={'docomo':'og-docomo','kddi':'og-kddi-newbusiness','sony':'og-sony-newbusines
  'recruit':'og-recruit-newbusiness','ajinomoto':'og-ajinomoto-newbusiness',
  'softbank':'og-softbank-newbusiness'}
 
+
+def wlen(t):
+    """検索結果での見え方に近い幅。全角2・半角1で数える"""
+    return sum(1 if ord(c)<0x3000 else 2 for c in t)
+
+def ttl(name,n,lo,hi):
+    """企業ページのタイトル。長い会社名でも60幅に収まるよう段階的に短くする"""
+    for t in ['%sの新規事業%d件｜%d年からの全記録と出典 | NEWFOR'%(name,n,lo),
+              '%sの新規事業%d件｜%d年からの記録 | NEWFOR'%(name,n,lo),
+              '%sの新規事業%d件｜%d年から | NEWFOR'%(name,n,lo),
+              '%sの新規事業%d件 | NEWFOR'%(name,n)]:
+        if wlen(t)<=60: return t
+    return '%sの新規事業一覧 | NEWFOR'%name
+
 CO=[]
 for f in sorted(glob.glob('companies/*.py')):
     n=os.path.basename(f)[:-3]
@@ -42,9 +56,16 @@ for C in sorted(CO,key=lambda c:-len(c['timeline'])):
       rep=('/articles/%s/'%A['slug']) if A else '',
       rept=A['h1'].replace('<br>','') if A else '',
       biz=biz,thin=len(biz)<MIN,srcs=C.get('sources',[]),ind=C['ind'],evsrc=C.get('evsrc') or {},
-      title='%sの新規事業一覧｜%d件を%d年から記録 | NEWFOR'%(name,len(biz),lo),
-      desc='%sが手がけた新規事業%d件を、開始年・継続状況・出典つきで一覧にしました。%d年から%d年まで、うち継続中%d件、終了または譲渡%d件。いつ始めていまどうなっているかが、稼働チャートと年表で分かります。'
-           %(name,len(biz),lo,hi,nl,len(biz)-nl),
+      # 検索結果で切れないよう、全角30字＝60幅までに収める。
+      # 「企業名＋新規事業」で引かれるので、それを先頭に置く。
+      title=ttl(name,len(biz),lo,hi),
+      # AIに引用されやすいよう、1文目だけで「何が・何件・いつからいつまで」が
+      # 完結するように書く。2文目以降で中身を足す。
+      desc=('%sの新規事業%d件の一覧です。%d年から%d年までに始まった事業を、'
+            '開始年・いまの状況・出典つきで1件ずつ年表にしました。'
+            '継続中%d件、終了または他社へ譲渡%d件。%sなどを掲載しています。'
+            %(name,len(biz),lo,hi,nl,len(biz)-nl,
+              '「%s」'%'」「'.join(b[0] for b in sorted(biz,key=lambda b:-b[1])[:2]))),
       lead='公開情報から拾った%d件を、開始年の古い順に並べています。いま提供が続いているものは青、終了または他社へ譲渡したものは紫で示しています。'%len(biz),
       others=[(x['slug'],x['name']) for x in sorted(CO,key=lambda c:-len(c['timeline']))
               if x['slug']!=slug and len(x['timeline'])>=MIN][:11])

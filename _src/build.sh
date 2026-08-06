@@ -21,6 +21,8 @@ node png.js
 node og.js
 python3 extras.py         # llms.txt / sitemap.xml / robots.txt ← companies/ と articles/
 python3 fixlinks.py
+# サイト直下の favicon.ico（古い環境とクローラ向けの保険）
+python3 -c "from PIL import Image; Image.open('dist/assets/favicon-512.png').convert('RGBA').save('dist/favicon.ico',format='ICO',sizes=[(16,16),(32,32),(48,48)])"
 
 # ── dist/ から gh/ へ写す ──
 for d in dist/articles/*/; do
@@ -30,7 +32,7 @@ done
 for p in about ads privacy; do
   [ -f "dist/$p/index.html" ] && { mkdir -p "gh/$p"; cp "dist/$p/index.html" "gh/$p/index.html"; }
 done
-for f in llms.txt sitemap.xml robots.txt 404.html; do
+for f in llms.txt sitemap.xml robots.txt 404.html favicon.ico; do
   [ -f "dist/$f" ] && cp "dist/$f" "gh/$f"
 done
 cp -r dist/assets/. gh/assets/ 2>/dev/null || true

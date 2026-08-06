@@ -378,6 +378,39 @@ footer{border-top:1px solid var(--border);padding:40px 0 50px;background:var(--b
       <path id="ic-moon" d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
   </button>
 </div></header>
+<style id="nf-pickup-css">
+/* ピックアップの帯。ヘッダーのすぐ下に置きます */
+#nf-pickup{position:relative;overflow:hidden;background:#FFF3EA;border-bottom:1px solid rgba(224,74,12,.16);
+ display:flex;align-items:center;gap:14px;height:38px;padding-left:14px;font-size:12.5px;line-height:1}
+#nf-pickup .nf-pk-tag{flex:0 0 auto;background:#E04A0C;color:#fff;font-weight:800;font-size:10.5px;
+ letter-spacing:.12em;padding:5px 9px;border-radius:5px}
+#nf-pickup .nf-pk-win{position:relative;flex:1 1 auto;overflow:hidden;height:100%;
+ -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 42px),transparent 100%);
+ mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 42px),transparent 100%)}
+#nf-pickup .nf-pk-track{display:flex;align-items:center;height:100%;width:max-content;
+ animation:nf-pk-flow 40s linear infinite}
+#nf-pickup:hover .nf-pk-track{animation-play-state:paused}
+#nf-pickup .nf-pk-item{display:inline-flex;align-items:center;gap:7px;padding:0 22px;
+ white-space:nowrap;text-decoration:none;color:#57536D}
+#nf-pickup .nf-pk-item:hover .nf-pk-w{text-decoration:underline}
+#nf-pickup .nf-pk-d{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#9A93AE}
+#nf-pickup .nf-pk-w{color:#2F3BD6;font-weight:700}
+@keyframes nf-pk-flow{from{transform:translateX(0)}to{transform:translateX(calc(var(--nf-pk-w,1000px) * -1))}}
+@media (prefers-reduced-motion:reduce){
+  #nf-pickup .nf-pk-track{animation:none}
+  #nf-pickup .nf-pk-win{overflow-x:auto}
+}
+html[data-theme="dark"] #nf-pickup,
+[data-theme="dark"] #nf-pickup{background:#171525;border-bottom-color:rgba(255,255,255,.08)}
+[data-theme="dark"] #nf-pickup .nf-pk-item{color:#A9A3BC}
+[data-theme="dark"] #nf-pickup .nf-pk-w{color:#9AA6FF}
+@media (max-width:640px){#nf-pickup{height:34px;font-size:11.5px}
+  #nf-pickup .nf-pk-tag{font-size:9.5px;padding:4px 7px}}
+</style>
+<div id="nf-pickup" hidden aria-label="直近の投票"><span class="nf-pk-tag">PICKUP</span><div class="nf-pk-win"><div class="nf-pk-track"></div></div></div>
+<script src="/assets/pickup-map.js" defer></script>
+<script src="/assets/pickup.js" defer></script>
+
 
 <section class="chero" id="top">
   <div class="glow"></div>

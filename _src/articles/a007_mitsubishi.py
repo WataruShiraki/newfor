@@ -10,7 +10,7 @@ forwho=[
  '<strong>DXの内製化に取り組んでいる方へ。</strong>技術は自社100%で持ってから事業を合弁にする、という順序をご紹介します',
  '<strong>10年単位の長期案件を抱えている方へ。</strong>4年で前提が崩れた洋上風力の記録から、畳み方の設計を考えます',
 ],
-kw='三菱商事,新規事業,ローソン,KDDI,Eneco,洋上風力,クリーンアンモニア,CVC,企業の決断',
+kw='三菱商事,新規事業,ローソン,KDDI,Eneco,洋上風力,クリーンアンモニア,CVC,新規事業ヒストリー',
 pub='2026-08-05', mod='2026-08-05', datejp='2026年8月5日', read='6',
 kpis=[('ローソンの持ち方を変えた回数','2','回','2016年に約33%から50.1%へ、2024年にKDDIと50%ずつへ。事業は同じコンビニのままです'),
       ('ローソン子会社化の金額','1,440','億円','2016年のTOB。その8年後、KDDIが4,971億円で入り、持ち方が組み替わりました'),
@@ -95,6 +95,6 @@ sources=[
  ('三菱商事：波方ターミナル 燃料アンモニア協議会の設置について','https://www.mitsubishicorp.com/jp/ja/pr/archive/2023/html/0000051088.html'),
  ('KDDI：ローソンとの資本業務提携について','https://newsroom.kddi.com/news/detail/kddi_pr_secret-79.html'),
 ],
-next=[('NEXT｜企業の決断','JR東日本の新規事業は、ほぼ全部が「持て余していた資産」','/articles/jreast-newbusiness/'),
-      ('企業の決断','パナソニックは、同じ問いに3回挑んだ','/articles/panasonic-newbusiness/')],
+next=[('NEXT｜新規事業ヒストリー','JR東日本の新規事業は、ほぼ全部が「持て余していた資産」','/articles/jreast-newbusiness/'),
+      ('新規事業ヒストリー','パナソニックは、同じ問いに3回挑んだ','/articles/panasonic-newbusiness/')],
 )

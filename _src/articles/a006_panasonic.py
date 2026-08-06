@@ -10,7 +10,7 @@ forwho=[
  '<strong>新規事業の予算が取れない方へ。</strong>既存資産の組み替えで原資を作る、という発想をご紹介します',
  '<strong>話題性と金額を混同しがちな場にいる方へ。</strong>語られる事業と、実際に金が動く事業のずれを数字で確認します',
 ],
-kw='パナソニック,新規事業,HomeX,Yohana,Blue Yonder,ゲームチェンジャーカタパルト,カーブアウト,企業の決断',
+kw='パナソニック,新規事業,HomeX,Yohana,Blue Yonder,ゲームチェンジャーカタパルト,カーブアウト,新規事業ヒストリー',
 pub='2026-08-05', mod='2026-08-05', datejp='2026年8月5日', read='6',
 kpis=[('同じ問いに挑んだ回数','3','回','HomeXは技術で、Yohanaは人で、UmiはAIで。7年のあいだに方法を変えて3回挑んでいます'),
       ('Blue Yonderの取得額','71','億ドル','約1兆円。サプライチェーン計画ソフトの米大手を、2021年に完全子会社化しました'),
@@ -104,6 +104,6 @@ sources=[
  ('パナソニック：カンザス工場の量産開始について（2025年7月14日）','https://news.panasonic.com/uploads/tmg_block_page_image/file/33905/jn250714-5-1.pdf'),
  ('INCJ：BeeEdgeへの出資について','https://www.incj.co.jp/newsroom/2020/20200529.html'),
 ],
-next=[('NEXT｜企業の決断','三菱商事は、同じ会社の持ち方を10年で2回作り替えた','/articles/mitsubishi-newbusiness/'),
-      ('企業の決断','トヨタは新規事業のたびに会社をつくる','/articles/toyota-newbusiness/')],
+next=[('NEXT｜新規事業ヒストリー','三菱商事は、同じ会社の持ち方を10年で2回作り替えた','/articles/mitsubishi-newbusiness/'),
+      ('新規事業ヒストリー','トヨタは新規事業のたびに会社をつくる','/articles/toyota-newbusiness/')],
 )

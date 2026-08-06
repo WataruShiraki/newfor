@@ -13,7 +13,7 @@ forwho=[
  '<strong>本業と新規事業の関係に悩んでいる方へ。</strong>売上の9割を本業が作り、利益の振れ幅を新規事業が作る。その二階建ての構造を数字で見ます',
  '<strong>大きく張る根拠を社内で説明したい方へ。</strong>1件の投資が全社の利益を作った年の決算書を、そのまま持ち帰れます',
 ],
-kw='ソフトバンクグループ,新規事業,孫正義,ビジョンファンド,OpenAI,Arm,PayPay,Stargate,アリババ,企業の決断',
+kw='ソフトバンクグループ,新規事業,孫正義,ビジョンファンド,OpenAI,Arm,PayPay,Stargate,アリババ,新規事業ヒストリー',
 pub='2026-08-05',mod='2026-08-05',datejp='2026年8月5日',read='8',
 
 kpis=[('2026年3月期の純利益','5兆22','億円','日本企業として過去最高です。ただしこの大半は、事業の稼ぎではなく投資の評価が上がったことによるものです'),
@@ -198,6 +198,6 @@ sources=[
  ('Arm Holdings 決算発表（Newsroom）','https://newsroom.arm.com/news/arm-q4-fye26-results'),
  ('Stargate Project 発表（OpenAI）','https://openai.com/index/announcing-the-stargate-project/'),
 ],
-next=[('NEXT｜企業の決断','味の素は本業をやめずに、利益率54%の事業を隣に作った','/articles/ajinomoto-newbusiness/'),
+next=[('NEXT｜新規事業ヒストリー','味の素は本業をやめずに、利益率54%の事業を隣に作った','/articles/ajinomoto-newbusiness/'),
       ('企業ページ','ソフトバンクグループの新規事業を一覧で見る','/companies/softbank/')],
 )

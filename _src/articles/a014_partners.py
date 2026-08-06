@@ -201,7 +201,7 @@ sources=[
 
 next=[
  ('ランキング','日本の大企業が新規事業に払った金額を、高い順に並べてみた','/articles/newbusiness-money-ranking/'),
- ('企業の決断','KDDIは、自分ひとりで新規事業を始めたことがほとんどない','/articles/kddi-newbusiness/'),
+ ('新規事業ヒストリー','KDDIは、自分ひとりで新規事業を始めたことがほとんどない','/articles/kddi-newbusiness/'),
  ('企業を探す','12社225件の新規事業を、企業ごとに見る','/companies/'),
 ],
 )

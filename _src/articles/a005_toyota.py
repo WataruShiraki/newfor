@@ -10,7 +10,7 @@ forwho=[
  '<strong>黒字化までの時間を社内で説明できずにいる方へ。</strong>6年かかった事業が、なぜ6年待ってもらえたのかを分解します',
  '<strong>出資比率の決め方に迷っている方へ。</strong>過半を取らないことが相手の本気度を上げる、という考え方をご紹介します',
 ],
-kw='トヨタ,新規事業,Woven City,KINTO,MONET,Woven by Toyota,CJPT,企業の決断',
+kw='トヨタ,新規事業,Woven City,KINTO,MONET,Woven by Toyota,CJPT,新規事業ヒストリー',
 pub='2026-08-05', mod='2026-08-05', datejp='2026年8月5日', read='6',
 kpis=[('記録した新規事業','14','件','2015年のToyota Research Instituteから2025年の北米電池工場まで、公開情報から拾った件数です'),
       ('そのために作った会社','6','社','TRI、MONET、KINTO、Woven Planet、CJPT、水素ファクトリー。事業より先に器を作っています'),
@@ -100,6 +100,6 @@ sources=[
  ('トヨタ：Lyft自動運転部門の取得について','https://global.toyota/en/newsroom/corporate/35244091.html'),
  ('トヨタ：北米電池工場の生産開始について','https://global.toyota/en/newsroom/corporate/42193203.html'),
 ],
-next=[('NEXT｜企業の決断','パナソニックは、同じ問いに3回挑んだ','/articles/panasonic-newbusiness/'),
-      ('企業の決断','KDDIは、自分ひとりで新規事業を始めたことがほとんどない','/articles/kddi-newbusiness/')],
+next=[('NEXT｜新規事業ヒストリー','パナソニックは、同じ問いに3回挑んだ','/articles/panasonic-newbusiness/'),
+      ('新規事業ヒストリー','KDDIは、自分ひとりで新規事業を始めたことがほとんどない','/articles/kddi-newbusiness/')],
 )

@@ -273,7 +273,7 @@ def render(c):
       "%sのプレスリリース、IR資料、公式サイトなど、公開されている情報だけを使っています。出典は%d件を明記しています。日付が確認できない出来事は載せていません。網羅を保証するものではありません。"
       %(nm,len(c.get('srcs',[])))))
     faq=''.join('<li><span class="q">%s</span><span class="a">%s</span></li>'%(q,a) for q,a in QA)
-    rep=('<a class="crep" href="%s"><span class="k2">企業の決断</span>'
+    rep=('<a class="crep" href="%s"><span class="k2">新規事業ヒストリー</span>'
          '<span class="t2">%s</span><span class="d2">この一覧の背景を、%d年分の記録として読み解いた記事です。</span></a>'
          %(c['rep'],c['rept'],2026-lo)) if c.get('rep') else ''
     U=SITE+'/companies/%s/'%c['slug']

@@ -10,7 +10,7 @@ forwho=[
  '<strong>止める判断ができずに困っている方へ。</strong>止める基準を「始める前に」決めておく、という設計思想を見ていきます',
  '<strong>社内で事業を抱え込みがちな方へ。</strong>外に出したから伸びた事業が、この会社には3つあります',
 ],
-kw='ソニー,新規事業,SSAP,社内起業,aibo,AFEELA,Sony Innovation Fund,企業の決断',
+kw='ソニー,新規事業,SSAP,社内起業,aibo,AFEELA,Sony Innovation Fund,新規事業ヒストリー',
 pub='2026-08-05', mod='2026-08-05', datejp='2026年8月5日', read='8',
 kpis=[('記録した新規事業','21','件','2000年のソネット・エムスリーから2026年のファンド4号まで、公開情報から拾って年表に並べた件数です'),
       ('社内制度から生まれた事業','20','数件','2014年に始めたSSAPという公募制度から。wena、MESH、toio、REON POCKETなどが該当します'),
@@ -126,6 +126,6 @@ sources=[
  ('Ginza Sony Park について','https://www.sonypark.com/about/'),
  ('ソニー：toio 公式サイト','https://www.sony.jp/toio/'),
 ],
-next=[('NEXT｜企業の決断','富士フイルムが買ってきた新規事業より、買わなかった事業のほうが儲かっている','/articles/fujifilm-newbusiness/'),
-      ('企業の決断','KDDIは、自分ひとりで新規事業を始めたことがほとんどない','/articles/kddi-newbusiness/')],
+next=[('NEXT｜新規事業ヒストリー','富士フイルムが買ってきた新規事業より、買わなかった事業のほうが儲かっている','/articles/fujifilm-newbusiness/'),
+      ('新規事業ヒストリー','KDDIは、自分ひとりで新規事業を始めたことがほとんどない','/articles/kddi-newbusiness/')],
 )

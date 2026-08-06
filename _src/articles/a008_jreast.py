@@ -10,7 +10,7 @@ forwho=[
  '<strong>企画が途中で止まった経験のある方へ。</strong>「この事業が止まるとしたら、誰の判断で止まるか」を先に確認する方法をご紹介します',
  '<strong>自社サービスの規模を活かしたい方へ。</strong>自社のインフラが他社のインフラになる瞬間を、Suicaの記録で見ていきます',
 ],
-kw='JR東日本,新規事業,Suica,STATION WORK,高輪ゲートウェイシティ,JRE BANK,変革2027,企業の決断',
+kw='JR東日本,新規事業,Suica,STATION WORK,高輪ゲートウェイシティ,JRE BANK,変革2027,新規事業ヒストリー',
 pub='2026-08-05', mod='2026-08-05', datejp='2026年8月5日', read='6',
 kpis=[('Suicaの発行枚数','1億1,022','万枚','2025年3月時点。モバイルSuicaが約3,347万、使える店は約207万店にのぼります'),
       ('Suicaの月間決済件数','2.53','億件','この規模があるからこそ、地方の交通事業者が相乗りできる基盤になりました'),
@@ -102,6 +102,6 @@ sources=[
  ('JR東日本：JRE BANK について（2024年5月9日）','https://www.jreast.co.jp/press/2024/20240509_ho02.pdf'),
  ('JR東日本：Beyond Stations構想（2021年3月3日）','https://www.jreast.co.jp/press/2020/20210303_ho04.pdf'),
 ],
-next=[('NEXT｜企業の決断','セブン&アイのこの10年は、足し算ではなく引き算だった','/articles/sevenandi-newbusiness/'),
-      ('企業の決断','三菱商事は、同じ会社の持ち方を10年で2回つくり替えた','/articles/mitsubishi-newbusiness/')],
+next=[('NEXT｜新規事業ヒストリー','セブン&アイのこの10年は、足し算ではなく引き算だった','/articles/sevenandi-newbusiness/'),
+      ('新規事業ヒストリー','三菱商事は、同じ会社の持ち方を10年で2回つくり替えた','/articles/mitsubishi-newbusiness/')],
 )

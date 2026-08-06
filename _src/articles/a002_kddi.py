@@ -10,7 +10,7 @@ forwho=[
  '<strong>自社の強みが何なのか整理したい方へ。</strong>持っているものより「持っていないもの」を先に数える、という考え方をご紹介します',
  '<strong>提携がうまく進まない方へ。</strong>相手に何を差し出せるかを一行で言えるかどうかが分かれ目になります',
 ],
-kw='KDDI,新規事業,au,ローソン,povo,Starlink,合弁,資本業務提携,企業の決断',
+kw='KDDI,新規事業,au,ローソン,povo,Starlink,合弁,資本業務提携,新規事業ヒストリー',
 pub='2026-08-05', mod='2026-08-05', datejp='2026年8月5日', read='7',
 kpis=[('記録した新規事業','18','件','2008年のauじぶん銀行から2026年の大阪堺データセンターまで、公開情報から拾った件数です'),
       ('自社ひとりで始めたもの','4','件','povo、au Style、auでんき、データセンター。どれも通信そのものの形を変える話でした'),
@@ -115,6 +115,6 @@ sources=[
  ('三菱商事 ローソンとの新たな資本業務提携について','https://www.mitsubishicorp.com/jp/ja/news/release/2024/0000052862.html'),
  ('au Starlink Direct 公式サイト','https://www.au.com/mobile/area/starlink-direct/'),
 ],
-next=[('NEXT｜企業の決断','NTTドコモは、25年かけて「iモード」に帰ってきたのではないか','/articles/docomo-newbusiness/'),
+next=[('NEXT｜新規事業ヒストリー','NTTドコモは、25年かけて「iモード」に帰ってきたのではないか','/articles/docomo-newbusiness/'),
       ('企業ページ','KDDIの新規事業を、一覧で見る','/companies/kddi/')],
 )

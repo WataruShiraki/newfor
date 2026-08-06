@@ -8,7 +8,7 @@ from artgen import CSS,UFO,AFF_JS,SITE
 
 # ── ジャンル定義 ──
 GENRES=[
- ('decisions','企業の決断','DECISIONS','1社の新規事業を、始まりから今日まで並べた記録。NEWFORの背骨になるジャンルです。'),
+ ('decisions','新規事業ヒストリー','HISTORY','1社の新規事業を、始まりから今日まで並べた記録。NEWFORの背骨になるジャンルです。'),
  ('ranking','ランキング','RANKING','数字と読者の投票で順位をつけます。投資額、書籍、新規事業オブザイヤーなど。'),
  ('partners','新規事業のお供','PARTNERS','社内に足りない力を、外から借りるための選択肢。コンサル、顧問、ツールを比べます。'),
  ('handbook','入門','HANDBOOK','新規事業のやり方と言葉。担当になったばかりの方が、最初に読む場所です。'),
@@ -65,6 +65,7 @@ for m in MODS:
             hero=(kk[0],kk[1],kk[2]); break
     CARDS.append(dict(
       genre=A.get('genre','decisions'), meta=A.get('cardmeta'),
+      gname=A.get('section') or '新規事業ヒストリー',
       no=A['no'], slug=A['slug'], company=A['company'], ind=ind,
       c1=c1,c2=c2,cw=cw,cd=cd,
       h1=A['h1'].replace('<br>',''), read=A['read'],
@@ -78,7 +79,7 @@ def card(c):
     learn=''.join('<li>%s</li>'%x for x in c['learn'])
     return '''<a class="rcard" data-g="%(genre)s" href="/articles/%(slug)s/" style="--c1:%(c1)s;--c2:%(c2)s;--cw:%(cw)s;--cd:%(cd)s">
   <span class="rc-hd">
-    <span class="rc-no">%(gen)s %(no)s</span>
+    <span class="rc-no">%(gname)s <b>#%(no)s</b></span>
     <span class="rc-co">%(company)s<em>%(ind)s</em></span>
   </span>
   <span class="rc-body">
@@ -92,7 +93,7 @@ def card(c):
     <span class="rc-go">読む<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
   </span>
 </a>'''%dict(c,hv=c['hero'][1],hu=c['hero'][2],hk=c['hero'][0],tags=tags,learn=learn,
-       gen=c['genre'].upper(),
+       gname=c.get('gname') or '新規事業ヒストリー',
        meta=c.get('meta') or ('記録した新規事業 <b>%d</b>件　じっくり読んで <b>約%s分</b>'%(c['nbiz'],c['read'])))
 
 EXTRA='''

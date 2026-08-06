@@ -203,8 +203,8 @@ sources=[
 ],
 
 next=[
- ('企業の決断','ソフトバンクグループは、事業を持ち続けるつもりで始めていない','/articles/softbank-newbusiness/'),
- ('企業の決断','富士フイルムが買ってきた新規事業より、買わなかった事業のほうが儲かっている','/articles/fujifilm-newbusiness/'),
+ ('新規事業ヒストリー','ソフトバンクグループは、事業を持ち続けるつもりで始めていない','/articles/softbank-newbusiness/'),
+ ('新規事業ヒストリー','富士フイルムが買ってきた新規事業より、買わなかった事業のほうが儲かっている','/articles/fujifilm-newbusiness/'),
  ('企業を探す','12社225件の新規事業を、企業ごとに見る','/companies/'),
 ],
 )

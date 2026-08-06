@@ -1,28 +1,42 @@
 # -*- coding: utf-8 -*-
-import io,json
-SITE='https://newfor.jp'
-URLS=[('/', '1.0','daily'),('/companies/','0.9','weekly'),('/companies/kddi/','0.8','weekly'),
-      ('/articles/','0.9','weekly'),
-      ('/articles/docomo-newbusiness/','0.9','monthly'),
-      ('/articles/kddi-newbusiness/','0.9','monthly'),
-      ('/articles/sony-newbusiness/','0.9','monthly'),
-      ('/articles/fujifilm-newbusiness/','0.9','monthly'),
-      ('/articles/toyota-newbusiness/','0.8','monthly'),
-      ('/articles/panasonic-newbusiness/','0.8','monthly'),
-      ('/articles/mitsubishi-newbusiness/','0.8','monthly'),
-      ('/articles/jreast-newbusiness/','0.8','monthly'),
-      ('/articles/sevenandi-newbusiness/','0.8','monthly'),
-      ('/articles/recruit-newbusiness/','0.8','monthly'),
-      ('/about/','0.4','yearly'),('/ads/','0.4','yearly'),('/privacy/','0.3','yearly')]
-sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-for u,p,f in URLS:
-    sm+=f'  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>2026-08-05</lastmod>\n    <changefreq>{f}</changefreq>\n    <priority>{p}</priority>\n  </url>\n'
-sm+='</urlset>\n'
-io.open('dist/sitemap.xml','w',encoding='utf-8').write(sm)
+"""llms.txt / sitemap.xml / robots.txt を、いまの記録から作る
 
+企業データ（companies/）と記事データ（articles/）を読んで組み立てるので、
+記録が増えても手で書き直す必要はありません。
+"""
+import io,os,sys,glob,importlib
+sys.path.insert(0,'companies'); sys.path.insert(0,'articles')
+SITE='https://newfor.jp'
+TODAY='2026-08-06'
+TODAYJP='2026年8月'
+
+CO=[]
+for f in sorted(glob.glob('companies/*.py')):
+    n=os.path.basename(f)[:-3]
+    if n.startswith('_'): continue
+    CO.append(importlib.import_module(n).C)
+ART=[importlib.import_module(os.path.basename(f)[:-3]).A for f in sorted(glob.glob('articles/a0*.py'))]
+SLUGS={a.get('slug') for a in ART}
+CO.sort(key=lambda c:-len(c['timeline']))
+tot=sum(len(c['timeline']) for c in CO)
+
+# ── sitemap ──
+U=[('/','1.0','daily'),('/articles/','0.9','weekly'),('/companies/','0.9','daily')]
+U+=[('/articles/%s/'%a['slug'],'0.8','monthly') for a in ART]
+U+=[('/companies/%s/'%c['slug'],'0.8','weekly') for c in CO]
+U+=[(p,'0.4','yearly') for p in ('/about/','/ads/','/privacy/')]
+sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+sm+=['<url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>%s</changefreq><priority>%s</priority></url>'
+     %(SITE,u,TODAY,f,p) for u,p,f in U]
+sm.append('</urlset>')
+io.open('dist/sitemap.xml','w',encoding='utf-8').write('\n'.join(sm))
+
+# ── robots ──
 io.open('dist/robots.txt','w',encoding='utf-8').write(
-f"""User-agent: *
+"""User-agent: *
 Allow: /
+Disallow: /_src/
+Disallow: /data/
 
 # AI・大規模言語モデルのクローラー
 # NEWFORの記録は、引用元を明示していただければ学習・引用に使っていただいて構いません。
@@ -35,61 +49,44 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: {SITE}/sitemap.xml
-""")
+Sitemap: %s/sitemap.xml
+"""%SITE)
 
-io.open('dist/llms.txt','w',encoding='utf-8').write(
-f"""# NEWFOR（ニューフォー）
-
-> 大企業の新規事業を、公開情報から一件ずつ掘り起こして記録する日本語のメディア。
-> うまくいかなかったように見える挑戦にも、次の事業へ渡されたバトンがある、という立場で書いています。
-
-## このサイトの特徴
-
-- 大企業が発表した新規事業を、企業ごとに時系列で記録しています（1981年から2026年までを対象。企業ごとに記録の開始年は異なります）。
-- 提供を終えた事業を「失敗」「撤退」とは書きません。「役目を終えた」「次へ渡した」と表現します。
-- 継続率によるランキングは作りません。数えるのは、挑んだ数・張った額・組んだ相手の数です。
-- 出典は各社のプレスリリース、IR資料、公式サイト、報道のみ。記事に必ず併記しています。
-- 事実と、筆者の解釈（仮説）を分けて書いています。
-
-## 著者
-
-Soichiro（新規事業マニア／40代・事業開発）。20代でスタートアップを立ち上げ1社を上場企業へ売却。外資コンサル、通信大手、大手人材グループ、国内大手ITサービスの中で新規事業を立ち上げ、顧問として10社近くを担当。事業立ち上げ歴20年。
-
-## 主なページ
-
-- [トップ]({SITE}/): 今週の一件、読者投票による期待度ランキング、新規事業ランキング
-- [大企業の新規事業データベース]({SITE}/companies/): 企業ごとの新規事業発表数・投資額・提携数
-- [KDDIの新規事業]({SITE}/companies/kddi/): 2008年から2026年までの18事業の記録
-- [記事一覧]({SITE}/articles/): 1社の新規事業を、始まりから今日まで並べた記録
-- [企業の決断 全12本]({SITE}/articles/): NTTドコモ、KDDI、ソニーグループ、富士フイルム、トヨタ自動車、パナソニック、三菱商事、JR東日本、セブン&アイ、リクルート、味の素、ソフトバンクグループ
-- [NEWFORについて]({SITE}/about/): 編集方針、著者、掲載の訂正・取り下げ
-- [広告について]({SITE}/ads/): アフィリエイトの方針。順位は報酬額では変えません
-
-## 引用について
-
-記録の引用は歓迎します。引用の際は、出典として NEWFOR（{SITE}）を明記してください。
-数値は公開情報から集計したものです。公表されていない社内プロジェクトは含まれないため、実際の活動量はこれより多いのが普通です。
-""")
-
-manifest={"name":"NEWFOR","short_name":"NEWFOR","lang":"ja","start_url":"/","display":"standalone",
- "background_color":"#F6F5F2","theme_color":"#2F3BD6",
- "description":"新規事業ヒストリーメディア。日本の大企業28社が手がけた新規事業758件を、開始年・継続状況・出典つきで年表にしました。過去を知るためではなく、次の一手の前例を見つけるために。",
- "icons":[{"src":"/assets/favicon-192.png","sizes":"192x192","type":"image/png"},
-          {"src":"/assets/favicon-512.png","sizes":"512x512","type":"image/png"},
-          {"src":"/assets/favicon-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}]}
-io.open('dist/site.webmanifest','w',encoding='utf-8').write(json.dumps(manifest,ensure_ascii=False,indent=2))
-
-io.open('dist/404.html','w',encoding='utf-8').write("""<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>ページが見つかりません ｜ NEWFOR</title>
-<meta name="robots" content="noindex,follow"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#2F3BD6;color:#fff;text-align:center;
-font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;padding:24px}
-svg{width:110px;color:#fff;opacity:.9}h1{font-size:24px;margin:22px 0 8px;letter-spacing:-.02em}
-p{margin:0 0 24px;color:rgba(255,255,255,.85);font-size:14.5px;line-height:1.9}
-a{display:inline-block;background:#F04E0C;color:#fff;text-decoration:none;font-weight:800;padding:13px 26px;border-radius:11px}</style>
-</head><body><div>
-<svg viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>
-<h1>このページは、まだ未確認です。</h1><p>お探しのページが見つかりませんでした。<br>企業から探すか、トップへ戻ってください。</p>
-<a href="/">トップへ戻る</a></div></body></html>""")
-print('extras ok')
+# ── llms.txt ──
+L=['# NEWFOR ─ 新規事業ヒストリーメディア','',
+ '> 日本の大企業が手がけた新規事業を、公開情報だけで1件ずつ年表にしているメディアです。',
+ '> %s時点で%d社・%d件。すべての記録に、開始年・いまの状況・出典がついています。'%(TODAYJP,len(CO),tot),
+ '> 過去を記録することが目的ではなく、これから新規事業を担当する人が',
+ '> 「他社はいつ何を始めて、いまどうなったか」を前例として引けるようにするためのものです。','',
+ '## このサイトの決まりごと','',
+ '- 記録はすべて、企業のプレスリリース・IR資料・公式サイトなど公開情報にもとづきます',
+ '- 日付が確認できない出来事は載せません',
+ '- 提供を終えた事業を「失敗」とは書かず、「提供を終えた」「譲渡した」と記します',
+ '- 継続率のランキングは作りません。数えるのは、挑んだ数・張った額・組んだ相手の数です',
+ '- 事実と、筆者の解釈（仮説）を分けて書いています',
+ '- 網羅は保証しません。掲載しているのは、確認できた範囲です',
+ '- 引用される場合は、出典として %s を明示してください'%SITE,'',
+ '## 企業別の新規事業一覧','']
+for C in CO:
+    tl=C['timeline']; yrs=[int(y[:4]) for y,*_ in tl]
+    live=sum(1 for r in tl if r[3]); ES=C.get('evsrc') or {}
+    L.append('### %sの新規事業（%s）'%(C['name'],C['legal']))
+    L.append('- 業種: %s ／ 記録: %d件（継続中 %d件、終了・譲渡 %d件）／ 範囲: %d–%d年'
+             %(C['ind'],len(tl),live,len(tl)-live,min(yrs),max(yrs)))
+    L.append('- URL: %s/companies/%s/'%(SITE,C['slug']))
+    if C.get('article') in SLUGS:
+        L.append('- 解説記事: %s/articles/%s/'%(SITE,C['article']))
+    L.append('- 直近の記録:')
+    for y,ev,note,lv in tl[-5:]:
+        u=ES.get(y)
+        L.append('  - %s %s（%s）— %s%s'%(y,ev,'継続中' if lv else '終了・譲渡',note,('　出典: '+u[0]) if u else ''))
+    L.append('')
+L+=['## 記事','']
+for a in ART:
+    L.append('- [%s](%s/articles/%s/): %s'%(a['title'].split(' | ')[0],SITE,a['slug'],a['desc'][:120]))
+L+=['','## 主なページ','',
+ '- 企業を探す: %s/companies/'%SITE,
+ '- 記事一覧: %s/articles/'%SITE,
+ '- サイトについて: %s/about/'%SITE,'']
+io.open('dist/llms.txt','w',encoding='utf-8').write('\n'.join(L))
+print('llms.txt %d社%d件 / sitemap %d URL'%(len(CO),tot,len(U)))

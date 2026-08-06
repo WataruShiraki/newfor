@@ -439,7 +439,7 @@ def render(a):
        "image":SITE+"/assets/og-%s.png"%slug,"datePublished":a['pub'],"dateModified":a['mod'],
        "author":{"@type":"Person","@id":SITE+"/#author","name":"Soichiro","alternateName":"新規事業マニア"},
        "publisher":{"@type":"Organization","@id":SITE+"/#org","name":"NEWFOR"},
-       "mainEntityOfPage":SITE+url,"inLanguage":"ja","articleSection":a.get("section","企業の決断"),
+       "mainEntityOfPage":SITE+url,"inLanguage":"ja","articleSection":a.get("section","新規事業ヒストリー"),
        "keywords":a['kw']},
       {"@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"NEWFOR","item":SITE+"/"},

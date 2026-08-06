@@ -77,8 +77,8 @@ def build_ld(src,p):
         g.append({"@type":"Article","@id":SITE+p['url']+"#article","headline":"NTTドコモは、25年かけて「iモード」に帰ってきたのではないか",
           "description":p['desc'],"image":SITE+p['img'],"datePublished":"2026-07-28","dateModified":"2026-08-04",
           "author":{"@id":SITE+"/#author"},"publisher":{"@id":SITE+"/#org"},
-          "mainEntityOfPage":SITE+p['url'],"inLanguage":"ja","articleSection":"企業の決断",
-          "keywords":"NTTドコモ,新規事業,iモード,dポイント,企業の決断,事業開発","about":{"@type":"Corporation","name":"株式会社NTTドコモ"}})
+          "mainEntityOfPage":SITE+p['url'],"inLanguage":"ja","articleSection":"新規事業ヒストリー",
+          "keywords":"NTTドコモ,新規事業,iモード,dポイント,新規事業ヒストリー,事業開発","about":{"@type":"Corporation","name":"株式会社NTTドコモ"}})
         g.append(crumbs([("NEWFOR","/"),("記事一覧","/articles/"),("NTTドコモ","/articles/docomo-newbusiness/")]))
     return {"@context":"https://schema.org","@graph":g}
 
@@ -104,7 +104,7 @@ def head_block(src,p):
         h.append('<meta property="article:published_time" content="2026-07-28T09:00:00+09:00">')
         h.append('<meta property="article:modified_time" content="2026-08-04T09:00:00+09:00">')
         h.append('<meta property="article:author" content="Soichiro">')
-        h.append('<meta property="article:section" content="企業の決断">')
+        h.append('<meta property="article:section" content="新規事業ヒストリー">')
     h.append('<meta name="twitter:card" content="summary_large_image">')
     h.append('<meta name="twitter:title" content="%s">'%p['title'])
     h.append('<meta name="twitter:description" content="%s">'%p['desc'])

@@ -10,7 +10,7 @@ forwho=[
  '<strong>買収を検討している方へ。</strong>「何を買ったのか」を1行で書けるかどうかが、7年後の判断を左右します',
  '<strong>地味な積み上げが評価されずに悩んでいる方へ。</strong>つながるまで効果が出ない、という弱点まで含めて設計する方法を考えます',
 ],
-kw='リクルート,新規事業,Indeed,Glassdoor,Airレジ,Airペイ,スタディサプリ,HRテクノロジー,企業の決断',
+kw='リクルート,新規事業,Indeed,Glassdoor,Airレジ,Airペイ,スタディサプリ,HRテクノロジー,新規事業ヒストリー',
 pub='2026-08-05', mod='2026-08-05', datejp='2026年8月5日', read='6',
 kpis=[('Glassdoorの買収額','12','億ドル','約1,272億円。2018年に買い、7年後の2025年にIndeedへ統合しました'),
       ('海外買収を並べた期間','4','年','2015年から2018年まで。Peoplebank、Quandoo、USG People、Glassdoorなど6件が集中しています'),
@@ -92,6 +92,6 @@ sources=[
  ('Bloomberg：Indeed・Glassdoorの統合について（2025年7月）','https://www.bloomberg.com/jp/news/articles/2025-07-10/SZ75XRDWX2PS00'),
  ('リクルートホールディングス IRライブラリ','https://recruit-holdings.com/ja/ir/library/'),
 ],
-next=[('記事一覧','ほかの企業の決断も読む','/articles/'),
-      ('企業の決断','セブン&アイのこの10年は、足し算ではなく引き算だった','/articles/sevenandi-newbusiness/')],
+next=[('記事一覧','ほかの企業のヒストリーも読む','/articles/'),
+      ('新規事業ヒストリー','セブン&アイのこの10年は、足し算ではなく引き算だった','/articles/sevenandi-newbusiness/')],
 )

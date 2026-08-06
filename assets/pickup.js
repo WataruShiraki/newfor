@@ -23,18 +23,27 @@
   }
 
   function line(r) {
-    var slug = String(r.poll_id || "").replace(/^reaction-/, "").replace(/^weekly-.*/, "");
-    var m = MAP[slug];
-    var who = m ? m.name : "NEWFOR";
-    var href = m ? m.url : "/articles/";
+    var id = String(r.poll_id || "");
     var n = Number(r.votes || 0);
     var tail = n > 1 ? "と" + n + "人が投票しました。" : "と投票がありました。";
+    var who, href, mid;
+    if (id.indexOf("weekly-") === 0) {
+      /* 今週の投票には記事がない。記事名を出すと嘘になるので言い方を変える */
+      who = "今週の投票";
+      href = "/#vote";
+      mid = "で「";
+    } else {
+      var m = MAP[id.replace(/^reaction-/, "")];
+      who = m ? m.name : "NEWFOR";
+      href = m ? m.url : "/articles/";
+      mid = "の記事に「";
+    }
     var a = document.createElement("a");
     a.className = "nf-pk-item";
     a.href = href;
     a.innerHTML = '<span class="nf-pk-d">・' + md(r.at) + '</span>' +
                   '<span class="nf-pk-w">' + who + '</span>' +
-                  '<span class="nf-pk-t">の記事に「' + (r.label || "") + '」' + tail + '</span>';
+                  '<span class="nf-pk-t">' + mid + (r.label || "") + '」' + tail + '</span>';
     return a;
   }
 

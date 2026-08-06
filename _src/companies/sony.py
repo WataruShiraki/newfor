@@ -6,38 +6,24 @@ legal='ソニーグループ株式会社',
 ind='電機',
 article='sony-newbusiness',
 evsrc={
- "2015": [
-  "https://sony.co.jp/SonyInfo/News/Press/201507/15-061",
-  "ソニー ニュースリリース"
- ],
- "2021.08": [
-  "https://www.prnewswire.com/news-releases/sonys-funimation-global-group-completes-acquisition-of-crunchyroll-from-att-301351462.html",
-  "ソニー公式リリース"
- ],
- "2022.02": [
-  "https://sie.com/jp/corporate/release/2022/220201.html",
-  "SIE プレスリリース"
- ],
- "2022.10": [
-  "https://www.shm-afeela.com/ja/news/2022-10-13/",
-  "ソニー・ホンダモビリティ"
- ],
- "2023.01": [
-  "https://www.shm-afeela.com/ja/news/2023-01-04/",
-  "ソニー・ホンダモビリティ"
- ],
- "2025.09": [
-  "https://www.sonyfg.co.jp/ja/news/article/250929_05.pdf",
-  "ソニーFG お知らせ"
- ],
- "2026.04": [
-  "https://www.shm-afeela.com/ja/news/2026-04-21/",
-  "ソニー・ホンダモビリティ"
- ],
- "2014": [
-  "https://xtech.nikkei.com/dm/article/MAG/20140801/368441/",
-  "日経クロステック"
- ]
+ '2000|ソネット・エムスリー 設立': ['https://corporate.m3.com/corporate', 'エムスリー 会社概要・沿革'],
+ '2001.04|ソニー銀行 設立': ['https://www.sonyfg.co.jp/ja/company/history.html', 'ソニーフィナンシャルグループ 沿革'],
+ '2014.04|ソニー不動産 設立': ['https://sre-group.co.jp/news/2019/0516-2.html', 'SREホールディングス お知らせ（2019年5月16日）'],
+ '2014|社内起業制度 SAP 開始': ['https://sony-acceleration-platform.com/', 'Sony Acceleration Platform 公式サイト'],
+ '2015.08|エアロセンス 設立': ['https://aerosense.co.jp/company/', 'エアロセンス 会社情報'],
+ '2015|First Flight 開始': ['https://sony.co.jp/SonyInfo/News/Press/201507/15-061', 'ソニー ニュースリリース'],
+ '2016|Sony Innovation Fund 設立': ['https://www.sonyinnovationfund.com/jp/about/', 'Sony Innovation Fund 公式サイト'],
+ '2018.01|aibo（ERS-1000）発売': ['https://prtimes.jp/main/html/rd/p/000000051.000018968.html', 'ソニーマーケティング プレスリリース（2017年11月1日発表／2018年1月11日発売）'],
+ '2018.08|Ginza Sony Park 第1期開園': ['https://www.sonypark.com/about/', 'Ginza Sony Park について'],
+ '2019.03|toio 発売': ['https://toio.io/news/2019/20190320-1.html', 'toio 公式ニュース（2019年3月20日 本体発売）'],
+ '2019.07|REON POCKET クラウドファンディング': ['https://prtimes.jp/main/html/rd/p/000000102.000015876.html', 'ソニーグループ プレスリリース（2019年7月22日 First Flightで開始）'],
+ '2020.04|Sony AI 設立': ['https://ai.sony/', 'Sony AI 公式サイト'],
+ '2021.08|Crunchyroll 買収': ['https://www.prnewswire.com/news-releases/sonys-funimation-global-group-completes-acquisition-of-crunchyroll-from-att-301351462.html', 'ソニー公式リリース'],
+ '2022.02|Bungie 買収': ['https://sie.com/jp/corporate/release/2022/220201.html', 'SIE プレスリリース'],
+ '2022.10|ソニー・ホンダモビリティ 設立': ['https://www.shm-afeela.com/ja/news/2022-10-13/', 'ソニー・ホンダモビリティ'],
+ '2024.12|KADOKAWA へ約500億円を追加出資': ['https://group.kadokawa.co.jp/information/media-download/1430/94c4da872fbad0e5/', 'KADOKAWA／ソニー 共同リリース（2024年12月19日）'],
+ '2025.09|ソニーフィナンシャルグループ 再上場': ['https://www.sonyfg.co.jp/ja/news/article/250929_05.pdf', 'ソニーFG お知らせ'],
+ '2026.04|Sony Innovation Fund 4 運用開始': ['https://www.sonyinnovationfund.com/jp/news/', 'Sony Innovation Fund ニュース（2026年4月）'],
 },
 timeline=[
  ('2000','ソネット・エムスリー 設立','医師向けポータル。のちにエムスリーとして独立し、いまは持分法適用関連会社',True),
@@ -46,7 +32,7 @@ timeline=[
  ('2014','社内起業制度 SAP 開始','社内公募で事業アイデアを募る制度。2018年10月から社外にも提供',True),
  ('2015','First Flight 開始','自社クラウドファンディング。社内案件が世に出る前の関門になった',True),
  ('2015.08','エアロセンス 設立','ZMPとの合弁。産業用ドローンによる測量・点検',True),
- ('2016','Sony Innovation Fund 設立','CVC。全世界170社超に投資し、運用総額は850億円超の見込み',True),
+ ('2016','Sony Innovation Fund 設立','ソニーグループ初のCVCとして2016年に創設。SIF・IGF・SIF:E・SIF3・SIF:AF・SIF4の6ファンドを運営し、運用総額はおよそ650億円',True),
  ('2016.06','wena wrist 発売','好きな腕時計をスマートウォッチ化するバンド。2026年2月にサービスを終えた',False),
  ('2018.01','aibo（ERS-1000）発売','12年ぶりに復活した自律型ロボット。2026年6月に国内販売を終えた',False),
  ('2018.08','Ginza Sony Park 第1期開園','ビル跡地を「公園」にした実験。3年で854万人が訪れた',True),

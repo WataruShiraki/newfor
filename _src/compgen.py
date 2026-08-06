@@ -15,6 +15,15 @@ def ym(s):
         return float(m.group(1)) if m else None
     return int(m.group(1))+(int(m.group(2))-1)/12.0
 
+def esrc(ES,y,ev):
+    """出来事ごとの出典を引く。
+
+    同じ年月に2件以上あると、年月だけのキーでは取り違える。そのため
+    "2026.08|事業名" の形を先に見て、無ければ年月、最後に年だけを見る。
+    """
+    if not ES: return None
+    return ES.get('%s|%s'%(y,ev)) or ES.get(y) or ES.get(y[:4])
+
 END_W=r'(?:終え|終了|終結|移した|移管|統合|譲渡|売却|手放し|公有化|解消|走り切っ|役目を終え)'
 
 def find_end(note,start=None):
@@ -242,7 +251,7 @@ def render(c):
         bd='<span class="bd2 live">継続中</span>' if live else '<span class="bd2 done">終了・譲渡</span>'
         y='%d.%02d'%(int(s),round((s-int(s))*12)+1)
         ES=c.get('evsrc') or {}
-        hit=ES.get(y) or ES.get('%d'%int(s))
+        hit=esrc(ES,y,n)
         lk=('<a class="src2" href="%s" rel="noopener nofollow" target="_blank" title="出典を開く">'
             '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
             '<path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>'
@@ -291,8 +300,8 @@ def render(c):
           "item":dict({"@type":"CreativeWork","name":n,"description":note,
                   "datePublished":"%d"%int(st),
                   "provider":{"@type":"Organization","name":c['legal']}},
-                 **({"subjectOf":{"@type":"WebPage","url":(c.get('evsrc') or {}).get('%d.%02d'%(int(st),round((st-int(st))*12)+1),[None])[0]}}
-                    if (c.get('evsrc') or {}).get('%d.%02d'%(int(st),round((st-int(st))*12)+1)) else {}))}
+                 **({"subjectOf":{"@type":"WebPage","url":esrc(c.get('evsrc') or {},'%d.%02d'%(int(st),round((st-int(st))*12)+1),n)[0]}}
+                    if esrc(c.get('evsrc') or {},'%d.%02d'%(int(st),round((st-int(st))*12)+1),n) else {}))}
          for i,(n,st,e,lv,note) in enumerate(biz)]},
       {"@type":"FAQPage","@id":U+"#faq","mainEntity":[
         {"@type":"Question","name":q,

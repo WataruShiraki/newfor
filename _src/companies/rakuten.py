@@ -6,136 +6,45 @@ legal='楽天グループ株式会社',
 ind='EC',
 article=None,
 evsrc={
- "2026.08": ['https://corp.rakuten.co.jp/news/press/2026/0803_03.html', '楽天グループ ニュース'],
- "2026.08": ['https://corp.rakuten.co.jp/news/press/2026/0804_01.html', '楽天グループ ニュース'],
- "2000.12": [
-  "https://corp.rakuten.co.jp/news/press/2000/1126.html",
-  "楽天グループ ニュース"
- ],
- "2001.03": [
-  "https://corp.rakuten.co.jp/news/press/2001/0327.html",
-  "楽天グループ ニュース"
- ],
- "2003.11": [
-  "https://corp.rakuten.co.jp/news/press/2003/1120.html",
-  "楽天グループ ニュース"
- ],
- "2004.10": [
-  "https://corp.rakuten.co.jp/news/press/2004/1116_1.html",
-  "楽天グループ ニュース"
- ],
- "2005.06": [
-  "https://corp.rakuten.co.jp/news/press/2005/0620.html",
-  "楽天グループ ニュース"
- ],
- "2008.05": [
-  "https://corp.rakuten.co.jp/news/press/2007/1129.html",
-  "楽天グループ ニュース"
- ],
- "2009.02": [
-  "https://corp.rakuten.co.jp/news/press/2009/0210.html",
-  "楽天グループ ニュース"
- ],
- "2010.01": [
-  "https://corp.rakuten.co.jp/news/press/2009/1105.html",
-  "楽天グループ ニュース"
- ],
- "2011.11": [
-  "https://corp.rakuten.co.jp/news/press/2011/1109_02.html",
-  "楽天グループ ニュース"
- ],
- "2012.10": [
-  "https://corp.rakuten.co.jp/news/press/2012/0920_01.html",
-  "楽天グループ ニュース"
- ],
- "2014.02": [
-  "https://corp.rakuten.co.jp/news/press/2014/0214_04.html",
-  "楽天グループ ニュース"
- ],
- "2015.01": [
-  "https://corp.rakuten.co.jp/news/press/2014/1206_01.html",
-  "楽天グループ ニュース"
- ],
- "2016.10": [
-  "https://corp.rakuten.co.jp/news/press/2016/1027_01.html",
-  "楽天グループ ニュース"
- ],
- "2018.03": [
-  "https://corp.rakuten.co.jp/news/press/2018/0314_01.html",
-  "楽天グループ ニュース"
- ],
- "2018.10": [
-  "https://corp.rakuten.co.jp/news/press/2018/1001_02.html",
-  "楽天グループ ニュース"
- ],
- "2019.07": [
-  "https://corp.rakuten.co.jp/news/press/2019/0802_01.html",
-  "楽天グループ ニュース"
- ],
- "2019.09": [
-  "https://corp.rakuten.co.jp/news/press/2019/0919_01.html",
-  "楽天グループ ニュース"
- ],
- "2019.10": [
-  "https://corp.rakuten.co.jp/news/press/2019/0906_02.html",
-  "楽天グループ ニュース"
- ],
- "2020.03": [
-  "https://corp.rakuten.co.jp/news/press/2020/0303_02.html",
-  "楽天グループ ニュース"
- ],
- "2020.04": [
-  "https://corp.rakuten.co.jp/news/press/2020/0408_01.html",
-  "楽天グループ ニュース"
- ],
- "2020.11": [
-  "https://corp.rakuten.co.jp/news/press/2020/1116_01.html",
-  "楽天グループ ニュース"
- ],
- "2021.03": [
-  "https://corp.rakuten.co.jp/news/press/2021/0312_02.html",
-  "楽天グループ ニュース"
- ],
- "2021.07": [
-  "https://corp.rakuten.co.jp/news/press/2021/0630_02.html",
-  "楽天グループ ニュース"
- ],
- "2021.08": [
-  "https://corp.rakuten.co.jp/news/press/2021/0804_02.html",
-  "楽天グループ ニュース"
- ],
- "2022.01": [
-  "https://corp.rakuten.co.jp/news/press/2021/0930_03.html",
-  "楽天グループ ニュース"
- ],
- "2022.02": [
-  "https://corp.rakuten.co.jp/news/press/2022/0225_07.html",
-  "楽天グループ ニュース"
- ],
- "2023.04": [
-  "https://corp.rakuten.co.jp/news/press/2023/0421_01.html",
-  "楽天グループ ニュース"
- ],
- "2023.11": [
-  "https://corp.rakuten.co.jp/news/press/2023/1109_08.html",
-  "楽天グループ ニュース"
- ],
- "2024.11": [
-  "https://corp.rakuten.co.jp/news/press/2024/1113_12.html",
-  "楽天グループ ニュース"
- ],
- "2026.03": [
-  "https://corp.rakuten.co.jp/news/press/2026/0317_01.html",
-  "楽天グループ ニュース"
- ],
- "2026.05": [
-  "https://corp.rakuten.co.jp/news/press/2026/0520_11.html",
-  "楽天グループ ニュース"
- ],
- "2014.10": [
-  "https://corp.rakuten.co.jp/news/press/2014/1010_01.html",
-  "楽天グループ ニュース"
- ]
+ '1997.02|株式会社エム・ディー・エム 設立': ['https://corp.rakuten.co.jp/about/history.html', '楽天グループ 沿革'],
+ '1997.05|楽天市場 開設': ['https://corp.rakuten.co.jp/about/history.html', '楽天グループ 沿革'],
+ '1998.07|楽天スーパーオークション 開始': ['https://corp.rakuten.co.jp/about/history.html', '楽天グループ 沿革'],
+ '2000.04|日本証券業協会へ株式を店頭登録': ['https://corp.rakuten.co.jp/about/history.html', '楽天グループ 沿革'],
+ '2000.12|インフォシーク 完全子会社化': ['https://corp.rakuten.co.jp/news/press/2000/1126.html', '楽天グループ ニュース'],
+ '2001.03|楽天トラベル 開始': ['https://corp.rakuten.co.jp/news/press/2001/0327.html', '楽天グループ ニュース'],
+ '2003.11|楽天証券の前身を子会社化': ['https://corp.rakuten.co.jp/news/press/2003/1120.html', '楽天グループ ニュース'],
+ '2004.10|株式会社楽天野球団 設立': ['https://corp.rakuten.co.jp/news/press/2004/1116_1.html', '楽天グループ ニュース'],
+ '2005.06|楽天カード 発行開始': ['https://corp.rakuten.co.jp/news/press/2005/0620.html', '楽天グループ ニュース'],
+ '2008.05|台湾楽天市場 開始': ['https://corp.rakuten.co.jp/news/press/2007/1129.html', '楽天グループ ニュース'],
+ '2009.02|イーバンク銀行 子会社化': ['https://corp.rakuten.co.jp/news/press/2009/0210.html', '楽天グループ ニュース'],
+ '2010.01|ビットワレット 子会社化': ['https://corp.rakuten.co.jp/news/press/2009/1105.html', '楽天グループ ニュース'],
+ '2011.11|Kobo社 買収': ['https://corp.rakuten.co.jp/news/press/2011/1109_02.html', '楽天グループ ニュース'],
+ '2012.10|アイリオ生命保険 子会社化': ['https://corp.rakuten.co.jp/news/press/2012/0920_01.html', '楽天グループ ニュース'],
+ '2014.02|Viber Media 買収': ['https://corp.rakuten.co.jp/news/press/2014/0214_04.html', '楽天グループ ニュース'],
+ '2014.10': ['https://corp.rakuten.co.jp/news/press/2014/1010_01.html', '楽天グループ ニュース'],
+ '2014.10|楽天モバイル 開始': ['https://corp.rakuten.co.jp/news/press/2014/1029_01.html', '楽天グループ ニュース'],
+ '2015.01|ヴィッセル神戸 全株式取得': ['https://corp.rakuten.co.jp/news/press/2014/1206_01.html', '楽天グループ ニュース'],
+ '2016.10|楽天ペイ 提供開始': ['https://corp.rakuten.co.jp/news/press/2016/1027_01.html', '楽天グループ ニュース'],
+ '2018.03|朝日火災海上保険 子会社化': ['https://corp.rakuten.co.jp/news/press/2018/0314_01.html', '楽天グループ ニュース'],
+ '2018.10|楽天でんき 提供開始': ['https://corp.rakuten.co.jp/news/press/2018/1001_02.html', '楽天グループ ニュース'],
+ '2019.07|楽天メディカルへ追加出資': ['https://corp.rakuten.co.jp/news/press/2019/0802_01.html', '楽天グループ ニュース'],
+ '2019.09|台湾プロ野球球団 取得': ['https://corp.rakuten.co.jp/news/press/2019/0919_01.html', '楽天グループ ニュース'],
+ '2019.10|楽天モバイル 携帯キャリア事業開始': ['https://corp.rakuten.co.jp/news/press/2019/0906_02.html', '楽天グループ ニュース'],
+ '2020.03|AST & Science 出資': ['https://corp.rakuten.co.jp/news/press/2020/0303_02.html', '楽天グループ ニュース'],
+ '2020.04|楽天モバイル 本格サービス開始': ['https://corp.rakuten.co.jp/news/press/2020/0408_01.html', '楽天グループ ニュース'],
+ '2020.11|西友 株式取得': ['https://corp.rakuten.co.jp/news/press/2020/1116_01.html', '楽天グループ ニュース'],
+ '2021.03|日本郵政グループと資本・業務提携': ['https://corp.rakuten.co.jp/news/press/2021/0312_02.html', '楽天グループ ニュース'],
+ '2021.07|JP楽天ロジスティクス 設立': ['https://corp.rakuten.co.jp/news/press/2021/0630_02.html', '楽天グループ ニュース'],
+ '2021.08|アルティオスター 完全子会社化': ['https://corp.rakuten.co.jp/news/press/2021/0804_02.html', '楽天グループ ニュース'],
+ '2022.01|楽天シンフォニー 設立': ['https://corp.rakuten.co.jp/news/press/2021/0930_03.html', '楽天グループ ニュース'],
+ '2022.02|Rakuten NFT 提供開始': ['https://corp.rakuten.co.jp/news/press/2022/0225_07.html', '楽天グループ ニュース'],
+ '2023.04|楽天銀行 東証プライム市場 上場': ['https://corp.rakuten.co.jp/news/press/2023/0421_01.html', '楽天グループ ニュース'],
+ '2023.11|楽天証券株式をみずほ証券へ追加譲渡': ['https://corp.rakuten.co.jp/news/press/2023/1109_08.html', '楽天グループ ニュース'],
+ '2024.11|楽天カードとみずほFGの資本業務提携': ['https://corp.rakuten.co.jp/news/press/2024/1113_12.html', '楽天グループ ニュース'],
+ '2026.03|Rakuten AI 3.0 提供開始': ['https://corp.rakuten.co.jp/news/press/2026/0317_01.html', '楽天グループ ニュース'],
+ '2026.05|フィンテック事業再編 最終合意': ['https://corp.rakuten.co.jp/news/press/2026/0520_11.html', '楽天グループ ニュース'],
+ '2026.08|ジェイフロンティアとオンライン診療で連携': ['https://corp.rakuten.co.jp/news/press/2026/0803_03.html', '楽天グループ ニュース'],
+ '2026.08|楽天ふるさと住民 新設を発表': ['https://corp.rakuten.co.jp/news/press/2026/0804_01.html', '楽天グループ ニュース'],
 },
 timeline=[
  ('2026.08','ジェイフロンティアとオンライン診療で連携','オンライン診療・服薬指導の普及に向けた連携を開始。1億超の楽天会員基盤を医療領域へつなぐ',True),

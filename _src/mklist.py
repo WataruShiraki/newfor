@@ -22,7 +22,7 @@ GN=json.dumps({g[0]:g[1] for g in GENRES},ensure_ascii=False,separators=(',',':'
 BODY=('<p class="rlead">大企業の新規事業を、公開情報から記録しているメディアです。'
       '<b>ジャンルで絞り込めます。</b></p>'
       +'<div class="gtabs">'+''.join(tabs)+'</div>'
-      +'<div class="gdesc" id="gdesc">気になるジャンルから探せます。準備中のジャンルには、これから記事が入ります。</div>'
+      +'<div class="gdesc" id="gdesc">気になるジャンルから探せます。企業を1社ずつ追った記録、金額のランキング、担当者向けの実務メモがあります。</div>'
       +'<div class="rgrid" id="rgrid">\n'+'\n'.join(card(c) for c in CARDS)+'\n</div>'
       +'<div class="gempty" id="gempty" style="display:none">'
        '<b>このジャンルは準備中です</b><span id="gemsg"></span></div>')
@@ -30,7 +30,7 @@ BODY=('<p class="rlead">大企業の新規事業を、公開情報から記録�
 JS='''<script>
 (function(){
   var DESC=%s, NAME=%s;
-  var ALL="気になるジャンルから探せます。準備中のジャンルには、これから記事が入ります。";
+  var ALL="気になるジャンルから探せます。企業を1社ずつ追った記録、金額のランキング、担当者向けの実務メモがあります。";
   var tabs=[].slice.call(document.querySelectorAll(".gtab"));
   var cards=[].slice.call(document.querySelectorAll(".rcard"));
   var gd=document.getElementById("gdesc"),ge=document.getElementById("gempty"),gm=document.getElementById("gemsg");

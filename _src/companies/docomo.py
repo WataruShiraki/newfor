@@ -6,70 +6,29 @@ legal='株式会社NTTドコモ',
 ind='通信',
 article='docomo-newbusiness',
 evsrc={
- "2004.07": [
-  "https://www.docomo.ne.jp/info/news_release/page/20040616.html",
-  "NTTドコモ 報道発表"
- ],
- "2011.11": [
-  "https://www.docomo.ne.jp/info/news_release/2011/11/02_00.html",
-  "NTTドコモ 報道発表"
- ],
- "2012.03": [
-  "https://www.docomo.ne.jp/info/news_release/2012/03/13_01.html",
-  "NTTドコモ 報道発表"
- ],
- "2012.04": [
-  "https://k-tai.watch.impress.co.jp/docs/news/523198.html",
-  "ケータイWatch"
- ],
- "2015.12": [
-  "https://www.docomo.ne.jp/info/news_release/2015/11/11_00.html",
-  "NTTドコモ 報道発表"
- ],
- "2018.04": [
-  "https://www.docomo.ne.jp/info/news_release/2018/04/24_00.html",
-  "NTTドコモ 報道発表"
- ],
- "2020.09": [
-  "https://group.ntt/jp/newsrelease/2020/09/29/200929b.html",
-  "NTT ニュースリリース"
- ],
- "2022.03": [
-  "https://www.docomo.ne.jp/info/news_release/2022/12/12_00.html",
-  "NTTドコモ 報道発表"
- ],
- "2024.01": [
-  "https://www.docomo.ne.jp/info/news_release/2023/10/04_00.html",
-  "NTTドコモ 報道発表"
- ],
- "2024.03": [
-  "https://www.docomo.ne.jp/info/news_release/2024/03/06_00.html",
-  "NTTドコモ 報道発表"
- ],
- "2025.10": [
-  "https://www.docomo.ne.jp/info/news_release/2025/09/26_00.html",
-  "NTTドコモ 報道発表"
- ],
- "2026.03": [
-  "https://www.docomo.ne.jp/info/news_release/2019/10/29_00.html",
-  "NTTドコモ 報道発表"
- ],
- "2026.07": [
-  "https://www.docomo.ne.jp/info/news_release/2026/03/31_00.html",
-  "NTTドコモ 報道発表"
- ],
- "2001.01": [
-  "https://www.watch.impress.co.jp/finance/news/2001/01/23/doc1746.htm",
-  "Impress Watch"
- ],
- "2000.05": [
-  "https://k-tai.watch.impress.co.jp/cda/article/news_toppage/1556.html",
-  "ケータイWatch"
- ],
- "1999.02": [
-  "https://www.itmedia.co.jp/pcuser/articles/1602/22/news020.html",
-  "ITmedia"
- ]
+ '1999.02|iモード 開始': ['https://www.itmedia.co.jp/pcuser/articles/1602/22/news020.html', 'ITmedia'],
+ '2000.05|KPNモバイル（蘭）へ出資': ['https://k-tai.watch.impress.co.jp/cda/article/news_toppage/1556.html', 'ケータイWatch'],
+ '2001.01|AT&T Wireless（米）へ出資': ['https://www.watch.impress.co.jp/finance/news/2001/01/23/doc1746.htm', 'Impress Watch'],
+ '2002.03|海外投資の減損 約1兆778億円': ['https://www.docomo.ne.jp/corporate/ir/binary/pdf/library/earnings/fy2001_4q_us.pdf', 'NTTドコモ 決算短信（米国会計基準）'],
+ '2004.07|おサイフケータイ 開始': ['https://www.docomo.ne.jp/info/news_release/page/20040616.html', 'NTTドコモ 報道発表'],
+ '2011.11': ['https://www.docomo.ne.jp/info/news_release/2011/11/02_00.html', 'NTTドコモ 報道発表'],
+ '2012.03|らでぃっしゅぼーやを子会社化': ['https://www.docomo.ne.jp/info/news_release/2012/03/13_01.html', 'NTTドコモ 報道発表'],
+ '2012.04|NOTTV 放送開始': ['https://k-tai.watch.impress.co.jp/docs/news/523198.html', 'ケータイWatch'],
+ '2012.07|dアニメストア 開始': ['https://www.docomo.ne.jp/info/news_release/2013/03/12_01.html', 'NTTドコモ 報道発表'],
+ '2013.12|dトラベル 開始': ['https://www.docomo.ne.jp/info/news_release/2013/10/10_03.html', 'NTTドコモ 報道発表'],
+ '2014.06|dマガジン 開始': ['https://www.docomo.ne.jp/info/news_release/2014/06/18_01.html', 'NTTドコモ 報道発表'],
+ '2015.05|dグルメ 開始': ['https://www.docomo.ne.jp/info/news_release/2015/05/13_01.html', 'NTTドコモ 報道発表'],
+ '2015.12|dポイント 開始': ['https://www.docomo.ne.jp/info/news_release/2015/11/11_00.html', 'NTTドコモ 報道発表'],
+ '2018.04|d払い 開始': ['https://www.docomo.ne.jp/info/news_release/2018/04/24_00.html', 'NTTドコモ 報道発表'],
+ '2020.09|NTTがドコモをTOB': ['https://group.ntt/jp/newsrelease/2020/09/29/200929b.html', 'NTT ニュースリリース'],
+ '2021.03|ahamo 開始': ['https://www.docomo.ne.jp/info/news_release/2021/02/05_01.html', 'NTTドコモ 報道発表'],
+ '2022.12|dスマートバンク 開始': ['https://www.docomo.ne.jp/info/news_release/2022/12/12_00.html', 'NTTドコモ 報道発表'],
+ '2024.01|マネックス証券を連結子会社化': ['https://www.docomo.ne.jp/info/news_release/2023/10/04_00.html', 'NTTドコモ 報道発表'],
+ '2024.03|オリックス・クレジットを子会社化': ['https://www.docomo.ne.jp/info/news_release/2024/03/06_00.html', 'NTTドコモ 報道発表'],
+ '2024.10|dポイントマーケット 開始': ['https://www.docomo.ne.jp/info/news_release/2024/10/02_00.html', 'NTTドコモ 報道発表'],
+ '2025.10|住信SBIネット銀行を連結子会社化': ['https://www.docomo.ne.jp/info/news_release/2025/09/26_00.html', 'NTTドコモ 報道発表'],
+ '2026.03|iモード／FOMA が終了': ['https://www.docomo.ne.jp/info/news_release/2019/10/29_00.html', 'NTTドコモ 報道発表'],
+ '2026.07|NTTドコモ・フィナンシャルグループ 設立': ['https://www.docomo.ne.jp/info/news_release/2026/03/31_00.html', 'NTTドコモ 報道発表'],
 },
 timeline=[
  ('1999.02','iモード 開始','世界で初めて携帯電話をインターネットに繋いだ。開始半年で100万契約。2026年3月に提供を終えた',False),

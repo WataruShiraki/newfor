@@ -6,98 +6,30 @@ legal='任天堂株式会社',
 ind='ゲーム',
 article=None,
 evsrc={
- "2007.04": [
-  "https://www.itmedia.co.jp/news/articles/0704/27/news155.html",
-  "ITmedia"
- ],
- "2015.03": [
-  "https://www.nintendo.co.jp/ir/pdf/2015/150317.pdf",
-  "任天堂 IR資料"
- ],
- "2015.10": [
-  "https://corporate.pokemon.co.jp/media/news/detail/14.html",
-  "株式会社ポケモン"
- ],
- "2016.03": [
-  "https://game.watch.impress.co.jp/docs/news/748809.html",
-  "GAME Watch"
- ],
- "2018.02": [
-  "https://www.nintendo.co.jp/corporate/release/2018/180201.html",
-  "任天堂 ニュースリリース"
- ],
- "2018.09": [
-  "https://game.watch.impress.co.jp/docs/news/1142857.html",
-  "GAME Watch"
- ],
- "2019.11": [
-  "https://www.nintendo.co.jp/corporate/release/2019/190201_2.html",
-  "任天堂 ニュースリリース"
- ],
- "2021.01": [
-  "https://www.nintendo.co.jp/ir/pdf/2021/210105.pdf",
-  "任天堂 IR資料"
- ],
- "2021.03": [
-  "https://www.usj.co.jp/company/news/2021/0308/",
-  "ユー・エス・ジェイ"
- ],
- "2021.06": [
-  "https://www.nintendo.co.jp/corporate/release/2021/210602.html",
-  "任天堂 ニュースリリース"
- ],
- "2021.09": [
-  "https://www.nintendo.co.jp/corporate/release/2021/210928.html",
-  "任天堂 ニュースリリース"
- ],
- "2022.02": [
-  "https://www.nintendo.co.jp/ir/pdf/2022/220224.pdf",
-  "任天堂 IR資料"
- ],
- "2022.04": [
-  "https://www.nintendo.co.jp/corporate/release/2022/220412.html",
-  "任天堂 ニュースリリース"
- ],
- "2023.03": [
-  "https://support.nintendo.com/jp/information/2022/0216.html",
-  "任天堂サポート"
- ],
- "2023.04": [
-  "https://www.nintendo.co.jp/ir/pdf/2022/221108_4.pdf",
-  "任天堂 IR資料"
- ],
- "2023.11": [
-  "https://www.nintendo.co.jp/corporate/release/2023/231108.html",
-  "任天堂 ニュースリリース"
- ],
- "2024.04": [
-  "https://support.nintendo.com/jp/information/2023/1004.html",
-  "任天堂サポート"
- ],
- "2024.05": [
-  "https://www.nintendo.co.jp/ir/pdf/2024/240521.pdf",
-  "任天堂 IR資料"
- ],
- "2024.10": [
-  "https://www.nintendo.co.jp/corporate/release/2024/240820.html",
-  "任天堂 ニュースリリース"
- ],
- "2025.05": [
-  "https://www.nintendo.co.jp/corporate/release/2025/250519.html",
-  "任天堂 ニュースリリース"
- ],
- "2025.08": [
-  "https://www.nintendo.co.jp/corporate/release/2025/250827.html",
-  "任天堂 ニュースリリース"
- ],
- "2025.09": [
-  "https://www.nintendo.co.jp/corporate/release/2025/250930.html",
-  "任天堂 ニュースリリース"
- ],
- "2022.10": [
-  "https://dynapix.jp/news/%E7%A4%BE%E5%90%8D%E5%A4%89%E6%9B%B4%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
-  "ニンテンドーピクチャーズ"
- ]
+ '2007.04|モノリスソフトを子会社化': ['https://www.itmedia.co.jp/news/articles/0704/27/news155.html', 'ITmedia'],
+ '2015.03': ['https://www.nintendo.co.jp/ir/pdf/2015/150317.pdf', '任天堂 IR資料'],
+ '2015.10|Nianticへの出資': ['https://corporate.pokemon.co.jp/media/news/detail/14.html', '株式会社ポケモン'],
+ '2016.03|Miitomoの提供開始': ['https://game.watch.impress.co.jp/docs/news/748809.html', 'GAME Watch'],
+ '2018.02|スーパーマリオのアニメ映画事業': ['https://www.nintendo.co.jp/corporate/release/2018/180201.html', '任天堂 ニュースリリース'],
+ '2018.09|Nintendo Switch Online開始': ['https://game.watch.impress.co.jp/docs/news/1142857.html', 'GAME Watch'],
+ '2019.11|Nintendo TOKYOを開店': ['https://www.nintendo.co.jp/corporate/release/2019/190201_2.html', '任天堂 ニュースリリース'],
+ '2021.01|Next Level Gamesを子会社化': ['https://www.nintendo.co.jp/ir/pdf/2021/210105.pdf', '任天堂 IR資料'],
+ '2021.03|スーパー・ニンテンドー・ワールド開業': ['https://www.usj.co.jp/company/news/2021/0308/', 'ユー・エス・ジェイ'],
+ '2021.06|任天堂資料館の計画を決定': ['https://www.nintendo.co.jp/corporate/release/2021/210602.html', '任天堂 ニュースリリース'],
+ '2021.09|テーマパークのエリア拡張を決定': ['https://www.nintendo.co.jp/corporate/release/2021/210928.html', '任天堂 ニュースリリース'],
+ '2022.02|SRDを子会社化': ['https://www.nintendo.co.jp/ir/pdf/2022/220224.pdf', '任天堂 IR資料'],
+ '2022.04|本社隣接市有地の取得': ['https://www.nintendo.co.jp/corporate/release/2022/220412.html', '任天堂 ニュースリリース'],
+ '2022.10|ニンテンドーピクチャーズが発足': ['https://dynapix.jp/news/%E7%A4%BE%E5%90%8D%E5%A4%89%E6%9B%B4%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/', 'ニンテンドーピクチャーズ'],
+ '2023.03|3DS・Wii Uのeショップを終了': ['https://support.nintendo.com/jp/information/2022/0216.html', '任天堂サポート'],
+ '2023.04|ニンテンドーシステムズ設立': ['https://www.nintendo.co.jp/ir/pdf/2022/221108_4.pdf', '任天堂 IR資料'],
+ '2023.11|ゼルダの伝説 実写映画の企画開発': ['https://www.nintendo.co.jp/corporate/release/2023/231108.html', '任天堂 ニュースリリース'],
+ '2024.04|3DS・Wii Uのオンラインを終了': ['https://support.nintendo.com/jp/information/2023/1004.html', '任天堂サポート'],
+ '2024.05|Shiver Entertainmentを子会社化': ['https://www.nintendo.co.jp/ir/pdf/2024/240521.pdf', '任天堂 IR資料'],
+ '2024.10|ニンテンドーミュージアム開館': ['https://www.nintendo.co.jp/corporate/release/2024/240820.html', '任天堂 ニュースリリース'],
+ '2025.05|Nintendo FUKUOKAの出店を発表': ['https://www.nintendo.co.jp/corporate/release/2025/250519.html', '任天堂 ニュースリリース'],
+ '2025.08|ニンテンドースターズへ商号変更': ['https://www.nintendo.co.jp/corporate/release/2025/250827.html', '任天堂 ニュースリリース'],
+ '2025.09|Nintendo Singapore設立': ['https://www.nintendo.co.jp/corporate/release/2025/250930.html', '任天堂 ニュースリリース'],
+ '2025.11|シンガポール開発会社の株式取得': ['https://www.nintendo.co.jp/corporate/release/2025/251127.html', '任天堂 ニュースリリース'],
 },
 timeline=[
  ('2007.04','モノリスソフトを子会社化','バンダイナムコHDから1999年設立のゲーム開発会社の株式を取得。2007年4月27日に発表し、自社の開発体制を広げた',True),

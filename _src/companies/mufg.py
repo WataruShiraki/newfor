@@ -6,134 +6,45 @@ legal='株式会社三菱UFJフィナンシャル・グループ',
 ind='金融',
 article=None,
 evsrc={
- "2008.10": [
-  "https://www.mufg.jp/dam/pressrelease/2008/pdf/pressrelease-20081013-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2013.07": [
-  "https://www.mufg.jp/dam/pressrelease/2013/pdf/pressrelease-20130702-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2015": [
-  "https://www.bk.mufg.jp/news/news2015/pdf/news1127.pdf",
-  "三菱東京UFJ銀行"
- ],
- "2017.07": [
-  "https://www.mufg.jp/dam/pressrelease/2017/pdf/pressrelease-20170731-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2017.12": [
-  "https://www.mufg.jp/dam/pressrelease/2017/pdf/pressrelease-20171226-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2018.04": [
-  "https://www.mufg.jp/dam/pressrelease/2018/pdf/pressrelease-20180427-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2018.10": [
-  "https://www.mufg.jp/dam/pressrelease/2018/pdf/pressrelease-20181031-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2019.01": [
-  "https://www.mufg.jp/dam/pressrelease/2019/pdf/news-20190111-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2019.03": [
-  "https://www.mufg.jp/dam/pressrelease/2019/pdf/news-20190301-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2019.04": [
-  "https://www.mufg.jp/dam/pressrelease/2019/pdf/news-20190429-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2020.02": [
-  "https://www.mufg.jp/dam/pressrelease/2020/pdf/news-20200225-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2020.09": [
-  "https://www.mufg.jp/dam/pressrelease/2020/pdf/news-20200903-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2021.09": [
-  "https://www.mufg.jp/dam/pressrelease/2021/pdf/news-20210921-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2021.12": [
-  "https://www.bk.mufg.jp/news/news2021/pdf/news0902_2.pdf",
-  "三菱UFJ銀行"
- ],
- "2022.02": [
-  "https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20220222-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2022.07": [
-  "https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20220712-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2022.08": [
-  "https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20220826-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2022.11": [
-  "https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20221124-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2023.02": [
-  "https://www.mufg.jp/dam/pressrelease/2023/pdf/news-20230227-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2023.06": [
-  "https://www.mufg.jp/dam/pressrelease/2023/pdf/news-20230626-002_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2023.10": [
-  "https://www.tr.mufg.jp/ippan/release/pdf_mutb/230911_1.pdf",
-  "三菱UFJ信託銀行"
- ],
- "2023.12": [
-  "https://www.mufg.jp/dam/pressrelease/2023/pdf/news-20231218-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2024.05": [
-  "https://www.mufg.jp/dam/pressrelease/2024/pdf/news-20240516-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2024.06": [
-  "https://www.mufg.jp/dam/pressrelease/2024/pdf/news-20240607-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2024.09": [
-  "https://www.mufg.jp/dam/pressrelease/2024/pdf/news-20240917-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2024.11": [
-  "https://www.mufg.jp/dam/pressrelease/2024/pdf/news-20241114-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2025.01": [
-  "https://www.mufg.jp/dam/pressrelease/2025/pdf/news-20250121-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2025.02": [
-  "https://www.mufg.jp/dam/pressrelease/2025/pdf/news-20250217-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2025.05": [
-  "https://www.mufg.jp/dam/pressrelease/2025/pdf/news-20250527-002_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2025.10": [
-  "https://www.mufg.jp/dam/pressrelease/2025/pdf/news-20251009-002_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2026.02": [
-  "https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260203-001_ja.pdf",
-  "MUFG ニュースリリース"
- ],
- "2026.03": [
-  "https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260324-001_ja.pdf",
-  "MUFG ニュースリリース"
- ]
+ '2008.10|モルガン・スタンレーへ出資': ['https://www.mufg.jp/dam/pressrelease/2008/pdf/pressrelease-20081013-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2013.07|タイ・アユタヤ銀行の買収を決定': ['https://www.mufg.jp/dam/pressrelease/2013/pdf/pressrelease-20130702-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2015|MUFG Digitalアクセラレータ開始': ['https://www.bk.mufg.jp/news/news2015/pdf/news1127.pdf', '三菱東京UFJ銀行'],
+ '2017.07|Japan Digital Design設立': ['https://www.mufg.jp/dam/pressrelease/2017/pdf/pressrelease-20170731-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2017.12|バンクダナモンへ戦略出資': ['https://www.mufg.jp/dam/pressrelease/2017/pdf/pressrelease-20171226-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2018.04|MUFG AI Studioの新設': ['https://www.mufg.jp/dam/pressrelease/2018/pdf/pressrelease-20180427-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2018.10|豪CFSGAMの買収を決定': ['https://www.mufg.jp/dam/pressrelease/2018/pdf/pressrelease-20181031-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2019.01|MUFG Innovation Partners設立': ['https://www.mufg.jp/dam/pressrelease/2019/pdf/news-20190111-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2019.02|Global Open Networkを共同設立': ['https://www.mufg.jp/dam/pressrelease/2019/pdf/news-20190212-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2019.02|カブドットコム証券をKDDIと共同運営': ['https://www.mufg.jp/dam/pressrelease/2019/pdf/news-20190212-002_ja.pdf', 'MUFG ニュースリリース'],
+ '2019.03|DVBバンクの航空機金融事業を買収': ['https://www.mufg.jp/dam/pressrelease/2019/pdf/news-20190301-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2019.04|バンクダナモンを子会社化': ['https://www.mufg.jp/dam/pressrelease/2019/pdf/news-20190429-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2020.02|配車大手Grabへ出資': ['https://www.mufg.jp/dam/pressrelease/2020/pdf/news-20200225-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2020.09|大阪に会員制イノベーション拠点': ['https://www.mufg.jp/dam/pressrelease/2020/pdf/news-20200903-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2021.09|MUFGユニオンバンクの譲渡を決定': ['https://www.mufg.jp/dam/pressrelease/2021/pdf/news-20210921-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2021.12|Money Canvas提供開始': ['https://www.bk.mufg.jp/news/news2021/pdf/news0902_2.pdf', '三菱UFJ銀行'],
+ '2022.02|GO-NETの事業停止を決定': ['https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20220222-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2022.07|MUFGトレーディング設立': ['https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20220712-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2022.08|Animoca Brands日本法人へ出資': ['https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20220826-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2022.11|Home Creditの比・尼2社を買収': ['https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20221124-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2022.12|Akulakuへ2億米ドル出資': ['https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20221226-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2022.12|MUFGユニオンバンクを譲渡': ['https://www.mufg.jp/dam/pressrelease/2022/pdf/news-20221202-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2022.12|カンムを子会社化': ['https://www.bk.mufg.jp/news/news2022/pdf/news1227.pdf', '三菱UFJ銀行'],
+ '2023.02|ジャパン・メタバース経済圏': ['https://www.mufg.jp/dam/pressrelease/2023/pdf/news-20230227-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2023.06|PT Mandala Multifinanceを買収': ['https://www.mufg.jp/dam/pressrelease/2023/pdf/news-20230626-002_ja.pdf', 'MUFG ニュースリリース'],
+ '2023.10|Progmat設立': ['https://www.tr.mufg.jp/ippan/release/pdf_mutb/230911_1.pdf', '三菱UFJ信託銀行'],
+ '2023.12|豪Link Administrationを買収': ['https://www.mufg.jp/dam/pressrelease/2023/pdf/news-20231218-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2024.05|MUFGスタートアップキット': ['https://www.mufg.jp/dam/pressrelease/2024/pdf/news-20240516-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2024.06|リクルートとの協業開始': ['https://www.mufg.jp/dam/pressrelease/2024/pdf/news-20240607-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2024.09|Sakana AIへ出資': ['https://www.mufg.jp/dam/pressrelease/2024/pdf/news-20240917-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2024.11|auじぶん銀行株式をKDDIへ譲渡': ['https://www.mufg.jp/dam/pressrelease/2024/pdf/news-20241114-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2025.01|ウェルスナビをTOBで子会社化': ['https://www.mufg.jp/dam/pressrelease/2025/pdf/news-20250121-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2025.02|MSと共同のクレジット新会社設立': ['https://www.mufg.jp/dam/pressrelease/2025/pdf/news-20250217-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2025.05|金融ブランド エムット 始動': ['https://www.mufg.jp/dam/pressrelease/2025/pdf/news-20250527-002_ja.pdf', 'MUFG ニュースリリース'],
+ '2025.10|デジタルアセット事業を開始': ['https://www.mufg.jp/dam/pressrelease/2025/pdf/news-20251009-002_ja.pdf', 'MUFG ニュースリリース'],
+ '2026.02|アルテミスベンチャーズ事業開始': ['https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260203-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2026.03|エムットの資産形成新会社を設立へ': ['https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260324-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2026.05|Apps in ChatGPTで金融体験': ['https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260528-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2026.05|Googleとの戦略的提携': ['https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260507-001_ja.pdf', 'MUFG ニュースリリース'],
 },
 timeline=[
  ('2008.10','モルガン・スタンレーへ出資','リーマン危機下で総額90億米ドルを払い込み、転換型優先株など2種で構成。潜在議決権ベース約21%を保有する筆頭株主となった',True),

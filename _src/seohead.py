@@ -6,21 +6,18 @@ NAME='NEWFOR'
 DESC_SITE='うまくいかなかったように見える挑戦にも、次の事業へ渡されたバトンがある。それを一件ずつ掘り起こして記録し、この国の新規事業の成功率を上げていく。そのための新規事業メディアです。'
 
 # src -> (dist path, url path, title, desc, ogimg, type)
-PAGES = {
- 'newfor-companies.html': dict(
-   out='companies/index.html', url='/companies/', img='/assets/og-companies.png', type='website',
-   title='大企業の新規事業データベース ｜ 12社・226事業を記録 ｜ NEWFOR',
-   desc='大企業が手がけた新規事業を、企業ごとに公開情報から記録。企業名で検索し、業界で絞り込み、新規事業発表数・投資額・提携数で並び替えられます。'),
- 'newfor-company-kddi.html': dict(
-   out='companies/kddi/index.html', url='/companies/kddi/', img='/assets/og-kddi.png', type='website',
-   title='KDDIの新規事業 一覧 ─ 2008年からの18事業を記録 ｜ NEWFOR',
-   desc='KDDIがこれまでに手がけた新規事業を、プレスリリースから掘り起こして時系列で記録。auじぶん銀行、au PAY、povo、ローソン共同経営、au Starlink Directまで18事業。'),
- 'newfor-site.html': dict(
-   out='articles/docomo-newbusiness/index.html', url='/articles/docomo-newbusiness/',
-   img='/assets/og-docomo.png', type='article',
-   title='NTTドコモは、25年かけて「iモード」に帰ってきたのではないか ｜ NEWFOR',
-   desc='海外に1兆円超を投じ、生活サービスを次々と組み替え、いま金融に全額を張る。NTTドコモの25年の新規事業を、公開情報だけで年表にして読み解いた記録です。'),
-}
+#
+# ここは、サイトを作り始めたころの手書きHTMLを変換するための表でした。
+# いまは同じページを、それぞれ専用の生成元が作っています。
+#
+#   /companies/            … 手で管理（gh/companies/index.html）
+#   /companies/<slug>/     … mkcomp.py が companies/*.py から作る
+#   /articles/<slug>/      … buildarticles.py が articles/a0*.py から作る
+#
+# 表に残しておくと、古い手書きHTML（12社226件・KDDI18事業のころ）から
+# 同じ場所を作り直してしまい、公開中のページを古い内容で上書きします。
+# 実際に llms.txt で同じ事故が起きました。だから空にしてあります。増やさないでください。
+PAGES = {}
 
 LINKMAP = {
  'newfor-top-light.html':'/', 'newfor-top.html':'/',

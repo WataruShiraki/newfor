@@ -6,122 +6,42 @@ legal='ソフトバンクグループ株式会社',
 ind='通信',
 article='softbank-newbusiness',
 evsrc={
- "1995.11": [
-  "https://group.softbank/news/press/19951109",
-  "ソフトバンクG プレスリリース"
- ],
- "1996.01": [
-  "https://group.softbank/news/press/19960111",
-  "ソフトバンクG プレスリリース"
- ],
- "2000.04": [
-  "https://group.softbank/news/press/19991207",
-  "ソフトバンクG プレスリリース"
- ],
- "2000.10": [
-  "https://www.paypay-bank.co.jp/company/press/2000/1011.html",
-  "PayPay銀行 プレスリリース"
- ],
- "2001.09": [
-  "https://group.softbank/news/press/20010829",
-  "ソフトバンクG プレスリリース"
- ],
- "2004.05": [
-  "https://group.softbank/news/press/20040527_0",
-  "ソフトバンクG プレスリリース"
- ],
- "2004.11": [
-  "https://group.softbank/news/press/20041130_0",
-  "ソフトバンクG プレスリリース"
- ],
- "2006.03": [
-  "https://group.softbank/news/press/20060317",
-  "ソフトバンクG プレスリリース"
- ],
- "2008.07": [
-  "https://www.softbank.jp/corp/group/sbm/news/press/2008/20080708_01/",
-  "ソフトバンクモバイル"
- ],
- "2013.07": [
-  "https://group.softbank/news/press/20130711",
-  "ソフトバンクG プレスリリース"
- ],
- "2013.10": [
-  "https://group.softbank/news/press/20131015_0",
-  "ソフトバンクG プレスリリース"
- ],
- "2014.06": [
-  "https://www.softbank.jp/corp/group/sbm/news/press/2014/20140605_01/",
-  "ソフトバンクモバイル"
- ],
- "2016.09": [
-  "https://group.softbank/news/press/20160905",
-  "ソフトバンクG プレスリリース"
- ],
- "2017.02": [
-  "https://group.softbank/news/press/20170215",
-  "ソフトバンクG プレスリリース"
- ],
- "2017.05": [
-  "https://group.softbank/news/press/20170522",
-  "ソフトバンクG プレスリリース"
- ],
- "2017.06": [
-  "https://group.softbank/news/press/20170609_0",
-  "ソフトバンクG プレスリリース"
- ],
- "2018.10": [
-  "https://image.paypay.ne.jp/pdf/pr20181005.pdf",
-  "PayPay プレスリリース"
- ],
- "2018.12": [
-  "https://www.softbank.jp/corp/news/press/sbkk/2018/20181219_01/",
-  "ソフトバンク プレスリリース"
- ],
- "2019.11": [
-  "https://www.softbank.jp/corp/news/press/sbkk/2019/20191114_02/",
-  "ソフトバンク プレスリリース"
- ],
- "2020.04": [
-  "https://group.softbank/news/press/20200402",
-  "ソフトバンクG プレスリリース"
- ],
- "2021.03": [
-  "https://www.itmedia.co.jp/news/articles/2103/02/news051.html",
-  "ITmedia"
- ],
- "2024.07": [
-  "https://www.graphcore.ai/posts/graphcore-joins-softbank-group-to-build-next-generation-of-ai-compute",
-  "Graphcore 公式発表"
- ],
- "2025.01": [
-  "https://group.softbank/news/press/20250122",
-  "ソフトバンクG プレスリリース"
- ],
- "2025.03": [
-  "https://www.softbank.jp/corp/news/press/sbkk/2025/20250314_01/",
-  "ソフトバンク プレスリリース"
- ],
- "2025.04": [
-  "https://group.softbank/news/press/20250401",
-  "ソフトバンクG プレスリリース"
- ],
- "2025.08": [
-  "https://group.softbank/news/press/20250819",
-  "ソフトバンクG プレスリリース"
- ],
- "2025.10": [
-  "https://group.softbank/news/press/20251008",
-  "ソフトバンクG プレスリリース"
- ],
- "2025.11": [
-  "https://group.softbank/news/press/20251126",
-  "ソフトバンクG プレスリリース"
- ],
- "2026.03": [
-  "https://about.paypay.ne.jp/pr/20260312/01/",
-  "PayPay プレスリリース"
- ]
+ '1981.09|日本ソフトバンク 設立': ['https://group.softbank/corp/about/history/', 'ソフトバンクグループ 沿革'],
+ '1982.05|出版事業に参入': ['https://group.softbank/corp/about/history/', 'ソフトバンクグループ 沿革'],
+ '1995.04|COMDEXを取得': ['https://group.softbank/corp/about/history/', 'ソフトバンクグループ 沿革'],
+ '1995.11|米Ziff-Davisを取得': ['https://group.softbank/news/press/19951109', 'ソフトバンクG プレスリリース'],
+ '1996.01|ヤフー株式会社 設立': ['https://group.softbank/news/press/19960111', 'ソフトバンクG プレスリリース'],
+ '2000.01|アリババへ出資': ['https://group.softbank/en/corp/about/history/', 'ソフトバンクグループ 沿革（英文）'],
+ '2000.04|Ziff-Davisの分割譲渡': ['https://group.softbank/news/press/19991207', 'ソフトバンクG プレスリリース'],
+ '2000.10|ジャパンネット銀行 営業開始': ['https://www.paypay-bank.co.jp/company/press/2000/1011.html', 'PayPay銀行 プレスリリース'],
+ '2001.09|Yahoo! BB サービス開始': ['https://group.softbank/news/press/20010829', 'ソフトバンクG プレスリリース'],
+ '2004.05|日本テレコムを取得': ['https://group.softbank/news/press/20040527_0', 'ソフトバンクG プレスリリース'],
+ '2004.11|福岡ダイエーホークスを取得': ['https://group.softbank/news/press/20041130_0', 'ソフトバンクG プレスリリース'],
+ '2006.03|ボーダフォン日本法人を取得': ['https://group.softbank/news/press/20060317', 'ソフトバンクG プレスリリース'],
+ '2008.07|iPhone 3G を日本で発売': ['https://www.softbank.jp/corp/group/sbm/news/press/2008/20080708_01/', 'ソフトバンクモバイル'],
+ '2011.10|SBエナジー 設立': ['https://group.softbank/corp/about/history/', 'ソフトバンクグループ 沿革'],
+ '2013.07|Sprintを取得': ['https://group.softbank/news/press/20130711', 'ソフトバンクG プレスリリース'],
+ '2013.10|Supercellへ出資': ['https://group.softbank/news/press/20131015_0', 'ソフトバンクG プレスリリース'],
+ '2014.06|Pepper を発表': ['https://www.softbank.jp/corp/group/sbm/news/press/2014/20140605_01/', 'ソフトバンクモバイル'],
+ '2016.09|Armを取得': ['https://group.softbank/news/press/20160905', 'ソフトバンクG プレスリリース'],
+ '2017.02|Fortress Investment Groupを取得': ['https://group.softbank/news/press/20170215', 'ソフトバンクG プレスリリース'],
+ '2017.05|ソフトバンク・ビジョン・ファンド 初回クローズ': ['https://group.softbank/news/press/20170522', 'ソフトバンクG プレスリリース'],
+ '2017.06|Boston Dynamicsを取得': ['https://group.softbank/news/press/20170609_0', 'ソフトバンクG プレスリリース'],
+ '2018.10|PayPay サービス開始': ['https://image.paypay.ne.jp/pdf/pr20181005.pdf', 'PayPay プレスリリース'],
+ '2018.12|ソフトバンク株式会社 東証上場': ['https://www.softbank.jp/corp/news/press/sbkk/2018/20181219_01/', 'ソフトバンク プレスリリース'],
+ '2019.11|ZOZOを子会社化': ['https://www.softbank.jp/corp/news/press/sbkk/2019/20191114_02/', 'ソフトバンク プレスリリース'],
+ '2020.04|SprintとT-Mobile USが統合': ['https://group.softbank/news/press/20200402', 'ソフトバンクG プレスリリース'],
+ '2021.03|LINEとヤフーが経営統合': ['https://www.itmedia.co.jp/news/articles/2103/02/news051.html', 'ITmedia'],
+ '2024.07|英Graphcoreを取得': ['https://www.graphcore.ai/posts/graphcore-joins-softbank-group-to-build-next-generation-of-ai-compute', 'Graphcore 公式発表'],
+ '2025.01|Stargate を発表': ['https://group.softbank/news/press/20250122', 'ソフトバンクG プレスリリース'],
+ '2025.03|シャープ堺工場を取得': ['https://www.softbank.jp/corp/news/press/sbkk/2025/20250314_01/', 'ソフトバンク プレスリリース'],
+ '2025.04|OpenAIへの出資を開始': ['https://group.softbank/news/press/20250401', 'ソフトバンクG プレスリリース'],
+ '2025.08|Intelへ出資': ['https://group.softbank/news/press/20250819', 'ソフトバンクG プレスリリース'],
+ '2025.10|ABBのロボット事業の取得を発表': ['https://group.softbank/news/press/20251008', 'ソフトバンクG プレスリリース'],
+ '2025.11': ['https://group.softbank/news/press/20251126', 'ソフトバンクG プレスリリース'],
+ '2025.11|NVIDIA株を全て譲渡': ['https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q2fy2025_01_ja.pdf', 'ソフトバンクG 2026年3月期 第2四半期決算短信'],
+ '2026.03': ['https://about.paypay.ne.jp/pr/20260312/01/', 'PayPay プレスリリース'],
+ '2026.03|純利益5兆22億円': ['https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q4fy2025_01_ja.pdf', 'ソフトバンクG 2026年3月期 決算短信'],
 },
 timeline=[
  ('1981.09','日本ソフトバンク 設立','24歳の孫正義氏がパソコン用ソフトの流通で創業。この事業はSB C&Sとしていまも続いている',True),

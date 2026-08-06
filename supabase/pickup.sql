@@ -19,6 +19,7 @@ select
   date_trunc('hour', v.created_at)      as at,
   v.poll_id                             as poll_id,
   p.kind                                as kind,
+  p.question                            as question,
   o.label                               as label,
   o.emoji                               as emoji,
   count(*)                              as votes
@@ -26,7 +27,7 @@ from public.newfor_votes v
 join public.newfor_polls p        on p.id = v.poll_id
 join public.newfor_poll_options o on o.poll_id = v.poll_id and o.key = v.option_key
 where v.created_at > now() - interval '3 days'
-group by 1, 2, 3, 4, 5
+group by 1, 2, 3, 4, 5, 6
 order by 1 desc;
 
 grant select on public.newfor_recent_votes to anon;

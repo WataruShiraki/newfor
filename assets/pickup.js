@@ -22,28 +22,40 @@
     return m + "-" + day;
   }
 
+  var CO = window.NF_PICKUP_CO || [];
+
+  /* 今週の投票は、問いの文から掲載企業を拾う。見つからなければ企業名は出さない */
+  function fromQuestion(q) {
+    q = q || "";
+    var best = null;
+    CO.forEach(function (c) {
+      c.keys.forEach(function (k) {
+        if (q.indexOf(k) >= 0 && (!best || k.length > best.len)) best = { c: c, len: k.length };
+      });
+    });
+    return best ? best.c : null;
+  }
+
   function line(r) {
     var id = String(r.poll_id || "");
     var n = Number(r.votes || 0);
-    var tail = n > 1 ? "と" + n + "人が投票しました。" : "と投票がありました。";
-    var who, href, mid;
+    var who, href;
     if (id.indexOf("weekly-") === 0) {
-      /* 今週の投票には記事がない。記事名を出すと嘘になるので言い方を変える */
-      who = "今週の投票";
-      href = "/#vote";
-      mid = "で「";
+      var c = fromQuestion(r.question);
+      who = c ? c.name : "今週の投票";
+      href = c ? c.url : "/#vote";
     } else {
       var m = MAP[id.replace(/^reaction-/, "")];
       who = m ? m.name : "NEWFOR";
       href = m ? m.url : "/articles/";
-      mid = "の記事に「";
     }
     var a = document.createElement("a");
     a.className = "nf-pk-item";
     a.href = href;
-    a.innerHTML = '<span class="nf-pk-d">・' + md(r.at) + '</span>' +
+    a.innerHTML = '<span class="nf-pk-d">' + md(r.at) + '</span>' +
                   '<span class="nf-pk-w">' + who + '</span>' +
-                  '<span class="nf-pk-t">' + mid + (r.label || "") + '」' + tail + '</span>';
+                  '<span class="nf-pk-t">に<b>「' + (r.label || "") + '」</b>の声</span>' +
+                  (n > 1 ? '<span class="nf-pk-n">' + n + '</span>' : '');
     return a;
   }
 

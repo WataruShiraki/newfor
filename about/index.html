@@ -98,35 +98,57 @@ footer a{margin-right:14px}
   <nav class="main"><a href="/articles/">記事一覧</a><a href="/companies/">企業を探す</a><a href="/#monthly">ランキング</a><a href="/about/">About</a></nav>
 </div></header>
 <style id="nf-pickup-css">
-/* ピックアップの帯。ヘッダーのすぐ下に置きます */
-#nf-pickup{position:relative;overflow:hidden;background:#FFF3EA;border-bottom:1px solid rgba(224,74,12,.16);
- display:flex;align-items:center;gap:14px;height:38px;padding-left:14px;font-size:12.5px;line-height:1}
-#nf-pickup .nf-pk-tag{flex:0 0 auto;background:#E04A0C;color:#fff;font-weight:800;font-size:10.5px;
- letter-spacing:.12em;padding:5px 9px;border-radius:5px}
+/* ピックアップの帯。ヘッダーのすぐ下に置きます。
+   ここは「人の気配」を出す場所なので、青ではなく差し色のオレンジで拾わせます。 */
+/* 帯の色は画面いっぱい。中身はそのページの .wrap と同じ幅にそろえる。
+   （ページごとに 1240px / 1180px / 760px と違うので、.wrap をそのまま借ります） */
+#nf-pickup{position:relative;overflow:hidden;
+ background:linear-gradient(90deg,#FFF1E4 0%,#FFF7F0 60%,#FFF1E4 100%);
+ border-bottom:1px solid rgba(224,74,12,.22);font-size:12.5px;line-height:1}
+#nf-pickup .nf-pk-in{display:flex;align-items:center;gap:12px;height:40px;
+ flex-wrap:nowrap;min-height:0}
+#nf-pickup .nf-pk-tag{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;
+ background:#E04A0C;color:#fff;font-weight:800;font-size:10.5px;
+ letter-spacing:.12em;padding:6px 10px;border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+#nf-pickup .nf-pk-tag i{width:6px;height:6px;border-radius:50%;background:#fff;
+ animation:nf-pk-blink 1.6s ease-in-out infinite}
+@keyframes nf-pk-blink{0%,100%{opacity:1}50%{opacity:.25}}
 #nf-pickup .nf-pk-win{position:relative;flex:1 1 auto;overflow:hidden;height:100%;
- -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 42px),transparent 100%);
- mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 42px),transparent 100%)}
+ -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 24px,#000 calc(100% - 44px),transparent 100%);
+ mask-image:linear-gradient(90deg,transparent 0,#000 24px,#000 calc(100% - 44px),transparent 100%)}
 #nf-pickup .nf-pk-track{display:flex;align-items:center;height:100%;width:max-content;
  animation:nf-pk-flow 40s linear infinite}
 #nf-pickup:hover .nf-pk-track{animation-play-state:paused}
-#nf-pickup .nf-pk-item{display:inline-flex;align-items:center;gap:7px;padding:0 22px;
- white-space:nowrap;text-decoration:none;color:#57536D}
-#nf-pickup .nf-pk-item:hover .nf-pk-w{text-decoration:underline}
-#nf-pickup .nf-pk-d{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#9A93AE}
-#nf-pickup .nf-pk-w{color:#2F3BD6;font-weight:700}
+#nf-pickup .nf-pk-item{display:inline-flex;align-items:center;gap:8px;padding:0 20px;
+ white-space:nowrap;text-decoration:none;color:#5A5368;border-radius:6px}
+/* カーソルを乗せたら、その1件まるごとに線を引く */
+#nf-pickup .nf-pk-item:hover{text-decoration:underline;text-decoration-color:rgba(224,74,12,.5);
+ text-underline-offset:4px;text-decoration-thickness:1.5px;color:#2A2439}
+#nf-pickup .nf-pk-d{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#B0A79E;
+ border:1px solid rgba(224,74,12,.2);border-radius:4px;padding:2px 5px}
+#nf-pickup .nf-pk-w{color:#E04A0C;font-weight:800}
+#nf-pickup .nf-pk-t b{font-weight:700;color:#2A2439}
+#nf-pickup .nf-pk-n{background:#E04A0C;color:#fff;font-weight:800;font-size:10px;
+ border-radius:9px;padding:2px 7px}
 @keyframes nf-pk-flow{from{transform:translateX(0)}to{transform:translateX(calc(var(--nf-pk-w,1000px) * -1))}}
 @media (prefers-reduced-motion:reduce){
   #nf-pickup .nf-pk-track{animation:none}
+  #nf-pickup .nf-pk-tag i{animation:none}
   #nf-pickup .nf-pk-win{overflow-x:auto}
 }
 html[data-theme="dark"] #nf-pickup,
-[data-theme="dark"] #nf-pickup{background:#171525;border-bottom-color:rgba(255,255,255,.08)}
-[data-theme="dark"] #nf-pickup .nf-pk-item{color:#A9A3BC}
-[data-theme="dark"] #nf-pickup .nf-pk-w{color:#9AA6FF}
-@media (max-width:640px){#nf-pickup{height:34px;font-size:11.5px}
-  #nf-pickup .nf-pk-tag{font-size:9.5px;padding:4px 7px}}
+[data-theme="dark"] #nf-pickup{background:#1B1526;border-bottom-color:rgba(255,138,69,.22)}
+[data-theme="dark"] #nf-pickup .nf-pk-item{color:#B6ADBF}
+[data-theme="dark"] #nf-pickup .nf-pk-item:hover{color:#F2ECF7}
+[data-theme="dark"] #nf-pickup .nf-pk-w{color:#FF8A45}
+[data-theme="dark"] #nf-pickup .nf-pk-t b{color:#EDE7F2}
+[data-theme="dark"] #nf-pickup .nf-pk-d{color:#8C8397;border-color:rgba(255,138,69,.24)}
+@media (max-width:640px){#nf-pickup{font-size:11.5px}
+  #nf-pickup .nf-pk-in{height:36px;gap:8px}
+  #nf-pickup .nf-pk-tag{font-size:9.5px;padding:5px 8px}
+  #nf-pickup .nf-pk-item{padding:0 14px;gap:6px}}
 </style>
-<div id="nf-pickup" hidden aria-label="直近の投票"><span class="nf-pk-tag">PICKUP</span><div class="nf-pk-win"><div class="nf-pk-track"></div></div></div>
+<div id="nf-pickup" hidden aria-label="直近の投票"><div class="wrap nf-pk-in"><span class="nf-pk-tag"><i></i>PICKUP</span><div class="nf-pk-win"><div class="nf-pk-track"></div></div></div></div>
 <script src="/assets/pickup-map.js" defer></script>
 <script src="/assets/pickup.js" defer></script>
 

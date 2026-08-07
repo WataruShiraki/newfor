@@ -23,6 +23,10 @@ def wrap(t,n):
     数字や英字の途中では切らない（「2026年」が「20／26年」に割れました）。
     行頭に句読点や閉じ括弧も置かない。
     """
+    if '\n' in t:                                # 改行を書いたら、そこで必ず切る
+        out=[]
+        for part in t.split('\n'): out+=wrap(part,n)
+        return out
     toks=re.findall(r'[0-9A-Za-z.,%&\-]+|.',t)   # 数字と英字はひとかたまり
     out=[]; cur=''
     for tk in toks:
@@ -122,12 +126,13 @@ def put(name,s):
 JOBS=[]   # (svg名, 幅, 高さ)
 
 # ── 1. 導入用（全体の数） ──
-put('ig-00-intro', square('大企業の新規事業8割はまだ生きてる',
-    '%d社%d件を全部並べました。%d年から%d年まで、全件出典つき。'%(len(CO),TOT,LO,HI),
-    '%d'%LIVE,'件がいまも続いています'))
+# 大きく出す数は「挑戦の数」。続いた数を驚きとして見せない（_src/KOTOBA.md）。
+put('ig-00-intro', square('大企業の新規事業\n45年ぶんの挑戦',
+    '%d社%d件を1件ずつ並べました。%d年から%d年まで、全件出典つき。'%(len(CO),TOT,LO,HI),
+    '%d'%TOT,'件の挑戦を記録しています'))
 JOBS.append(('ig-00-intro',1080,1080))
-put('tt-00-intro', vertical('新規事業8割は生きてる',
-    '%d社%d件を全部並べました'%(len(CO),TOT),'%d'%LIVE,'件が継続中'))
+put('tt-00-intro', vertical('大企業の新規事業\n45年ぶんの挑戦',
+    '%d社%d件を1件ずつ並べました'%(len(CO),TOT),'%d'%TOT,'件を記録'))
 JOBS.append(('tt-00-intro',1080,1920))
 
 # ── 2. 企業ごと（Instagram用・上位12社） ──

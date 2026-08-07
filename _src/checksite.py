@@ -1,9 +1,18 @@
 # -*- coding: utf-8 -*-
 """サイト全体の点検"""
 import io,os,re,glob
-NG=['レポート','失敗','撤退','寿命','いま続いている','次へ渡した','今週','今日の','毎週',
+# 挑戦を否定する言葉は、サイトのどこにも出さない（_src/KOTOBA.md が最上位のルール）
+KOTOBA=['どうせ続かない','まだ生きて','生き残','生存率','失敗','しくじり','爆死',
+        '終わってる','終わっている','消滅','淘汰','敗者','勝ち組','負け組',
+        '撤退','頓挫','挫折','寿命','打ち切り','お蔵入り','黒歴史',
+        '意外にも','思ったより']
+# 「いま続いている」「次へ渡した」は、KOTOBA.md が勧める言い方に変わったので外しました
+NG=KOTOBA+['レポート','今週','今日の','毎週',
     'undefined','NaN','${','DECISIONS','企業の決断','準備中']
 EMO=re.compile('[\U0001F300-\U0001FAFF☀-➿]')
+# 決まりそのものを説明している文。ここだけは禁止語が出てよい
+ALLOW=['提供を終えた事業を「失敗」とは書かず',
+       '提供を終えた事業を「失敗」「撤退」とは書きません']
 bad=[]
 FILES=[p for p in glob.glob('gh/**/*.html',recursive=True) if not p.startswith('gh/_src/')]
 FILES+= ['gh/llms.txt']
@@ -12,6 +21,7 @@ for p in FILES:
     body=re.sub(r'<script.*?</script>','',s,flags=re.S) if p.endswith('.html') else s
     body=re.sub(r'<style.*?</style>','',body,flags=re.S)
     txt=re.sub(r'<[^>]+>','',body)
+    for a in ALLOW: txt=txt.replace(a,'')
     for w in NG:
         if w in txt: bad.append('%s に「%s」'%(p,w))
     if EMO.search(txt): bad.append('%s に絵文字'%p)

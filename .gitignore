@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+
+# 生成物は置かない（同じ中身を2か所に持たないため）
+# _src/brand/     … brand.py + brandpng.js が作る
+# _src/posts/img/ … postimg.py + postimg.js が作る
+# どちらも `python3 postimg.py && node postimg.js` で作り直せます
+_src/brand/
+_src/posts/

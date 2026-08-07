@@ -42,12 +42,28 @@ var G={"job":{"title":"新規事業の経験は、どこで値段がつくのか
  '.nfa-fit b{color:#2F3BD6}',
  '.nfa-care{background:rgba(224,74,12,.07);color:#5A3320}',
  '.nfa-care b{color:#B8400F}',
- '.nfa-spec{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0;border-top:1px solid rgba(47,59,214,.12);font-size:12.5px}',
- '.nfa-spec dt{padding:8px 14px 8px 0;font-weight:800;color:var(--tx-3,#8C8497);white-space:nowrap;border-bottom:1px solid rgba(47,59,214,.08)}',
- '.nfa-spec dd{padding:8px 0;margin:0;color:var(--tx-2,#57536D);border-bottom:1px solid rgba(47,59,214,.08)}',
- '.nfa-tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}',
+ /* 入口・対象・費用は、横並びの3枚にして幅いっぱいに置く。
+    縦積みの定義リストにしていたころ、右半分が空いて落ち着かない見た目でした。 */
+ '.nfa-spec{margin:16px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;font-size:12.5px}',
+ '.nfa-spec .sp{background:rgba(47,59,214,.045);border:1px solid rgba(47,59,214,.1);border-radius:11px;padding:11px 14px}',
+ '.nfa-spec dt{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--tx-3,#8C8497);margin-bottom:5px}',
+ '.nfa-spec dd{margin:0;color:var(--tx-2,#57536D);font-weight:600;line-height:1.7}',
+ /* いちばん下は「タグ（左）＋ボタン（右）」の1行。狭い画面では縦に積む。 */
+ '.nfa-end{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}',
+ '.nfa-tg{display:flex;align-items:center;flex-wrap:wrap;gap:6px;flex:1 1 240px;min-width:0}',
  '.nfa-tg span{font-size:11px;color:var(--tx-2,#57536D);border:1px solid rgba(47,59,214,.2);border-radius:5px;padding:3px 9px}',
- '.nfa .nfa-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin-top:16px;width:100%;max-width:340px;background:#C6410B;color:#fff;font-size:14px;font-weight:800;text-decoration:none;border-radius:11px;padding:14px 20px}',
+ /* ボタンの見た目は1か所に。大きさだけを、置く場所ごとに変える。
+    以前は .nfa の中でしか色がつかず、記事の途中の小さい枠ではただの文字に
+    見えていました（実際にそうなっていました）。 */
+ '.nfa-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#C6410B;color:#fff;font-weight:800;text-decoration:none;border-radius:11px;box-shadow:0 2px 0 rgba(150,50,10,.28)}',
+ '.nfa .nfa-cta{flex:0 1 auto;min-width:300px;font-size:14.5px;padding:15px 26px}',
+ /* 縦に積むときは flex-basis が「高さ」になる。240px のままだとタグの枠が
+    縦に伸びてしまうので、ここで打ち消しておく（実際に伸びました）。 */
+ '@media(max-width:680px){.nfa-end{flex-direction:column;align-items:stretch}',
+ '.nfa-end .nfa-tg{flex:0 0 auto}.nfa .nfa-cta{min-width:0;width:100%}}',
+ /* 記事の途中に出す小さい枠は、同じボタンを幅を抑えて使う */
+ '.affmini .nfa-cta{min-width:0;max-width:230px;font-size:12.5px;padding:12px 18px;text-align:center;line-height:1.45;white-space:normal}',
+ '@media(max-width:640px){.affmini .nfa-cta{max-width:none;width:100%}}',
  '.nfa-cta:hover{background:#A83203}',
  '.nfa-f{padding:14px 22px;font-size:11.5px;line-height:1.8;color:var(--tx-3,#8C8497);background:rgba(47,59,214,.04);border-top:1px solid rgba(47,59,214,.12)}',
  '[data-theme="dark"] .nfa{background:var(--surface,#17141F);border-color:rgba(255,255,255,.12)}',
@@ -82,9 +98,11 @@ function affRow(it,i,cta){
      +'<div class="nfa-box nfa-fit"><b>こんな方に向いています</b><ul>'+li(it.fit)+'</ul></div>'
      +'<div class="nfa-box nfa-care"><b>気になるところ</b><ul>'+li(it.care)+'</ul></div>'
    +'</div>'
-   +'<dl class="nfa-spec">'+(it.spec||[]).map(function(s){return '<dt>'+s[0]+'</dt><dd>'+s[1]+'</dd>'}).join('')+'</dl>'
-   +'<div class="nfa-tg">'+(it.t||[]).map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'
-   +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||cta)+ARROW+'</a>'
+   +'<dl class="nfa-spec">'+(it.spec||[]).map(function(s){return '<div class="sp"><dt>'+s[0]+'</dt><dd>'+s[1]+'</dd></div>'}).join('')+'</dl>'
+   +'<div class="nfa-end">'
+     +'<div class="nfa-tg">'+(it.t||[]).map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'
+     +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||cta)+ARROW+'</a>'
+   +'</div>'
    +px(it.mat)+'</div>';}
 function affBuild(el){
   var live=affLive(el.getAttribute("data-aff")||"job");

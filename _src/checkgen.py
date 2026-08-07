@@ -165,7 +165,11 @@ for p in sorted(glob.glob('gh/**/*.html',recursive=True)):
     seen.setdefault(url,[]).append(p)
     t=re.search(r'<meta name="twitter:image" content="(.*?)"',s)
     if t and t.group(1)!=url: bad.append('%s の twitter:image が og:image と違う'%p)
+# NEWS詳細（1件1ページ）は、企業ごとの共通画像をわざと使い回しています。
+# 1076枚を1枚ずつ作ると75MBになり、GitHubへ上げられなくなるためです。
+# ここを数えると毎回ひっかかるので、/news/ は数から外します。
 for url,ps in seen.items():
+    ps=[q for q in ps if not q.startswith('gh/news/')]
     if len(ps)>3: bad.append('OGP画像 %s を %d ページで使い回している'%(url,len(ps)))
 
 # ── ピックアップの帯が全ページに入っているか ──

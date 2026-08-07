@@ -78,7 +78,7 @@ for C in CO:
     tl=C['timeline']; yrs=[int(y[:4]) for y,*_ in tl]
     live=sum(1 for r in tl if r[3]); ES=C.get('evsrc') or {}
     L.append('### %sの新規事業（%s）'%(C['name'],C['legal']))
-    L.append('- 業種: %s ／ 記録: %d件（継続中 %d件、終了・譲渡 %d件）／ 範囲: %d–%d年'
+    L.append('- 業種: %s ／ 記録: %d件（継続中 %d件、役目を終えた %d件）／ 範囲: %d–%d年'
              %(C['ind'],len(tl),live,len(tl)-live,min(yrs),max(yrs)))
     L.append('- URL: %s/companies/%s/'%(SITE,C['slug']))
     if C.get('article') in SLUGS:
@@ -86,7 +86,7 @@ for C in CO:
     L.append('- 直近の記録:')
     for y,ev,note,lv in tl[-5:]:
         u=ES.get(y)
-        L.append('  - %s %s（%s）— %s%s'%(y,ev,'継続中' if lv else '終了・譲渡',note,('　出典: '+u[0]) if u else ''))
+        L.append('  - %s %s（%s）— %s%s'%(y,ev,'継続中' if lv else '役目を終えた',note,('　出典: '+u[0]) if u else ''))
     L.append('')
 L+=['## 記事','']
 for a in ART:

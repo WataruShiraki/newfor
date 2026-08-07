@@ -339,7 +339,7 @@ def render(it, same_co, same_time, prev_it, next_it, coinfo):
         ld["@graph"][0]["temporalCoverage"] = it['date']
 
     st = ('<span class="st live">継続中</span>' if it['live']
-          else '<span class="st done">終了・譲渡</span>')
+          else '<span class="st done">役目を終えた</span>')
     hero = ('<div class="nhero"><svg class="bg" viewBox="0 0 32 32" fill="none" aria-hidden="true">%s</svg>'
             '<div class="nwrap">'
             '<div class="crumb"><a href="/">NEWFOR</a> ／ <a href="/news/">新規事業NEWS</a> ／ '

@@ -8,14 +8,6 @@ sys.path.insert(0,'companies')
 sys.path.insert(0,'articles')
 import compgen
 from compgen import ym,find_end
-import newsdata
-
-# 年表の1件ずつに、NEWS詳細ページ（/news/…）の行き先を持たせる。
-# 同じ会社の中で見出しが重なることはないので、見出しで引けます。
-NEWSURL={}
-for _i in newsdata.build():
-    NEWSURL[(_i['coslug'],_i['title'])]=newsdata.path(_i)
-
 
 MIN=10   # これ未満の企業は、検索エンジンに載せない
 
@@ -58,7 +50,7 @@ for C in sorted(CO,key=lambda c:-len(c['timeline'])):
     c=dict(slug=slug,name=name,legal=C['legal'],ogslug='c-%s'%slug,
       rep=('/articles/%s/'%A['slug']) if A else '',
       rept=A['h1'].replace('<br>','') if A else '',
-      biz=biz,news={t[1]:NEWSURL.get((slug,t[1]),'') for t in tl},thin=len(biz)<MIN,srcs=C.get('sources',[]),ind=C['ind'],evsrc=C.get('evsrc') or {},
+      biz=biz,thin=len(biz)<MIN,srcs=C.get('sources',[]),ind=C['ind'],evsrc=C.get('evsrc') or {},
       # 検索結果で切れないよう、全角30字＝60幅までに収める。
       # 「企業名＋新規事業」で引かれるので、それを先頭に置く。
       title=ttl(name,len(biz),lo,hi),
@@ -66,10 +58,10 @@ for C in sorted(CO,key=lambda c:-len(c['timeline'])):
       # 完結するように書く。2文目以降で中身を足す。
       desc=('%sの新規事業%d件の一覧です。%d年から%d年までに始まった事業を、'
             '開始年・いまの状況・出典つきで1件ずつ年表にしました。'
-            '継続中%d件、終了または他社へ譲渡%d件。%sなどを掲載しています。'
+            '継続中%d件、役目を終えた・次へ渡した%d件。%sなどを掲載しています。'
             %(name,len(biz),lo,hi,nl,len(biz)-nl,
               '「%s」'%'」「'.join(b[0] for b in sorted(biz,key=lambda b:-b[1])[:2]))),
-      lead='公開情報から拾った%d件を、開始年の古い順に並べています。いま提供が続いているものは青、終了または他社へ譲渡したものは紫で示しています。'%len(biz),
+      lead='公開情報から拾った%d件を、開始年の古い順に並べています。いま提供が続いているものは青、役目を終えた、または次へ渡したものは紫で示しています。'%len(biz),
       others=[(x['slug'],x['name']) for x in sorted(CO,key=lambda c:-len(c['timeline']))
               if x['slug']!=slug and len(x['timeline'])>=MIN][:11])
     os.makedirs('gh/companies/%s'%slug,exist_ok=True)

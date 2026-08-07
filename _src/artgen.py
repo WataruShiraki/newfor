@@ -584,19 +584,19 @@ def chart_html(a):
     ticks=''.join('<span>%d</span>'%y for y in a['ticks'])
     return ('<div class="fig"><div class="cap">CHART</div><h4>%s</h4><div class="sub">%s</div>'
       '<div class="chart">%s</div><div class="axis">%s</div>'
-      '<div class="lg"><span><i class="live"></i>継続中</span><span><i class="done"></i>終了・譲渡</span></div></div>'
+      '<div class="lg"><span><i class="live"></i>継続中</span><span><i class="done"></i>役目を終えた</span></div></div>'
       )%(a['chart_t'],a['chart_s'],''.join(rows),ticks)
 
 def timeline_html(a):
     items=[]
     for y,ev,note,live in a['timeline']:
-        bd='<span class="bd live">継続中</span>' if live else '<span class="bd done">終了・譲渡</span>'
+        bd='<span class="bd live">継続中</span>' if live else '<span class="bd done">役目を終えた</span>'
         note='<em>%s</em>'%note if note else ''
         items.append('<li data-s="%s"><span class="y">%s</span><span class="ev">%s%s</span>%s</li>'%(
           'live' if live else 'done',y,ev,note,bd))
     return ('<div class="fig"><div class="cap">TIMELINE</div><h4>%s</h4><div class="sub">%s</div>'
       '<div class="tlf"><button class="on" data-f="all">すべて</button>'
-      '<button data-f="live">継続中</button><button data-f="done">終了・譲渡</button></div>'
+      '<button data-f="live">継続中</button><button data-f="done">役目を終えた</button></div>'
       '<ul class="tl" id="tl">%s</ul></div>')%(a['tl_t'],a['tl_s'],''.join(items))
 
 TL_JS = '''

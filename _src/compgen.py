@@ -173,7 +173,7 @@ TPL='''<!DOCTYPE html>
     <div class="sub">{name}の主な新規事業／{lo}–2026</div>
     <div class="cch">{chart}</div>
     <div class="cax"><span>{lo}</span><span>2026</span></div>
-    <div class="clg"><span><i class="live"></i>継続中</span><span><i class="done"></i>終了・譲渡</span>{unklg}</div>
+    <div class="clg"><span><i class="live"></i>継続中</span><span><i class="done"></i>役目を終えた</span>{unklg}</div>
     {unknote}
   </div>
 
@@ -182,7 +182,7 @@ TPL='''<!DOCTYPE html>
   <div class="cbox">
     <h2>新規事業の一覧</h2>
     <div class="sub">公開情報から拾った{n}件。年の古い順に並べています</div>
-    <div class="cfil"><button class="on" data-f="all">すべて（{n}）</button><button data-f="live">継続中（{nlive}）</button><button data-f="done">終了・譲渡（{ndone}）</button></div>
+    <div class="cfil"><button class="on" data-f="all">すべて（{n}）</button><button data-f="live">継続中（{nlive}）</button><button data-f="done">役目を終えた（{ndone}）</button></div>
     <ul class="clist" id="clist">{list}</ul>
   </div>
 
@@ -249,7 +249,7 @@ def render(c):
           '<span class="yr2">%s</span></div>'%(n,n,cls,left,w,yr))
     items=[]
     for n,s,e,live,note in biz:
-        bd='<span class="bd2 live">継続中</span>' if live else '<span class="bd2 done">終了・譲渡</span>'
+        bd='<span class="bd2 live">継続中</span>' if live else '<span class="bd2 done">役目を終えた</span>'
         y='%d.%02d'%(int(s),round((s-int(s))*12)+1)
         ES=c.get('evsrc') or {}
         hit=esrc(ES,y,n)
@@ -276,8 +276,8 @@ def render(c):
       %(len(biz),lo,hi,int(rec[0][1]),'「%s」'%rec[0][0],ex(rec[1:],3))),
      ("%sの新規事業のうち、いま提供が続いているものは何件ですか？"%nm,
       "記録した%d件のうち%d件が継続中です。%sなどが該当します。"%(len(biz),len(lv),ex(sorted(lv,key=lambda b:-b[1]),3)))]
-    if dn: QA.append(("%sが終了または他社へ譲渡した事業はありますか？"%nm,
-      "%d件を記録しています。%sなどが、すでに提供を終えたか他社へ譲渡ずみです。年表では、それぞれの開始年と終了年を帯の長さで確認できます。"
+    if dn: QA.append(("%sが役目を終えた、または次へ渡した事業はありますか？"%nm,
+      "%d件を記録しています。%sなどが、すでに提供を終えたか、次へ渡しています。年表では、それぞれの開始年と終えた年を帯の長さで確認できます。"
       %(len(dn),ex(sorted(dn,key=lambda b:-b[1]),3))))
     QA.append(("この一覧はどこの情報をもとにしていますか？",
       "%sのプレスリリース、IR資料、公式サイトなど、公開されている情報だけを使っています。出典は%d件を明記しています。日付が確認できない出来事は載せていません。網羅を保証するものではありません。"
@@ -315,7 +315,7 @@ def render(c):
         ogslug=c['ogslug'],name=c['name'],lead=c['lead'],stat=stat,lo=lo,yspan=2026-lo,
         chart=''.join(rows),list=''.join(items),n=len(biz),nlive=nlive,ndone=ndone,
         unklg='<span><i class="unk"></i>その年だけの出来事</span>' if unk else '',
-        unknote='<div class="cnote">丸い印で示しているのは、譲渡の決定や買収の提案など、その年で完結した出来事です。期間のある事業は帯で示しています。終了した年が公表されていない事業も、同じ丸い印にしています。</div>' if unk else '',
+        unknote='<div class="cnote">丸い印で示しているのは、次へ渡す決定や買収の提案など、その年で完結した出来事です。期間のある事業は帯で示しています。終えた年が公表されていない事業も、同じ丸い印にしています。</div>' if unk else '',
         rep=rep,others=others,srcs=srcs,faq=faq,
         robots=('noindex,follow' if c.get('thin') else 'index,follow,max-image-preview:large,max-snippet:-1'),
         ld=json.dumps(ld,ensure_ascii=False,separators=(',',':')),

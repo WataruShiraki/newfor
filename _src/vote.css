@@ -1,0 +1,94 @@
+/* NEWFOR 読者の投票。見た目はここだけにあります（ページ側には入れません）。
+   クラス名は nfv- でそろえています。ページ側の古い .vote 系とぶつからないためです。 */
+.nfv{background:var(--surface,#fff);border:1px solid rgba(47,59,214,.22);border-radius:18px;
+ padding:26px 28px;position:relative;overflow:hidden}
+@media(max-width:640px){.nfv{padding:20px 17px;border-radius:14px}}
+.nfv::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;
+ background:linear-gradient(90deg,#2F3BD6,#E04A0C 70%,transparent)}
+
+.nfv-hd{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.nfv-tag{display:inline-block;background:#2F3BD6;color:#fff;font-size:11px;font-weight:800;
+ letter-spacing:.08em;border-radius:6px;padding:5px 10px}
+.nfv-day{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--tx-3,#8C8497);font-weight:700}
+
+.nfv-q{margin:0 0 18px}
+.nfv-y{display:block;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.05em;
+ color:var(--tx-3,#8C8497);font-weight:700}
+.nfv-t{margin:7px 0 0;font-size:clamp(19px,3.6vw,24px);font-weight:850;letter-spacing:-.03em;line-height:1.55;
+ color:var(--tx-1,#0C0A16)}
+.nfv-sub{margin:10px 0 0;font-size:13.5px;line-height:1.95;color:var(--tx-2,#403C55)}
+.nfv-ask{margin:13px 0 0;font-size:14.5px;line-height:1.85;color:var(--tx-2,#403C55)}
+.nfv-ask b{color:var(--tx-1,#0C0A16);font-weight:800}
+.nfv-ask2{margin:0;font-size:clamp(16px,3.1vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.65}
+
+.nfv-safe{list-style:none;margin:0 0 18px;padding:14px 16px;background:var(--surface-2,#F2F1ED);
+ border-radius:11px;font-size:12px;line-height:1.85;color:var(--tx-2,#403C55)}
+.nfv-safe li{position:relative;padding-left:20px;margin:3px 0}
+.nfv-safe li::before{content:"✓";position:absolute;left:0;top:0;color:#116B1D;font-weight:800}
+.nfv-safe b{font-weight:800;color:var(--tx-1,#0C0A16)}
+
+.nfv-opts{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+@media(max-width:560px){.nfv-opts{grid-template-columns:1fr}}
+.nfv-opts.re{grid-template-columns:1fr;gap:9px}
+.nfv-o{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:9px;
+ font:inherit;font-size:15.5px;font-weight:800;letter-spacing:-.01em;
+ padding:18px 18px;border-radius:13px;border:2px solid rgba(47,59,214,.3);background:var(--surface,#fff);
+ color:var(--tx-1,#0C0A16);cursor:pointer;text-align:center;line-height:1.5;transition:transform .12s,box-shadow .12s}
+.nfv-o:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(47,59,214,.6);
+ border-color:#2F3BD6}
+.nfv-o:disabled{cursor:default}
+.nfv-o.re{display:flex;align-items:center;gap:10px;text-align:left;font-size:14.5px;padding:14px 16px;
+ border-width:1px;border-color:var(--border,rgba(18,14,38,.13))}
+.nfv-o .fill{position:absolute;inset:0 auto 0 0;background:rgba(47,59,214,.12);transition:width .5s ease}
+.nfv-o .lb{position:relative;flex:1;display:flex;align-items:center;gap:8px}
+.nfv-o .em{font-size:19px;line-height:1}
+.nfv-o .pv{position:relative;font-family:ui-monospace,Menlo,monospace;font-weight:800;color:#2F3BD6}
+.nfv-o em{font-style:normal;font-size:10.5px;font-weight:800;background:#2F3BD6;color:#fff;
+ border-radius:20px;padding:2px 8px;margin-left:8px}
+.nfv-o.mine{border-color:#2F3BD6}
+
+.nfv-n{margin:15px 0 0;font-size:12.5px;line-height:1.8;color:var(--tx-3,#8C8497)}
+.nfv-n b{color:var(--tx-1,#0C0A16);font-weight:800}
+.nfv-n2{margin:0 0 14px;font-size:13px;line-height:1.85;color:var(--tx-2,#403C55)}
+
+/* ── 答え合わせ ── */
+.nfv-res{display:flex;align-items:center;gap:13px;flex-wrap:wrap;padding:16px 18px;border-radius:13px;margin:0 0 16px}
+.nfv-res.hit{background:rgba(17,107,29,.09);border:1px solid rgba(17,107,29,.28)}
+.nfv-res.miss{background:rgba(224,74,12,.08);border:1px solid rgba(224,74,12,.28)}
+.nfv-badge{font-size:13px;font-weight:850;letter-spacing:.06em;color:#fff;border-radius:7px;padding:6px 13px}
+.nfv-res.hit .nfv-badge{background:#116B1D}
+.nfv-res.miss .nfv-badge{background:#C6410B}
+.nfv-real{font-size:14.5px;line-height:1.7;color:var(--tx-1,#0C0A16)}
+.nfv-real b{font-weight:850}
+.nfv-note{margin:0 0 18px;font-size:14px;line-height:2;color:var(--tx-2,#403C55);
+ padding:15px 17px;background:var(--surface-2,#F2F1ED);border-radius:11px}
+
+.nfv-bars{display:grid;gap:9px}
+.nfv-b{position:relative;overflow:hidden;display:flex;align-items:center;gap:10px;
+ padding:14px 16px;border-radius:11px;border:1px solid var(--border,rgba(18,14,38,.13));background:var(--surface,#fff)}
+.nfv-b .fill{position:absolute;inset:0 auto 0 0;background:rgba(47,59,214,.11)}
+.nfv-b.ok .fill{background:rgba(17,107,29,.15)}
+.nfv-b.ok{border-color:rgba(17,107,29,.42)}
+.nfv-b .lb{position:relative;flex:1;font-size:14px;font-weight:700;display:flex;align-items:center;
+ gap:7px;flex-wrap:wrap}
+.nfv-b .lb em{font-style:normal;font-size:10.5px;font-weight:800;background:#2F3BD6;color:#fff;
+ border-radius:20px;padding:2px 8px}
+.nfv-b .lb i{font-style:normal;font-size:10.5px;font-weight:800;background:#116B1D;color:#fff;
+ border-radius:20px;padding:2px 8px}
+.nfv-b .pv{position:relative;font-family:ui-monospace,Menlo,monospace;font-size:19px;font-weight:850;
+ color:var(--tx-1,#0C0A16);letter-spacing:-.03em}
+.nfv-b .pv small{font-size:11px;margin-left:1px}
+
+.nfv-cta{display:flex;align-items:center;justify-content:center;gap:9px;margin:18px 0 0;
+ background:#2F3BD6;color:#fff;font-size:15px;font-weight:800;border-radius:13px;padding:17px 22px;
+ text-decoration:none;line-height:1.5;text-align:center}
+.nfv-cta:hover{background:#212DBE}
+.nfv-cta svg{width:16px;height:16px;flex-shrink:0}
+.nfv-thx{margin:14px 0 0;padding:14px 16px;background:var(--accent-w,rgba(47,59,214,.08));border-radius:11px;font-size:13.5px;line-height:1.85;color:var(--tx-2,#403C55)}
+.nfv-thx b{color:var(--accent,#2F3BD6);font-weight:800}
+.nfv-tm{margin:12px 0 0;font-size:12px;color:var(--tx-3,#8C8497);text-align:center;line-height:1.8}
+
+[data-theme="dark"] .nfv{background:var(--surface,#121218);border-color:rgba(255,255,255,.13)}
+[data-theme="dark"] .nfv-o{background:var(--surface-2,#191922);border-color:rgba(124,140,255,.32);color:var(--tx-1,#F5F5F8)}
+[data-theme="dark"] .nfv-safe,[data-theme="dark"] .nfv-note{background:var(--surface-2,#191922)}
+[data-theme="dark"] .nfv-tag,[data-theme="dark"] .nfv-cta{background:#4A57E8}

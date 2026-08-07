@@ -8,6 +8,14 @@ sys.path.insert(0,'companies')
 sys.path.insert(0,'articles')
 import compgen
 from compgen import ym,find_end
+import newsdata
+
+# 年表の1件ずつに、NEWS詳細ページ（/news/…）の行き先を持たせる。
+# 同じ会社の中で見出しが重なることはないので、見出しで引けます。
+NEWSURL={}
+for _i in newsdata.build():
+    NEWSURL[(_i['coslug'],_i['title'])]=newsdata.path(_i)
+
 
 MIN=10   # これ未満の企業は、検索エンジンに載せない
 
@@ -50,7 +58,7 @@ for C in sorted(CO,key=lambda c:-len(c['timeline'])):
     c=dict(slug=slug,name=name,legal=C['legal'],ogslug='c-%s'%slug,
       rep=('/articles/%s/'%A['slug']) if A else '',
       rept=A['h1'].replace('<br>','') if A else '',
-      biz=biz,thin=len(biz)<MIN,srcs=C.get('sources',[]),ind=C['ind'],evsrc=C.get('evsrc') or {},
+      biz=biz,news={t[1]:NEWSURL.get((slug,t[1]),'') for t in tl},thin=len(biz)<MIN,srcs=C.get('sources',[]),ind=C['ind'],evsrc=C.get('evsrc') or {},
       # 検索結果で切れないよう、全角30字＝60幅までに収める。
       # 「企業名＋新規事業」で引かれるので、それを先頭に置く。
       title=ttl(name,len(biz),lo,hi),

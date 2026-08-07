@@ -9,6 +9,7 @@
 
     トップ            og-top.png
     企業DB            og-companies.png
+    NEWS一覧          og-news.png
     企業ページ        og-c-<slug>.png
     記事              og-a-<slug>.png
     固定ページ        og-p-<name>.png
@@ -63,6 +64,10 @@ P.append(dict(f='og-top.png', eyebrow='新規事業ヒストリーメディア',
 P.append(dict(f='og-companies.png', eyebrow='大企業の新規事業データベース',
   title='%d社%d件を<br>公開情報から記録した。'%(NCO,TOT),
   sub='いまも続くのが%d件。企業ごとに年表で見られます。'%LIVE))
+
+P.append(dict(f='og-news.png', eyebrow='新規事業NEWS',
+  title='大企業の新規事業を、<br>1件ずつ日付順に。',
+  sub='%d社%d件。発表日・いまの状況・出典つきで記録しています。'%(NCO,TOT)))
 
 P.append(dict(f='og-articles.png', eyebrow='新規事業ヒストリー 記事一覧',
   title='%d本の記事で、<br>大企業の決断を読み解く。'%len(ART),

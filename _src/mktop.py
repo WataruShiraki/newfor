@@ -40,13 +40,15 @@ for c in CO:
 NSRC=len(_u)
 
 # ── 全社の出来事を新しい順に ──
-EV=[]
-for c in CO:
-    for d,ev,note,live in c['timeline']:
-        u=esrc(c.get('evsrc'),d,ev)
-        EV.append((d,c['name'],ev,note,c['ind'],1 if live else 0,
-                   '/companies/%s/'%c['slug'],u[0] if u else '',u[1] if u else ''))
-EV.sort(key=lambda e:e[0],reverse=True)
+#
+# 日付と行き先は newsdata.py が決めています。ここで別に計算すると、
+# トップとNEWSページで日付が食い違います（同じ中身を2か所に持たない）。
+#
+#   日付   … 発表日が分かっていれば 2026.08.05、分からなければ 2026.08
+#   行き先 … その1件のNEWSページ。企業ページの先頭ではありません
+import newsdata
+EV=[(i['date'].replace('-','.'),i['co'],i['title'],i['note'],i['ind'],
+     1 if i['live'] else 0,newsdata.path(i),i['src'],i['srclabel']) for i in newsdata.build()]
 def cut(t,n):
     """途中で切れて意味が壊れないよう、句点か読点で切る"""
     if len(t)<=n: return t

@@ -1,11 +1,4 @@
-# -*- coding: utf-8 -*-
-import io,os,json,html
 
-UFO='<path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/>'
-AV_SVG='<svg viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".22"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".32"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>'
-SITE='https://newfor.jp'
-
-CSS = '''
 :root{--page:#F6F5F2;--band:#fff;--surface:#fff;--surface-2:#F2F1ED;--surface-3:#E5E3DD;
  --border:rgba(18,14,38,.13);--border-2:rgba(18,14,38,.22);--border-3:rgba(18,14,38,.36);
  --tx-1:#0C0A16;--tx-2:#403C55;--tx-3:#57536D;
@@ -375,383 +368,77 @@ footer .ln a{margin-right:15px}
 .tbl table{min-width:600px}
 .tbl tbody tr:nth-child(-n+3) td.r{color:var(--blue)}
 @media (max-width:640px){.tbl table{font-size:13px;min-width:480px}.tbl th,.tbl td{padding:9px 9px}}
-'''
 
-from afflinks import END as AFFEND, END_DEFAULT as AFFEND_DEFAULT
-
-AFF_JS = r'''
-/* ============================================================
-   NEWFOR 広告枠
-
-   1行の説明では押されません。読む人が知りたいのは「自分に向いているか」。
-   だから1件ごとに、要点・本文・向いている人・気になるところ・事実の一覧を出します。
-   「気になるところ」は必ず出します。良い面だけ並べた瞬間に信用されなくなるからです。
-
-   見た目のCSSはここから流し込みます。トップと企業DBは手書きHTMLで、
-   ページ側のCSSに新しい書き方が入っていないためです。
-   ============================================================ */
-var ARROW='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
-var G=__AFFDATA__;
-
-(function(){
- if(document.getElementById('nf-aff-css'))return;
- var st=document.createElement('style'); st.id='nf-aff-css';
- st.textContent=[
- '.nfa,.nfa *{box-sizing:border-box}',
- '.nfa{display:block;border:1px solid rgba(47,59,214,.22);border-radius:18px;overflow:hidden;margin:40px 0;background:var(--surface,#fff)}',
- '.nfa-h{display:block;padding:19px 26px;background:#2F3BD6}',
- '.nfa-h .pr{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:4px;padding:2px 7px;margin-right:10px;vertical-align:2px}',
- '.nfa-h .t{font-size:16.5px;font-weight:800;letter-spacing:-.02em;color:#fff}',
- '.nfa-who{padding:15px 26px;font-size:12.5px;font-weight:700;color:#2A2266;background:rgba(47,59,214,.06);border-bottom:1px solid rgba(47,59,214,.12)}',
- '.nfa-lead{padding:22px 26px 6px;font-size:13.5px;line-height:2.05;color:var(--tx-2,#57536D)}',
- '.nfa-r{display:block;padding:30px 26px;border-top:1px solid rgba(47,59,214,.12)}',
- '.nfa-r.top{background:rgba(224,74,12,.045)}',
- '.nfa-hd{display:flex;align-items:baseline;align-items:baseline;gap:10px;flex-wrap:wrap}',
- '.nfa-hd .rk{font-family:ui-monospace,Menlo,monospace;font-size:19px;font-weight:800;color:#E04A0C;min-width:20px}',
- '.nfa-hd .nm{font-size:18px;font-weight:800;letter-spacing:-.02em;color:var(--tx-1,#1A1730)}',
- '.nfa-hd .best{display:inline-block;font-size:10.5px;font-weight:800;color:#fff;background:#E04A0C;border-radius:5px;padding:3px 8px;margin-left:8px;vertical-align:2px}',
- '.nfa-catch{margin-top:13px;font-size:14.5px;font-weight:800;color:#2F3BD6;line-height:1.75}',
- '.nfa-body{margin-top:14px;font-size:13.5px;line-height:2.1;color:var(--tx-2,#57536D)}',
- '.nfa-body strong{color:var(--tx-1,#1A1730);font-weight:800}',
- '.nfa-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}',
- '@media(max-width:680px){.nfa-cols{grid-template-columns:1fr}}',
- '.nfa-box{border-radius:12px;padding:17px 19px;font-size:12.5px;line-height:1.95}',
- '.nfa-box b{display:block;font-size:12px;font-weight:800;margin-bottom:9px;letter-spacing:.02em}',
- '.nfa-box ul{margin:0;padding-left:17px}',
- '.nfa-box li{margin:5px 0}',
- '.nfa-fit{background:rgba(47,59,214,.06);color:#2A2266}',
- '.nfa-fit b{color:#2F3BD6}',
- '.nfa-care{background:rgba(224,74,12,.07);color:#5A3320}',
- '.nfa-care b{color:#B8400F}',
- /* 入口・対象・費用は、横並びの3枚にして幅いっぱいに置く。
-    縦積みの定義リストにしていたころ、右半分が空いて落ち着かない見た目でした。 */
- '.nfa-spec{margin:24px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0;font-size:13px;border-top:1px solid rgba(47,59,214,.13)}',
- '.nfa-spec dt{padding:13px 20px 13px 0;font-weight:800;color:var(--tx-3,#8C8497);white-space:nowrap;border-bottom:1px solid rgba(47,59,214,.09)}',
- '.nfa-spec dd{padding:13px 0;margin:0;color:var(--tx-2,#57536D);line-height:1.8;border-bottom:1px solid rgba(47,59,214,.09)}',
- '@media(max-width:520px){.nfa-spec{grid-template-columns:1fr}.nfa-spec dt{padding:12px 0 0;border-bottom:0}.nfa-spec dd{padding:4px 0 12px}}',
- /* 出典は、ボタンのすぐ下に小さく。どこの情報で書いたのかを、その場で見せる。 */
- '.nfa-src{margin:11px 0 0;text-align:center;font-size:11.5px;line-height:1.7;color:var(--tx-3,#8C8497)}',
- /* いちばん下は「タグ（左）＋ボタン（右）」の1行。狭い画面では縦に積む。 */
- '.nfa-end{display:block;margin-top:26px}',
- '.nfa-tg{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-bottom:16px}',
- '.nfa-tg span{font-size:11px;color:var(--tx-2,#57536D);border:1px solid rgba(47,59,214,.2);border-radius:5px;padding:3px 9px}',
- /* ボタンの見た目は1か所に。大きさだけを、置く場所ごとに変える。
-    以前は .nfa の中でしか色がつかず、記事の途中の小さい枠ではただの文字に
-    見えていました（実際にそうなっていました）。 */
- '.nfa-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#C6410B;color:#fff;font-weight:800;text-decoration:none;border-radius:11px;box-shadow:0 2px 0 rgba(150,50,10,.28)}',
- '.nfa .nfa-cta{display:flex;width:100%;font-size:15px;padding:18px 24px;line-height:1.5;white-space:normal;text-align:center}',
-  '@media(max-width:680px){.nfa-r{padding:24px 17px}.nfa .nfa-cta{font-size:14.5px;padding:16px 18px}}',
- /* 記事の途中に出す小さい枠は、同じボタンを幅を抑えて使う */
- '.affmini .nfa-cta{min-width:0;max-width:230px;font-size:12.5px;padding:12px 18px;text-align:center;line-height:1.45;white-space:normal}',
- '@media(max-width:640px){.affmini .nfa-cta{max-width:none;width:100%}}',
- '.nfa-cta:hover{background:#A83203}',
- '.nfa-f{padding:17px 26px;font-size:11.5px;line-height:1.8;color:var(--tx-3,#8C8497);background:rgba(47,59,214,.04);border-top:1px solid rgba(47,59,214,.12)}',
- '[data-theme="dark"] .nfa{background:var(--surface,#17141F);border-color:rgba(255,255,255,.12)}',
- '[data-theme="dark"] .nfa-h{background:#232030}',
- '[data-theme="dark"] .nfa-who{background:rgba(255,255,255,.05);color:#C9C2D6}',
- '[data-theme="dark"] .nfa-r.top{background:rgba(255,138,69,.07)}',
- '[data-theme="dark"] .nfa-fit{background:rgba(154,166,255,.1);color:#C7CDF7}',
- '[data-theme="dark"] .nfa-fit b{color:#9AA6FF}',
- '[data-theme="dark"] .nfa-care{background:rgba(255,138,69,.1);color:#EBC7B2}',
- '[data-theme="dark"] .nfa-care b{color:#FF8A45}',
- '[data-theme="dark"] .nfa-catch{color:#9AA6FF}'
- ].join('\n');
- document.head.appendChild(st);
-})();
-
-var A8='https://px.a8.net/svt/ejp?a8mat=';
-var A8IMG='https://www13.a8.net/0.gif?a8mat=';
-function affLive(k){var g=G[k];if(!g)return null;
-  var it=g.items.filter(function(x){return x.mat&&x.mat.length>8});
-  return it.length?{g:g,items:it}:null;}
-/* 成果計測の1×1画像。A8の規定どおり、リンクと一緒に置きます */
-function px(m){return '<img border="0" width="1" height="1" src="'+A8IMG+m+'" alt="" loading="lazy">';}
-function b2(t){return String(t||'').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');}
-function li(a){return (a||[]).map(function(x){return '<li>'+x+'</li>'}).join('');}
-function affRow(it,i,cta){
-  return '<div class="nfa-r'+(i===0?' top':'')+'">'
-   +'<div class="nfa-hd"><span class="rk">'+(i+1)+'</span><span class="nm">'+it.n
-   +(it.best?'<span class="best">NEWFORのおすすめ</span>':'')+'</span></div>'
-   +'<div class="nfa-catch">'+it.catch+'</div>'
-   +'<div class="nfa-body">'+b2(it.body)+'</div>'
-   +'<div class="nfa-cols">'
-     +'<div class="nfa-box nfa-fit"><b>こんな方に向いています</b><ul>'+li(it.fit)+'</ul></div>'
-     +'<div class="nfa-box nfa-care"><b>気になるところ</b><ul>'+li(it.care)+'</ul></div>'
-   +'</div>'
-   +'<dl class="nfa-spec">'+(it.spec||[]).map(function(s){return '<dt>'+s[0]+'</dt><dd>'+s[1]+'</dd>'}).join('')+'</dl>'
-   +'<div class="nfa-end">'
-     +'<div class="nfa-tg">'+(it.t||[]).map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'
-     +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||cta)+ARROW+'</a>'
-     +(it.src?'<p class="nfa-src">出典: '+it.src[0]+'（'+it.src[1]+'／2026年8月時点）</p>':'')
-   +'</div>'
-   +px(it.mat)+'</div>';}
-function affBuild(el){
-  var live=affLive(el.getAttribute("data-aff")||"job");
-  if(!live){el.remove();return;}
-  el.innerHTML='<div class="nfa"><div class="nfa-h"><span class="pr">広告</span>'
-   +'<span class="t">'+live.g.title+'</span></div>'
-   +'<div class="nfa-who">'+live.g.who+'</div>'
-   +(live.g.lead?'<div class="nfa-lead">'+live.g.lead+'</div>':'')
-   +live.items.map(function(it,i){return affRow(it,i,live.g.cta)}).join('')
-   +'<div class="nfa-f">本枠は広告（アフィリエイトプログラムを含みます）。'
-   +'掲載内容は各社の公表情報にもとづくNEWFORの整理で、各社の公式見解ではありません。'
-   +'並び順は、この記事を読んでいる方との近さで決めており、報酬額では変えません。</div></div>';
-}
-function affMini(el){
-  var live=affLive(el.getAttribute("data-aff")||"pro");
-  if(!live){el.remove();return;}
-  var it=live.items[0];
-  el.innerHTML='<div class="affmini"><span class="bd"><span class="lead"><span class="pr">広告</span>'+live.g.who+'</span>'
-   +'<span class="nm">'+it.n+'</span><span class="ds">'+it.catch+'</span></span>'
-   +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||live.g.cta)+ARROW+'</a>'
-   +px(it.mat)+'</div>';}
-Array.prototype.forEach.call(document.querySelectorAll(".affslot"),affBuild);
-Array.prototype.forEach.call(document.querySelectorAll(".affmini-slot"),affMini);
-'''
-
-# 広告の中身は afflinks.py が持っています。ここで焼き込むと、
-# afflinks.py を直しても反映されません（実際に1度そうなりました）。
-import json as _json, hashlib as _hl, os as _os
-from afflinks import G as _AFFG
-AFF_JS = AFF_JS.replace('__AFFDATA__', _json.dumps(_AFFG, ensure_ascii=False, separators=(',',':')))
-# 外部ファイルとして書き出す。ページ側は <script src="/assets/aff.js"> を読むだけ。
-# ?v=ハッシュ は付けません。付けると広告を1文字直すたびに全ページのHTMLが変わり、
-# 反映のたびに57ファイルを上げ直すことになります。代わりに vercel.json で
-# このファイルだけ短い保存期間（5分）にしてあります。
-_os.makedirs('gh/assets', exist_ok=True)
-io.open('gh/assets/aff.js','w',encoding='utf-8').write(AFF_JS)
-AFF_V = _hl.md5(AFF_JS.encode('utf-8')).hexdigest()[:8]
-
-print("artgen part1 written")
-
-def esc(s): return s
-
-def render(a):
-    """a: dict with article data -> full HTML string"""
-    slug=a['slug']; url='/articles/%s/'%slug
-    ld={"@context":"https://schema.org","@graph":[
-      {"@type":"Article","@id":SITE+url+"#article","headline":a['title'],"description":a['desc'],
-       "image":SITE+"/assets/og-a-%s.png"%slug,"datePublished":a['pub'],"dateModified":a['mod'],
-       "author":{"@type":"Person","@id":SITE+"/#author","name":"Soichiro","alternateName":"新規事業マニア"},
-       "publisher":{"@type":"Organization","@id":SITE+"/#org","name":"NEWFOR"},
-       "mainEntityOfPage":SITE+url,"inLanguage":"ja","articleSection":a.get("section","新規事業ヒストリー"),
-       "keywords":a['kw']},
-      {"@type":"BreadcrumbList","itemListElement":[
-        {"@type":"ListItem","position":1,"name":"NEWFOR","item":SITE+"/"},
-        {"@type":"ListItem","position":2,"name":"記事一覧","item":SITE+"/articles/"},
-        {"@type":"ListItem","position":3,"name":a['company'],"item":SITE+url}]}]}
-    if a.get('legal'): ld["@graph"][0]["about"]={"@type":"Corporation","name":a['legal']}
-
-    # KPIs
-    def _kpi(t):
-        k,v,u = t[0],t[1],t[2]
-        note = ('<div class="kn">%s</div>'%t[3]) if len(t)>3 and t[3] else ''
-        return '<div class="kpi"><div class="k">%s</div><div class="v">%s<em>%s</em></div>%s</div>'%(k,v,u,note)
-    kpi=''.join(_kpi(t) for t in a['kpis'])
-    # summary
-    summ=''.join('<li>%s</li>'%s for s in a['summary'])
-    # toc
-    heads=[(i,t) for i,(tag,t) in enumerate(a['body']) if tag=='h2']
-    toc=''.join('<li><a href="#s%d">%s</a></li>'%(i,t) for i,t in heads)
-    toc+='<li><a href="#memo">%s</a></li>'%a['memo_t']
-    # body
-    bd=[]
-    for i,(tag,t) in enumerate(a['body']):
-        if tag=='h2': bd.append('<h2 id="s%d">%s</h2>'%(i,t))
-        elif tag=='h3': bd.append('<h3>%s</h3>'%t)
-        elif tag=='p': bd.append('<p>%s</p>'%t)
-        elif tag=='note': bd.append('<div class="note">%s</div>'%t)
-        elif tag=='voice':
-            bd.append('<div class="voice"><span class="av">%s</span><div>'
-              '<span class="k">新規事業マニアの解説</span>%s</div></div>'
-              %(AV_SVG,''.join('<p>%s</p>'%x for x in t)))
-        elif tag=='term':
-            w,rd,ds=t
-            bd.append('<div class="term"><span class="k">用語</span>'
-              '<span class="w">%s%s</span><p>%s</p></div>'
-              %(w,('<em>%s</em>'%rd) if rd else '',ds))
-        elif tag=='tip':
-            bd.append('<div class="tip"><span class="k">実務のコツ</span>%s</div>'
-              %''.join('<p>%s</p>'%x for x in t))
-        elif tag=='quote': bd.append('<blockquote><p>%s</p></blockquote>'%t)
-        elif tag=='ul': bd.append('<ul>%s</ul>'%''.join('<li>%s</li>'%x for x in t))
-        elif tag=='aff': bd.append('<div class="affmini-slot" data-aff="%s"></div>'%t)
-        elif tag=='chart': bd.append(chart_html(a))
-        elif tag=='timeline': bd.append(timeline_html(a))
-        elif tag=='raw': bd.append(t)
-    body='\n'.join(bd)
-    memo=''.join('<p>%s</p>'%p for p in a['memo'])
-    src=''.join('<li><a href="%s" rel="noopener nofollow" target="_blank">%s</a></li>'%(u,t) for t,u in a['sources'])
-    nxt=''.join('<a href="%s"><div class="k">%s</div><div class="t">%s</div></a>'%(u,k,t) for k,t,u in a['next'])
-
-    return TPL.format(title=a['title'],desc=a['desc'],url=SITE+url,slug=slug,company=a['company'],
-      no=a['no'],h1=a['h1'],dek=a['dek'],date=a['datejp'],read=a['read'],kpi=kpi,summ=summ,toc=toc,
-      forwho=('<div class="k">この記事はこんな方に</div><ul>%s</ul>'
-        %''.join('<li>%s</li>'%x for x in a.get('forwho',[])) if a.get('forwho') else ''),
-      body=body,memo=memo,memo_t=a['memo_t'],src=src,nxt=nxt,ld=json.dumps(ld,ensure_ascii=False,separators=(',',':')),
-      css=CSS,affv=AFF_V,affend=AFFEND.get(slug,AFFEND_DEFAULT),ufo=UFO,tljs=TL_JS if any(t=='timeline' for t,_ in a['body']) else '')
-
-def chart_html(a):
-    lo,hi=a['span']
-    rows=[]
-    for n,s,e,live in a['chart']:
-        left=(s-lo)/(hi-lo)*100
-        end=e if e else hi
-        w=max(1.6,(end-s)/(hi-lo)*100)
-        yr=('%d–'%s) if live else ('%d–%d'%(s,e))
-        rows.append('<div class="crow"><span class="n" title="%s">%s</span>'
-          '<span class="trk"><span class="bar %s" style="left:%.2f%%;width:%.2f%%"></span></span>'
-          '<span class="yr">%s</span></div>'%(n,n,'live' if live else 'done',left,w,yr))
-    ticks=''.join('<span>%d</span>'%y for y in a['ticks'])
-    return ('<div class="fig"><div class="cap">CHART</div><h4>%s</h4><div class="sub">%s</div>'
-      '<div class="chart">%s</div><div class="axis">%s</div>'
-      '<div class="lg"><span><i class="live"></i>継続中</span><span><i class="done"></i>終了・譲渡</span></div></div>'
-      )%(a['chart_t'],a['chart_s'],''.join(rows),ticks)
-
-def timeline_html(a):
-    items=[]
-    for y,ev,note,live in a['timeline']:
-        bd='<span class="bd live">継続中</span>' if live else '<span class="bd done">終了・譲渡</span>'
-        note='<em>%s</em>'%note if note else ''
-        items.append('<li data-s="%s"><span class="y">%s</span><span class="ev">%s%s</span>%s</li>'%(
-          'live' if live else 'done',y,ev,note,bd))
-    return ('<div class="fig"><div class="cap">TIMELINE</div><h4>%s</h4><div class="sub">%s</div>'
-      '<div class="tlf"><button class="on" data-f="all">すべて</button>'
-      '<button data-f="live">継続中</button><button data-f="done">終了・譲渡</button></div>'
-      '<ul class="tl" id="tl">%s</ul></div>')%(a['tl_t'],a['tl_s'],''.join(items))
-
-TL_JS = '''
-(function(){var tl=document.getElementById("tl");if(!tl)return;
- Array.prototype.forEach.call(document.querySelectorAll(".tlf button"),function(b){
-  b.addEventListener("click",function(){
-   var f=b.getAttribute("data-f");
-   Array.prototype.forEach.call(document.querySelectorAll(".tlf button"),function(x){x.classList.toggle("on",x===b)});
-   Array.prototype.forEach.call(tl.children,function(li){
-    li.style.display=(f==="all"||li.getAttribute("data-s")===f)?"":"none";});});});})();
-'''
-
-TPL = '''<!DOCTYPE html>
-<html lang="ja" data-theme="light">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{title}</title>
-<meta name="description" content="{desc}">
-<link rel="canonical" href="{url}">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="author" content="Soichiro">
-<meta name="theme-color" content="#2F3BD6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#08080B" media="(prefers-color-scheme: dark)">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="NEWFOR">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:url" content="{url}">
-<meta property="og:title" content="{title}">
-<meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://newfor.jp/assets/og-a-{slug}.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{title}">
-<meta name="twitter:description" content="{desc}">
-<meta name="twitter:image" content="https://newfor.jp/assets/og-a-{slug}.png">
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<script type="application/ld+json">{ld}</script>
-<style>{css}</style>
-</head>
-<body>
-<header><div class="wrap hd">
-  <a class="brand" href="/"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">{ufo}</svg><span class="wm">NEW<b>FOR</b></span></a>
-  <nav class="main"><a href="/articles/">記事一覧</a><a href="/companies/">企業を探す</a><a href="/#monthly">ランキング</a><a href="/about/">About</a></nav>
-  <button class="tgl" id="tgl" aria-label="配色を切り替える">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <path id="ic-moon" d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
-  </button>
-</div></header>
-
-<div class="hero">
-  <svg class="bg" viewBox="0 0 32 32" fill="none" aria-hidden="true">{ufo}</svg>
-  <div class="wrap">
-    <div class="crumb"><a href="/">NEWFOR</a> ／ <a href="/articles/">記事一覧</a> ／ #{no}　{company}</div>
-    <h1>{h1}</h1>
-    <p class="dek">{dek}</p>
-    <div class="meta"><span>Soichiro</span><span><b>{date}</b></span><span>じっくり読んで 約{read}分</span></div>
-    <div class="kpis">{kpi}</div>
-  </div>
-</div>
-
-<main>
-<div class="rd">
-  <div class="forwho">{forwho}</div>
-  <div class="sum"><div class="k">3行でいうと</div><ol>{summ}</ol></div>
-  <div class="toc"><div class="k">目次</div><ol>{toc}</ol></div>
-
-  <article>
-{body}
-  </article>
-
-  <div class="react-band">
-    <div class="react-wrap">
-      <div class="react-hd">
-        <span class="k">READERS' VOICE</span>
-        <h3>ここまで読んだ、あなたへ</h3>
-        <p><b>ひとつ選ぶと、ほかの読者が何を選んだかが、その場で見えます。</b><br>この記録がどう受け取られたのかを、みんなで確かめる場所です。</p>
-      </div>
-      <div class="vote-slot" data-poll="reaction-{slug}"></div>
-    </div>
-  </div>
-
-  <div class="memo" id="memo" style="scroll-margin-top:84px">
-    <div class="mh">
-      <span class="av"><svg width="16" height="16" viewBox="0 0 32 32" fill="none">{ufo}</svg></span>
-      <div><div class="k">NEWFOR MEMO</div><div class="t">{memo_t}</div></div>
-    </div>
-    {memo}
-  </div>
-
-  <div class="affslot" data-aff="{affend}"></div>
-
-  <div class="au">
-    <span class="av"><svg width="26" height="26" viewBox="0 0 32 32" fill="none">{ufo}</svg></span>
-    <div>
-      <div class="nm">Soichiro<span class="hd2">新規事業マニア</span></div>
-      <div class="rl">40代 ／ 事業開発</div>
-      <div class="bio">新規事業マニア。20代でスタートアップを立ち上げ、1社を上場企業へ売却。その後、外資系コンサルティングファーム、通信大手、大手人材グループ、国内大手ITサービスの中で、社員として新規事業の立ち上げに携わる。並行して顧問として10社近くの新規事業を担当。事業立ち上げ歴20年。名前は、本田宗一郎への敬意から。</div>
-      <div class="bg2"><span><b>20年</b> 事業立ち上げ歴</span><span><b>1社</b> 上場企業へ売却</span><span><b>4社</b> 事業会社の中で立ち上げ</span><span><b>10社</b> 顧問として担当</span></div>
-    </div>
-  </div>
-
-  <div class="next">{nxt}</div>
-
-  <div class="src">
-    <h3>出典</h3>
-    <ol>{src}</ol>
-    <div class="legal">掲載内容は公開情報（各社プレスリリース・IR資料・報道）に基づく筆者の整理であり、各社の公式見解ではありません。事実の誤りや抜け漏れのご指摘、掲載の取り下げのご連絡は<a href="/about/">運営者情報</a>のページから受け付けています。<br>本サイトはアフィリエイトプログラムによる収益を得ています。詳しくは<a href="/ads/">広告について</a>。</div>
-  </div>
-</div>
-</main>
-
-<footer><div class="wrap">
-  <div class="ln"><a href="/">トップ</a><a href="/companies/">企業を探す</a><a href="/articles/">記事一覧</a><a href="/about/">運営者情報</a><a href="/ads/">広告について</a><a href="/privacy/">プライバシーポリシー</a></div>
-  <div>NEWFOR ／ ニューフォー　公開情報に基づく筆者の見解であり、各社の公式見解ではありません。<br>© 2026 NEWFOR</div>
-</div></footer>
-
-<script>
-(function(){{"use strict";
-var theme="light",root=document.documentElement;
-var moon="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z";
-var sun="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z";
-document.getElementById("tgl").addEventListener("click",function(){{
-  theme=theme==="dark"?"light":"dark";root.setAttribute("data-theme",theme);
-  document.getElementById("ic-moon").setAttribute("d",theme==="dark"?moon:sun);}});
-{tljs}
-}})();
-</script>
-<script src="/assets/aff.js" defer></script>
-<script src="/assets/vote.js" defer></script>
-</body></html>
-'''
+.nwrap{max-width:760px;margin:0 auto;padding:0 22px}
+@media(max-width:640px){.nwrap{padding:0 17px}}
+.nhero{background:linear-gradient(172deg,#2730CE 0%,#2F3BD6 52%,#3843E6 100%);color:#fff;padding:34px 0 38px;position:relative;overflow:hidden}
+:root[data-theme="dark"] .nhero{background:var(--band);color:var(--tx-1);border-bottom:1px solid var(--border)}
+.nhero .bg{position:absolute;right:10px;bottom:6px;width:170px;color:#fff;opacity:.12;pointer-events:none}
+:root[data-theme="dark"] .nhero .bg{color:var(--accent);opacity:.07}
+@media(max-width:760px){.nhero .bg{width:104px;right:-8px}}
+.nhero h1{margin:12px 0 0;font-size:clamp(22px,4.4vw,33px);line-height:1.5;letter-spacing:-.032em;font-weight:850}
+.nchips{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:15px}
+.nchips a,.nchips span{font-size:12px;font-weight:700;padding:5px 11px;border-radius:20px;
+ background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);color:#fff;white-space:nowrap}
+:root[data-theme="dark"] .nchips a,:root[data-theme="dark"] .nchips span{background:var(--surface);border-color:var(--border);color:var(--tx-2)}
+.nchips a:hover{background:rgba(255,255,255,.3)}
+.nchips .st.live{background:rgba(255,255,255,.95);color:#116B1D;border-color:transparent}
+.nchips .st.done{background:rgba(255,255,255,.95);color:#6B46C1;border-color:transparent}
+.ndate{font-family:ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.92);
+ display:inline-flex;align-items:baseline;gap:8px}
+:root[data-theme="dark"] .ndate{color:var(--tx-2)}
+.ndate em{font-style:normal;font-family:inherit;font-size:10.5px;letter-spacing:.1em;opacity:.8}
+.nsec{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:26px 0;box-shadow:var(--sh)}
+@media(max-width:640px){.nsec{padding:19px 16px;border-radius:13px}}
+.nsec h2{font-size:15.5px;font-weight:800;letter-spacing:-.01em;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.nsec h2::before{content:"";width:3px;height:15px;background:var(--accent);border-radius:2px}
+.nlede{font-size:17px;line-height:2.05;margin:0;color:var(--tx-1)}
+@media(max-width:640px){.nlede{font-size:16px;line-height:1.98}}
+.ngap{margin:14px 0 0;padding:11px 14px;background:var(--surface-2);border-left:3px solid var(--gold);
+ border-radius:0 9px 9px 0;font-size:13px;line-height:1.9;color:var(--tx-2)}
+.nsoi{background:var(--accent-w);border:1px solid var(--accent-l);border-radius:16px;padding:22px 24px;margin:26px 0}
+@media(max-width:640px){.nsoi{padding:18px 16px}}
+.nsoi .who{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.nsoi .av{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;flex-shrink:0}
+.nsoi .av svg{width:19px;height:19px}
+.nsoi .nm{font-size:12.5px;font-weight:800;letter-spacing:-.01em}
+.nsoi .nm em{display:block;font-style:normal;font-size:10.5px;font-weight:600;color:var(--tx-3);letter-spacing:.03em;margin-top:1px}
+.nsoi p{margin:0;font-size:15px;line-height:2.05;color:var(--tx-1)}
+.nsrc{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--accent);color:#fff;
+ font-size:15px;font-weight:800;border-radius:13px;padding:17px 22px;margin:6px 0 0;line-height:1.5;text-align:center}
+.nsrc:hover{background:var(--accent-2)}
+.nsrc svg{width:15px;height:15px;flex-shrink:0}
+.nsrcn{font-size:12px;color:var(--tx-3);line-height:1.85;margin:11px 0 0;text-align:center}
+.nlist{list-style:none;margin:0;padding:0}
+.nlist li{border-top:1px solid var(--border)}
+.nlist li:first-child{border-top:0}
+.nlist a{display:grid;grid-template-columns:84px 1fr;gap:13px;padding:13px 0;align-items:baseline}
+@media(max-width:640px){.nlist a{grid-template-columns:72px 1fr;gap:10px}}
+.nlist a:hover .t{color:var(--accent);text-decoration:underline}
+.nlist .d{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--tx-3)}
+.nlist .t{font-size:14.5px;font-weight:700;line-height:1.7}
+.nlist .t em{font-style:normal;font-weight:600;font-size:12px;color:var(--tx-3);margin-left:8px}
+.nlist li.here{background:var(--surface-2)}
+.nlist li.here .t{color:var(--tx-3)}
+.nlist li.here a{cursor:default}
+.nback{display:block;background:var(--surface);border:1px solid var(--accent-l);border-radius:15px;padding:20px 23px;margin:26px 0}
+.nback .k{display:block;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.13em;color:var(--accent);font-weight:700}
+.nback .t{display:block;font-size:16.5px;font-weight:800;letter-spacing:-.02em;margin-top:6px;line-height:1.6}
+.nback .d{display:block;font-size:12.5px;color:var(--tx-3);margin-top:7px;line-height:1.85}
+.nback:hover{border-color:var(--accent)}
+.nnav{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:26px 0}
+@media(max-width:640px){.nnav{grid-template-columns:1fr}}
+.nnav a{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px 16px}
+.nnav a:hover{border-color:var(--accent)}
+.nnav .k{display:block;font-size:10.5px;color:var(--tx-3);font-weight:700;letter-spacing:.05em}
+.nnav .t{display:block;font-size:13.5px;font-weight:700;line-height:1.65;margin-top:5px}
+.nnav .nx{text-align:right}
+.nyears{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.nyears a{font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:700;padding:6px 11px;border-radius:8px;
+ border:1px solid var(--border);background:var(--surface);color:var(--tx-2)}
+.nyears a:hover,.nyears a.on{border-color:var(--accent);color:var(--accent);background:var(--accent-w)}
+.nnote{font-size:12px;color:var(--tx-3);line-height:1.9;margin:26px 0 0}
+footer{border-top:1px solid var(--border);padding:30px 0;margin-top:44px;background:var(--band)}
+.fnav{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;justify-content:center}
+.fnav a{color:var(--tx-2)}.fnav a:hover{color:var(--accent)}
+.cp{text-align:center;font-size:11.5px;color:var(--tx-3);margin:14px 0 0}

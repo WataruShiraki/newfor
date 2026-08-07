@@ -48,7 +48,10 @@ python3 mkcomp.py         # gh/companies/<slug>/  ← companies/*.py
 python3 mklist.py         # gh/articles/          ← articles/a0*.py
 python3 mktop.py          # gh/index.html の中の数と一覧
 python3 mkcompidx.py      # gh/companies/index.html の中の数と一覧
+python3 newsgen.py        # gh/news/<slug>/ 1件ずつのNEWSページと一覧
 
+python3 pollgen.py       # 読者の投票「今日の1件」の出題表（1年ぶん）
+python3 mkvote.py        # 投票のJSと見た目／トップの投票のかたまり
 python3 mkaff.py         # トップと企業DBの広告枠を、記事と同じ中身にそろえる
 python3 pickup.py        # ヘッダー下の「ピックアップ」帯（直近の投票が流れる）
 

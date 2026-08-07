@@ -21,9 +21,16 @@ CO.sort(key=lambda c:-len(c['timeline']))
 tot=sum(len(c['timeline']) for c in CO)
 
 # ── sitemap ──
-U=[('/','1.0','daily'),('/articles/','0.9','weekly'),('/companies/','0.9','daily')]
+import newsdata
+NEWS=newsdata.build()
+NEWSYEARS=sorted({i['year'] for i in NEWS},reverse=True)
+U=[('/','1.0','daily'),('/news/','0.9','daily'),
+   ('/articles/','0.9','weekly'),('/companies/','0.9','daily')]
 U+=[('/articles/%s/'%a['slug'],'0.8','monthly') for a in ART]
 U+=[('/companies/%s/'%c['slug'],'0.8','weekly') for c in CO]
+U+=[('/news/%d/'%y,'0.6','monthly') for y in NEWSYEARS]
+# NEWSの1件ずつ。数は多いが、1件に1ページあることが検索とAIに伝わる形にしておく。
+U+=[(newsdata.path(i),'0.6','yearly') for i in NEWS]
 U+=[(p,'0.4','yearly') for p in ('/about/','/ads/','/privacy/')]
 sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 sm+=['<url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>%s</changefreq><priority>%s</priority></url>'

@@ -80,6 +80,11 @@ EXTRA_CSS='''
 .clist li:first-child{border-top:0}
 .clist .y2{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);padding-top:2px}
 .clist .ev2{font-weight:700;line-height:1.6}
+.clist .ev2t{color:inherit}
+.clist .ev2t:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a.crow2{text-decoration:none;color:inherit;border-radius:8px;padding:2px 4px;margin:-2px -4px}
+a.crow2:hover .n2{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a.crow2:hover{background:var(--accent-w)}
 .clist .ev2 em{display:block;font-style:normal;font-weight:400;font-size:13px;color:var(--muted);margin-top:3px;line-height:1.8}
 .bd2{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:11px;white-space:nowrap;height:fit-content;margin-top:2px}
 .bd2.live{background:var(--accent-w);color:var(--accent)}
@@ -227,7 +232,7 @@ TPL='''<!DOCTYPE html>
     li.style.display=(f==="all"||li.getAttribute("data-s")===f)?"":"none";}});
   }});}});}})();
 </script>
-<script src="/assets/aff.js?v={affv}" defer></script>
+<script src="/assets/aff.js" defer></script>
 </body></html>'''
 
 
@@ -235,6 +240,7 @@ def render(c):
     biz=c['biz']            # [(name, start_float, end_float or None, live, note)]
     lo=int(min(b[1] for b in biz))
     span=2026.6-lo
+    NEWS=c.get('news') or {}
     rows=[]; unk=False
     for n,s,e,live,note in biz:
         left=(s-lo)/span*100
@@ -244,9 +250,14 @@ def render(c):
             w=max(1.8,(e-s)/span*100); cls='done'; yr='%d–%d'%(int(s),int(e))
         else:
             w=0.7; cls='done unk'; yr='%d'%int(s); unk=True
-        rows.append('<div class="crow2"><span class="n2" title="%s">%s</span>'
+        # チャートの1行も、その1件のNEWSページへ行けるようにする。
+        # これまでは押せず、押せる場所は企業ページの先頭しかありませんでした。
+        u=NEWS.get(n)
+        rows.append(('<a class="crow2" href="%s">'%u if u else '<div class="crow2">')
+          +'<span class="n2" title="%s">%s</span>'
           '<span class="trk2"><span class="b2 %s" style="left:%.2f%%;width:%.2f%%"></span></span>'
-          '<span class="yr2">%s</span></div>'%(n,n,cls,left,w,yr))
+          '<span class="yr2">%s</span>'%(n,n,cls,left,w,yr)
+          +('</a>' if u else '</div>'))
     items=[]
     for n,s,e,live,note in biz:
         bd='<span class="bd2 live">継続中</span>' if live else '<span class="bd2 done">終了・譲渡</span>'
@@ -258,8 +269,10 @@ def render(c):
             '<path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>'
             '%s</a>')%(hit[0],hit[1]) if hit else ''
         note='<em>%s</em>'%note if note else ''
+        u=NEWS.get(n)
+        ttl=('<a class="ev2t" href="%s">%s</a>'%(u,n)) if u else n
         items.append('<li data-s="%s"><span class="y2">%s</span><span class="ev2">%s%s%s</span>%s</li>'%(
-          'live' if live else 'done',y,n,note,lk,bd))
+          'live' if live else 'done',y,ttl,note,lk,bd))
     nlive=sum(1 for b in biz if b[3]); ndone=len(biz)-nlive
     stat=''.join('<div class="c"><span class="l">%s</span><span class="v">%s<small>%s</small></span></div>'%(l,v,u)
         for l,v,u in [('記録した新規事業',len(biz),'件'),('記録の範囲','%d–'%lo,'2026')])

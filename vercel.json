@@ -7,5 +7,13 @@
     { "source": "/reports/", "destination": "/articles/", "permanent": true },
     { "source": "/reports/:slug", "destination": "/articles/:slug", "permanent": true },
     { "source": "/reports/:slug/", "destination": "/articles/:slug/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(aff|pickup).js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=300, must-revalidate" }
+      ]
+    }
   ]
 }

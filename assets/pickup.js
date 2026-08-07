@@ -100,3 +100,8 @@
   })
   .catch(function (e) { console.warn("[NEWFOR pickup]", e); die(); });
 })();
+
+/* ---- 共有ボタンと訂正窓口（assets/share.js）を呼ぶ ----
+   ページのHTMLを触らずに足せるよう、ここから読み込んでいます。
+   中身は share.py が作ります。 */
+(function(){var s=document.createElement('script');s.src='/assets/share.js';s.defer=true;(document.head||document.documentElement).appendChild(s);})();

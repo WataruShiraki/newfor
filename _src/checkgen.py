@@ -112,11 +112,42 @@ for f in sorted(glob.glob('articles/a0*.py')):
 import afflinks as _af
 _empty=[i['n'] for g in _af.G.values() for i in g['items'] if not i.get('mat')]
 if _empty: bad.append('広告リンクが空のまま: %s'%('・'.join(_empty)))
+# リンクは gh/assets/aff.js の中にあります。ページ側は枠と読み込みだけ。
 for p2 in sorted(glob.glob('gh/articles/*/index.html')):
     if p2.endswith('articles/index.html'): continue
     s2=txt(p2)
-    if 'a8mat=' not in s2:
-        bad.append('%s に広告リンクが1つも入っていない'%p2)
+    if 'affslot' not in s2 and 'affmini-slot' not in s2:
+        bad.append('%s に広告枠が1つもない'%p2)
+
+# ── 広告が、古い見本のまま残っていないか ──
+#
+# トップと企業DBは手書きHTMLで、その中に広告JSの写しを持っていました。
+# afflinks.py を直しても、この2ページだけビズリーチ・doda X のまま
+# 公開されていました。同じ中身を2か所に持たない、が答えです。
+# 本文で「ビザスク」「サーキュレーション」に触れるのは記事として正しい。
+# 見るのは広告データの中の名前（"n":"…"）だけにする。
+# 広告のJSとデータは gh/assets/aff.js の1本だけ。ページはそれを読むだけにする。
+SAMPLE=re.compile(r'"n":"(ビズリーチ|フォースタートアップス|doda X|グロービス学び放題|'
+                  r'ラクスルバンク|GMOオフィスサポート|サーキュレーション|ビザスク|HiPro Biz|officee|freee会計|flier[^"]*)"')
+OKNAMES={i['n'] for g in _af.G.values() for i in g['items']}
+AFFJS=txt('gh/assets/aff.js')
+if not AFFJS: bad.append('gh/assets/aff.js がない')
+else:
+    m=SAMPLE.search(AFFJS)
+    if m: bad.append('gh/assets/aff.js に古い見本「%s」が残っている'%m.group(1))
+    for nm in set(re.findall(r'"n":"([^"]+)"',AFFJS)):
+        if nm not in OKNAMES:
+            bad.append('gh/assets/aff.js に afflinks.py にない名前「%s」がある'%nm)
+    for i in _af.G['job']['items']:
+        if i['mat'] not in AFFJS: bad.append('gh/assets/aff.js に %s のリンクがない'%i['n'])
+for p2 in sorted(glob.glob('gh/**/*.html',recursive=True)):
+    if p2.startswith('gh/_src/'): continue
+    s2=txt(p2)
+    if '"mat":' in s2:
+        bad.append('%s に広告データが焼き込まれている（aff.js を読む形にする）'%p2)
+    if 'affslot' in s2 and '/assets/aff.js' not in s2:
+        bad.append('%s が広告のJS（/assets/aff.js）を読んでいない'%p2)
+    if re.search(r'<button data-af=',s2): bad.append('%s に古いタブ式の広告が残っている'%p2)
 
 # ── OGP画像（SNSに貼ったときの絵）が、実在するか ──
 #
@@ -141,8 +172,9 @@ for url,ps in seen.items():
 for p in sorted(glob.glob('gh/**/*.html',recursive=True)):
     if p.startswith('gh/_src/'): continue
     s=txt(p)
-    if '</header>' in s and 'id="nf-pickup"' not in s:
-        bad.append('%s にピックアップの帯がない（pickup.py を流し直す）'%p)
+    # 帯そのものは assets/pickup.js が作ります。ページ側は読み込み2行だけ。
+    if '</header>' in s and '/assets/pickup.js' not in s:
+        bad.append('%s がピックアップのJSを読んでいない（pickup.py を流し直す）'%p)
 
 # ── 3. 生成元のないファイル ──
 for p in sorted(glob.glob('gh/**/*',recursive=True)):

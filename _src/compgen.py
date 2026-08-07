@@ -3,7 +3,7 @@
 import io,os,re,sys,json
 sys.path.insert(0,'articles')
 import artgen
-from artgen import CSS,UFO,AFF_JS,SITE
+from artgen import CSS,UFO,AFF_V,SITE
 
 NOW=2026.6   # 2026年8月
 
@@ -226,8 +226,8 @@ TPL='''<!DOCTYPE html>
    Array.prototype.forEach.call(L.children,function(li){{
     li.style.display=(f==="all"||li.getAttribute("data-s")===f)?"":"none";}});
   }});}});}})();
-{affjs}
 </script>
+<script src="/assets/aff.js?v={affv}" defer></script>
 </body></html>'''
 
 
@@ -319,4 +319,4 @@ def render(c):
         rep=rep,others=others,srcs=srcs,faq=faq,
         robots=('noindex,follow' if c.get('thin') else 'index,follow,max-image-preview:large,max-snippet:-1'),
         ld=json.dumps(ld,ensure_ascii=False,separators=(',',':')),
-        css=CSS,ecss=EXTRA_CSS,ufo=UFO,affjs=AFF_JS)
+        css=CSS,ecss=EXTRA_CSS,ufo=UFO,affv=AFF_V)

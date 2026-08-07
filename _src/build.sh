@@ -20,6 +20,11 @@ python3 assets.py
 node png.js
 python3 ogspec.py       # OGP画像の中身を実データから組み立てる（og.js より先に）
 node og.js              # 全ページぶんのOGP画像 1200×630
+# OGP画像は1枚250KBほどになる。減色すると70KBほどまで落ちて、見た目は変わらない。
+# SNSの取得が速くなり、GitHubへ上げる量も3分の1になる。
+command -v pngquant >/dev/null && for f in dist/assets/og-*.png; do
+  pngquant --quality=70-92 --speed 1 --force --ext .png "$f" 2>/dev/null || true
+done
 python3 extras.py         # llms.txt / sitemap.xml / robots.txt ← companies/ と articles/
 python3 fixlinks.py
 # サイト直下の favicon.ico（古い環境とクローラ向けの保険）
@@ -44,6 +49,7 @@ python3 mklist.py         # gh/articles/          ← articles/a0*.py
 python3 mktop.py          # gh/index.html の中の数と一覧
 python3 mkcompidx.py      # gh/companies/index.html の中の数と一覧
 
+python3 mkaff.py         # トップと企業DBの広告枠を、記事と同じ中身にそろえる
 python3 pickup.py        # ヘッダー下の「ピックアップ」帯（直近の投票が流れる）
 
 # ── いちばん最後。ページを作り直したあとでないと、タグが消えます ──

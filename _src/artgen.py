@@ -380,19 +380,70 @@ footer .ln a{margin-right:15px}
 from afflinks import END as AFFEND, END_DEFAULT as AFFEND_DEFAULT
 
 AFF_JS = r'''
-
 /* ============================================================
    NEWFOR 広告枠
 
-   タブはやめました。広告枠の中のタブを押す人は、まずいないからです。
-   代わりに、そのページを読んでいる人がいま何を思っているかで、
-   出すものを1種類に決めています（data-aff で指定）。
+   1行の説明では押されません。読む人が知りたいのは「自分に向いているか」。
+   だから1件ごとに、要点・本文・向いている人・気になるところ・事実の一覧を出します。
+   「気になるところ」は必ず出します。良い面だけ並べた瞬間に信用されなくなるからです。
 
-   リンクが空のものは出しません。グループが全部空なら、枠ごと消します。
-   押しても何も起きないリンクを置くと、メディアの信用が落ちるためです。
+   見た目のCSSはここから流し込みます。トップと企業DBは手書きHTMLで、
+   ページ側のCSSに新しい書き方が入っていないためです。
    ============================================================ */
 var ARROW='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
 var G=__AFFDATA__;
+
+(function(){
+ if(document.getElementById('nf-aff-css'))return;
+ var st=document.createElement('style'); st.id='nf-aff-css';
+ st.textContent=[
+ '.nfa,.nfa *{box-sizing:border-box}',
+ '.nfa{display:block;border:1px solid rgba(47,59,214,.22);border-radius:18px;overflow:hidden;margin:40px 0;background:var(--surface,#fff)}',
+ '.nfa-h{display:block;padding:16px 22px;background:#2F3BD6}',
+ '.nfa-h .pr{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:4px;padding:2px 7px;margin-right:10px;vertical-align:2px}',
+ '.nfa-h .t{font-size:16.5px;font-weight:800;letter-spacing:-.02em;color:#fff}',
+ '.nfa-who{padding:12px 22px;font-size:12.5px;font-weight:700;color:#2A2266;background:rgba(47,59,214,.06);border-bottom:1px solid rgba(47,59,214,.12)}',
+ '.nfa-lead{padding:16px 22px 4px;font-size:13.5px;line-height:1.95;color:var(--tx-2,#57536D)}',
+ '.nfa-r{display:block;padding:22px;border-top:1px solid rgba(47,59,214,.12)}',
+ '.nfa-r.top{background:rgba(224,74,12,.045)}',
+ '.nfa-hd{display:flex;align-items:baseline;align-items:baseline;gap:10px;flex-wrap:wrap}',
+ '.nfa-hd .rk{font-family:ui-monospace,Menlo,monospace;font-size:19px;font-weight:800;color:#E04A0C;min-width:20px}',
+ '.nfa-hd .nm{font-size:18px;font-weight:800;letter-spacing:-.02em;color:var(--tx-1,#1A1730)}',
+ '.nfa-hd .best{display:inline-block;font-size:10.5px;font-weight:800;color:#fff;background:#E04A0C;border-radius:5px;padding:3px 8px;margin-left:8px;vertical-align:2px}',
+ '.nfa-catch{margin-top:8px;font-size:14.5px;font-weight:800;color:#2F3BD6;line-height:1.7}',
+ '.nfa-body{margin-top:10px;font-size:13.5px;line-height:2;color:var(--tx-2,#57536D)}',
+ '.nfa-body strong{color:var(--tx-1,#1A1730);font-weight:800}',
+ '.nfa-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}',
+ '@media(max-width:680px){.nfa-cols{grid-template-columns:1fr}}',
+ '.nfa-box{border-radius:12px;padding:13px 15px;font-size:12.5px;line-height:1.85}',
+ '.nfa-box b{display:block;font-size:12px;font-weight:800;margin-bottom:6px;letter-spacing:.02em}',
+ '.nfa-box ul{margin:0;padding-left:17px}',
+ '.nfa-box li{margin:3px 0}',
+ '.nfa-fit{background:rgba(47,59,214,.06);color:#2A2266}',
+ '.nfa-fit b{color:#2F3BD6}',
+ '.nfa-care{background:rgba(224,74,12,.07);color:#5A3320}',
+ '.nfa-care b{color:#B8400F}',
+ '.nfa-spec{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0;border-top:1px solid rgba(47,59,214,.12);font-size:12.5px}',
+ '.nfa-spec dt{padding:8px 14px 8px 0;font-weight:800;color:var(--tx-3,#8C8497);white-space:nowrap;border-bottom:1px solid rgba(47,59,214,.08)}',
+ '.nfa-spec dd{padding:8px 0;margin:0;color:var(--tx-2,#57536D);border-bottom:1px solid rgba(47,59,214,.08)}',
+ '.nfa-tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}',
+ '.nfa-tg span{font-size:11px;color:var(--tx-2,#57536D);border:1px solid rgba(47,59,214,.2);border-radius:5px;padding:3px 9px}',
+ '.nfa .nfa-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin-top:16px;width:100%;max-width:340px;background:#C6410B;color:#fff;font-size:14px;font-weight:800;text-decoration:none;border-radius:11px;padding:14px 20px}',
+ '.nfa-cta:hover{background:#A83203}',
+ '.nfa-f{padding:14px 22px;font-size:11.5px;line-height:1.8;color:var(--tx-3,#8C8497);background:rgba(47,59,214,.04);border-top:1px solid rgba(47,59,214,.12)}',
+ '[data-theme="dark"] .nfa{background:var(--surface,#17141F);border-color:rgba(255,255,255,.12)}',
+ '[data-theme="dark"] .nfa-h{background:#232030}',
+ '[data-theme="dark"] .nfa-who{background:rgba(255,255,255,.05);color:#C9C2D6}',
+ '[data-theme="dark"] .nfa-r.top{background:rgba(255,138,69,.07)}',
+ '[data-theme="dark"] .nfa-fit{background:rgba(154,166,255,.1);color:#C7CDF7}',
+ '[data-theme="dark"] .nfa-fit b{color:#9AA6FF}',
+ '[data-theme="dark"] .nfa-care{background:rgba(255,138,69,.1);color:#EBC7B2}',
+ '[data-theme="dark"] .nfa-care b{color:#FF8A45}',
+ '[data-theme="dark"] .nfa-catch{color:#9AA6FF}'
+ ].join('\n');
+ document.head.appendChild(st);
+})();
+
 var A8='https://px.a8.net/svt/ejp?a8mat=';
 var A8IMG='https://www13.a8.net/0.gif?a8mat=';
 function affLive(k){var g=G[k];if(!g)return null;
@@ -400,38 +451,55 @@ function affLive(k){var g=G[k];if(!g)return null;
   return it.length?{g:g,items:it}:null;}
 /* 成果計測の1×1画像。A8の規定どおり、リンクと一緒に置きます */
 function px(m){return '<img border="0" width="1" height="1" src="'+A8IMG+m+'" alt="" loading="lazy">';}
-function affRow(it,i){
-  return '<div class="aff-r'+(i===0?' top':'')+'"><span class="rk">'+(i+1)+'</span><span>'
-   +'<span class="nm">'+it.n+(it.best?' <span class="best">NEWFORのおすすめ</span>':'')+'</span>'
-   +'<span class="ds">'+it.d+'</span><span class="tg2">'+it.t.map(function(x){return '<span>'+x+'</span>'}).join('')+'</span></span>'
-   +'<a class="btn-a" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+CTA+ARROW+'</a>'+px(it.mat)+'</div>';}
-var CTA='';
+function b2(t){return String(t||'').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');}
+function li(a){return (a||[]).map(function(x){return '<li>'+x+'</li>'}).join('');}
+function affRow(it,i,cta){
+  return '<div class="nfa-r'+(i===0?' top':'')+'">'
+   +'<div class="nfa-hd"><span class="rk">'+(i+1)+'</span><span class="nm">'+it.n
+   +(it.best?'<span class="best">NEWFORのおすすめ</span>':'')+'</span></div>'
+   +'<div class="nfa-catch">'+it.catch+'</div>'
+   +'<div class="nfa-body">'+b2(it.body)+'</div>'
+   +'<div class="nfa-cols">'
+     +'<div class="nfa-box nfa-fit"><b>こんな方に向いています</b><ul>'+li(it.fit)+'</ul></div>'
+     +'<div class="nfa-box nfa-care"><b>気になるところ</b><ul>'+li(it.care)+'</ul></div>'
+   +'</div>'
+   +'<dl class="nfa-spec">'+(it.spec||[]).map(function(s){return '<dt>'+s[0]+'</dt><dd>'+s[1]+'</dd>'}).join('')+'</dl>'
+   +'<div class="nfa-tg">'+(it.t||[]).map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'
+   +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||cta)+ARROW+'</a>'
+   +px(it.mat)+'</div>';}
 function affBuild(el){
   var live=affLive(el.getAttribute("data-aff")||"job");
   if(!live){el.remove();return;}
-  CTA=live.g.cta;
-  el.innerHTML='<div class="aff"><div class="aff-h"><span class="pr">広告</span>'
+  el.innerHTML='<div class="nfa"><div class="nfa-h"><span class="pr">広告</span>'
    +'<span class="t">'+live.g.title+'</span></div>'
-   +'<div class="aff-who">'+live.g.who+'</div>'
-   +live.items.map(affRow).join('')
-   +'<div class="aff-f">本枠は広告（アフィリエイトプログラムを含みます）。並び順は、この記事を読んでいる方との近さで決めており、報酬額では変えません。</div></div>';
+   +'<div class="nfa-who">'+live.g.who+'</div>'
+   +(live.g.lead?'<div class="nfa-lead">'+live.g.lead+'</div>':'')
+   +live.items.map(function(it,i){return affRow(it,i,live.g.cta)}).join('')
+   +'<div class="nfa-f">本枠は広告（アフィリエイトプログラムを含みます）。'
+   +'掲載内容は各社の公表情報にもとづくNEWFORの整理で、各社の公式見解ではありません。'
+   +'並び順は、この記事を読んでいる方との近さで決めており、報酬額では変えません。</div></div>';
 }
 function affMini(el){
   var live=affLive(el.getAttribute("data-aff")||"pro");
   if(!live){el.remove();return;}
   var it=live.items[0];
   el.innerHTML='<div class="affmini"><span class="bd"><span class="lead"><span class="pr">広告</span>'+live.g.who+'</span>'
-   +'<span class="nm">'+it.n+'</span><span class="ds">'+it.d+'</span></span>'
-   +'<a class="btn-a" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+live.g.cta+ARROW+'</a>'+px(it.mat)+'</div>';}
+   +'<span class="nm">'+it.n+'</span><span class="ds">'+it.catch+'</span></span>'
+   +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||live.g.cta)+ARROW+'</a>'
+   +px(it.mat)+'</div>';}
 Array.prototype.forEach.call(document.querySelectorAll(".affslot"),affBuild);
 Array.prototype.forEach.call(document.querySelectorAll(".affmini-slot"),affMini);
 '''
 
 # 広告の中身は afflinks.py が持っています。ここで焼き込むと、
 # afflinks.py を直しても反映されません（実際に1度そうなりました）。
-import json as _json
+import json as _json, hashlib as _hl, os as _os
 from afflinks import G as _AFFG
 AFF_JS = AFF_JS.replace('__AFFDATA__', _json.dumps(_AFFG, ensure_ascii=False, separators=(',',':')))
+# 外部ファイルとして書き出す。ページ側は <script src="/assets/aff.js?v=…"> を読むだけ。
+_os.makedirs('gh/assets', exist_ok=True)
+io.open('gh/assets/aff.js','w',encoding='utf-8').write(AFF_JS)
+AFF_V = _hl.md5(AFF_JS.encode('utf-8')).hexdigest()[:8]
 
 print("artgen part1 written")
 
@@ -500,7 +568,7 @@ def render(a):
       forwho=('<div class="k">この記事はこんな方に</div><ul>%s</ul>'
         %''.join('<li>%s</li>'%x for x in a.get('forwho',[])) if a.get('forwho') else ''),
       body=body,memo=memo,memo_t=a['memo_t'],src=src,nxt=nxt,ld=json.dumps(ld,ensure_ascii=False,separators=(',',':')),
-      css=CSS,affjs=AFF_JS,affend=AFFEND.get(slug,AFFEND_DEFAULT),ufo=UFO,tljs=TL_JS if any(t=='timeline' for t,_ in a['body']) else '')
+      css=CSS,affv=AFF_V,affend=AFFEND.get(slug,AFFEND_DEFAULT),ufo=UFO,tljs=TL_JS if any(t=='timeline' for t,_ in a['body']) else '')
 
 def chart_html(a):
     lo,hi=a['span']
@@ -660,9 +728,9 @@ document.getElementById("tgl").addEventListener("click",function(){{
   theme=theme==="dark"?"light":"dark";root.setAttribute("data-theme",theme);
   document.getElementById("ic-moon").setAttribute("d",theme==="dark"?moon:sun);}});
 {tljs}
-{affjs}
 }})();
 </script>
+<script src="/assets/aff.js?v={affv}" defer></script>
 <script src="/assets/vote.js?v=4" defer></script>
 </body></html>
 '''

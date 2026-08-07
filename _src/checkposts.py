@@ -29,10 +29,23 @@ def cells(t):
     return [c.strip() for c in t.strip().strip('|').split('|')]
 
 def sentences(text):
-    out=[]
+    """点検するのは「投稿の本文」だけ。
+
+    手引きの行（``` の外にある説明文やファイル名）は、SNSに出す文では
+    ないので数えません。ここを混ぜると、直しようのない指摘が並びます。
+    """
+    # ``` で囲んだ中身が「実際に投稿する文」です。囲みが1つでもあるファイルは、
+    # その中だけを見ます。外側は手引きや、決まりを説明するための引用だからです。
+    # 「どうせ続かない、とは書かない」という説明文まで直せと言われても困ります。
+    only_code = '```' in text
+    out=[]; incode=False
     for ln in text.split('\n'):
         s=ln.strip()
-        if not s or s.startswith('#') or s.startswith('>') or s.startswith('```'): continue
+        if s.startswith('```'):
+            incode=not incode; continue
+        if only_code and not incode: continue
+        if not s or s.startswith('#') or s.startswith('>'): continue
+        if not incode and '`' in s: continue     # 手引きの中のコマンドやファイル名
         if s.startswith('|'):
             for c in cells(s):
                 if c and not set(c)<=set('-: '): out.append(c)

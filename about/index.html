@@ -98,7 +98,7 @@ footer a{margin-right:14px}
   <nav class="main"><a href="/articles/">記事一覧</a><a href="/companies/">企業を探す</a><a href="/#monthly">ランキング</a><a href="/about/">About</a></nav>
 </div></header>
 <script src="/assets/pickup-map.js" defer></script>
-<script src="/assets/pickup.js" defer></script>
+<script src="/assets/pickup.js?v=72f9015d" defer></script>
 
 <div class="top">
   <svg class="bg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".16"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".24"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>
@@ -143,10 +143,22 @@ footer a{margin-right:14px}
 <dt>運営者</dt><dd>NEWFOR運営</dd>
 <dt>執筆</dt><dd>Soichiro（新規事業マニア）</dd>
 <dt>開設</dt><dd>2026年8月</dd>
-<dt>連絡先</dt><dd>このページの下にあるフォームからお願いします</dd>
+<dt>連絡先</dt><dd><button class="reveal" id="mailBtn" type="button">メールアドレスを表示する</button><span id="mailOut"></span></dd>
 </dl>
 </div>
-<p class="mini">メールアドレスは公開していません。迷惑メールを避けるためです。お問い合わせ・掲載内容の訂正・掲載の取り下げは、下のフォームからお送りください。返信が必要な場合は、フォームの中でご連絡先をお書き添えください。</p>
+<p class="mini">迷惑メール対策のため、連絡先はボタンを押したときだけ表示しています。</p>
+<script>
+(function(){
+  var b=document.getElementById("mailBtn"),o=document.getElementById("mailOut");
+  if(!b)return;
+  b.addEventListener("click",function(){
+    var u=["n","e","w","f","o","r"].join(""),d=["o","f","f","m","l"].join("")+".com";
+    var a=u+String.fromCharCode(64)+d;
+    o.innerHTML='<a href="mailto:'+a+'">'+a+'</a>';
+    b.remove();
+  });
+})();
+</script>
 
 <div class="up">最終更新：2026年8月5日</div>
 </div></main>

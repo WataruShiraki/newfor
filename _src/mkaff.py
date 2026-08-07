@@ -18,7 +18,7 @@ import artgen
 BEGIN = '<!-- ▼ 広告枠（mkaff.py が入れます。手で書かないでください） ▼ -->'
 END   = '<!-- ▲ 広告枠 ここまで ▲ -->'
 
-BLOCK = '%s\n<script src="/assets/aff.js" defer></script>\n%s'%(BEGIN,END)
+BLOCK = '%s\n<script src="/assets/aff.js?v=%s" defer></script>\n%s'%(BEGIN,artgen.AFF_V,END)
 
 def strip_old(s):
     """古い自前の広告JSを外す。

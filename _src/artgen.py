@@ -399,53 +399,38 @@ var G=__AFFDATA__;
  st.textContent=[
  '.nfa,.nfa *{box-sizing:border-box}',
  '.nfa{display:block;border:1px solid rgba(47,59,214,.22);border-radius:18px;overflow:hidden;margin:40px 0;background:var(--surface,#fff)}',
- '.nfa-h{display:block;padding:19px 26px;background:#2F3BD6}',
+ '.nfa-h{display:block;padding:16px 22px;background:#2F3BD6}',
  '.nfa-h .pr{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:4px;padding:2px 7px;margin-right:10px;vertical-align:2px}',
  '.nfa-h .t{font-size:16.5px;font-weight:800;letter-spacing:-.02em;color:#fff}',
- '.nfa-who{padding:15px 26px;font-size:12.5px;font-weight:700;color:#2A2266;background:rgba(47,59,214,.06);border-bottom:1px solid rgba(47,59,214,.12)}',
- '.nfa-lead{padding:22px 26px 6px;font-size:13.5px;line-height:2.05;color:var(--tx-2,#57536D)}',
- '.nfa-r{display:block;padding:30px 26px;border-top:1px solid rgba(47,59,214,.12)}',
+ '.nfa-who{padding:12px 22px;font-size:12.5px;font-weight:700;color:#2A2266;background:rgba(47,59,214,.06);border-bottom:1px solid rgba(47,59,214,.12)}',
+ '.nfa-lead{padding:16px 22px 4px;font-size:13.5px;line-height:1.95;color:var(--tx-2,#57536D)}',
+ '.nfa-r{display:block;padding:22px;border-top:1px solid rgba(47,59,214,.12)}',
  '.nfa-r.top{background:rgba(224,74,12,.045)}',
  '.nfa-hd{display:flex;align-items:baseline;align-items:baseline;gap:10px;flex-wrap:wrap}',
  '.nfa-hd .rk{font-family:ui-monospace,Menlo,monospace;font-size:19px;font-weight:800;color:#E04A0C;min-width:20px}',
  '.nfa-hd .nm{font-size:18px;font-weight:800;letter-spacing:-.02em;color:var(--tx-1,#1A1730)}',
  '.nfa-hd .best{display:inline-block;font-size:10.5px;font-weight:800;color:#fff;background:#E04A0C;border-radius:5px;padding:3px 8px;margin-left:8px;vertical-align:2px}',
- '.nfa-catch{margin-top:13px;font-size:14.5px;font-weight:800;color:#2F3BD6;line-height:1.75}',
- '.nfa-body{margin-top:14px;font-size:13.5px;line-height:2.1;color:var(--tx-2,#57536D)}',
+ '.nfa-catch{margin-top:8px;font-size:14.5px;font-weight:800;color:#2F3BD6;line-height:1.7}',
+ '.nfa-body{margin-top:10px;font-size:13.5px;line-height:2;color:var(--tx-2,#57536D)}',
  '.nfa-body strong{color:var(--tx-1,#1A1730);font-weight:800}',
- '.nfa-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}',
+ '.nfa-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}',
  '@media(max-width:680px){.nfa-cols{grid-template-columns:1fr}}',
- '.nfa-box{border-radius:12px;padding:17px 19px;font-size:12.5px;line-height:1.95}',
- '.nfa-box b{display:block;font-size:12px;font-weight:800;margin-bottom:9px;letter-spacing:.02em}',
+ '.nfa-box{border-radius:12px;padding:13px 15px;font-size:12.5px;line-height:1.85}',
+ '.nfa-box b{display:block;font-size:12px;font-weight:800;margin-bottom:6px;letter-spacing:.02em}',
  '.nfa-box ul{margin:0;padding-left:17px}',
- '.nfa-box li{margin:5px 0}',
+ '.nfa-box li{margin:3px 0}',
  '.nfa-fit{background:rgba(47,59,214,.06);color:#2A2266}',
  '.nfa-fit b{color:#2F3BD6}',
  '.nfa-care{background:rgba(224,74,12,.07);color:#5A3320}',
  '.nfa-care b{color:#B8400F}',
- /* 入口・対象・費用は、横並びの3枚にして幅いっぱいに置く。
-    縦積みの定義リストにしていたころ、右半分が空いて落ち着かない見た目でした。 */
- '.nfa-spec{margin:24px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0;font-size:13px;border-top:1px solid rgba(47,59,214,.13)}',
- '.nfa-spec dt{padding:13px 20px 13px 0;font-weight:800;color:var(--tx-3,#8C8497);white-space:nowrap;border-bottom:1px solid rgba(47,59,214,.09)}',
- '.nfa-spec dd{padding:13px 0;margin:0;color:var(--tx-2,#57536D);line-height:1.8;border-bottom:1px solid rgba(47,59,214,.09)}',
- '@media(max-width:520px){.nfa-spec{grid-template-columns:1fr}.nfa-spec dt{padding:12px 0 0;border-bottom:0}.nfa-spec dd{padding:4px 0 12px}}',
- /* 出典は、ボタンのすぐ下に小さく。どこの情報で書いたのかを、その場で見せる。 */
- '.nfa-src{margin:11px 0 0;text-align:center;font-size:11.5px;line-height:1.7;color:var(--tx-3,#8C8497)}',
- /* いちばん下は「タグ（左）＋ボタン（右）」の1行。狭い画面では縦に積む。 */
- '.nfa-end{display:block;margin-top:26px}',
- '.nfa-tg{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-bottom:16px}',
+ '.nfa-spec{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0;border-top:1px solid rgba(47,59,214,.12);font-size:12.5px}',
+ '.nfa-spec dt{padding:8px 14px 8px 0;font-weight:800;color:var(--tx-3,#8C8497);white-space:nowrap;border-bottom:1px solid rgba(47,59,214,.08)}',
+ '.nfa-spec dd{padding:8px 0;margin:0;color:var(--tx-2,#57536D);border-bottom:1px solid rgba(47,59,214,.08)}',
+ '.nfa-tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}',
  '.nfa-tg span{font-size:11px;color:var(--tx-2,#57536D);border:1px solid rgba(47,59,214,.2);border-radius:5px;padding:3px 9px}',
- /* ボタンの見た目は1か所に。大きさだけを、置く場所ごとに変える。
-    以前は .nfa の中でしか色がつかず、記事の途中の小さい枠ではただの文字に
-    見えていました（実際にそうなっていました）。 */
- '.nfa-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#C6410B;color:#fff;font-weight:800;text-decoration:none;border-radius:11px;box-shadow:0 2px 0 rgba(150,50,10,.28)}',
- '.nfa .nfa-cta{display:flex;width:100%;font-size:15px;padding:18px 24px;line-height:1.5;white-space:normal;text-align:center}',
-  '@media(max-width:680px){.nfa-r{padding:24px 17px}.nfa .nfa-cta{font-size:14.5px;padding:16px 18px}}',
- /* 記事の途中に出す小さい枠は、同じボタンを幅を抑えて使う */
- '.affmini .nfa-cta{min-width:0;max-width:230px;font-size:12.5px;padding:12px 18px;text-align:center;line-height:1.45;white-space:normal}',
- '@media(max-width:640px){.affmini .nfa-cta{max-width:none;width:100%}}',
+ '.nfa .nfa-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin-top:16px;width:100%;max-width:340px;background:#C6410B;color:#fff;font-size:14px;font-weight:800;text-decoration:none;border-radius:11px;padding:14px 20px}',
  '.nfa-cta:hover{background:#A83203}',
- '.nfa-f{padding:17px 26px;font-size:11.5px;line-height:1.8;color:var(--tx-3,#8C8497);background:rgba(47,59,214,.04);border-top:1px solid rgba(47,59,214,.12)}',
+ '.nfa-f{padding:14px 22px;font-size:11.5px;line-height:1.8;color:var(--tx-3,#8C8497);background:rgba(47,59,214,.04);border-top:1px solid rgba(47,59,214,.12)}',
  '[data-theme="dark"] .nfa{background:var(--surface,#17141F);border-color:rgba(255,255,255,.12)}',
  '[data-theme="dark"] .nfa-h{background:#232030}',
  '[data-theme="dark"] .nfa-who{background:rgba(255,255,255,.05);color:#C9C2D6}',
@@ -479,11 +464,8 @@ function affRow(it,i,cta){
      +'<div class="nfa-box nfa-care"><b>気になるところ</b><ul>'+li(it.care)+'</ul></div>'
    +'</div>'
    +'<dl class="nfa-spec">'+(it.spec||[]).map(function(s){return '<dt>'+s[0]+'</dt><dd>'+s[1]+'</dd>'}).join('')+'</dl>'
-   +'<div class="nfa-end">'
-     +'<div class="nfa-tg">'+(it.t||[]).map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'
-     +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||cta)+ARROW+'</a>'
-     +(it.src?'<p class="nfa-src">出典: '+it.src[0]+'（'+it.src[1]+'／2026年8月時点）</p>':'')
-   +'</div>'
+   +'<div class="nfa-tg">'+(it.t||[]).map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'
+   +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||cta)+ARROW+'</a>'
    +px(it.mat)+'</div>';}
 function affBuild(el){
   var live=affLive(el.getAttribute("data-aff")||"job");
@@ -514,10 +496,7 @@ Array.prototype.forEach.call(document.querySelectorAll(".affmini-slot"),affMini)
 import json as _json, hashlib as _hl, os as _os
 from afflinks import G as _AFFG
 AFF_JS = AFF_JS.replace('__AFFDATA__', _json.dumps(_AFFG, ensure_ascii=False, separators=(',',':')))
-# 外部ファイルとして書き出す。ページ側は <script src="/assets/aff.js"> を読むだけ。
-# ?v=ハッシュ は付けません。付けると広告を1文字直すたびに全ページのHTMLが変わり、
-# 反映のたびに57ファイルを上げ直すことになります。代わりに vercel.json で
-# このファイルだけ短い保存期間（5分）にしてあります。
+# 外部ファイルとして書き出す。ページ側は <script src="/assets/aff.js?v=…"> を読むだけ。
 _os.makedirs('gh/assets', exist_ok=True)
 io.open('gh/assets/aff.js','w',encoding='utf-8').write(AFF_JS)
 AFF_V = _hl.md5(AFF_JS.encode('utf-8')).hexdigest()[:8]
@@ -751,7 +730,7 @@ document.getElementById("tgl").addEventListener("click",function(){{
 {tljs}
 }})();
 </script>
-<script src="/assets/aff.js" defer></script>
-<script src="/assets/vote.js" defer></script>
+<script src="/assets/aff.js?v={affv}" defer></script>
+<script src="/assets/vote.js?v=4" defer></script>
 </body></html>
 '''

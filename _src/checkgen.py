@@ -33,11 +33,7 @@ OWNER=[(r'^gh/articles/index\.html$','mklist.py'),
        (r'^gh/(llms\.txt|sitemap\.xml|robots\.txt)$','extras.py'),
        (r'^gh/index\.html$','レイアウトは手／数は mktop.py'),
        (r'^gh/companies/index\.html$','レイアウトは手／数は mkcompidx.py'),
-       (r'^gh/news/index\.html$','newsgen.py'),
-       (r'^gh/news/\d{4}/index\.html$','newsgen.py'),
-       (r'^gh/news/[^/]+/index\.html$','newsgen.py'),
-       (r'^gh/supabase/','schema は手／poll.sql は pollgen.py'),
-       (r'^gh/assets/','assets.py / png.js / og.js / newsgen.py / pollgen.py')]
+       (r'^gh/assets/','assets.py / png.js / og.js')]
 def owner(p):
     for r,g in OWNER:
         if re.match(r,p): return g
@@ -170,10 +166,7 @@ for p in sorted(glob.glob('gh/**/*.html',recursive=True)):
     t=re.search(r'<meta name="twitter:image" content="(.*?)"',s)
     if t and t.group(1)!=url: bad.append('%s の twitter:image が og:image と違う'%p)
 for url,ps in seen.items():
-    # NEWSの1件ずつは、企業ごとの1枚を共有します。1076枚を専用にすると
-    # 75MBになり、GitHubへの反映ができなくなるためです。ここは意図した設計。
-    ps2=[p for p in ps if not p.startswith('gh/news/')]
-    if len(ps2)>3: bad.append('OGP画像 %s を %d ページで使い回している'%(url,len(ps2)))
+    if len(ps)>3: bad.append('OGP画像 %s を %d ページで使い回している'%(url,len(ps)))
 
 # ── ピックアップの帯が全ページに入っているか ──
 for p in sorted(glob.glob('gh/**/*.html',recursive=True)):
@@ -182,54 +175,6 @@ for p in sorted(glob.glob('gh/**/*.html',recursive=True)):
     # 帯そのものは assets/pickup.js が作ります。ページ側は読み込み2行だけ。
     if '</header>' in s and '/assets/pickup.js' not in s:
         bad.append('%s がピックアップのJSを読んでいない（pickup.py を流し直す）'%p)
-
-# ── NEWS ページ ──
-#
-# ここで見ているのは3つです。
-#   ・件数が年表と合っているか（1件に1ページ）
-#   ・日付をでっちあげていないか（月しか分からない記録に日を出していないか）
-#   ・行き先が生きているか（企業ページの先頭へ戻していないか）
-import newsdata as _nd
-_NEWS=_nd.build()
-_dirs={os.path.dirname(p)[len('gh/news/'):] for p in glob.glob('gh/news/*/index.html')}
-_dirs={d for d in _dirs if not re.fullmatch(r'\d{4}',d)}
-_want={i['slug'] for i in _NEWS}
-if _dirs!=_want:
-    miss=_want-_dirs; extra=_dirs-_want
-    if miss: bad.append('NEWSページが足りない %d件（例 %s）'%(len(miss),list(miss)[:3]))
-    if extra: bad.append('もう無い記録のNEWSページが残っている %d件（例 %s）'%(len(extra),list(extra)[:3]))
-for i in _NEWS:
-    p='gh/news/%s/index.html'%i['slug']
-    s=txt(p)
-    if not s: continue
-    d=i['date'].replace('-','.')
-    # 見出しの下に出している日付だけを見る。ページの中の「この前後」の一覧には
-    # 同じ月の別の記録（日まで分かっているもの）が並ぶので、ページ全体を
-    # 探すと必ず引っかかります（実際に全件で誤検知しました）。
-    m=re.search(r'<span class="ndate">([^<]*)<em>([^<]*)</em>',s)
-    if not m:
-        bad.append('%s に日付が出ていない'%p)
-    else:
-        if m.group(1)!=d:
-            bad.append('%s の日付が %s ではなく %s になっている'%(p,d,m.group(1)))
-        if i['prec']!='day' and m.group(2)=='発表日':
-            bad.append('%s は月までしか分かっていないのに「発表日」と書いている'%p)
-    if i['src'] and i['src'] not in s:
-        bad.append('%s に出典リンクがない'%p)
-# トップと企業ページが、NEWSページへ向いているか
-_top=txt('gh/index.html')
-if '/companies/denso/"' in _top and '"/news/' not in _top:
-    bad.append('トップの新規事業NEWSが、まだ企業ページの先頭へ飛ばしている')
-for p in sorted(glob.glob('gh/companies/*/index.html')):
-    s=txt(p)
-    if 'class="clist"' in s and '/news/' not in s:
-        bad.append('%s の新規事業の一覧が、NEWSページへ向いていない'%p)
-
-# ── 読者の投票（今日の1件） ──
-if not txt('gh/assets/poll.js'): bad.append('gh/assets/poll.js がない（pollgen.py を流す）')
-if not txt('gh/assets/vote.js'): bad.append('gh/assets/vote.js がない（mkvote.py を流す）')
-if 'weekly-2026-08-05' in _top:
-    bad.append('トップの投票が、古い1問（weekly-2026-08-05）のまま')
 
 # ── 3. 生成元のないファイル ──
 for p in sorted(glob.glob('gh/**/*',recursive=True)):

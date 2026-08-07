@@ -1,0 +1,200 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>NEWFOR 数字1枚</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#1a1a1a;display:flex;flex-wrap:wrap;gap:20px;padding:20px}
+
+  .card{
+    width:1080px;height:1350px;position:relative;overflow:hidden;
+    background:#2F3BD6;color:#fff;
+    font-family:"Noto Sans CJK JP","Noto Sans JP",sans-serif;
+    font-feature-settings:"palt" 1;
+  }
+  /* ベタ塗り1色だと単調なので、右下にうっすら円を敷く */
+  .card::after{
+    content:"";position:absolute;right:-210px;bottom:-230px;width:680px;height:680px;
+    border-radius:50%;background:rgba(255,255,255,.05);
+  }
+  .card::before{
+    content:"";position:absolute;left:0;top:0;width:100%;height:12px;background:#E04A0C;z-index:2;
+  }
+  .card.hasbar::before{top:150px}
+
+  /* ══ 題字 ══ サイトと同じ「新規事業ヒストリーメディア」を必ず置く
+     わたるさんが2026年8月7日に選んだのは L1（白ヌキで大きく）です。
+     L2（白い板）と L3（白い帯）も残してあります。window.__LOGO__ で切り替えます。 */
+  .mast{position:absolute;left:70px;top:60px;display:flex;align-items:center;gap:18px}
+  .mast .ufo{flex:0 0 auto;display:block}
+  .mast .wm{font-weight:900;letter-spacing:.05em;line-height:1;white-space:nowrap}
+  .mast .rule{background:rgba(255,255,255,.45)}
+  .mast .tag{font-weight:800;letter-spacing:.13em;color:#DDE1FF;white-space:nowrap}
+
+  /* 型L1｜白ヌキで大きく */
+  .L1 .ufo{width:74px;height:74px}
+  .L1 .wm{font-size:60px;color:#fff}
+  .L1 .wm em{font-style:normal;color:#FFB08A}
+  .L1 .rule{width:3px;height:46px}
+  .L1 .tag{font-size:23px}
+
+  /* 型L2｜白い板に、サイトと同じ色のロゴを載せる */
+  .L2{align-items:center;gap:20px}
+  .L2 .plate{display:flex;align-items:center;gap:16px;
+    background:#fff;border-radius:18px;padding:18px 26px 18px 22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.14)}
+  .L2 .ufo{width:62px;height:62px}
+  .L2 .wm{font-size:54px;color:#2F3BD6}
+  .L2 .wm em{font-style:normal;color:#E04A0C}
+  .L2 .rule{display:none}
+  .L2 .tag{font-size:23px;color:#DDE1FF}
+
+  /* 型L3｜上に白い帯を敷いて、その中に収める（新聞の題字） */
+  .L3{left:0;top:0;width:1080px;height:150px;padding:0 70px;
+    background:#fff;gap:18px}
+  .L3 .ufo{width:64px;height:64px}
+  .L3 .wm{font-size:56px;color:#2F3BD6}
+  .L3 .wm em{font-style:normal;color:#E04A0C}
+  .L3 .rule{width:3px;height:42px;background:rgba(18,14,38,.22)}
+  .L3 .tag{font-size:23px;color:#403C55}
+
+  /* ══ 何の数字か ══ */
+  .kicker{position:absolute;left:74px;top:196px;width:932px;
+    font-size:27px;font-weight:800;line-height:1.55;letter-spacing:.05em;color:#B9C0FF}
+
+  /* ══ 会社名 ══ ここが小さいと誰の話かわからない。大きく出す */
+  .co{position:absolute;left:74px;top:244px;display:inline-block;width:auto;white-space:nowrap;
+    font-size:104px;font-weight:900;letter-spacing:-.035em;line-height:1.1;color:#fff}
+
+  /* ══ 数字 ══ 横幅ギリギリまで自動でふくらませる */
+  .big{position:absolute;left:58px;display:inline-block;width:auto;white-space:nowrap;
+    font-weight:900;letter-spacing:-.07em;line-height:1}
+  .big .n{font-size:280px}
+  .big .u{font-size:100px;letter-spacing:0;margin:0 0 0 6px}
+
+  /* ══ 何があったか ══ */
+  h1{position:absolute;left:74px;width:932px;
+    font-size:52px;line-height:1.5;font-weight:800;letter-spacing:-.01em;color:#fff;
+    word-break:auto-phrase;text-wrap:balance}
+
+  .proof{position:absolute;left:74px;top:1054px;width:900px;
+    font-size:25px;line-height:1.95;color:#BFC5FF;font-weight:600;
+    border-top:2px solid rgba(255,255,255,.26);padding-top:26px}
+
+  .site{position:absolute;left:74px;bottom:66px;
+    font-size:27px;font-weight:800;letter-spacing:.09em;color:#CFD4FF}
+  .arrow{position:absolute;right:74px;bottom:58px;
+    width:62px;height:62px;border-radius:50%;border:3px solid rgba(255,255,255,.4);
+    display:flex;align-items:center;justify-content:center;
+    font-size:29px;font-weight:900;color:#fff;padding-bottom:4px}
+</style>
+<div id="wrap"></div>
+<script>
+const CARDS = __CARDS__;
+const LOGO = window.__LOGO__ || 'L1';
+const wrap = document.getElementById('wrap');
+
+CARDS.forEach(function (c, i) {
+  const d = document.createElement('div');
+  d.className = 'card' + (LOGO === 'L3' ? ' hasbar' : '');
+  d.id = 'c' + i;
+  d.dataset.tag = c.tag || ('card' + i);
+  d.innerHTML =
+    '<div class="mast ' + LOGO + '">' + (LOGO === 'L2' ? '<div class="plate">' : '') +
+      '<svg class="ufo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="--uc:' + (LOGO === 'L1' ? '#fff' : '#2F3BD6') + '"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="var(--uc)" opacity=".18"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="var(--uc)" opacity=".26"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="var(--uc)"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="var(--uc)" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>' +
+      '<div class="wm">NEW<em>FOR</em></div>' +
+      (LOGO === 'L2' ? '</div>' : '') +
+      '<div class="rule"></div>' +
+      '<div class="tag">新規事業ヒストリーメディア</div>' +
+    '</div>' +
+    '<div class="kicker">' + c.kicker + '</div>' +
+    (c.co ? '<div class="co">' + c.co + '</div>' : '') +
+    '<div class="big">' + c.big + '</div>' +
+    '<h1>' + c.head + '</h1>' +
+    '<div class="proof">' + c.proof + '</div>' +
+    '<div class="site">newfor.jp</div>' +
+    '<div class="arrow">&#8599;</div>';
+  wrap.appendChild(d);
+});
+
+/* ══ 組み ══
+   数字の大きさは、28枚ぜんぶで同じにします。
+   1枚ずつ幅いっぱいに広げると、「44件」と「4兆2,500億円」で大きさが変わり、
+   並べたときに揃って見えません。そこで
+     1回目：各カードが入る限界の大きさを測る
+     2回目：そのいちばん小さい値を、ぜんぶのカードに当てる
+   という2段構えにしています。 */
+const CARDS_EL = [].slice.call(document.querySelectorAll('.card'));
+const MAXW = 1080 - 74 * 2;      /* 932px：会社名と見出しの幅 */
+const BIGW = 1080 - 58 * 2;      /* 964px：数字だけ余白を詰める */
+const U_RATIO = 0.30;            /* 単位（件・回・億円）は数字の0.30倍 */
+
+function bigParts(card) {
+  const big = card.querySelector('.big');
+  return {
+    big: big,
+    set: function (px) {
+      big.querySelectorAll('.n').forEach(function (e) { e.style.fontSize = px + 'px'; });
+      big.querySelectorAll('.u').forEach(function (e) {
+        e.style.fontSize = Math.round(px * U_RATIO) + 'px';
+      });
+    }
+  };
+}
+
+/* ── 1回目：会社名と見出しを決めて、各カードが入る限界を測る ── */
+const room = [];
+CARDS_EL.forEach(function (card) {
+  const co = card.querySelector('.co');
+  if (co) {
+    let cs = 104;
+    while (co.getBoundingClientRect().width > MAXW && cs > 54) {
+      cs -= 2; co.style.fontSize = cs + 'px';
+    }
+  }
+  const h = card.querySelector('h1');
+  let hs = 52;
+  h.style.fontSize = hs + 'px';
+  while (h.scrollHeight > 172 && hs > 38) { hs -= 2; h.style.fontSize = hs + 'px'; }
+
+  const P = bigParts(card);
+  /* 横幅で入る限界 */
+  let lo = 90, hi = 620, fitW = 90;
+  for (let k = 0; k < 28; k++) {
+    const mid = (lo + hi) / 2;
+    P.set(mid);
+    if (P.big.getBoundingClientRect().width <= BIGW) { fitW = mid; lo = mid; } else { hi = mid; }
+  }
+  /* 縦で入る限界（題字の下から、出典の欄の上まで） */
+  const coH = co ? co.getBoundingClientRect().height : 0;
+  const fitH = (1010 - 152) - (54 + coH + 14 + 44 + h.getBoundingClientRect().height);
+  room.push(Math.min(fitW, fitH));
+});
+
+/* ── 2回目：いちばん小さい値に、ぜんぶそろえる ── */
+const SIZE = Math.floor(Math.min.apply(null, room));
+CARDS_EL.forEach(function (card) {
+  const P = bigParts(card);
+  P.set(SIZE);
+
+  /* 題字の下（152px）から、出典の欄の上（1010px）までの中で、
+     かたまりを上下まんなかに置きます。余白が下に溜まらないように。 */
+  const kick = card.querySelector('.kicker');
+  const co   = card.querySelector('.co');
+  const h    = card.querySelector('h1');
+  const coH  = co ? co.getBoundingClientRect().height : 0;
+  const bigH = P.big.getBoundingClientRect().height;
+  const hH   = h.getBoundingClientRect().height;
+  const blockH = 54 + coH + 14 + bigH + 44 + hH;
+
+  const TOP = (LOGO === 'L3') ? 200 : 152, BOT = 1010;
+  const kickTop = Math.round(TOP + Math.max(0, (BOT - TOP - blockH) / 2));
+
+  kick.style.top = kickTop + 'px';
+  const coTop = kickTop + 54;
+  if (co) co.style.top = coTop + 'px';
+  const bigTop = coTop + coH + 14;
+  P.big.style.top = bigTop + 'px';
+  h.style.top = (bigTop + bigH + 44) + 'px';
+});
+document.title = 'NEWFOR 数字1枚（数字 ' + SIZE + 'px でそろえました）';
+</script>

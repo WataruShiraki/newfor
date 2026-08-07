@@ -39,11 +39,18 @@
      企業ページ /companies/<slug>/ と、NEWS 1件ずつ /news/<slug>/ だけ。
      一覧（/companies/ /news/）と年別アーカイブ（/news/2026/）には出しません。 */
   var path = location.pathname;
-  var m = path.match(/^\/(companies|news)\/([^\/]+)\/$/);
-  if (!m) return;
-  var kind = m[1] === "companies" ? "company" : "news";
-  var target = m[2];
-  if (kind === "news" && /^\d{4}$/.test(target)) return;
+  var kind, target;
+  if (path === "/about/") {
+    /* 運営者情報のページ。メールアドレスは公開しません（迷惑メールを避けるため）。
+       ここが、そのかわりの窓口です。共有ボタンは出しません。 */
+    kind = "contact"; target = "about";
+  } else {
+    var m = path.match(/^\/(companies|news)\/([^\/]+)\/$/);
+    if (!m) return;
+    kind = m[1] === "companies" ? "company" : "news";
+    target = m[2];
+    if (kind === "news" && /^\d{4}$/.test(target)) return;
+  }
 
   /* ── 出す文は <title> から作る ──
      企業  : 「三菱重工業の新規事業44件｜2012年からの全記録と出典 | NEWFOR」
@@ -51,7 +58,9 @@
   var title = (document.title || "").replace(/\s*\|\s*NEWFOR\s*$/, "").trim();
   var head = title.split("｜")[0].trim() || "NEWFORの記録";
   var share, label;
-  if (kind === "company") {
+  if (kind === "contact") {
+    share = ""; label = "";
+  } else if (kind === "company") {
     share = head + "を、開始年の古い順に並べた年表です。1件ずつ出典つき。";
     label = head.replace(/の新規事業.*$/, "") + "の年表";
   } else {
@@ -90,11 +99,17 @@
     } catch (e) {}
   }
 
-  var KINDS = [
+  var KINDS_PAGE = [
     ["correction", "内容が違う"],
     ["missing", "この事業が抜けている"],
     ["supplement", "その後を知っている"]
   ];
+  var KINDS_CONTACT = [
+    ["correction", "掲載内容の訂正"],
+    ["missing", "掲載してほしい事業"],
+    ["other", "その他のお問い合わせ"]
+  ];
+  var KINDS = (kind === "contact") ? KINDS_CONTACT : KINDS_PAGE;
 
   function build() {
     var url = location.origin + location.pathname;
@@ -103,7 +118,10 @@
 
     var w = el("div", "nf-sr");
 
-    /* ── 共有 ── */
+    /* ── 共有 ──
+       運営者情報のページ（/about/）では共有ボタンを出しません。
+       あそこは「連絡する場所」であって、広める場所ではないためです。 */
+    if (kind !== "contact") {
     w.appendChild(el("div", "nf-sr-h", "この記録を共有する"));
     w.appendChild(el("p", "nf-sr-p",
       label + "は、公開情報だけで組み立てています。" +
@@ -148,16 +166,27 @@
     });
     row.appendChild(cp);
     w.appendChild(row);
+    }
 
-    /* ── 訂正・補足 ── */
+    /* ── 訂正・補足（/about/ ではお問い合わせ） ── */
     var f = el("div", "nf-sr-f");
-    f.appendChild(el("div", "nf-sr-h2", "訂正・補足を送る"));
-    f.appendChild(el("p", "nf-sr-p",
-      "抜けている事業、日付の違い、その後の動き。どれでも歓迎します。" +
-      "<b>記録した会社の方からのご連絡も、同じ窓口で受け付けています。</b>" +
-      "いただいた内容は、一次情報を確かめたうえで年表に反映します。"));
+    if (kind === "contact") {
+      f.className = "nf-sr-f solo";
+      f.appendChild(el("div", "nf-sr-h", "お問い合わせ"));
+      f.appendChild(el("p", "nf-sr-p",
+        "掲載内容の訂正、掲載の取り下げ、取材や広告のご相談。どれでもこちらへお願いします。" +
+        "<b>記録した会社の方からのご連絡も、同じ窓口で受け付けています。</b>" +
+        "返信が必要な場合は、ご連絡先をお書き添えください。"));
+    } else {
+      f.appendChild(el("div", "nf-sr-h2", "訂正・補足を送る"));
+      f.appendChild(el("p", "nf-sr-p",
+        "抜けている事業、日付の違い、その後の動き。どれでも歓迎します。" +
+        "<b>記録した会社の方からのご連絡も、同じ窓口で受け付けています。</b>" +
+        "いただいた内容は、一次情報を確かめたうえで年表に反映します。"));
+    }
 
-    var open = el("button", "nf-sr-open", "この記録について知らせる");
+    var open = el("button", "nf-sr-open",
+      kind === "contact" ? "お問い合わせフォームを開く" : "この記録について知らせる");
     open.type = "button";
     f.appendChild(open);
 
@@ -179,7 +208,9 @@
     var ta = document.createElement("textarea");
     ta.className = "nf-sr-ta";
     ta.rows = 4; ta.maxLength = 4000; ta.required = true;
-    ta.placeholder = "例）2019年3月に、この事業を◯◯社へ引き継いでいます。\n例）開始は2021年4月ではなく、同年7月です。";
+    ta.placeholder = kind === "contact"
+      ? "例）弊社の掲載内容について、1点訂正をお願いしたく連絡しました。\n例）取材のご相談です。"
+      : "例）2019年3月に、この事業を◯◯社へ引き継いでいます。\n例）開始は2021年4月ではなく、同年7月です。";
     form.appendChild(ta);
 
     var src = document.createElement("input");
@@ -193,7 +224,9 @@
     form.appendChild(ct);
 
     form.appendChild(el("p", "nf-sr-mini",
-      "送っていただいた内容は、年表を直すためだけに使います。" +
+      (kind === "contact"
+        ? "送っていただいた内容は、お返事と掲載内容の確認にだけ使います。"
+        : "送っていただいた内容は、年表を直すためだけに使います。") +
       "サイトに公開することはありません。" +
       "<a href=\"/privacy/\">プライバシーポリシー</a>"));
 
@@ -249,13 +282,15 @@
         form.innerHTML = "";
         form.appendChild(el("div", "nf-sr-ok",
           "<b>ありがとうございます。受け取りました。</b>" +
-          "<span>一次情報を確かめたうえで、年表に反映します。" +
-          "この記録が良くなります。</span>"));
+          "<span>" + (kind === "contact"
+            ? "内容を確かめてお返事します。ご連絡先をいただいた場合のみ、返信いたします。"
+            : "一次情報を確かめたうえで、年表に反映します。この記録が良くなります。") +
+          "</span>"));
       }).catch(function () {
         go.disabled = false; go.textContent = "送る";
         msg.hidden = false; msg.className = "nf-sr-msg ng";
-        msg.innerHTML = "うまく送れませんでした。お手数ですが " +
-          "<a href=\"/about/\">About</a> のメールアドレスへお願いします。";
+        msg.textContent = "うまく送れませんでした。通信の具合かもしれません。" +
+          "少し時間をおいて、もう一度お試しください。";
       });
     });
 

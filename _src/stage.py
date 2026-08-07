@@ -9,9 +9,12 @@
 """
 import io, os, sys, shutil, subprocess
 
-OUT = '/mnt/user-data/outputs/gh-upload'
+OUT = '/mnt/user-data/outputs/u'
 LIMIT = 2_600_000        # 1まとまりの上限（バイト）
-NLIMIT = 260             # 1まとまりの上限（枚数）
+NLIMIT = 95              # 1まとまりの上限（枚数）
+# GitHubのアップロード画面は100枚未満までです。それを超えると
+# 「Yowza, that's a lot of files. Try uploading fewer than 100 at a time.」
+# と出て、1枚も受け取ってもらえません。
 
 
 def changed():
@@ -52,7 +55,14 @@ i = int(arg)
 b = B[i - 1]
 shutil.rmtree(OUT, ignore_errors=True)
 os.makedirs(OUT)
+def stagename(f):
+    # NEWSの1件は数が多いので、名前を短くしておきます（呼び出しの文字数を減らすため）。
+    # ブラウザ側で news/<名前>/index.html に戻します。
+    if f.startswith('news/') and f.endswith('/index.html') and f.count('/') == 2:
+        return f[len('news/'):-len('/index.html')]
+    return f.replace('/', '~')
+
 for f in b:
-    shutil.copyfile('gh/' + f, os.path.join(OUT, f.replace('/', '~')))
+    shutil.copyfile('gh/' + f, os.path.join(OUT, stagename(f)))
 s = sum(os.path.getsize('gh/' + f) for f in b)
 print('%d/%d 番目を用意しました: %d枚 %.2fMB' % (i, len(B), len(b), s / 1048576.0))

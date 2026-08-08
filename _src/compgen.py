@@ -7,6 +7,33 @@ from artgen import CSS,UFO,AFF_V,SITE
 
 NOW=2026.6   # 2026年8月
 
+# ── 年表の1件から、その1件のページへ ──
+#
+# NEWS詳細（/news/<住所>/）は1件につき1ページあります。年表に並んでいるのに
+# そこから飛べないと、読む人は企業ページの中で行き止まりになります。
+# 住所を決めているのは newsdata.py です。ここでは決め直さず、借りてきます。
+# （同じ中身を2か所に持たない）
+_NEWSMAP=None
+def newsmap():
+    """{(会社slug, '2005.10', '事業名'): '/news/…/'} を1回だけ作る"""
+    global _NEWSMAP
+    if _NEWSMAP is None:
+        try:
+            import newsdata
+            _NEWSMAP={}
+            for i in newsdata.build():
+                p=newsdata.path(i)
+                _NEWSMAP[(i['coslug'], i['ym'], i['title'])]=p
+                # 年しか分かっていない記録（'2006'）は、年表を組み直すときに
+                # '2006.01' の形になります。その形でも引けるようにしておきます。
+                if len(i['ym'])==4:
+                    _NEWSMAP[(i['coslug'], i['ym']+'.01', i['title'])]=p
+        except Exception as e:
+            print('   ！ NEWSページの住所を読めませんでした（%s）。'
+                  '年表からのリンクは今回だけ省きます'%e)
+            _NEWSMAP={}
+    return _NEWSMAP
+
 def ym(s):
     """'2015.11' -> 2015.917"""
     m=re.match(r'(\d{4})\.(\d{1,2})',str(s))
@@ -81,6 +108,17 @@ EXTRA_CSS='''
 .clist .y2{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);padding-top:2px}
 .clist .ev2{font-weight:700;line-height:1.6}
 .clist .ev2 em{display:block;font-style:normal;font-weight:400;font-size:13px;color:var(--muted);margin-top:3px;line-height:1.8}
+/* 事業名を、その1件のページへのリンクに */
+.clist .ev2l{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+/* 矢印は薄く出しっぱなしにします。カーソルを乗せるまで見えないと、
+   押せることに気づけません（実際に気づけませんでした） */
+.clist .ev2l svg{width:14px;height:14px;flex:0 0 auto;opacity:.38;color:var(--accent);
+ transition:opacity .14s ease,transform .14s ease}
+.clist .ev2l:hover{color:var(--accent)}
+.clist .ev2l:hover svg{opacity:1;transform:translateX(2px)}
+.clist li:hover{background:var(--note)}
+.clist li{border-radius:9px;padding-left:9px;padding-right:9px;margin-left:-9px;margin-right:-9px}
+@media(hover:none){.clist .ev2l svg{opacity:.55}}
 .bd2{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:11px;white-space:nowrap;height:fit-content;margin-top:2px}
 .bd2.live{background:var(--accent-w);color:var(--accent)}
 .bd2.done{background:var(--ended-w);color:var(--ended-d)}
@@ -258,8 +296,15 @@ def render(c):
             '<path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>'
             '%s</a>')%(hit[0],hit[1]) if hit else ''
         note='<em>%s</em>'%note if note else ''
+        # 事業名を、その1件のページへのリンクにします。
+        # 行ごとつつむと、中の出典リンクと入れ子になって壊れるので、名前だけにします。
+        href=newsmap().get((c['slug'],y,n))
+        name=('<a class="ev2l" href="%s">%s<svg viewBox="0 0 24 24" fill="none" '
+              'stroke="currentColor" stroke-width="2.6" stroke-linecap="round" '
+              'stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/>'
+              '</svg></a>')%(href,n) if href else n
         items.append('<li data-s="%s"><span class="y2">%s</span><span class="ev2">%s%s%s</span>%s</li>'%(
-          'live' if live else 'done',y,n,note,lk,bd))
+          'live' if live else 'done',y,name,note,lk,bd))
     nlive=sum(1 for b in biz if b[3]); ndone=len(biz)-nlive
     stat=''.join('<div class="c"><span class="l">%s</span><span class="v">%s<small>%s</small></span></div>'%(l,v,u)
         for l,v,u in [('記録した新規事業',len(biz),'件'),('記録の範囲','%d–'%lo,'2026')])

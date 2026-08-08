@@ -2,6 +2,26 @@
  "updated": "2026-08-08",
  "items": [
   {
+   "id": "2026-08-08-kirin-1",
+   "found": "2026-08-08",
+   "company": "キリンHD",
+   "date": "2026.08",
+   "title": "カナダのサプリメント大手ジェイミソン・ウェルネスを約2183億円で買収",
+   "url": "https://www.kirinholdings.com/en/newsroom/release/2026/0807_05.pdf",
+   "why": "健康事業拡大に向けた北米サプリメント大手の完全子会社化（買収）にあたるため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-08-sumitomo-chem-1",
+   "found": "2026-08-08",
+   "company": "住友化学",
+   "date": "2026.08",
+   "title": "イタリアの天然ピレトリン系農薬メーカー、Pyragro（COPYR子会社）を買収",
+   "url": "https://www.sumitomo-chem.co.jp/english/news/detail/20260805e.html",
+   "why": "欧州の農薬事業強化に向けたイタリア企業の子会社化（買収）にあたるため",
+   "status": "new"
+  },
+  {
    "id": "2026-08-06-itochu-1",
    "found": "2026-08-06",
    "company": "伊藤忠商事",

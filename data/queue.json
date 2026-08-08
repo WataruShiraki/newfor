@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-06",
+ "updated": "2026-08-08",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -69,6 +69,16 @@
    "title": "整備プラットフォームのSeibiiと資本業務提携",
    "url": "https://response.jp/article/2026/08/05/414924.html",
    "why": "東京センチュリー・出光興産と共に行う資本業務提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-08-idemitsu-1",
+   "found": "2026-08-08",
+   "company": "出光興産",
+   "date": "2026.08",
+   "title": "出張整備のSeibiiと資本提携し、モビリティサービス事業で協業開始",
+   "url": "https://www.zaikei.co.jp/article/20260804/864385.html",
+   "why": "サービスステーション網と出張整備サービスを組み合わせる資本提携のため",
    "status": "new"
   }
  ]

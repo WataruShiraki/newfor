@@ -14,6 +14,25 @@ GENRES=[
  ('handbook','入門','HANDBOOK','新規事業のやり方と言葉。担当になったばかりの方が、最初に読む場所です。'),
 ]
 
+# ── お悩みの型 ──
+#
+# 記事ごとの「こんな方におすすめ」は45個すべて違う文で、そのままでは
+# 絞り込みに使えませんでした。10種類に束ねて、記事側（articles/a0*.py の
+# topics）で2〜3個ずつ選びます。記事の中の文はそのまま残しています。
+TOPICS=[
+ ('approval','社内を通す'),
+ ('seed','ネタを見つける'),
+ ('strength','自社の強みを見極める'),
+ ('partner','他社と組む'),
+ ('buildbuy','買うか、作るか'),
+ ('money','お金の話'),
+ ('handoff','次へ渡す判断'),
+ ('explain','成果を説明する'),
+ ('longrun','長い時間と戦う'),
+ ('starter','担当になったばかり'),
+]
+TOPIC_JA=dict(TOPICS)
+
 MODS=['a001_docomo','a002_kddi','a003_sony','a004_fujifilm','a005_toyota','a006_panasonic',
       'a007_mitsubishi','a008_jreast','a009_sevenandi','a010_recruit','a011_ajinomoto','a012_softbank',
       'a013_money','a014_partners','a015_words']
@@ -72,21 +91,38 @@ for m in MODS:
       hero=hero, tags=[tag_of(x) for x in A.get('forwho',[])][:3],
       learn=learn_of(A), nbiz=len(A.get('timeline') or []),
       nlive=sum(1 for r in (A.get('timeline') or []) if r[3]),
+      pub=A.get('pub') or '', topics=[t for t in (A.get('topics') or []) if t in TOPIC_JA],
+      # 業種は「1社を追った記録」だけに付けます。ランキングや入門は1社の話では
+      # ないので、業種の札を出すと（ランキングが「通信」に見えて）誤解を生みます。
+      # 色は ind から取るので、ind そのものは残しておきます。
+      indshow=(ind if A.get('genre','decisions')=='decisions' else ''),
     ))
+
+# ── 並び順は新着順 ──
+#
+# これまでは MODS の並び（番号順）でした。毎日1本ずつ増えていくので、
+# 新しいものが先頭に来ないと、増えたことに気づけません。
+# 公開日が同じ日なら、番号の大きいほうを先にします。
+CARDS.sort(key=lambda c:(c['pub'], c['no']), reverse=True)
+
+for c in CARDS:
+    if not c['topics']:
+        print('   ！ 記事 #%s に topics がありません（絞り込みに出てきません）'%c['no'])
 
 def card(c):
     tags=''.join('<span class="rt">%s</span>'%t for t in c['tags'])
     learn=''.join('<li>%s</li>'%x for x in c['learn'])
-    return '''<a class="rcard" data-g="%(genre)s" href="/articles/%(slug)s/" style="--c1:%(c1)s;--c2:%(c2)s;--cw:%(cw)s;--cd:%(cd)s">
+    return '''<a class="rcard" data-g="%(genre)s" data-ind="%(indshow)s" data-t="%(tp)s" data-read="%(read)s" data-no="%(no)s" href="/articles/%(slug)s/" style="--c1:%(c1)s;--c2:%(c2)s;--cw:%(cw)s;--cd:%(cd)s">
   <span class="rc-hd">
     <span class="rc-no">%(gname)s <b>#%(no)s</b></span>
-    <span class="rc-co">%(company)s<em>%(ind)s</em></span>
+    <span class="rc-co">%(company)s%(indtag)s</span>
   </span>
   <span class="rc-body">
     <span class="rc-ttl">%(h1)s</span>
     <span class="rc-hero"><b>%(hv)s</b><i>%(hu)s</i><span class="rc-hk">%(hk)s</span></span>
     <span class="rc-learn"><span class="rc-lk">この記録で分かること</span><ul>%(learn)s</ul></span>
     <span class="rc-tags"><span class="rc-lk">こんな方におすすめ</span>%(tags)s</span>
+    <span class="rc-tp">%(tplabel)s</span>
   </span>
   <span class="rc-foot">
     <span class="rc-meta">%(meta)s</span>
@@ -94,11 +130,51 @@ def card(c):
   </span>
 </a>'''%dict(c,hv=c['hero'][1],hu=c['hero'][2],hk=c['hero'][0],tags=tags,learn=learn,
        gname=c.get('gname') or '新規事業ヒストリー',
+       tp=' '.join(c['topics']),
+       indtag=('<em>%s</em>'%c['indshow'] if c['indshow'] else ''),
+       tplabel=''.join('<span class="tpx">%s</span>'%TOPIC_JA[t] for t in c['topics']),
        meta=c.get('meta') or ('記録した新規事業 <b>%d</b>件　じっくり読んで <b>約%s分</b>'%(c['nbiz'],c['read'])))
 
 EXTRA='''
 
-.gtabs{display:flex;gap:9px;flex-wrap:wrap;margin:26px 0 8px}
+/* ── 絞り込み（3つの軸）── */
+.fgrp{margin:20px 0 0}
+/* 携帯のときだけ出る、開け閉めのボタン */
+.ftoggle{display:none;font:inherit;font-size:14px;font-weight:800;width:100%;
+ align-items:center;justify-content:center;gap:8px;margin:20px 0 0;
+ padding:14px 18px;border-radius:14px;border:1.5px solid var(--border);
+ background:var(--surface);color:var(--tx-2);cursor:pointer}
+.ftoggle svg{transition:transform .18s ease}
+.ftoggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+.ftoggle .fnum{font-family:ui-monospace,Menlo,monospace;font-size:11px;background:var(--blue);
+ color:#fff;border-radius:11px;padding:2px 8px}
+@media(max-width:700px){
+  .ftoggle{display:flex}
+  .ffilters{display:none}
+  .ffilters.open{display:block}
+  .gtab{font-size:12.5px;padding:9px 14px;gap:6px}
+  .gtab .en{display:none}
+  .fbar{margin-top:16px}
+}
+.flab{font-size:11.5px;font-weight:800;letter-spacing:.14em;color:var(--tx-3);margin-bottom:9px}
+.fbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;
+ border-top:1px solid var(--border);margin-top:22px;padding-top:16px}
+.fhit{font-size:14px;font-weight:800;color:var(--tx-2)}
+.fhit b{color:var(--blue);font-size:21px;font-family:ui-monospace,Menlo,monospace;margin-right:3px}
+.fright{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.fsorts{display:flex;gap:6px}
+.fsort{font:inherit;font-size:12.5px;font-weight:700;padding:8px 14px;border-radius:9px;
+ border:1.5px solid var(--border);background:var(--page);color:var(--tx-3);cursor:pointer;
+ transition:all .13s ease}
+.fsort:hover{border-color:var(--blue);color:var(--blue)}
+.fsort.on{background:var(--tx-1);border-color:var(--tx-1);color:var(--page)}
+.fclr{font:inherit;font-size:12.5px;font-weight:800;color:var(--orange);background:none;
+ border:0;cursor:pointer;text-decoration:underline;padding:6px 2px}
+/* カードの中の、お悩みの型 */
+.rc-tp{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.rc-tp .tpx{font-size:11px;font-weight:700;background:var(--surface-2);color:var(--tx-3);
+ border-radius:8px;padding:3px 9px}
+.gtabs{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 8px}
 .gtab{font:inherit;font-size:13.5px;font-weight:800;padding:11px 18px;border-radius:24px;
  border:1.5px solid var(--border);background:var(--page);color:var(--tx-3);cursor:pointer;
  display:inline-flex;align-items:center;gap:8px;transition:all .14s ease}

@@ -2,6 +2,7 @@
 A=dict(
 slug='newbusiness-money-ranking',
 no='013',
+topics=['money', 'buildbuy', 'approval'],   # 一覧の絞り込み用。_src/COMSPEC.md の10種類から選びます
 genre='ranking',
 section='ランキング',
 company='新規事業に払った金額',

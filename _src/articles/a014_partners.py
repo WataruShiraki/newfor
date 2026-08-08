@@ -2,6 +2,7 @@
 A=dict(
 slug='newbusiness-partners',
 no='014',
+topics=['approval', 'money', 'starter'],   # 一覧の絞り込み用。_src/COMSPEC.md の10種類から選びます
 genre='partners',
 section='新規事業のお供',
 company='外から力を借りる',

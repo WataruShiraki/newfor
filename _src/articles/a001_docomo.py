@@ -2,6 +2,7 @@
 A=dict(
 slug='docomo-newbusiness',
 no='001',
+topics=['approval', 'strength', 'starter'],   # 一覧の絞り込み用。_src/COMSPEC.md の10種類から選びます
 company='NTTドコモ',
 legal='株式会社NTTドコモ',
 title='NTTドコモの新規事業25件｜iモードから金融まで | NEWFOR',

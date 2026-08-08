@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 A = dict(
-slug='mitsubishi-newbusiness', no='007', company='三菱商事', legal='三菱商事株式会社',
+slug='mitsubishi-newbusiness', no='007',
+topics=['partner', 'longrun', 'buildbuy'],   # 一覧の絞り込み用。10種類から選びます
+company='三菱商事', legal='三菱商事株式会社',
 title='三菱商事の新規事業13件｜ローソンとCVCの記録 | NEWFOR',
 h1='三菱商事は、<br>同じ会社の持ち方を<br>10年で2回つくり替えた',
 desc='2016年に約1,440億円でローソンを子会社化し、2024年にKDDIへ半分を渡して折半経営へ。Eneco買収5,000億円、洋上風力3海域、クリーンアンモニア。商社の新規事業10年を公開情報から記録。',

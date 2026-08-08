@@ -2,6 +2,7 @@
 A=dict(
 slug='softbank-newbusiness',
 no='012',
+topics=['partner', 'handoff', 'money'],   # 一覧の絞り込み用。_src/COMSPEC.md の10種類から選びます
 company='ソフトバンクグループ',
 legal='ソフトバンクグループ株式会社',
 title='ソフトバンクGの新規事業36件｜45年の投資と出口 | NEWFOR',

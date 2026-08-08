@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 A = dict(
-slug='kddi-newbusiness', no='002', company='KDDI', legal='KDDI株式会社',
+slug='kddi-newbusiness', no='002',
+topics=['approval', 'strength', 'partner'],   # 一覧の絞り込み用。10種類から選びます
+company='KDDI', legal='KDDI株式会社',
 title='KDDIの新規事業19件｜他社と組んで始めた15件の記録 | NEWFOR',
 h1='KDDIは、自分ひとりで<br>新規事業を始めたことが<br>ほとんどない',
 desc='auじぶん銀行から、ローソンの共同経営、Starlinkとの衛星直接通信まで。KDDIが2008年からの18年で手がけた新規事業を公開情報から並べると、ほぼ全部に相手がいた。組む相手で事業をつくってきた通信会社の記録。',

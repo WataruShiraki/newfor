@@ -10,47 +10,180 @@ DESC='大企業の新規事業を、始めた年から今日まで公開情報�
 H1='記事一覧'
 LEAD='大企業の新規事業を、公開情報から記録しています。'
 
-cnt={g[0]:sum(1 for c in CARDS if c['genre']==g[0]) for g in GENRES}
-tabs=['<button class="gtab on" data-g="all">すべて<span class="cnt">%d</span></button>'%len(CARDS)]
-for slug,ja,en,desc in GENRES:
-    tabs.append('<button class="gtab%s" data-g="%s">%s<span class="en">%s</span>'
-                '<span class="cnt">%d</span></button>'
-                %('' if cnt[slug] else ' empty',slug,ja,en,cnt[slug]))
+# ── 絞り込みの3つの軸 ──
+#
+# これまではジャンルの4つだけでした。読む人は「自分の業種」や
+# 「いま困っていること」から探します。軸を足して、掛け合わせられるようにします。
+INDS=[]
+for c in CARDS:
+    if c['indshow'] and c['indshow'] not in INDS: INDS.append(c['indshow'])
+INDS.sort()
+
+def chips(kind,items):
+    """items は (値, 表示名, 英字) の並び"""
+    out=[]
+    for v,ja,en in items:
+        n=sum(1 for c in CARDS if (c['genre']==v if kind=='g'
+                                   else c['indshow']==v if kind=='ind'
+                                   else v in c['topics']))
+        out.append('<button class="gtab%s" data-k="%s" data-v="%s">%s%s'
+                   '<span class="cnt">%d</span></button>'
+                   %('' if n else ' empty',kind,v,ja,
+                     '<span class="en">%s</span>'%en if en else '',n))
+    return ''.join(out)
+
+# 携帯だと札が縦に伸びて、記事にたどり着く前に画面3つぶんスクロールすることに
+# なります。そこで携帯のときだけ閉じておいて、押したら開く形にします。
+FILTERS=(
+  '<button class="ftoggle" id="ftoggle" aria-expanded="false">'
+  '絞り込む<span class="fnum" id="fnum" hidden>0</span>'
+  '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+  'stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>'
+  '</button>'
+  '<div class="ffilters" id="ffilters">'
+  '<div class="fgrp"><div class="flab">ジャンル</div><div class="gtabs">'
+  + chips('g',[(g[0],g[1],g[2]) for g in GENRES]) + '</div></div>'
+  '<div class="fgrp"><div class="flab">業種</div><div class="gtabs">'
+  + chips('ind',[(i,i,'') for i in INDS]) + '</div></div>'
+  '<div class="fgrp"><div class="flab">こんな方におすすめ</div><div class="gtabs">'
+  + chips('t',[(k,ja,'') for k,ja in mkreports.TOPICS]) + '</div></div></div>')
+
+BAR=('<div class="fbar">'
+     '<span class="fhit"><b id="fhit">%d</b> 本の記事</span>'
+     '<span class="fright">'
+     '<span class="fsorts">'
+     '<button class="fsort on" data-s="new">新着順</button>'
+     '<button class="fsort" data-s="old">古い順</button>'
+     '<button class="fsort" data-s="short">短い順</button></span>'
+     '<button class="fclr" id="fclr" hidden>絞り込みを解除</button>'
+     '</span></div>'%len(CARDS))
+
 GD=json.dumps({g[0]:g[3] for g in GENRES},ensure_ascii=False,separators=(',',':'))
 GN=json.dumps({g[0]:g[1] for g in GENRES},ensure_ascii=False,separators=(',',':'))
 
 BODY=('<p class="rlead">大企業の新規事業を、公開情報から記録しているメディアです。'
-      '<b>ジャンルで絞り込めます。</b></p>'
-      +'<div class="gtabs">'+''.join(tabs)+'</div>'
-      +'<div class="gdesc" id="gdesc">気になるジャンルから探せます。企業を1社ずつ追った記録、金額のランキング、担当者向けの実務メモがあります。</div>'
+      '<b>新しい記事が上に並びます。</b>ジャンル・業種・お悩みで絞り込めます。</p>'
+      + FILTERS
+      +'<div class="gdesc" id="gdesc">気になるところから探せます。企業を1社ずつ追った記録、金額のランキング、担当者向けの実務メモがあります。</div>'
+      + BAR
       +'<div class="rgrid" id="rgrid">\n'+'\n'.join(card(c) for c in CARDS)+'\n</div>'
       +'<div class="gempty" id="gempty" style="display:none">'
-       '<b>このジャンルは準備中です</b><span id="gemsg"></span></div>')
+       '<b>この組み合わせに当てはまる記事は、まだありません</b>'
+       '<span id="gemsg">絞り込みをひとつ外してみてください。</span></div>')
 
 JS='''<script>
+/* 記事一覧の絞り込みと並べ替え
+   ─────────────────────────────────
+   3つの軸（ジャンル・業種・お悩み）を掛け合わせます。同じ軸の中で
+   2つ以上えらんだときは「どちらか」、軸をまたぐと「かつ」です。
+   選んだ状態は住所（?g=&ind=&t=）に残します。人に送れるようにするためです。 */
 (function(){
-  var DESC=%s, NAME=%s;
-  var ALL="気になるジャンルから探せます。企業を1社ずつ追った記録、金額のランキング、担当者向けの実務メモがあります。";
-  var tabs=[].slice.call(document.querySelectorAll(".gtab"));
+  var DESC=%s;
+  var ALL="気になるところから探せます。企業を1社ずつ追った記録、金額のランキング、担当者向けの実務メモがあります。";
+  var chips=[].slice.call(document.querySelectorAll(".gtab[data-k]"));
   var cards=[].slice.call(document.querySelectorAll(".rcard"));
-  var gd=document.getElementById("gdesc"),ge=document.getElementById("gempty"),gm=document.getElementById("gemsg");
-  function show(g){
-    tabs.forEach(function(t){t.classList.toggle("on",t.dataset.g===g);});
+  var sorts=[].slice.call(document.querySelectorAll(".fsort"));
+  var gd=document.getElementById("gdesc"),ge=document.getElementById("gempty");
+  var hit=document.getElementById("fhit"),clr=document.getElementById("fclr");
+  var sel={g:[],ind:[],t:[]}, mode="new";
+
+  function has(list,v){return list.indexOf(v)>=0;}
+  function vals(c,k){
+    return k==="g" ? [c.dataset.g] : k==="ind" ? [c.dataset.ind] : (c.dataset.t||"").split(" ");
+  }
+  /* ある軸を仮に v だけにしたら何本になるか。数えて札に出します */
+  function countWith(k,v){
     var n=0;
     cards.forEach(function(c){
-      var hit=(g==="all"||c.dataset.g===g);
-      c.style.display=hit?"":"none"; if(hit)n++;
+      var ok=true;
+      ["g","ind","t"].forEach(function(kk){
+        var want = (kk===k) ? [v] : sel[kk];
+        if(!want.length) return;
+        var mine=vals(c,kk);
+        if(!want.some(function(x){return has(mine,x);})) ok=false;
+      });
+      if(ok)n++;
     });
-    gd.textContent=(g==="all")?ALL:(DESC[g]||ALL);
-    ge.style.display=n?"none":"";
-    if(!n)gm.textContent="「"+(NAME[g]||"")+"」の記事は、いま準備しています。公開までもう少しお待ちください。";
-    if(history.replaceState)history.replaceState(null,"",g==="all"?location.pathname:location.pathname+"?g="+g);
+    return n;
   }
-  tabs.forEach(function(t){t.addEventListener("click",function(){show(t.dataset.g);});});
-  var q=(location.search.match(/[?&]g=([a-z]+)/)||[])[1];
-  if(q&&tabs.some(function(t){return t.dataset.g===q;}))show(q);
+  function match(c){
+    var ok=true;
+    ["g","ind","t"].forEach(function(k){
+      if(!sel[k].length) return;
+      var mine=vals(c,k);
+      if(!sel[k].some(function(x){return has(mine,x);})) ok=false;
+    });
+    return ok;
+  }
+  function draw(){
+    var n=0, shown=[];
+    cards.forEach(function(c){
+      var m=match(c);
+      c.style.display=m?"":"none";
+      if(m){n++;shown.push(c);}
+    });
+    /* 並べ替えは order でやります。DOMを組み替えないので、
+       スクロール位置が飛びません */
+    shown.sort(function(a,b){
+      if(mode==="short"){
+        var d=Number(a.dataset.read)-Number(b.dataset.read);
+        if(d) return d;
+      }
+      var x=a.dataset.no, y=b.dataset.no;
+      return mode==="old" ? (x<y?-1:1) : (x>y?-1:1);
+    }).forEach(function(c,i){c.style.order=i;});
+
+    hit.textContent=n;
+    ge.style.display=n?"none":"";
+    var one=(sel.g.length===1&&!sel.ind.length&&!sel.t.length)?sel.g[0]:null;
+    gd.textContent=one?(DESC[one]||ALL):ALL;
+    chips.forEach(function(b){
+      var k=b.dataset.k,v=b.dataset.v,c=countWith(k,v);
+      b.classList.toggle("on",has(sel[k],v));
+      b.classList.toggle("empty",!c);
+      var s=b.querySelector(".cnt"); if(s)s.textContent=c;
+    });
+    var any=sel.g.length+sel.ind.length+sel.t.length;
+    clr.hidden=!any;
+    var fn=document.getElementById("fnum");
+    if(fn){fn.hidden=!any;fn.textContent=any;}
+    if(history.replaceState){
+      var q=[];
+      ["g","ind","t"].forEach(function(k){
+        if(sel[k].length) q.push(k+"="+sel[k].map(encodeURIComponent).join(","));
+      });
+      history.replaceState(null,"",location.pathname+(q.length?"?"+q.join("&"):""));
+    }
+  }
+  chips.forEach(function(b){b.addEventListener("click",function(){
+    var k=b.dataset.k,v=b.dataset.v,i=sel[k].indexOf(v);
+    if(i>=0) sel[k].splice(i,1); else sel[k].push(v);
+    draw();
+  });});
+  sorts.forEach(function(b){b.addEventListener("click",function(){
+    sorts.forEach(function(x){x.classList.remove("on");});
+    b.classList.add("on"); mode=b.dataset.s; draw();
+  });});
+  clr.addEventListener("click",function(){sel={g:[],ind:[],t:[]};draw();});
+
+  /* 携帯用の開け閉め。開いているかどうかは aria-expanded に持たせます */
+  var tg=document.getElementById("ftoggle"), box=document.getElementById("ffilters");
+  tg.addEventListener("click",function(){
+    var open=box.classList.toggle("open");
+    tg.setAttribute("aria-expanded",open?"true":"false");
+  });
+
+  /* 住所に絞り込みが書いてあれば、それを復元します */
+  ["g","ind","t"].forEach(function(k){
+    var m=location.search.match(new RegExp("[?&]"+k+"=([^&]*)"));
+    if(!m) return;
+    decodeURIComponent(m[1]).split(",").forEach(function(v){
+      if(v&&chips.some(function(b){return b.dataset.k===k&&b.dataset.v===v;})) sel[k].push(v);
+    });
+  });
+  draw();
 })();
-</script>'''%(GD,GN)
+</script>'''%GD
 
 ld=[{"@context":"https://schema.org","@type":"CollectionPage","url":SITE+"/articles/","name":TITLE,
      "description":DESC,"inLanguage":"ja","isPartOf":{"@id":SITE+"/#site"},

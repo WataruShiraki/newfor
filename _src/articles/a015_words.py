@@ -2,6 +2,7 @@
 A=dict(
 slug='newbusiness-words',
 no='015',
+topics=['starter', 'seed', 'explain'],   # 一覧の絞り込み用。_src/COMSPEC.md の10種類から選びます
 genre='handbook',
 section='入門',
 company='新規事業の言葉',

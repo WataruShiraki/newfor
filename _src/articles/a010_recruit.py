@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 A = dict(
-slug='recruit-newbusiness', no='010', company='リクルート', legal='株式会社リクルートホールディングス',
+slug='recruit-newbusiness', no='010',
+topics=['buildbuy', 'explain', 'money'],   # 一覧の絞り込み用。10種類から選びます
+company='リクルート', legal='株式会社リクルートホールディングス',
 title='リクルートの新規事業16件｜Indeed買収と事業の作り方 | NEWFOR',
 h1='リクルートは<br>12億ドルで買ったブランドを、<br>7年後に自社へ畳んだ',
 desc='Glassdoor買収12億ドル（2018年）と、2025年のIndeedへの統合。一方でAirレジは10年かけて90万アカウント。海外を買うリズムと国内を積むリズムが、まったく違う会社の記録。',

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 A = dict(
-slug='sony-newbusiness', no='003', company='ソニーグループ', legal='ソニーグループ株式会社',
+slug='sony-newbusiness', no='003',
+topics=['handoff', 'explain'],   # 一覧の絞り込み用。10種類から選びます
+company='ソニーグループ', legal='ソニーグループ株式会社',
 title='ソニーの新規事業21件｜社内公募SSAPとCVCの仕組み | NEWFOR',
 h1='ソニーがいちばん<br>うまく作ったのは、<br>事業ではなく「作り方」だった',
 desc='社内公募制度から生まれた事業は20数件。一方その制度自体は、27業種1,050件超の他社支援になった。wena、aibo、AFEELAが同じ年に区切りを迎えた2026年に、ソニーの新規事業25年を公開情報から読み解く。',

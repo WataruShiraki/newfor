@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 A = dict(
-slug='sevenandi-newbusiness', no='009', company='セブン&アイ', legal='株式会社セブン&アイ・ホールディングス',
+slug='sevenandi-newbusiness', no='009',
+topics=['approval', 'explain', 'handoff'],   # 一覧の絞り込み用。10種類から選びます
+company='セブン&アイ', legal='株式会社セブン&アイ・ホールディングス',
 title='セブン&アイの新規事業15件｜引き算の10年 | NEWFOR',
 h1='セブン&アイのこの10年は、<br>足し算ではなく<br>引き算だった',
 desc='Speedway買収2.2兆円、ヨークHD売却8,147億円、そごう・西武譲渡2,200億円。一方で社内発の新規事業は7pay、SIPストア、7NOW。同じ会社の中で金額の桁が3つ違う10年を公開情報から記録。',

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 A = dict(
-slug='panasonic-newbusiness', no='006', company='パナソニック', legal='パナソニック ホールディングス株式会社',
+slug='panasonic-newbusiness', no='006',
+topics=['approval', 'money', 'seed'],   # 一覧の絞り込み用。10種類から選びます
+company='パナソニック', legal='パナソニック ホールディングス株式会社',
 title='パナソニックの新規事業14件｜家庭のOSへの挑戦 | NEWFOR',
 h1='パナソニックは<br>「家庭のOS」という同じ問いに、<br>3回挑んだ',
 desc='HomeX、Yohana、Panasonic Well。創業100周年で掲げた「くらしアップデート業」の7年を公開情報から記録。同じ時期に71億ドルのBlue Yonder買収と40億ドルの電池工場が動いていた。',

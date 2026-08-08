@@ -80,6 +80,10 @@ for r in MONEY:
     vals=[jp(v/100),jp(v/10),jp(v),jp(v*10)]
     if len(set(vals))<4: continue
     if LEAK_YEN.search(r['ev']): continue
+    # 「NTTがドコモをTOB」のように、事業名の中に別の会社が主語として
+    # 出てくるものは、「○○社が払った額は？」と書くと主語がずれます。出しません
+    gi=r['ev'].find('が'); wo=r['ev'].find('を')
+    if gi>=0 and wo>gi: continue
     u=r.get('url2') or link(r['slug'],r['date'],r['ev'])
     # 説明文は年表の一文をそのまま使います。文の途中で切れていると
     # 「約1,000億円で。」のように尻切れになるので、末尾の助詞を落とします

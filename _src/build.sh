@@ -46,6 +46,8 @@ cp -r dist/assets/. gh/assets/ 2>/dev/null || true
 # ── gh/ に直接作る ──
 python3 mkcomp.py         # gh/companies/<slug>/  ← companies/*.py
 python3 mklist.py         # gh/articles/          ← articles/a0*.py
+python3 money.py          # 年表から「払った額」を抜き出す（/tmp/money.json）
+python3 quiz.py           # トップの「今日の1問」を作る（/tmp/quiz.json）
 python3 mktop.py          # gh/index.html の中の数と一覧
 python3 mkcompidx.py      # gh/companies/index.html の中の数と一覧
 

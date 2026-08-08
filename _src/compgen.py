@@ -86,6 +86,14 @@ EXTRA_CSS='''
 .crow2{display:grid;grid-template-columns:150px 1fr 96px;gap:11px;align-items:center;font-size:12.5px}
 @media(max-width:640px){.crow2{grid-template-columns:104px 1fr;gap:7px}.crow2 .yr2{grid-column:2;font-size:11px;text-align:left;margin-top:-3px}}
 .crow2 .n2{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+/* チャートの事業名も、その1件のページへ飛べます。名前の欄はせまくて
+   矢印を置けないので、薄い下線を出しっぱなしにして「押せる」ことを伝えます。
+   下線は text-decoration で引きます。枠線だと、名前が「…」で切れたときに
+   見えなくなるためです。色は --border-2（実際に定義がある変数）を使います */
+.crow2 .n2l{color:inherit;text-decoration:underline;text-decoration-thickness:1px;
+ text-underline-offset:3px;text-decoration-color:var(--border-2);
+ transition:color .14s ease,text-decoration-color .14s ease}
+.crow2 .n2l:hover{color:var(--accent);text-decoration-color:var(--accent)}
 .crow2 .trk2{position:relative;height:12px;background:var(--track);border-radius:7px;overflow:hidden}
 .crow2 .b2{position:absolute;top:0;height:12px;border-radius:7px}
 .b2.live{background:var(--accent)}
@@ -116,7 +124,7 @@ EXTRA_CSS='''
  transition:opacity .14s ease,transform .14s ease}
 .clist .ev2l:hover{color:var(--accent)}
 .clist .ev2l:hover svg{opacity:1;transform:translateX(2px)}
-.clist li:hover{background:var(--note)}
+.clist li:hover{background:var(--surface-2)}
 .clist li{border-radius:9px;padding-left:9px;padding-right:9px;margin-left:-9px;margin-right:-9px}
 @media(hover:none){.clist .ev2l svg{opacity:.55}}
 .bd2{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:11px;white-space:nowrap;height:fit-content;margin-top:2px}
@@ -282,9 +290,14 @@ def render(c):
             w=max(1.8,(e-s)/span*100); cls='done'; yr='%d–%d'%(int(s),int(e))
         else:
             w=0.7; cls='done unk'; yr='%d'%int(s); unk=True
+        # 事業名は、下の一覧と同じように、その1件のページへ飛ばします。
+        # 住所の作り方は newsmap() 一か所だけに置いてあります。
+        ymk='%d.%02d'%(int(s),round((s-int(s))*12)+1)
+        href=newsmap().get((c['slug'],ymk,n))
+        nm=('<a class="n2l" href="%s">%s</a>'%(href,n)) if href else n
         rows.append('<div class="crow2"><span class="n2" title="%s">%s</span>'
           '<span class="trk2"><span class="b2 %s" style="left:%.2f%%;width:%.2f%%"></span></span>'
-          '<span class="yr2">%s</span></div>'%(n,n,cls,left,w,yr))
+          '<span class="yr2">%s</span></div>'%(n,nm,cls,left,w,yr))
     items=[]
     for n,s,e,live,note in biz:
         bd='<span class="bd2 live">継続中</span>' if live else '<span class="bd2 done">役目を終えた</span>'

@@ -7,7 +7,7 @@ companies/*.py と articles/a0*.py から計算できるので、ここで書き
 書き換えるのは次の6つです。
 
   ページ上部の「N社」「N件」（title, description, OGP, 構造化データ）
-  「最新の記録」の5件
+  「今日の1問」（var QUIZ）
   数字4つ（記録した企業／記録した新規事業／公開している記事／参照した一次情報）
   var NEW    … 新規事業NEWS の24件
   var MONTH  … 2015年以降の発表数ランキング
@@ -86,11 +86,12 @@ def fix(t):
 h=s.index('</head>')+7
 s=fix(s[:h])+s[h:]
 
-# ── 2. 最新の記録（5件） ──
-rows=''.join('<a class="hrk nw" href="%s"><span class="nd mono">%s</span>'
-  '<span class="t">%s<em>%s</em></span></a>'%(e[6],e[0],cut(e[2],22),e[1]) for e in EV[:5])
-i=s.index('<a class="hrk nw"'); j=s.index('</div>',i)
-s=s[:i]+rows+'\n      '+s[j:]
+# ── 2. 今日の1問 ──
+#
+# ここは以前「最新の記録」の5件でした。同じ中身が下の「新規事業NEWS」にも
+# 並んでいたので、上は1問のクイズに入れ替えています。
+# 問題そのものは quiz.py が作ります。ここでは埋め込むだけです。
+QUIZ=json.load(io.open('/tmp/quiz.json',encoding='utf-8'))
 
 # ── 3. 数字4つ ──
 def stat(key,val):
@@ -108,7 +109,7 @@ def swap(var,val,tail=';'):
     i=s.index('var %s='%var); j=s.index(tail,s.index('=',i))
     s=s[:i]+'var %s=%s'%(var,json.dumps(val,ensure_ascii=False))+s[j:]
 swap('NEW',NEW,tail=', nIx=')
-swap('MONTH',MONTH); swap('ALL',ALL)
+swap('MONTH',MONTH); swap('ALL',ALL); swap('QUIZ',QUIZ)
 
 # ── 5. 新規事業ヒストリーのカード3枚 ──
 def card_fix(m):

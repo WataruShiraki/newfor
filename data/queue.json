@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-08",
+ "updated": "2026-08-11",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -79,6 +79,46 @@
    "title": "出張整備のSeibiiと資本提携し、モビリティサービス事業で協業開始",
    "url": "https://www.zaikei.co.jp/article/20260804/864385.html",
    "why": "サービスステーション網と出張整備サービスを組み合わせる資本提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-11-sony-1",
+   "found": "2026-08-11",
+   "company": "ソニーグループ",
+   "date": "2026.08",
+   "title": "TSMCと次世代イメージセンサーの合弁会社「Advanced Vision Semiconductor Manufacturing」設立で確定契約を締結",
+   "url": "https://www.itmedia.co.jp/mobile/articles/2608/11/news017.html",
+   "why": "熊本県合志市に量産拠点となる合弁会社を設立する確定契約を締結したため（ソニー62%・TSMC38%出資）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-11-mitsubishi-1",
+   "found": "2026-08-11",
+   "company": "三菱商事",
+   "date": "2026.08",
+   "title": "メディパルHDと業務提携を拡大、エム・シー・ヘルスケアHDを50対50の共同経営体制へ",
+   "url": "https://www.mitsubishicorp.com/jp/ja/news/release/2026/20260807001.html",
+   "why": "出資比率80対20だった合弁会社を50対50の共同経営体制へ変更し、対象領域をヘルスケアから食・日用品にも広げる資本提携拡大のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-11-fujifilm-2",
+   "found": "2026-08-11",
+   "company": "富士フイルム",
+   "date": "2026.08",
+   "title": "富士フイルムビジネスイノベーション、イー・アンド・エムと合弁会社設立へ",
+   "url": "https://www.eandm.co.jp/20260806-2/",
+   "why": "ソフトウェア開発の体制・リソース強化を目的とした新会社設立のため（重要度は小さめ、要確認）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-11-kirin-1",
+   "found": "2026-08-11",
+   "company": "キリンHD",
+   "date": "2026.08",
+   "title": "カナダのサプリメント大手ジェイミソン・ウェルネスを約2183億円で買収、完全子会社化",
+   "url": "https://news.yahoo.co.jp/articles/8bb483e641f68d2a05c9dc9df6fd974800b6497f",
+   "why": "北米の健康食品市場への本格参入を目的とした買収のため",
    "status": "new"
   }
  ]

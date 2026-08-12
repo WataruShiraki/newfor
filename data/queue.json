@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-11",
+ "updated": "2026-08-12",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -119,6 +119,36 @@
    "title": "カナダのサプリメント大手ジェイミソン・ウェルネスを約2183億円で買収、完全子会社化",
    "url": "https://news.yahoo.co.jp/articles/8bb483e641f68d2a05c9dc9df6fd974800b6497f",
    "why": "北米の健康食品市場への本格参入を目的とした買収のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-12-mitsubishi-1",
+   "found": "2026-08-12",
+   "company": "三菱商事",
+   "date": "2026.08",
+   "title": "TOYO TIREとの資本業務提携を解消、保有株式20%を自己株式取得の形で売却",
+   "url": "https://www.nikkei.com/article/DGXZQOUF101ER0Q6A810C2000000/",
+   "why": "2018年から続いた資本業務提携を解消し、8月10日にTOYO TIREへ保有株式を売却したため（事業提携の終了に該当）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-12-kddi-1",
+   "found": "2026-08-12",
+   "company": "KDDI",
+   "date": "2026.08",
+   "title": "グノシー株式を全て売却し、12年に及ぶ資本業務提携を解消",
+   "url": "https://www.nikkei.com/article/DGXZQOUC124SQ0S6A810C2000000/",
+   "why": "2014年から保有していたグノシー株式14.65%を全て売却し、2027年3月末で業務提携も終了するため（資本提携の終了に該当）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-12-cyberagent-1",
+   "found": "2026-08-12",
+   "company": "サイバーエージェント",
+   "date": "2026.08",
+   "title": "ポイント交換基盤「ドットマネー事業」をGMOタウンWiFiへ譲渡",
+   "url": "https://group.gmo/news/article/10146/",
+   "why": "2026年8月10日付で事業譲受契約を締結し、ドットマネー事業を譲渡したため（事業の譲渡に該当）",
    "status": "new"
   }
  ]

@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-12",
+ "updated": "2026-08-14",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -149,6 +149,26 @@
    "title": "ポイント交換基盤「ドットマネー事業」をGMOタウンWiFiへ譲渡",
    "url": "https://group.gmo/news/article/10146/",
    "why": "2026年8月10日付で事業譲受契約を締結し、ドットマネー事業を譲渡したため（事業の譲渡に該当）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-14-docomo-1",
+   "found": "2026-08-14",
+   "company": "NTTドコモ",
+   "date": "2026.08",
+   "title": "WOWOWとの吸収分割契約を締結、「Lemino」事業を合弁会社へ承継",
+   "url": "https://prtimes.jp/main/html/rd/p/000008886.000001355.html",
+   "why": "映像配信事業「Lemino」をWOWOWとの合弁会社へ承継する吸収分割契約を締結したため（6月の提携合意から進んだ事業統合の具体化。新会社の事業開始は10月1日予定）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-14-mufg-1",
+   "found": "2026-08-14",
+   "company": "三菱UFJ FG",
+   "date": "2026.08",
+   "title": "Digital Asset・Progmatと日本国債レポ取引のオンチェーン化に向けた実証実験を開始",
+   "url": "https://prtimes.jp/main/html/rd/p/000000356.000036656.html",
+   "why": "ブロックチェーン基盤（Canton Network）を用いた新しい決済・取引サービスの実証実験を開始したため（実証実験段階のため要確認）",
    "status": "new"
   }
  ]

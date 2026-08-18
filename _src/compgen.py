@@ -51,7 +51,8 @@ def esrc(ES,y,ev):
     if not ES: return None
     return ES.get('%s|%s'%(y,ev)) or ES.get(y) or ES.get(y[:4])
 
-END_W=r'(?:終え|終了|終結|移した|移管|統合|譲渡|売却|手放し|公有化|解消|走り切っ|役目を終え)'
+# 「次へ渡した」は KOTOBA.md が勧める言い方。終えた合図としても読みます
+END_W=r'(?:終え|終了|終結|移した|移管|統合|譲渡|売却|手放し|公有化|解消|走り切っ|役目を終え|次へ渡)'
 
 def find_end(note,start=None):
     """本文から終了年月を拾う。拾えなければ None（＝期間が公表されていない）"""

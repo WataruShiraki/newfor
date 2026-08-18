@@ -178,13 +178,14 @@ nav.main a:hover,nav.main button:hover,nav.main a.on{color:var(--tx-1);backgroun
  box-shadow:0 18px 44px rgba(9,6,44,.5),0 0 0 1px rgba(255,255,255,.14) inset}
 .nfq-in{padding:20px 20px 22px}
 .nfq-top{display:flex;align-items:center;gap:10px;margin-bottom:15px}
-.nfq-badge{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:900;
- letter-spacing:-.015em;color:#1B1150;background:#FFC93C;border-radius:100px;padding:7px 17px;
+.nfq-badge{display:inline-flex;align-items:center;gap:8px;
+ font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:700;letter-spacing:.09em;
+ color:#1B1150;background:#FFC93C;border-radius:100px;padding:7px 16px;
  box-shadow:0 4px 0 rgba(0,0,0,.2)}
 .nfq-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF5A14}
 .nfq-day{margin-left:auto;font-size:11px;font-weight:700;color:rgba(255,255,255,.72);white-space:nowrap}
-.nfq-lead{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.14em;color:#1B1150;
- background:#7CFFB2;border-radius:6px;padding:3px 9px;margin:0 0 9px;transform:rotate(-1.2deg)}
+.nfq-lead{display:inline-block;font-size:14.5px;font-weight:900;letter-spacing:.01em;color:#1B1150;
+ background:#7CFFB2;border-radius:7px;padding:4px 12px;margin:0 0 10px;transform:rotate(-1.2deg)}
 .nfq-q{font-size:18.5px;font-weight:850;line-height:1.48;letter-spacing:-.025em;color:#fff;margin:0 0 16px;
  text-shadow:0 2px 10px rgba(0,0,0,.22)}
 .nfq-ch{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -207,6 +208,12 @@ nav.main a:hover,nav.main button:hover,nav.main a.on{color:var(--tx-1);backgroun
 .nfq-ch button[disabled]:hover{transform:none}
 .nfq-ch button.no:hover{border-color:rgba(255,255,255,.16);box-shadow:none}
 .nfq-ch button.ok:hover{border-color:#fff;box-shadow:0 4px 0 rgba(9,6,44,.45)}
+.nfq-pre{display:inline-flex;align-items:center;gap:5px;margin-top:11px;
+ font-size:11.5px;font-weight:700;color:rgba(255,255,255,.6);
+ border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:1px;transition:color .13s ease,border-color .13s ease}
+.nfq-pre:hover{color:#FFC93C;border-bottom-color:#FFC93C}
+/* display を指定しているぶん、hidden だけでは消えません。明示して消します */
+.nfq-pre[hidden]{display:none}
 .nfq-an{margin-top:17px;padding:15px 16px;border-radius:14px;background:rgba(6,3,34,.4)}
 .nfq-res{font-size:16px;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;color:#fff}
 .nfq-res .hit{color:#7CFFB2}
@@ -1061,12 +1068,14 @@ footer{border-top:1px solid var(--border);padding:48px 0 58px;background:var(--b
       <div class="hrank nfq">
         <div class="nfq-in">
           <div class="nfq-top">
-            <span class="nfq-badge">今日の1問</span>
+            <span class="nfq-badge">NEW BUSINESS QUIZ</span>
             <span class="nfq-day mono" id="nfq-day"></span>
           </div>
-          <p class="nfq-lead">あなたはどっち？</p>
+          <p class="nfq-lead">今日の1問</p>
           <p class="nfq-q" id="nfq-q">きょうの問題を読み込んでいます</p>
           <div class="nfq-ch" id="nfq-ch"></div>
+          <a class="nfq-pre" id="nfq-pre" href="/"><span id="nfq-pre-t">先にこの1件を読む</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <div class="nfq-an" id="nfq-an" hidden>
             <div class="nfq-res" id="nfq-res"></div>
             <p class="nfq-why" id="nfq-why"></p>
@@ -1336,12 +1345,15 @@ var QUIZ=[{"q": "日産自動車の「ダイムラーと戦略的提携」は何
   var ch=document.getElementById("nfq-ch"),an=document.getElementById("nfq-an"),
       res=document.getElementById("nfq-res"),why=document.getElementById("nfq-why"),
       go=document.getElementById("nfq-go"),next=document.getElementById("nfq-next"),
-      day=document.getElementById("nfq-day"),KEY="ABCD",n=0,d=new Date(),
+      day=document.getElementById("nfq-day"),pre=document.getElementById("nfq-pre"),
+      preT=document.getElementById("nfq-pre-t"),KEY="ABCD",n=0,d=new Date(),
       i0=Math.floor(d.getTime()/864e5)%QUIZ.length;
-  day.textContent=(d.getMonth()+1)+"月"+d.getDate()+"日の1問";
+  day.textContent=(d.getMonth()+1)+"月"+d.getDate()+"日";
   function paint(){
     var q=QUIZ[(i0+n)%QUIZ.length];
     qq.textContent=q.q; an.hidden=true; ch.innerHTML="";
+    pre.hidden=false; pre.setAttribute("href",q.url);
+    preT.textContent=(q.k==="count"?"先にこの会社の記録を見る":"先にこの1件を読む");
     q.ch.forEach(function(t,i){
       var b=document.createElement("button");
       b.type="button";
@@ -1362,6 +1374,7 @@ var QUIZ=[{"q": "日産自動車の「ダイムラーと戦略的提携」は何
     document.getElementById("nfq-go-t").textContent=
       (q.k==="count"?"この会社の記録を見る":"この1件を読む");
     an.hidden=false;
+    pre.hidden=true;   /* 答えたあとは、下の大きいボタンから行けます */
   }
   next.addEventListener("click",function(){n++;paint();});
   paint();

@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-15",
+ "updated": "2026-08-19",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -299,6 +299,36 @@
    "title": "リコージャパン、ナレッジワークと資本業務提携を締結",
    "url": "https://jp.ricoh.com/release/2026/0804_1",
    "why": "AI営業DX支援企業ナレッジワークへ出資し資本業務提携を締結したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-19-rakuten-1",
+   "found": "2026-08-19",
+   "company": "楽天グループ",
+   "date": "2026.08",
+   "title": "楽天シンフォニー、ボリビア大手通信Nuevatel PCSと戦略的協業に向けた覚書を締結",
+   "url": "https://corp.rakuten.co.jp/news/press/2026/0818_01.html",
+   "why": "通信子会社によるOpen RAN・OSS・クラウド基盤の海外展開に向けた業務提携のため（覚書段階、重要度は小さめ、要確認）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-19-panasonic-1",
+   "found": "2026-08-19",
+   "company": "パナソニック",
+   "date": "2026.08",
+   "title": "独・スロバキアの製造子会社（車載電源等事業）を米投資会社連合へ株式譲渡",
+   "url": "https://news.panasonic.com/jp/press/jn260818-1",
+   "why": "パナソニック インダストリーの欧州製造子会社2社の株式を譲渡し、車載用電流遮断ユニットなどの事業を手放すため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-19-docomo-1",
+   "found": "2026-08-19",
+   "company": "NTTドコモ",
+   "date": "2026.08",
+   "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
+   "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
+   "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
    "status": "new"
   }
  ]

@@ -4,7 +4,7 @@ slug='mercari',
 name='メルカリ',
 legal='株式会社メルカリ',
 ind='EC',
-article=None,
+article='mercari-newbusiness',
 evsrc={
  '2013.07|フリマアプリ メルカリ を提供開始': ['https://about.mercari.com/press/news/articles/20180702_mercarinumbers/', 'メルカリ プレスリリース'],
  '2014.09|米国でメルカリの提供を開始': ['https://about.mercari.com/press/news/articles/20140916_5million_us_launch/', 'メルカリ プレスリリース'],

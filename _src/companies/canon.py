@@ -4,7 +4,7 @@ slug='canon',
 name='キヤノン',
 legal='キヤノン株式会社',
 ind='電機',
-article=None,
+article='canon-newbusiness',
 evsrc={
  '2005.10|アネルバを子会社化し真空装置に参入': ['https://global.canon/ja/news/2005/canon_anelva.html', 'キヤノン ニュース'],
  '2007.01|SED株式会社を完全子会社化': ['https://global.canon/ja/news/2007/sed2007jan12.html', 'キヤノン ニュース'],

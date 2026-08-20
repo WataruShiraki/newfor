@@ -35,7 +35,7 @@ TOPIC_JA=dict(TOPICS)
 
 MODS=['a001_docomo','a002_kddi','a003_sony','a004_fujifilm','a005_toyota','a006_panasonic',
       'a007_mitsubishi','a008_jreast','a009_sevenandi','a010_recruit','a011_ajinomoto','a012_softbank',
-      'a013_money','a014_partners','a015_words','a016_mhi']
+      'a013_money','a014_partners','a015_words','a016_mhi','a017_canon']
 
 # 業種ごとの色（ライト/ダークで別指定）
 HUE={
@@ -53,7 +53,7 @@ HUE={
 IND={'NTTドコモ':'通信','KDDI':'通信','ソニーグループ':'電機','富士フイルム':'化学',
      'トヨタ自動車':'自動車','パナソニック':'電機','パナソニックHD':'電機','三菱商事':'商社','JR東日本':'鉄道',
      'セブン&アイ':'小売','リクルート':'人材','リクルートHD':'人材','味の素':'食品',
-     'ソフトバンクグループ':'通信','三菱重工業':'輸送機器'}
+     'ソフトバンクグループ':'通信','三菱重工業':'輸送機器','キヤノン':'電機'}
 
 def tag_of(fw):
     """forwho の <strong>…方へ。</strong> から短いタグを作る"""

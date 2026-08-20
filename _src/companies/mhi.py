@@ -4,7 +4,7 @@ slug='mhi',
 name='三菱重工業',
 legal='三菱重工業株式会社',
 ind='輸送機器',
-article=None,
+article='mhi-newbusiness',
 evsrc={
  '2012.12|米P&Wの中小型ガスタービン事業を買収': ['https://www.mhi.com/jp/news/12121135296.html', '三菱重工 ニュース'],
  '2014.02|三菱日立パワーシステムズが発足': ['https://www.mhi.com/jp/news/14012803.html', '三菱重工 ニュース'],

@@ -112,15 +112,78 @@ swap('NEW',NEW,tail=', nIx=')
 swap('MONTH',MONTH); swap('ALL',ALL); swap('QUIZ',QUIZ)
 
 # ── 5. 新規事業ヒストリーのカード3枚 ──
-def card_fix(m):
-    co=m.group(1)
-    c=BYNAME.get(co)
-    if not c: return m.group(0)
-    ys=[yr(t[0]) for t in c['timeline']]
-    return (m.group(0).replace(m.group(2),'%d'%len(c['timeline']))
-                      .replace(m.group(3),'%d'%(max(ys)-min(ys)+1)))
-s=re.sub(r'<span class="dc-co">([^<]+)</span>.*?<b>(\d+)</b>件の記録.*?<b>(\d+)</b>年分',
-         card_fix,s,flags=re.S)
+#
+# 3枚とも、いちばん新しい「新規事業ヒストリー」の記事から毎回作り直します。
+# 以前はカードのHTMLが gh/index.html に手で書いてあり、記事を足しても
+# #012 のまま止まっていました。ここで作るのは <div class="dgrid"> の中身だけで、
+# 見出しやレイアウトは触りません。
+#
+#   並び順 … pub（公開日）の新しい順。同じ日なら no の大きい順
+#   対象  … genre を持たない記事（＝新規事業ヒストリー）だけ
+#   数    … 「N件の記録」「N年分」は companies/<slug>.py の年表から数えます
+#   帯    … 記事の chart（開始年・終了年つき）から8本を等間隔に選びます。
+#           chart のない記事は、会社の年表から作ります。
+
+def _cut(t,n=62):
+    """カードの説明文。句読点のうしろで切って「…」をつける"""
+    if len(t)<=n: return t
+    h=t[:n]; b=max(h.rfind('、'),h.rfind('。'))
+    return (h[:b+1] if b>0 else h)+'…'
+
+def _pick(seq,k=8):
+    """並びの端から端まで、k本を等間隔に選ぶ"""
+    n=len(seq)
+    if n<=k: return list(seq)
+    return [seq[round(i*(n-1)/(k-1))] for i in range(k)]
+
+def _ym(d):
+    """'2013.07' → 2013.5 のような、月まで見た数にする"""
+    a,_,b=str(d).partition('.')
+    return int(a)+((int(b)-1)/12 if b else 0)
+
+def _bars(A,c):
+    rows=[]
+    ch=A.get('chart'); sp=A.get('span')
+    if ch and sp:
+        lo,hi=float(sp[0]),float(sp[1])
+        for _n,st,en,live in _pick(ch):
+            left=(float(st)-lo)/(hi-lo)*100
+            end=float(en) if en else hi
+            rows.append((left,max(2.5,(end-float(st))/(hi-lo)*100),live))
+    else:
+        tl=c['timeline']; ys=[_ym(t[0]) for t in tl]
+        lo,hi=min(ys),max(ys)
+        for t in _pick(tl):
+            left=(_ym(t[0])-lo)/(hi-lo)*100
+            rows.append((left,max(2.5,100-left) if t[3] else 2.5,t[3]))
+    return ''.join('<span class="mr"><i class="%s" style="left:%.1f%%;width:%.1f%%"></i></span>'
+                   %('lv' if lv else 'dn',min(max(l,0.0),100.0),w) for l,w,lv in rows)
+
+HIST=[a for a in ART if not a.get('genre')]
+HIST.sort(key=lambda a:(a.get('pub',''),a.get('no','')),reverse=True)
+
+def _card(A,big):
+    c=BYNAME.get(A['company'])
+    ind=A.get('ind') or (c['ind'] if c else '')
+    if c:
+        ys=[yr(t[0]) for t in c['timeline']]
+        nrec,nyr=len(c['timeline']),max(ys)-min(ys)+1
+    else:
+        nrec,nyr=len(A.get('timeline') or []),0
+    return ('<a class="dc%s" href="/articles/%s/">'
+      '<span class="dc-top"><span class="dc-no">新規事業ヒストリー<b>#%s</b></span>'
+      '<span class="dc-ind">%s</span></span>'
+      '<span class="dc-co">%s</span><h3>%s</h3><p>%s</p>'
+      '<span class="dc-ch">%s</span>'
+      '<span class="dc-ft"><b>%d</b>件の記録<span class="sep">/</span>'
+      '<b>%d</b>年分<span class="sep">/</span>%s分で読める</span></a>')%(
+      ' big' if big else '',A['slug'],A['no'],ind,A['company'],
+      A['h1'].replace('<br>',''),_cut(A['dek']),_bars(A,c) if c else '',
+      nrec,nyr,A['read'])
+
+_i=s.index('<div class="dgrid">',s.index('id="featured"'))
+_j=s.index('</div>',s.index('</a></div>',_i))
+s=s[:_i]+'<div class="dgrid">'+''.join(_card(a,k==0) for k,a in enumerate(HIST[:3]))+s[_j:]
 
 io.open(P,'w',encoding='utf-8').write(s)
 print('-> %s  %d社 / %d件 / 記事%d本 / 出典%d件'%(P,NCO,NBIZ,NART,NSRC))

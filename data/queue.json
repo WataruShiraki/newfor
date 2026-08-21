@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-19",
+ "updated": "2026-08-21",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,36 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-21-rakuten-1",
+   "found": "2026-08-21",
+   "company": "楽天グループ",
+   "date": "2026.08",
+   "title": "独防衛スタートアップHelsingと提携、攻撃型ドローンの陸自導入を支援",
+   "url": "https://www.itmedia.co.jp/news/article/2608/17/2000000568/",
+   "why": "防衛分野への新規参入となる他社との業務提携のため（資本関係の記載はなし）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-21-kddi-1",
+   "found": "2026-08-21",
+   "company": "KDDI",
+   "date": "2026.08",
+   "title": "日本発スタートアップの米国進出を支援する「KDDI Beyond Borders Accelerator」を開始",
+   "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1127_4673.html",
+   "why": "新しいアクセラレータープログラムの開始にあたるため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-21-mitsubishi-1",
+   "found": "2026-08-21",
+   "company": "三菱商事",
+   "date": "2026.08",
+   "title": "リゾートトラスト子会社アドバンスト・メディカル・ケアに出資、資本業務提携",
+   "url": "https://kabutan.jp/news/marketnews/?b=n202608190613",
+   "why": "第三者割当増資の引き受けによる資本業務提携のため（メディカル事業の海外展開が目的）",
    "status": "new"
   }
  ]

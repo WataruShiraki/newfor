@@ -185,5 +185,166 @@ _i=s.index('<div class="dgrid">',s.index('id="featured"'))
 _j=s.index('</div>',s.index('</a></div>',_i))
 s=s[:_i]+'<div class="dgrid">'+''.join(_card(a,k==0) for k,a in enumerate(HIST[:3]))+s[_j:]
 
+
+# ── 6. トップの「記事一覧」（var ARTS）──
+#
+# ここも index.html に手で書いてあり、15本のまま止まっていました。
+# 記事を足しても増えず、しかも #001 から古い順に並ぶので、
+# 「上にあるものが古い」という見え方になっていました。毎回作り直します。
+#
+#   並び順 … pub（公開日）の新しい順。同じ日なら no の大きい順
+#   左の列 … 通し番号ではなく公開日（年／月日の2行）。番号は順番と紛らわしいためです
+#   タグ  … 絞り込みに使うので、記事ごとに手で決めたものを下の TAGS に置きます
+
+TAGS={
+ "docomo-newbusiness": [
+  "通信",
+  "NTTドコモ",
+  "iモード",
+  "dポイント",
+  "ドコモFG"
+ ],
+ "kddi-newbusiness": [
+  "通信",
+  "KDDI",
+  "au",
+  "ローソン",
+  "povo"
+ ],
+ "sony-newbusiness": [
+  "電機",
+  "ソニー",
+  "SSAP",
+  "社内起業",
+  "aibo"
+ ],
+ "fujifilm-newbusiness": [
+  "化学",
+  "富士フイルム",
+  "アスタリフト",
+  "バイオCDMO",
+  "チェキ"
+ ],
+ "toyota-newbusiness": [
+  "自動車",
+  "トヨタ",
+  "KINTO",
+  "MONET",
+  "CJPT"
+ ],
+ "panasonic-newbusiness": [
+  "電機",
+  "パナソニック",
+  "HomeX",
+  "Yohana",
+  "カーブアウト"
+ ],
+ "mitsubishi-newbusiness": [
+  "商社",
+  "三菱商事",
+  "ローソン",
+  "KDDI",
+  "Eneco"
+ ],
+ "jreast-newbusiness": [
+  "鉄道",
+  "JR東日本",
+  "Suica",
+  "JRE BANK",
+  "変革2027"
+ ],
+ "sevenandi-newbusiness": [
+  "小売",
+  "セブン&アイ",
+  "7NOW",
+  "Speedway",
+  "そごう西武"
+ ],
+ "recruit-newbusiness": [
+  "人材",
+  "リクルート",
+  "Indeed",
+  "Airレジ",
+  "Airペイ"
+ ],
+ "ajinomoto-newbusiness": [
+  "食品",
+  "味の素",
+  "ABF",
+  "半導体材料",
+  "アミノサイエンス"
+ ],
+ "softbank-newbusiness": [
+  "通信",
+  "孫正義",
+  "ビジョンファンド",
+  "OpenAI",
+  "Arm"
+ ],
+ "newbusiness-money-ranking": [
+  "通信",
+  "投資額",
+  "M&A",
+  "買収金額",
+  "ランキング"
+ ],
+ "newbusiness-partners": [
+  "人材",
+  "支援会社",
+  "コンサルティング",
+  "顧問",
+  "副業人材"
+ ],
+ "newbusiness-words": [
+  "IT",
+  "用語",
+  "入門",
+  "のれん",
+  "カーブアウト"
+ ],
+ "mhi-newbusiness": [
+  "製造",
+  "三菱重工",
+  "H3ロケット",
+  "データセンター",
+  "JV・合弁"
+ ],
+ "canon-newbusiness": [
+  "電機",
+  "キヤノン",
+  "ナノインプリント",
+  "半導体",
+  "M&A"
+ ],
+ "mercari-newbusiness": [
+  "EC",
+  "メルカリ",
+  "メルペイ",
+  "決済",
+  "海外展開"
+ ],
+ "komatsu-newbusiness": [
+  "製造",
+  "コマツ",
+  "Komtrax",
+  "IoT",
+  "ロボティクス"
+ ]
+}
+
+def _arow(A):
+    y,m,d=A['pub'].split('-')
+    return {"n":"%s<br>%s.%s"%(y,m,d),
+            "t":A['h1'].replace('<br>',''),
+            "d":A['dek'][:56],
+            "tags":TAGS.get(A['slug'],[]),
+            "st":"pub",
+            "u":"/articles/%s/"%A['slug']}
+
+ARTSJS=[_arow(a) for a in sorted(ART,key=lambda a:(a.get('pub',''),a.get('no','')),reverse=True)]
+_i=s.index('var ARTS=')
+_j=s.index('];',_i)+2
+s=s[:_i]+'var ARTS='+json.dumps(ARTSJS,ensure_ascii=False)+';'+s[_j:]
+
 io.open(P,'w',encoding='utf-8').write(s)
 print('-> %s  %d社 / %d件 / 記事%d本 / 出典%d件'%(P,NCO,NBIZ,NART,NSRC))

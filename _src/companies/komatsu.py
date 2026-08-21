@@ -4,7 +4,7 @@ slug='komatsu',
 name='コマツ',
 legal='株式会社小松製作所',
 ind='輸送機器',
-article=None,
+article='komatsu-newbusiness',
 evsrc={
  '2001.07|Komtraxを建機に標準搭載開始': ['https://www.komatsu.jp/ja/aboutus/history', 'コマツ 沿革'],
  '2008.01|無人ダンプ運行システムAHSを市場導入': ['https://www.komatsu.jp/en/newsroom/2018/20180129', 'Komatsu Newsroom'],

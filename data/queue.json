@@ -1,335 +1,445 @@
 {
- "updated": "2026-08-19",
- "items": [
-  {
-   "id": "2026-08-06-itochu-1",
-   "found": "2026-08-06",
-   "company": "伊藤忠商事",
-   "date": "2026.08",
-   "title": "米航空機リース大手Aviation Capital Groupの共同経営に参画",
-   "url": "https://www.itochu.co.jp/ja/news/press/2026/260803_2.html",
-   "why": "東京センチュリー傘下会社の持分50%を約19.5億米ドルで取得する出資参画のため",
-   "status": "used"
-  },
-  {
-   "id": "2026-08-06-rakuten-1",
-   "found": "2026-08-06",
-   "company": "楽天グループ",
-   "date": "2026.08",
-   "title": "ポータルサイト「楽天ふるさと住民」を2027年春に新設と発表",
-   "url": "https://corp.rakuten.co.jp/news/press/2026/0804_01.html",
-   "why": "ふるさと住民登録制度を受け皿とする新サービスの立ち上げ発表のため",
-   "status": "used"
-  },
-  {
-   "id": "2026-08-06-rakuten-2",
-   "found": "2026-08-06",
-   "company": "楽天グループ",
-   "date": "2026.08",
-   "title": "ジェイフロンティアとオンライン診療・服薬指導の普及で連携開始",
-   "url": "https://corp.rakuten.co.jp/news/press/2026/0803_03.html",
-   "why": "医療領域での他社との事業連携のため（資本関係の記載はなし）",
-   "status": "used"
-  },
-  {
-   "id": "2026-08-06-kddi-1",
-   "found": "2026-08-06",
-   "company": "KDDI",
-   "date": "2026.08",
-   "title": "堺市自動運転タクシー実装コンソーシアムに参画",
-   "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1112_4640.html",
-   "why": "自動運転タクシーの商用化に向けた他社連携への参画のため（通信・GPU基盤を提供）",
-   "status": "used"
-  },
-  {
-   "id": "2026-08-06-fujifilm-1",
-   "found": "2026-08-06",
-   "company": "富士フイルム",
-   "date": "2026.08",
-   "title": "大鵬薬品とADC製造技術の開発で戦略的パートナーシップを締結",
-   "url": "https://www.fujifilm.com/jp/ja/news/list/13804",
-   "why": "バイオCDMO事業の拡張につながる戦略的提携のため",
-   "status": "used"
-  },
-  {
-   "id": "2026-08-06-yamato-1",
-   "found": "2026-08-06",
-   "company": "ヤマトHD",
-   "date": "2026.08",
-   "title": "CVCファンドを通じて量子技術のJIJへ出資",
-   "url": "https://kyodonewsprwire.jp/release/202608033556",
-   "why": "KURONEKO Innovation Fund 2号によるスタートアップ出資のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-06-orix-1",
-   "found": "2026-08-06",
-   "company": "オリックス",
-   "date": "2026.08",
-   "title": "整備プラットフォームのSeibiiと資本業務提携",
-   "url": "https://response.jp/article/2026/08/05/414924.html",
-   "why": "東京センチュリー・出光興産と共に行う資本業務提携のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-08-idemitsu-1",
-   "found": "2026-08-08",
-   "company": "出光興産",
-   "date": "2026.08",
-   "title": "出張整備のSeibiiと資本提携し、モビリティサービス事業で協業開始",
-   "url": "https://www.zaikei.co.jp/article/20260804/864385.html",
-   "why": "サービスステーション網と出張整備サービスを組み合わせる資本提携のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-11-sony-1",
-   "found": "2026-08-11",
-   "company": "ソニーグループ",
-   "date": "2026.08",
-   "title": "TSMCと次世代イメージセンサーの合弁会社「Advanced Vision Semiconductor Manufacturing」設立で確定契約を締結",
-   "url": "https://www.itmedia.co.jp/mobile/articles/2608/11/news017.html",
-   "why": "熊本県合志市に量産拠点となる合弁会社を設立する確定契約を締結したため（ソニー62%・TSMC38%出資）",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-11-mitsubishi-1",
-   "found": "2026-08-11",
-   "company": "三菱商事",
-   "date": "2026.08",
-   "title": "メディパルHDと業務提携を拡大、エム・シー・ヘルスケアHDを50対50の共同経営体制へ",
-   "url": "https://www.mitsubishicorp.com/jp/ja/news/release/2026/20260807001.html",
-   "why": "出資比率80対20だった合弁会社を50対50の共同経営体制へ変更し、対象領域をヘルスケアから食・日用品にも広げる資本提携拡大のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-11-fujifilm-2",
-   "found": "2026-08-11",
-   "company": "富士フイルム",
-   "date": "2026.08",
-   "title": "富士フイルムビジネスイノベーション、イー・アンド・エムと合弁会社設立へ",
-   "url": "https://www.eandm.co.jp/20260806-2/",
-   "why": "ソフトウェア開発の体制・リソース強化を目的とした新会社設立のため（重要度は小さめ、要確認）",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-11-kirin-1",
-   "found": "2026-08-11",
-   "company": "キリンHD",
-   "date": "2026.08",
-   "title": "カナダのサプリメント大手ジェイミソン・ウェルネスを約2183億円で買収、完全子会社化",
-   "url": "https://news.yahoo.co.jp/articles/8bb483e641f68d2a05c9dc9df6fd974800b6497f",
-   "why": "北米の健康食品市場への本格参入を目的とした買収のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-12-mitsubishi-1",
-   "found": "2026-08-12",
-   "company": "三菱商事",
-   "date": "2026.08",
-   "title": "TOYO TIREとの資本業務提携を解消、保有株式20%を自己株式取得の形で売却",
-   "url": "https://www.nikkei.com/article/DGXZQOUF101ER0Q6A810C2000000/",
-   "why": "2018年から続いた資本業務提携を解消し、8月10日にTOYO TIREへ保有株式を売却したため（事業提携の終了に該当）",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-12-kddi-1",
-   "found": "2026-08-12",
-   "company": "KDDI",
-   "date": "2026.08",
-   "title": "グノシー株式を全て売却し、12年に及ぶ資本業務提携を解消",
-   "url": "https://www.nikkei.com/article/DGXZQOUC124SQ0S6A810C2000000/",
-   "why": "2014年から保有していたグノシー株式14.65%を全て売却し、2027年3月末で業務提携も終了するため（資本提携の終了に該当）",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-12-cyberagent-1",
-   "found": "2026-08-12",
-   "company": "サイバーエージェント",
-   "date": "2026.08",
-   "title": "ポイント交換基盤「ドットマネー事業」をGMOタウンWiFiへ譲渡",
-   "url": "https://group.gmo/news/article/10146/",
-   "why": "2026年8月10日付で事業譲受契約を締結し、ドットマネー事業を譲渡したため（事業の譲渡に該当）",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-mitsubishi-1",
-   "found": "2026-08-15",
-   "company": "三菱商事",
-   "date": "2026.08",
-   "title": "ライズ・コンサルティング・グループと共同で「Mill-Box株式会社」を設立",
-   "url": "https://prtimes.jp/main/html/rd/p/000000042.000058161.html",
-   "why": "素材・建設産業向けデジタルサービスを担う新会社を出資比率80%で設立したため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-sevenandi-1",
-   "found": "2026-08-15",
-   "company": "セブン&アイ",
-   "date": "2026.07",
-   "title": "ソフトバンク・PayPay・三井住友カードと計3000億円の資本業務提携、7iDとPayPayIDを統合",
-   "url": "https://www.sej.co.jp/company/news_release/news/2026/202607311645.html",
-   "why": "3社から計3000億円の出資を受け入れID統合など次世代サービス創出に踏み出す資本業務提携のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-softbank-1",
-   "found": "2026-08-15",
-   "company": "ソフトバンクグループ",
-   "date": "2026.07",
-   "title": "セブン&アイへ1000億円出資、PayPay・三井住友カードと合わせ計3000億円の資本業務提携",
-   "url": "https://www.softbank.jp/corp/news/press/sbkk/2026/20260731_02/",
-   "why": "セブン&アイへの新規出資を通じリアル店舗とデジタルを融合する事業へ参画したため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-denso-1",
-   "found": "2026-08-15",
-   "company": "デンソー",
-   "date": "2026.08",
-   "title": "イーソルへの追加出資で資本業務提携を強化",
-   "url": "https://www.netdenjd.com/archives/376769",
-   "why": "車載ソフトウエア開発会社イーソルへ追加出資し資本業務提携を強化したため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-lycorp-1",
-   "found": "2026-08-15",
-   "company": "LINEヤフー",
-   "date": "2026.08",
-   "title": "カカクコム買収案の総額6900億円を表明、TOB価格を最大3640円に引き上げ",
-   "url": "https://www.nikkei.com/article/DGXZQOUC036430T00C26A8000000/",
-   "why": "米ベイン・キャピタルと組みカカクコムの非公開化TOB価格を引き上げ買収を進めているため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-kepco-1",
-   "found": "2026-08-15",
-   "company": "関西電力",
-   "date": "2026.08",
-   "title": "堺市自動運転タクシー実装コンソーシアムを共同設立",
-   "url": "https://www.kepco.co.jp/corporate/notice/notice_pdf/20260805_1.pdf",
-   "why": "EV充電・受電設備等の地域インフラ整備を担う新コンソーシアムを共同設立したため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-kepco-2",
-   "found": "2026-08-15",
-   "company": "関西電力",
-   "date": "2026.08",
-   "title": "「カン－denchiファンド」を通じ愛知県春日井市の蓄電所事業に参画",
-   "url": "https://www.kepco.co.jp/corporate/notice/notice_pdf/20260805_2.pdf",
-   "why": "自社組成の蓄電所投資ファンドを通じて新規の蓄電所開発事業に出資参画したため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-eneos-1",
-   "found": "2026-08-15",
-   "company": "ENEOS HD",
-   "date": "2026.08",
-   "title": "米TPC Holdings, Inc.を買収しブタジエン生産で世界3位へ",
-   "url": "https://www.hd.eneos.co.jp/news/release_information/upload/20260807_01_01_mr03.pdf",
-   "why": "米国の石油化学会社を買収し機能マテリアル事業を強化する買収のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-sumitomo-chem-1",
-   "found": "2026-08-15",
-   "company": "住友化学",
-   "date": "2026.08",
-   "title": "イタリアの天然ピレトリン系農薬子会社Pyragroを買収",
-   "url": "https://www.sumitomo-chem.co.jp/english/news/detail/20260805e.html",
-   "why": "COPYR社傘下のPyragro全持分を取得し欧州農薬事業を強化する買収のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-unicharm-1",
-   "found": "2026-08-15",
-   "company": "ユニ・チャーム",
-   "date": "2026.08",
-   "title": "豊田通商とのケニア合弁会社「SOFY UNICHARM EAST AFRICA」登記完了、9月から事業開始",
-   "url": "https://www.toyota-tsusho.com/press/detail/260814_006900.html",
-   "why": "東アフリカでの生理用品・紙おむつの現地製造販売を行う新会社が登記完了し事業を開始するため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-subaru-1",
-   "found": "2026-08-15",
-   "company": "SUBARU",
-   "date": "2026.08",
-   "title": "北米で自動車販売金融事業に参入、2030年開始へ",
-   "url": "https://www.subaru.co.jp/news/2026_08_05_143743/",
-   "why": "自社で自動車ローン・リースなど金融事業を新たに開始する発表のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-suzuki-1",
-   "found": "2026-08-15",
-   "company": "スズキ",
-   "date": "2026.08",
-   "title": "AIスタートアップ支援ファンド「A.Capital Fund V」に出資",
-   "url": "https://response.jp/article/2026/08/07/415031.html",
-   "why": "スズキグローバルベンチャーズを通じ米ベンチャーキャピタルファンドへ新規出資したため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-yamaha-motor-1",
-   "found": "2026-08-15",
-   "company": "ヤマハ発動機",
-   "date": "2026.08",
-   "title": "アウトドアランドビークル(ROV)の自社生産を終了、OEM供給モデルへ移行",
-   "url": "https://global.yamaha-motor.com/jp/news/2026/0804/olv.html",
-   "why": "米国拠点でのROV自社生産を終了し事業モデルを転換する構造改革のため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-mhi-1",
-   "found": "2026-08-15",
-   "company": "三菱重工業",
-   "date": "2026.08",
-   "title": "Green AIと産業分野の脱炭素・エネルギー効率改善で協業開始",
-   "url": "https://kikai-news.net/2026/08/04/%E4%B8%89%E8%8F%B1%E9%87%8D%E5%B7%A5%E3%80%81green-ai%E3%81%A8%E7%94%A3%E6%A5%AD%E5%90%91%E3%81%91%E8%84%B1%E7%82%AD%E7%B4%A0%E6%94%AF%E6%8F%B4%E3%81%A7%E5%8D%94%E6%A5%AD%E3%80%80%E4%B8%AD%E5%A0%85/",
-   "why": "脱炭素支援ソリューションを提供するGreen AIとの新たな業務提携のため(重要度は小さめ、要確認)",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-15-ricoh-1",
-   "found": "2026-08-15",
-   "company": "リコー",
-   "date": "2026.08",
-   "title": "リコージャパン、ナレッジワークと資本業務提携を締結",
-   "url": "https://jp.ricoh.com/release/2026/0804_1",
-   "why": "AI営業DX支援企業ナレッジワークへ出資し資本業務提携を締結したため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-19-rakuten-1",
-   "found": "2026-08-19",
-   "company": "楽天グループ",
-   "date": "2026.08",
-   "title": "楽天シンフォニー、ボリビア大手通信Nuevatel PCSと戦略的協業に向けた覚書を締結",
-   "url": "https://corp.rakuten.co.jp/news/press/2026/0818_01.html",
-   "why": "通信子会社によるOpen RAN・OSS・クラウド基盤の海外展開に向けた業務提携のため（覚書段階、重要度は小さめ、要確認）",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-19-panasonic-1",
-   "found": "2026-08-19",
-   "company": "パナソニック",
-   "date": "2026.08",
-   "title": "独・スロバキアの製造子会社（車載電源等事業）を米投資会社連合へ株式譲渡",
-   "url": "https://news.panasonic.com/jp/press/jn260818-1",
-   "why": "パナソニック インダストリーの欧州製造子会社2社の株式を譲渡し、車載用電流遮断ユニットなどの事業を手放すため",
-   "status": "new"
-  },
-  {
-   "id": "2026-08-19-docomo-1",
-   "found": "2026-08-19",
-   "company": "NTTドコモ",
-   "date": "2026.08",
-   "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
-   "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
-   "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
-   "status": "new"
-  }
- ]
+  "updated": "2026-08-22",
+  "items": [
+    {
+      "id": "2026-08-06-itochu-1",
+      "found": "2026-08-06",
+      "company": "伊藤忠商事",
+      "date": "2026.08",
+      "title": "米航空機リース大手Aviation Capital Groupの共同経営に参画",
+      "url": "https://www.itochu.co.jp/ja/news/press/2026/260803_2.html",
+      "why": "東京センチュリー傘下会社の持分50%を約19.5億米ドルで取得する出資参画のため",
+      "status": "used"
+    },
+    {
+      "id": "2026-08-06-rakuten-1",
+      "found": "2026-08-06",
+      "company": "楽天グループ",
+      "date": "2026.08",
+      "title": "ポータルサイト「楽天ふるさと住民」を2027年春に新設と発表",
+      "url": "https://corp.rakuten.co.jp/news/press/2026/0804_01.html",
+      "why": "ふるさと住民登録制度を受け皿とする新サービスの立ち上げ発表のため",
+      "status": "used"
+    },
+    {
+      "id": "2026-08-06-rakuten-2",
+      "found": "2026-08-06",
+      "company": "楽天グループ",
+      "date": "2026.08",
+      "title": "ジェイフロンティアとオンライン診療・服薬指導の普及で連携開始",
+      "url": "https://corp.rakuten.co.jp/news/press/2026/0803_03.html",
+      "why": "医療領域での他社との事業連携のため（資本関係の記載はなし）",
+      "status": "used"
+    },
+    {
+      "id": "2026-08-06-kddi-1",
+      "found": "2026-08-06",
+      "company": "KDDI",
+      "date": "2026.08",
+      "title": "堺市自動運転タクシー実装コンソーシアムに参画",
+      "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1112_4640.html",
+      "why": "自動運転タクシーの商用化に向けた他社連携への参画のため（通信・GPU基盤を提供）",
+      "status": "used"
+    },
+    {
+      "id": "2026-08-06-fujifilm-1",
+      "found": "2026-08-06",
+      "company": "富士フイルム",
+      "date": "2026.08",
+      "title": "大鵬薬品とADC製造技術の開発で戦略的パートナーシップを締結",
+      "url": "https://www.fujifilm.com/jp/ja/news/list/13804",
+      "why": "バイオCDMO事業の拡張につながる戦略的提携のため",
+      "status": "used"
+    },
+    {
+      "id": "2026-08-06-yamato-1",
+      "found": "2026-08-06",
+      "company": "ヤマトHD",
+      "date": "2026.08",
+      "title": "CVCファンドを通じて量子技術のJIJへ出資",
+      "url": "https://kyodonewsprwire.jp/release/202608033556",
+      "why": "KURONEKO Innovation Fund 2号によるスタートアップ出資のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-06-orix-1",
+      "found": "2026-08-06",
+      "company": "オリックス",
+      "date": "2026.08",
+      "title": "整備プラットフォームのSeibiiと資本業務提携",
+      "url": "https://response.jp/article/2026/08/05/414924.html",
+      "why": "東京センチュリー・出光興産と共に行う資本業務提携のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-08-idemitsu-1",
+      "found": "2026-08-08",
+      "company": "出光興産",
+      "date": "2026.08",
+      "title": "出張整備のSeibiiと資本提携し、モビリティサービス事業で協業開始",
+      "url": "https://www.zaikei.co.jp/article/20260804/864385.html",
+      "why": "サービスステーション網と出張整備サービスを組み合わせる資本提携のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-11-sony-1",
+      "found": "2026-08-11",
+      "company": "ソニーグループ",
+      "date": "2026.08",
+      "title": "TSMCと次世代イメージセンサーの合弁会社「Advanced Vision Semiconductor Manufacturing」設立で確定契約を締結",
+      "url": "https://www.itmedia.co.jp/mobile/articles/2608/11/news017.html",
+      "why": "熊本県合志市に量産拠点となる合弁会社を設立する確定契約を締結したため（ソニー62%・TSMC38%出資）",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-11-mitsubishi-1",
+      "found": "2026-08-11",
+      "company": "三菱商事",
+      "date": "2026.08",
+      "title": "メディパルHDと業務提携を拡大、エム・シー・ヘルスケアHDを50対50の共同経営体制へ",
+      "url": "https://www.mitsubishicorp.com/jp/ja/news/release/2026/20260807001.html",
+      "why": "出資比率80対20だった合弁会社を50対50の共同経営体制へ変更し、対象領域をヘルスケアから食・日用品にも広げる資本提携拡大のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-11-fujifilm-2",
+      "found": "2026-08-11",
+      "company": "富士フイルム",
+      "date": "2026.08",
+      "title": "富士フイルムビジネスイノベーション、イー・アンド・エムと合弁会社設立へ",
+      "url": "https://www.eandm.co.jp/20260806-2/",
+      "why": "ソフトウェア開発の体制・リソース強化を目的とした新会社設立のため（重要度は小さめ、要確認）",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-11-kirin-1",
+      "found": "2026-08-11",
+      "company": "キリンHD",
+      "date": "2026.08",
+      "title": "カナダのサプリメント大手ジェイミソン・ウェルネスを約2183億円で買収、完全子会社化",
+      "url": "https://news.yahoo.co.jp/articles/8bb483e641f68d2a05c9dc9df6fd974800b6497f",
+      "why": "北米の健康食品市場への本格参入を目的とした買収のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-12-mitsubishi-1",
+      "found": "2026-08-12",
+      "company": "三菱商事",
+      "date": "2026.08",
+      "title": "TOYO TIREとの資本業務提携を解消、保有株式20%を自己株式取得の形で売却",
+      "url": "https://www.nikkei.com/article/DGXZQOUF101ER0Q6A810C2000000/",
+      "why": "2018年から続いた資本業務提携を解消し、8月10日にTOYO TIREへ保有株式を売却したため（事業提携の終了に該当）",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-12-kddi-1",
+      "found": "2026-08-12",
+      "company": "KDDI",
+      "date": "2026.08",
+      "title": "グノシー株式を全て売却し、12年に及ぶ資本業務提携を解消",
+      "url": "https://www.nikkei.com/article/DGXZQOUC124SQ0S6A810C2000000/",
+      "why": "2014年から保有していたグノシー株式14.65%を全て売却し、2027年3月末で業務提携も終了するため（資本提携の終了に該当）",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-12-cyberagent-1",
+      "found": "2026-08-12",
+      "company": "サイバーエージェント",
+      "date": "2026.08",
+      "title": "ポイント交換基盤「ドットマネー事業」をGMOタウンWiFiへ譲渡",
+      "url": "https://group.gmo/news/article/10146/",
+      "why": "2026年8月10日付で事業譲受契約を締結し、ドットマネー事業を譲渡したため（事業の譲渡に該当）",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-mitsubishi-1",
+      "found": "2026-08-15",
+      "company": "三菱商事",
+      "date": "2026.08",
+      "title": "ライズ・コンサルティング・グループと共同で「Mill-Box株式会社」を設立",
+      "url": "https://prtimes.jp/main/html/rd/p/000000042.000058161.html",
+      "why": "素材・建設産業向けデジタルサービスを担う新会社を出資比率80%で設立したため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-sevenandi-1",
+      "found": "2026-08-15",
+      "company": "セブン&アイ",
+      "date": "2026.07",
+      "title": "ソフトバンク・PayPay・三井住友カードと計3000億円の資本業務提携、7iDとPayPayIDを統合",
+      "url": "https://www.sej.co.jp/company/news_release/news/2026/202607311645.html",
+      "why": "3社から計3000億円の出資を受け入れID統合など次世代サービス創出に踏み出す資本業務提携のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-softbank-1",
+      "found": "2026-08-15",
+      "company": "ソフトバンクグループ",
+      "date": "2026.07",
+      "title": "セブン&アイへ1000億円出資、PayPay・三井住友カードと合わせ計3000億円の資本業務提携",
+      "url": "https://www.softbank.jp/corp/news/press/sbkk/2026/20260731_02/",
+      "why": "セブン&アイへの新規出資を通じリアル店舗とデジタルを融合する事業へ参画したため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-denso-1",
+      "found": "2026-08-15",
+      "company": "デンソー",
+      "date": "2026.08",
+      "title": "イーソルへの追加出資で資本業務提携を強化",
+      "url": "https://www.netdenjd.com/archives/376769",
+      "why": "車載ソフトウエア開発会社イーソルへ追加出資し資本業務提携を強化したため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-lycorp-1",
+      "found": "2026-08-15",
+      "company": "LINEヤフー",
+      "date": "2026.08",
+      "title": "カカクコム買収案の総額6900億円を表明、TOB価格を最大3640円に引き上げ",
+      "url": "https://www.nikkei.com/article/DGXZQOUC036430T00C26A8000000/",
+      "why": "米ベイン・キャピタルと組みカカクコムの非公開化TOB価格を引き上げ買収を進めているため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-kepco-1",
+      "found": "2026-08-15",
+      "company": "関西電力",
+      "date": "2026.08",
+      "title": "堺市自動運転タクシー実装コンソーシアムを共同設立",
+      "url": "https://www.kepco.co.jp/corporate/notice/notice_pdf/20260805_1.pdf",
+      "why": "EV充電・受電設備等の地域インフラ整備を担う新コンソーシアムを共同設立したため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-kepco-2",
+      "found": "2026-08-15",
+      "company": "関西電力",
+      "date": "2026.08",
+      "title": "「カン－denchiファンド」を通じ愛知県春日井市の蓄電所事業に参画",
+      "url": "https://www.kepco.co.jp/corporate/notice/notice_pdf/20260805_2.pdf",
+      "why": "自社組成の蓄電所投資ファンドを通じて新規の蓄電所開発事業に出資参画したため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-eneos-1",
+      "found": "2026-08-15",
+      "company": "ENEOS HD",
+      "date": "2026.08",
+      "title": "米TPC Holdings, Inc.を買収しブタジエン生産で世界3位へ",
+      "url": "https://www.hd.eneos.co.jp/news/release_information/upload/20260807_01_01_mr03.pdf",
+      "why": "米国の石油化学会社を買収し機能マテリアル事業を強化する買収のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-sumitomo-chem-1",
+      "found": "2026-08-15",
+      "company": "住友化学",
+      "date": "2026.08",
+      "title": "イタリアの天然ピレトリン系農薬子会社Pyragroを買収",
+      "url": "https://www.sumitomo-chem.co.jp/english/news/detail/20260805e.html",
+      "why": "COPYR社傘下のPyragro全持分を取得し欧州農薬事業を強化する買収のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-unicharm-1",
+      "found": "2026-08-15",
+      "company": "ユニ・チャーム",
+      "date": "2026.08",
+      "title": "豊田通商とのケニア合弁会社「SOFY UNICHARM EAST AFRICA」登記完了、9月から事業開始",
+      "url": "https://www.toyota-tsusho.com/press/detail/260814_006900.html",
+      "why": "東アフリカでの生理用品・紙おむつの現地製造販売を行う新会社が登記完了し事業を開始するため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-subaru-1",
+      "found": "2026-08-15",
+      "company": "SUBARU",
+      "date": "2026.08",
+      "title": "北米で自動車販売金融事業に参入、2030年開始へ",
+      "url": "https://www.subaru.co.jp/news/2026_08_05_143743/",
+      "why": "自社で自動車ローン・リースなど金融事業を新たに開始する発表のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-suzuki-1",
+      "found": "2026-08-15",
+      "company": "スズキ",
+      "date": "2026.08",
+      "title": "AIスタートアップ支援ファンド「A.Capital Fund V」に出資",
+      "url": "https://response.jp/article/2026/08/07/415031.html",
+      "why": "スズキグローバルベンチャーズを通じ米ベンチャーキャピタルファンドへ新規出資したため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-yamaha-motor-1",
+      "found": "2026-08-15",
+      "company": "ヤマハ発動機",
+      "date": "2026.08",
+      "title": "アウトドアランドビークル(ROV)の自社生産を終了、OEM供給モデルへ移行",
+      "url": "https://global.yamaha-motor.com/jp/news/2026/0804/olv.html",
+      "why": "米国拠点でのROV自社生産を終了し事業モデルを転換する構造改革のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-mhi-1",
+      "found": "2026-08-15",
+      "company": "三菱重工業",
+      "date": "2026.08",
+      "title": "Green AIと産業分野の脱炭素・エネルギー効率改善で協業開始",
+      "url": "https://kikai-news.net/2026/08/04/%E4%B8%89%E8%8F%B1%E9%87%8D%E5%B7%A5%E3%80%81green-ai%E3%81%A8%E7%94%A3%E6%A5%AD%E5%90%91%E3%81%91%E8%84%B1%E7%82%AD%E7%B4%A0%E6%94%AF%E6%8F%B4%E3%81%A7%E5%8D%94%E6%A5%AD%E3%80%80%E4%B8%AD%E5%A0%85/",
+      "why": "脱炭素支援ソリューションを提供するGreen AIとの新たな業務提携のため(重要度は小さめ、要確認)",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-15-ricoh-1",
+      "found": "2026-08-15",
+      "company": "リコー",
+      "date": "2026.08",
+      "title": "リコージャパン、ナレッジワークと資本業務提携を締結",
+      "url": "https://jp.ricoh.com/release/2026/0804_1",
+      "why": "AI営業DX支援企業ナレッジワークへ出資し資本業務提携を締結したため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-19-rakuten-1",
+      "found": "2026-08-19",
+      "company": "楽天グループ",
+      "date": "2026.08",
+      "title": "楽天シンフォニー、ボリビア大手通信Nuevatel PCSと戦略的協業に向けた覚書を締結",
+      "url": "https://corp.rakuten.co.jp/news/press/2026/0818_01.html",
+      "why": "通信子会社によるOpen RAN・OSS・クラウド基盤の海外展開に向けた業務提携のため（覚書段階、重要度は小さめ、要確認）",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-19-panasonic-1",
+      "found": "2026-08-19",
+      "company": "パナソニック",
+      "date": "2026.08",
+      "title": "独・スロバキアの製造子会社（車載電源等事業）を米投資会社連合へ株式譲渡",
+      "url": "https://news.panasonic.com/jp/press/jn260818-1",
+      "why": "パナソニック インダストリーの欧州製造子会社2社の株式を譲渡し、車載用電流遮断ユニットなどの事業を手放すため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-19-docomo-1",
+      "found": "2026-08-19",
+      "company": "NTTドコモ",
+      "date": "2026.08",
+      "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
+      "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
+      "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-rakuten-1",
+      "found": "2026-08-22",
+      "company": "楽天グループ",
+      "date": "2026.08",
+      "title": "独ヘルシングと提携、攻撃型ドローンの陸自導入・国内量産を支援",
+      "url": "https://www.itmedia.co.jp/news/article/2608/17/2000000568/",
+      "why": "防衛スタートアップとの提携により防衛ドローン分野へ新規参入するため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-itochu-1",
+      "found": "2026-08-22",
+      "company": "伊藤忠商事",
+      "date": "2026.08",
+      "title": "データセンター開発事業に参入、2030年までに数千億円投じ10棟開発へ",
+      "url": "https://www.zaikei.co.jp/article/20260820/866645.html",
+      "why": "不動産事業の一環として新たにデータセンター開発事業に参入するため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-fujitsu-1",
+      "found": "2026-08-22",
+      "company": "富士通",
+      "date": "2026.08",
+      "title": "「Fujitsu トラステッドサプライチェーンサービス」提供開始",
+      "url": "https://news.mynavi.jp/techplus/article/20260820-4843268/",
+      "why": "サプライチェーン向け新しい情報連携サービスの提供開始のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-kddi-1",
+      "found": "2026-08-22",
+      "company": "KDDI",
+      "date": "2026.08",
+      "title": "日本発スタートアップの海外展開支援「KDDI Beyond Borders Accelerator」開始",
+      "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1127_4673.html",
+      "why": "新しいアクセラレータープログラムの開始のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-toyota-1",
+      "found": "2026-08-22",
+      "company": "トヨタ自動車",
+      "date": "2026.08",
+      "title": "STATION Aiと交通安全分野の新サービス創出へ「安心共創チャレンジ」募集開始",
+      "url": "https://prtimes.jp/main/html/rd/p/000000134.000095825.html",
+      "why": "スタートアップ公募による新サービス創出の枠組みの開始のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-mitsubishi-1",
+      "found": "2026-08-22",
+      "company": "三菱商事",
+      "date": "2026.08",
+      "title": "リゾートトラスト子会社アドバンスト・メディカル・ケアと資本業務提携、医療ツーリズム分野で連携",
+      "url": "https://www.zaikei.co.jp/article/20260819/866523.html",
+      "why": "第三者割当増資の引き受けによる資本業務提携のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-softbank-1",
+      "found": "2026-08-22",
+      "company": "ソフトバンクグループ",
+      "date": "2026.08",
+      "title": "NVIDIAが傘下SBエナジーに15億ドル出資、OpenAI向けAIデータセンター基盤を強化",
+      "url": "https://sustainablejapan.jp/2026/08/21/nvidia-open-ai-sb-energy/129756",
+      "why": "傘下事業会社への他社からの新規出資受け入れのため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-familymart-1",
+      "found": "2026-08-22",
+      "company": "ファミリーマート",
+      "date": "2026.08",
+      "title": "「ファミマでかんたん！ブックオフ買取」開始、全国約1.6万店で中古品の宅配買取窓口に",
+      "url": "https://www.family.co.jp/company/news_releases/2026/20260819_01.html",
+      "why": "親会社伊藤忠商事とブックオフの資本業務提携を活用した新サービスの開始のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-daiwahouse-1",
+      "found": "2026-08-22",
+      "company": "大和ハウス工業",
+      "date": "2026.08",
+      "title": "三菱商事出資のMCD3と建設業界の課題解決に向け協業の基本合意書を締結",
+      "url": "https://kyodonewsprwire.jp/release/202608103954",
+      "why": "AI・データ活用による新たな業務提携のため（基本合意段階、重要度は小さめ、要確認）",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-daikin-1",
+      "found": "2026-08-22",
+      "company": "ダイキン工業",
+      "date": "2026.08",
+      "title": "建設DX「ANDPAD」運営のアンドパッドと資本業務提携（東京ガス・カインズも同時提携）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000201.000018154.html",
+      "why": "施工現場のデータ・AI活用に向けたスタートアップへの資本業務提携のため",
+      "status": "new"
+    },
+    {
+      "id": "2026-08-22-smfg-1",
+      "found": "2026-08-22",
+      "company": "三井住友FG",
+      "date": "2026.08",
+      "title": "三井住友カード、事前登録型MaaS新サービス「Pass Case エントリー」提供開始（江ノ島電鉄と提携）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000972.000032321.html",
+      "why": "新しいMaaSサービスの開始のため",
+      "status": "new"
+    }
+  ]
 }

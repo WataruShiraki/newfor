@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-19",
+ "updated": "2026-08-23",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,36 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-23-fujitsu-1",
+   "found": "2026-08-23",
+   "company": "富士通",
+   "date": "2026.08",
+   "title": "米Exostarの機能を活用したサプライチェーンの情報連携サービス「Fujitsuトラステッドサプライチェーンサービス」の提供を開始",
+   "url": "https://news.yahoo.co.jp/articles/a51a412d00946006cad0c64b79c2b8bf71f90248",
+   "why": "国内データ管理・運用による高セキュアな新サービスの提供開始のため（2026年8月20日発表）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-23-kddi-1",
+   "found": "2026-08-23",
+   "company": "KDDI",
+   "date": "2026.08",
+   "title": "フードデリバリー「menu」の提供を9月30日で終了し、menu株式会社を解散・清算へ",
+   "url": "https://newsroom.kddi.com/news/detail/kddi_nr_s-75_4679.html",
+   "why": "子会社を完全子会社化した上でサービス提供を終了し解散する事業終了のため（2026年8月19日発表）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-23-sumitomocorp-1",
+   "found": "2026-08-23",
+   "company": "住友商事",
+   "date": "2026.08",
+   "title": "CVCの住商ベンチャー・パートナーズがサプライチェーンリスク管理クラウド「Resilire（レジリア）」へ出資",
+   "url": "https://prtimes.jp/main/html/rd/p/000000032.000108815.html",
+   "why": "住友商事のコーポレートベンチャーキャピタルによるスタートアップへの新規出資のため（シリーズB 1stクローズ）",
    "status": "new"
   }
  ]

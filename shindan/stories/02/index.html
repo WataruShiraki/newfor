@@ -48,6 +48,14 @@ svg{display:block}
 .nav .lk a{font-size:13px;color:rgba(255,255,255,.86);font-weight:600;white-space:nowrap;padding-bottom:2px;border-bottom:2px solid transparent}
 .nav .lk a:hover{color:#fff;border-color:rgba(255,138,76,.5)}
 .nav .lk a.on{color:#fff;border-color:#FF8A4C}
+.nav .sub{background:rgba(0,0,0,.18);border-top:1px solid rgba(255,255,255,.14)}
+.nav .in2{display:flex;align-items:center;gap:18px;height:42px;overflow-x:auto}
+.sbt{font-size:12px;font-weight:800;color:#fff;white-space:nowrap;flex:none}
+.nav .lk2{display:flex;gap:16px;align-items:center;overflow-x:auto}
+.nav .lk2 a{font-size:12.5px;color:rgba(255,255,255,.8);font-weight:600;white-space:nowrap;padding-bottom:2px;border-bottom:2px solid transparent}
+.nav .lk2 a:hover{color:#fff;border-color:rgba(255,138,76,.5)}
+.nav .lk2 a.on{color:#fff;border-color:#FF8A4C}
+@media(max-width:700px){.sbt{display:none}}
 .tgl{width:27px;height:27px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:none;color:#fff;cursor:pointer;font-size:12px;flex:none}
 .crumb{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.72);padding:14px 0 0}
 .crumb a:hover{color:#FF8A4C}
@@ -87,8 +95,8 @@ p{font-size:15.5px;line-height:1.95;margin:0 0 16px}
  padding:14px 17px;margin-bottom:9px;font-size:15px;line-height:1.7;cursor:pointer;background:var(--surface);width:100%;text-align:left;font-family:inherit;color:inherit}
 .opt:hover{border-color:var(--gold-l);background:var(--gold-w)}
 .opt.sel{border-color:var(--gold);background:var(--gold-w)}
-.opt .rd{width:19px;height:19px;border-radius:50%;border:2px solid var(--border-3);margin-top:3px}
-.opt.sel .rd{border-color:var(--gold);background:radial-gradient(circle,var(--gold) 0 5px,transparent 6px)}
+.opt .qrd{width:19px;height:19px;border-radius:50%;border:2px solid var(--border-3);margin-top:3px}
+.opt.sel .qrd{border-color:var(--gold);background:radial-gradient(circle,var(--gold) 0 5px,transparent 6px)}
 .opt b{font-weight:750;display:block}
 .opt small{display:block;color:var(--tx-3);font-size:12.5px;font-weight:400;margin-top:3px;line-height:1.75}
 .chapn{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:6px;font-size:11.5px;font-weight:700;color:var(--tx-3)}
@@ -203,7 +211,7 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px}
   gtag('config','G-Y9N8CYZE61');
 </script>
 </head>
-<body><div class="nav"><div class="wrap in"><a class="brand" href="/shindan/"><svg class="mark" viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".22"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".32"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg><span class="wm">NEW<em>FOR</em></span><span class="sl">スタートアップ調達診断</span></a><div class="lk"><a href="/shindan">診断</a><a href="/shindan/records/">先人の記録</a><a href="/shindan/stories/" class="on">読みもの</a><a href="/shindan/words/">言葉の意味</a><a href="/articles/">新規事業ヒストリー</a><button class="tgl" onclick="tt()" aria-label="配色を切り替える"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></button></div></div><div class="wrap"><div class="crumb"><a href="/">NEWFOR</a> ／ <a href="/shindan/">調達診断</a> ／ <a href="/shindan/stories/">読みもの</a> ／ #02</div></div></div><div class="hero"><div class="wrap"><span class="htag">もしもの話 #02 ／ これはフィクションです</span><h1>辞めた共同創業者の株、いくらで買い戻す？</h1><p class="dek"><b>この話で起きること：</b>辞めるときは「わかった」で済んだ → 半年後、値段の話になる → 決め方を持っていない会社は、ここで一年を使う</p></div></div><div class="rd blk"><article><hr>
+<body><div class="nav"><div class="wrap in"><a class="brand" href="/"><svg class="mark" viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".22"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".32"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg><span class="wm">NEW<em>FOR</em></span></a><div class="lk"><a href="/articles/">記事一覧</a><a href="/companies/">企業を探す</a><a href="/shindan/" class="on">調達診断</a><a href="/#monthly">ランキング</a><a href="/about/">About</a><button class="tgl" onclick="tt()" aria-label="配色を切り替える"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></button></div></div><div class="sub"><div class="wrap in2"><a class="sbt" href="/shindan/">スタートアップ調達診断</a><div class="lk2"><a href="/shindan">診断</a><a href="/shindan/records/">先人の記録</a><a href="/shindan/stories/" class="on">読みもの</a><a href="/shindan/words/">言葉の意味</a></div></div></div><div class="wrap"><div class="crumb"><a href="/">NEWFOR</a> ／ <a href="/shindan/">調達診断</a> ／ <a href="/shindan/stories/">読みもの</a> ／ #02</div></div></div><div class="hero"><div class="wrap"><span class="htag">もしもの話 #02 ／ これはフィクションです</span><h1>辞めた共同創業者の株、いくらで買い戻す？</h1><p class="dek"><b>この話で起きること：</b>辞めるときは「わかった」で済んだ → 半年後、値段の話になる → 決め方を持っていない会社は、ここで一年を使う</p></div></div><div class="rd blk"><article><hr>
 <h3>1. 「わかった」で終わった日</h3>
 <p>ユウキが抜けると言ったとき、僕は「わかった」と言った。それ以外に言うことがなかった。三年一緒にやって、最後は静かだった。</p>
 <p>送別会もやった。ユウキは笑っていたし、僕も笑っていた。株の話は出なかった。出すのは、なんとなく品がない気がした。</p>

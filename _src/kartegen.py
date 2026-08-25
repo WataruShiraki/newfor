@@ -83,6 +83,14 @@ svg{display:block}
 .nav .lk a{font-size:13px;color:rgba(255,255,255,.86);font-weight:600;white-space:nowrap;padding-bottom:2px;border-bottom:2px solid transparent}
 .nav .lk a:hover{color:#fff;border-color:rgba(255,138,76,.5)}
 .nav .lk a.on{color:#fff;border-color:#FF8A4C}
+.nav .sub{background:rgba(0,0,0,.18);border-top:1px solid rgba(255,255,255,.14)}
+.nav .in2{display:flex;align-items:center;gap:18px;height:42px;overflow-x:auto}
+.sbt{font-size:12px;font-weight:800;color:#fff;white-space:nowrap;flex:none}
+.nav .lk2{display:flex;gap:16px;align-items:center;overflow-x:auto}
+.nav .lk2 a{font-size:12.5px;color:rgba(255,255,255,.8);font-weight:600;white-space:nowrap;padding-bottom:2px;border-bottom:2px solid transparent}
+.nav .lk2 a:hover{color:#fff;border-color:rgba(255,138,76,.5)}
+.nav .lk2 a.on{color:#fff;border-color:#FF8A4C}
+@media(max-width:700px){.sbt{display:none}}
 .tgl{width:27px;height:27px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:none;color:#fff;cursor:pointer;font-size:12px;flex:none}
 .crumb{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.72);padding:14px 0 0}
 .crumb a:hover{color:#FF8A4C}
@@ -122,8 +130,8 @@ p{font-size:15.5px;line-height:1.95;margin:0 0 16px}
  padding:14px 17px;margin-bottom:9px;font-size:15px;line-height:1.7;cursor:pointer;background:var(--surface);width:100%;text-align:left;font-family:inherit;color:inherit}
 .opt:hover{border-color:var(--gold-l);background:var(--gold-w)}
 .opt.sel{border-color:var(--gold);background:var(--gold-w)}
-.opt .rd{width:19px;height:19px;border-radius:50%;border:2px solid var(--border-3);margin-top:3px}
-.opt.sel .rd{border-color:var(--gold);background:radial-gradient(circle,var(--gold) 0 5px,transparent 6px)}
+.opt .qrd{width:19px;height:19px;border-radius:50%;border:2px solid var(--border-3);margin-top:3px}
+.opt.sel .qrd{border-color:var(--gold);background:radial-gradient(circle,var(--gold) 0 5px,transparent 6px)}
 .opt b{font-weight:750;display:block}
 .opt small{display:block;color:var(--tx-3);font-size:12.5px;font-weight:400;margin-top:3px;line-height:1.75}
 .chapn{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:6px;font-size:11.5px;font-weight:700;color:var(--tx-3)}
@@ -232,15 +240,27 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px}
 UFO = '<svg class="mark" viewBox="0 0 32 32" fill="none"><path d="M10.6 16.4 L21.4 16.4 L25.8 31 L6.2 31 Z" fill="currentColor" opacity=".22"/><path d="M12.5 16.4 L19.5 16.4 L21.9 26.5 L10.1 26.5 Z" fill="currentColor" opacity=".32"/><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>'
 MARK = '<svg class="m" viewBox="0 0 32 32" fill="none"><ellipse cx="16" cy="15.4" rx="12.6" ry="4.4" fill="currentColor"/><path d="M9.7 13.4C10.4 9.2 12.9 6.5 16 6.5s5.6 2.7 6.3 6.9" stroke="currentColor" stroke-width="2.3" fill="none"/></svg>'
 
+# 1段目はサイト全体で共通（NEWFORのどのページでも同じ並び）。2段目だけが調達診断の中の移動。
+SITENAV = [('/articles/', '記事一覧'), ('/companies/', '企業を探す'),
+           ('/shindan/', '調達診断'), ('/#monthly', 'ランキング'), ('/about/', 'About')]
 NAVS = [('', '診断'), ('/records/', '先人の記録'), ('/stories/', '読みもの'), ('/words/', '言葉の意味')]
 
+TGL = ('<button class="tgl" onclick="tt()" aria-label="配色を切り替える">'
+       '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+       'stroke-linecap="round"><path d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2'
+       'M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></button>')
+
 def nav(cur, crumb=''):
-    lk = ''.join('<a href="%s%s"%s>%s</a>' % (BASE, p, ' class="on"' if p == cur else '', t) for p, t in NAVS)
-    lk += '<a href="/articles/">新規事業ヒストリー</a>'
-    return ('<div class="nav"><div class="wrap in"><a class="brand" href="%s/">%s'
-            '<span class="wm">NEW<em>FOR</em></span><span class="sl">スタートアップ調達診断</span></a>'
-            '<div class="lk">%s<button class="tgl" onclick="tt()" aria-label="配色を切り替える"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></button></div></div>'
-            '%s</div>') % (BASE, UFO, lk, crumb)
+    top = ''.join('<a href="%s"%s>%s</a>' % (u, ' class="on"' if u == '/shindan/' else '', t)
+                  for u, t in SITENAV)
+    sub = ''.join('<a href="%s%s"%s>%s</a>' % (BASE, p, ' class="on"' if p == cur else '', t)
+                  for p, t in NAVS)
+    return ('<div class="nav"><div class="wrap in">'
+            '<a class="brand" href="/">%s<span class="wm">NEW<em>FOR</em></span></a>'
+            '<div class="lk">%s%s</div></div>'
+            '<div class="sub"><div class="wrap in2">'
+            '<a class="sbt" href="%s/">スタートアップ調達診断</a><div class="lk2">%s</div>'
+            '</div></div>%s</div>') % (UFO, top, TGL, BASE, sub, crumb)
 
 def crumb(*parts):
     out = ['<a href="/">NEWFOR</a>', '<a href="%s/">調達診断</a>' % BASE]
@@ -373,7 +393,7 @@ function draw(){
  const cur=A[q.id];
  $("qopts").innerHTML=q.o.map(function(o,i){
   const on=q.multi?((cur||[]).indexOf(o[0])>=0):(cur===o[0]);
-  return '<button class="opt'+(on?' sel':'')+'" onclick="pick('+i+')"><span class="rd"></span><span><b>'+o[0]+'</b>'+(o[1]?'<small>'+o[1]+'</small>':'')+'</span></button>';
+  return '<button class="opt'+(on?' sel':'')+'" onclick="pick('+i+')"><span class="qrd"></span><span><b>'+o[0]+'</b>'+(o[1]?'<small>'+o[1]+'</small>':'')+'</span></button>';
  }).join("");
  $("multinext").classList.toggle("hide",!q.multi);
 }

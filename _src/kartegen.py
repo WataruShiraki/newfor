@@ -378,7 +378,8 @@ const ILLS=%s;
 const RB="__B__/records/";
 let ix=0, A={};
 function $(i){return document.getElementById(i)}
-function start(){$("top").classList.add("hide");$("result").classList.add("hide");$("quiz").classList.remove("hide");ix=0;draw();window.scrollTo(0,0)}
+function ga(ev,pm){ if(typeof gtag==="function"){ try{gtag('event',ev,pm||{})}catch(e){} } }
+function start(){$("top").classList.add("hide");$("result").classList.add("hide");$("quiz").classList.remove("hide");ix=0;draw();window.scrollTo(0,0);ga('shindan_start')}
 function draw(){
  const q=Q[ix];
  $("qno").textContent="QUESTION "+(ix+1)+" / 18";
@@ -419,6 +420,7 @@ const RUN={"3ヶ月未満":1,"3〜6ヶ月":3,"6〜12ヶ月":6,"12〜18ヶ月":12
 function show(){
  $("quiz").classList.add("hide");$("result").classList.remove("hide");
  const v=verdict(), st=A.stage||"シード";
+ ga('shindan_complete',{verdict:v,stage:st});
  /* CHECK3：同じ段階の出資の記録から、事象タグを数える */
  const allEq=CASES.filter(function(c){return c.ft==="出資"});
  const same=allEq.filter(function(c){return c.stage===st});

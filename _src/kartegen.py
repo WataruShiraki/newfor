@@ -673,6 +673,88 @@ def build_stories():
             esc(s['lead'])[:110], '%s/stories/%s/' % (BASE, s['id']), body, og='og-shindan-s-%s.png' % s['id']))
 
 # ═══════════════════════ 言葉の意味 ═══════════════════════
+# ── 言葉の意味：1語1ページ ──
+#
+# 検索する人は「○○とは」「○○ 意味」で来るので、1語ずつ独立したページにします。
+# URLは /shindan/words/<slug>/ 。実体は words/<slug>.html という1ファイルで、
+# vercel.json の rewrite が /words/<slug>/ → /words/<slug>.html に割り当てます。
+# （フォルダを増やさないのは、GitHubのアップロード画面が1フォルダ単位のため。
+#   checksite.py のリンク点検も、この rewrite を知っています）
+import hashlib
+WSLUG = {
+ '出資（エクイティ）': 'equity', '融資（デット）': 'debt', '補助金・助成金': 'hojokin',
+ 'ステージ／ラウンド': 'stage-round', 'シード': 'seed', 'プレA': 'pre-a', 'シリーズA': 'series-a',
+ 'シリーズB以降': 'series-b', 'VC（ベンチャーキャピタル）': 'vc', 'エンジェル投資家': 'angel',
+ '事業会社／CVC': 'cvc', 'リード投資家／フォロー投資家': 'lead-follow',
+ '株式／持分': 'kabushiki', '希薄化（ダイリューション）': 'dilution',
+ 'キャップテーブル（資本政策表）': 'cap-table', '資本政策': 'shihon-seisaku',
+ '普通株／優先株': 'yusenkabu', 'J-KISS／転換型（コンバーティブル）': 'j-kiss',
+ 'キャップ／ディスカウント': 'cap-discount', 'ベスティング': 'vesting',
+ 'ストックオプション（SO）': 'stock-option', 'バリュエーション（評価額）': 'valuation',
+ 'タームシート': 'term-sheet', 'DD（デューデリジェンス）': 'dd',
+ '投資契約／株主間契約': 'toshi-keiyaku', '拒否権／取締役指名権': 'kyohiken',
+ 'ランウェイ': 'runway', 'バーンレート': 'burn-rate', 'ブリッジ（つなぎ調達）': 'bridge',
+ 'EXIT（出口）': 'exit', 'IPO（上場）': 'ipo', 'M&A（売却）': 'ma',
+ 'スモールビジネス': 'small-business', 'PMF': 'pmf', 'ピボット': 'pivot',
+ 'ピッチ／ピッチデッキ': 'pitch-deck', '市況／調達環境': 'shikyo', '選別局面': 'senbetsu-kyokumen',
+ 'SAFE': 'safe', 'コンバーティブル・ノート': 'convertible-note', 'ダウンラウンド': 'down-round',
+ 'パーティーラウンド': 'party-round', 'プロラタ（pro-rata）': 'pro-rata',
+ 'post-mortem（ポストモーテム）': 'post-mortem', 'ファンド期／投資期間': 'fund-cycle',
+ 'プレモーテム': 'pre-mortem', '帰属（本人の帰属／編集部の見立て）': 'kizoku',
+}
+def wslug(g):
+    """語のURL用の名前。表になければ用語から機械的に作る（順番が変わってもURLは変わらない）"""
+    return WSLUG.get(g['term']) or 'w-' + hashlib.md5(g['term'].encode('utf-8')).hexdigest()[:8]
+
+def _wkey(g):
+    """記録の中からこの言葉を探すときの、検索のもとになる部分"""
+    t = g['term']
+    for sep in ('（', '／', '('):
+        t = t.split(sep)[0]
+    return t.strip()
+
+def _wcases(g, n=3):
+    """この言葉が実際に出てくる先人の記録を探す（最大n件）"""
+    k = _wkey(g)
+    if len(k) < 2: return []
+    out = []
+    for c in CASES:
+        if k in json.dumps(c, ensure_ascii=False):
+            out.append(c)
+            if len(out) >= n: break
+    return out
+
+def build_word_pages():
+    for g in GLOSS:
+        sl, term = wslug(g), g['term']
+        same = [x for x in GLOSS if x['cat'] == g['cat'] and x['term'] != term]
+        rel_words = ''.join(
+            '<li><a href="%s/words/%s/">%s</a></li>' % (BASE, wslug(x), esc(x['term']))
+            for x in same[:6])
+        recs = ''.join(
+            '<li><a href="%s/records/%s/">%s</a>　%s／%s</li>' % (
+                BASE, cid(c), case_title(c), esc(c.get('region', '')), esc(c.get('stage', '')))
+            for c in _wcases(g))
+        body = (nav('/words/', crumb('<a href="%s/words/">言葉の意味</a>' % BASE, esc(term)))
+         + '<div class="rd blk">'
+         + '<div class="gl" style="margin-top:0"><span class="cat">%s</span>'
+           '<h1 style="font-size:clamp(23px,3.6vw,31px);margin:8px 0 6px">%sとは？</h1><div class="rdg">%s</div>' % (
+               esc(g['cat']), esc(term), esc(g.get('read', '')))
+         + '<p class="sh"><b>一行でいうと：</b>%s</p>' % esc(g.get('short', ''))
+         + '<p class="lo">%s</p>' % esc(g.get('long', ''))
+         + (('<p class="cau">よくある勘違い：%s</p>' % esc(g['caution'])) if g.get('caution') else '')
+         + '</div>'
+         + (('<div class="rel"><span class="k">この言葉が出てくる先人の記録</span><ul>%s</ul></div>' % recs) if recs else '')
+         + (('<div class="rel"><span class="k">同じ分類の言葉</span><ul>%s</ul></div>' % rel_words) if rel_words else '')
+         + '<div class="rel" style="margin-top:26px"><span class="k">次に</span><ul>'
+         + '<li><a href="%s/">18の質問に答える</a>　この言葉が自分の調達に関係あるか、3分でわかります</li>' % BASE
+         + '<li><a href="%s/words/">言葉の意味 %d語をぜんぶ見る</a></li></ul></div>' % (BASE, len(GLOSS))
+         + '</div>' + MISSION)
+        w('words/%s.html' % sl, page(
+            '%sとは？意味をわかりやすく | NEWFOR' % esc(term),
+            esc('スタートアップの資金調達で出てくる「%s」を、中学生にもわかる言い方で。一行の説明と、よくある勘違い、実際にこの言葉が出てくる先人の記録。' % term),
+            BASE + '/words/%s/' % sl, body, og='og-shindan-w-%s.png' % sl))
+
 def build_words():
     cats, items = [], ''
     for g in GLOSS:
@@ -680,10 +762,11 @@ def build_words():
     for c in cats:
         items += '<h3 style="font-size:17px;margin:34px 0 14px;letter-spacing:-.02em">%s</h3>' % esc(c)
         for g in [x for x in GLOSS if x['cat'] == c]:
-            items += ('<div class="gl"><span class="cat">%s</span><h3>%s</h3><div class="rdg">%s</div>'
-                      '<p class="sh">%s</p><p class="lo">%s</p>%s</div>') % (
-                esc(c), esc(g['term']), esc(g.get('read', '')), esc(g.get('short', '')), esc(g.get('long', '')),
-                ('<p class="cau">よくある勘違い：%s</p>' % esc(g['caution'])) if g.get('caution') else '')
+            u = '%s/words/%s/' % (BASE, wslug(g))
+            items += ('<div class="gl"><span class="cat">%s</span><h3><a href="%s">%s</a></h3><div class="rdg">%s</div>'
+                      '<p class="sh">%s</p>'
+                      '<p style="margin:8px 0 0"><a href="%s" style="font-size:13px;font-weight:800;color:var(--gold)">くわしく（勘違いしやすい点も） →</a></p></div>') % (
+                esc(c), u, esc(g['term']), esc(g.get('read', '')), esc(g.get('short', '')), u)
     body = (nav('/words/', crumb('言葉の意味'))
      + '<div class="rd blk"><div class="shd">%s<h2>言葉の意味</h2><span class="sub">%d語／中学生にもわかる言い方で</span>'
        '<a class="more" href="%s/">診断をはじめる →</a></div>'
@@ -740,15 +823,19 @@ def build_ogspec():
     for s_ in STORIES:
         P.append(dict(f='og-shindan-s-%s.png' % s_['id'], eyebrow='%s #%s' % (say(s_['series']), s_['id']),
                       title=re.sub('<[^>]+>', '', say(s_['title'])), sub=say(s_['lead'])[:46]))
+    for g in GLOSS:
+        P.append(dict(f='og-shindan-w-%s.png' % wslug(g), eyebrow='資金調達の言葉',
+                      title='%sとは？' % g['term'], sub=say(g.get('short', ''))[:46]))
     io.open('/tmp/shindan_og.json', 'w', encoding='utf-8').write(json.dumps(P, ensure_ascii=False))
     urls = [(BASE + '/', '0.9', 'weekly'), (BASE + '/records/', '0.8', 'weekly'),
             (BASE + '/stories/', '0.7', 'monthly'), (BASE + '/words/', '0.7', 'monthly')]
     urls += [('%s/records/%s/' % (BASE, cid(c)), '0.6', 'yearly') for c in CASES]
     urls += [('%s/stories/%s/' % (BASE, s_['id']), '0.6', 'monthly') for s_ in STORIES]
+    urls += [('%s/words/%s/' % (BASE, wslug(g)), '0.6', 'monthly') for g in GLOSS]
     io.open('/tmp/shindan_urls.json', 'w', encoding='utf-8').write(json.dumps(urls, ensure_ascii=False))
     return P
 
 if __name__ == '__main__':
-    build_index(); build_records(); build_stories(); build_words(); build_ogspec()
+    build_index(); build_records(); build_stories(); build_words(); build_word_pages(); build_ogspec()
     n = sum(len(f) for _, _, f in os.walk(OUT))
     print('-> %s/  %dページ（記録%d・読みもの%d・用語%d語）' % (OUT, n, NC, len(STORIES), len(GLOSS)))

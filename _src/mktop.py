@@ -390,7 +390,10 @@ BANCSS = ('<style>.sdbn{display:grid;grid-template-columns:1fr auto;gap:26px;ali
 if 'id="shindan"' in s:
     _i = s.index('<section class="blk" id="shindan">')
     _j = s.index('</section>', _i) + 10
-    s = s[:_i] + s[_j:]
+    # 前後の空行ごと外す（外して入れ直すたびに空行が増えないように）
+    while _i > 0 and s[_i-1] == '\n': _i -= 1
+    while _j < len(s) and s[_j] == '\n': _j += 1
+    s = s[:_i] + '\n\n' + s[_j:]
 _anchor = None
 for _t in ('<section class="blk" id="featured">', '<section class="blk" id="list">'):
     if _t in s: _anchor = _t; break

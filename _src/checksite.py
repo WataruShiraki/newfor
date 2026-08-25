@@ -48,7 +48,10 @@ for p in FILES:
 for p,u in sorted(links):
     t='gh'+u
     if u.endswith('/'): t+='index.html'
-    if not os.path.exists(t) and not u.startswith('/assets'): bad.append('%s のリンク切れ %s'%(p,u))
+    if not os.path.exists(t) and not u.startswith('/assets'):
+        # vercel.json の rewrite（/xxx/ → /xxx.html）で届くページは、リンク切れではない
+        if u.endswith('/') and os.path.exists('gh'+u.rstrip('/')+'.html'): continue
+        bad.append('%s のリンク切れ %s'%(p,u))
 print('点検 %d ファイル'%len(FILES))
 if bad:
     print('【%d件】'%len(bad))

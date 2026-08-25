@@ -323,6 +323,13 @@ TAGS={
   "決済",
   "海外展開"
  ],
+ "fastretailing-newbusiness": [
+  "アパレル",
+  "ユニクロ",
+  "ジーユー",
+  "JV・合弁",
+  "オープンイノベーション"
+ ],
  "komatsu-newbusiness": [
   "製造",
   "コマツ",

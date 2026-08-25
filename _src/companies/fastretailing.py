@@ -4,7 +4,7 @@ slug='fastretailing',
 name='ファーストリテイリング',
 legal='株式会社ファーストリテイリング',
 ind='アパレル',
-article=None,
+article='fastretailing-newbusiness',
 evsrc={
  '1998.10|フリースを1,900円で全国投入': ['https://www.fastretailing.com/jp/about/history/2003.html', 'ファーストリテイリング 沿革（1949年-2003年）'],
  '1999.04|上海に生産管理事務所を開設': ['https://www.fastretailing.com/jp/about/history/2003.html', 'ファーストリテイリング 沿革（1949年-2003年）'],

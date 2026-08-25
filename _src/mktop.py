@@ -386,15 +386,23 @@ BANCSS = ('<style>.sdbn{display:grid;grid-template-columns:1fr auto;gap:26px;ali
  '.sdbn-b{background:#E8490F;color:#fff;font-weight:800;font-size:15px;padding:15px 26px;border-radius:12px;white-space:nowrap}'
  '@media(max-width:800px){.sdbn{grid-template-columns:1fr}.sdbn-b{text-align:center}}</style>')
 
+# いまある導線をいったん外して、ヒーローのすぐ下（記事一覧より前）へ置き直す
 if 'id="shindan"' in s:
     _i = s.index('<section class="blk" id="shindan">')
     _j = s.index('</section>', _i) + 10
-    s = s[:_i] + BANNER + s[_j:]
-else:
-    _a = s.index('<section class="blk" id="list">')
-    s = s[:_a] + BANNER + '\n\n' + s[_a:]
+    s = s[:_i] + s[_j:]
+_anchor = None
+for _t in ('<section class="blk" id="featured">', '<section class="blk" id="list">'):
+    if _t in s: _anchor = _t; break
+_a = s.index(_anchor)
+s = s[:_a] + BANNER + '\n\n' + s[_a:]
 if '.sdbn{' not in s:
     s = s.replace('</head>', BANCSS + '</head>', 1)
+# ヘッダーのナビにも「調達診断」を出す（1画面目から行けるように）
+_nv = '<a href="/shindan/">調達診断</a>'
+if _nv not in s:
+    s = s.replace('<a href="/companies/">企業を探す</a>',
+                  '<a href="/companies/">企業を探す</a>\n      ' + _nv, 1)
 
 io.open(P,'w',encoding='utf-8').write(s)
 print('-> %s  %d社 / %d件 / 記事%d本 / 出典%d件'%(P,NCO,NBIZ,NART,NSRC))

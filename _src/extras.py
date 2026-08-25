@@ -32,6 +32,10 @@ U+=[('/news/%d/'%y,'0.6','monthly') for y in NEWSYEARS]
 # NEWSの1件ずつ。数は多いが、1件に1ページあることが検索とAIに伝わる形にしておく。
 U+=[(newsdata.path(i),'0.6','yearly') for i in NEWS]
 U+=[(p,'0.4','yearly') for p in ('/about/','/ads/','/privacy/')]
+# スタートアップ調達診断（kartegen.py が書き出したもの）
+import os as _os, json as _json
+if _os.path.exists('/tmp/shindan_urls.json'):
+    U+=[tuple(x) for x in _json.load(open('/tmp/shindan_urls.json',encoding='utf-8'))]
 sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 sm+=['<url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>%s</changefreq><priority>%s</priority></url>'
      %(SITE,u,TODAY,f,p) for u,p,f in U]

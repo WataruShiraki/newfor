@@ -95,6 +95,11 @@ for name,eye,ttl,sub in [
    '企業DBから、%d社の年表をたどれます。'%NCO)]:
     P.append(dict(f='og-p-%s.png'%name,eyebrow=eye,title=ttl,sub=sub))
 
+
+# ── スタートアップ調達診断（/shindan/）── kartegen.py が材料を書き出します
+if os.path.exists('/tmp/shindan_og.json'):
+    P += json.load(open('/tmp/shindan_og.json', encoding='utf-8'))
+
 io.open('/tmp/ogspec.json','w',encoding='utf-8').write(
     json.dumps(P,ensure_ascii=False,indent=1))
 print('OGPの中身を %d ページぶん組み立てました'%len(P))

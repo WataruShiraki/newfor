@@ -32,8 +32,8 @@ MONEY_URL = 'https://newfor.jp/articles/newbusiness-money-ranking/'
 TOP_URL = 'https://newfor.jp'
 CO_URL = 'https://newfor.jp/companies/%s/'
 
-IG_TAGS = '#新規事業 #事業開発 #社内起業 #新規事業担当者 #オープンイノベーション'
-TH_TAG = '#新規事業'
+IG_TAGS = '#スタートアップ #起業 #資金調達 #新規事業 #事業開発'
+TH_TAG = '#スタートアップ'
 IG_CTA = 'プロフィールのリンクからどうぞ。'
 
 

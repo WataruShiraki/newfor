@@ -1,6 +1,6 @@
 const { chromium } = require('playwright');
 const fs=require('fs');
-(async()=>{const b=await chromium.launch();
+(async()=>{const b=await chromium.launch({executablePath: process.env.PW_CHROMIUM || '/opt/pw-browsers/chromium'});
 async function svg2png(svgPath,out,w,h){
   const svg=fs.readFileSync(svgPath,'utf8');
   const p=await b.newPage({viewport:{width:w,height:h}});

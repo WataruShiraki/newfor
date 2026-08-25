@@ -42,7 +42,7 @@ const JOBS = [
 const TRANSPARENT = /^logo-/;
 
 (async () => {
-  const b = await chromium.launch();
+  const b = await chromium.launch({executablePath: process.env.PW_CHROMIUM || '/opt/pw-browsers/chromium'});
   for (const [src, out, w, h] of JOBS) {
     const svg = fs.readFileSync(path.join('brand', src + '.svg'), 'utf8')
       .replace(/width="\d+"/, 'width="' + w + '"')

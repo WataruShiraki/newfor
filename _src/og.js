@@ -56,7 +56,7 @@ h1{margin:16px 0 0;font-size:${fit(p.title)}px;line-height:1.3;letter-spacing:-.
 </body></html>`;
 
 (async () => {
-  const b = await chromium.launch();
+  const b = await chromium.launch({executablePath: process.env.PW_CHROMIUM || '/opt/pw-browsers/chromium'});
   const pg = await b.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
   for (const p of PAGES) {
     await pg.setContent(tpl(p));

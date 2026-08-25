@@ -3,7 +3,7 @@ const fs = require('fs');
 (async () => {
   const dir = 'posts/big/png';
   fs.mkdirSync(dir, { recursive: true });
-  const b = await chromium.launch();
+  const b = await chromium.launch({executablePath: process.env.PW_CHROMIUM || '/opt/pw-browsers/chromium'});
   const p = await b.newPage({ viewport: { width: 1200, height: 1500 }, deviceScaleFactor: 1 });
   await p.goto('file://' + process.cwd() + '/posts/big/index.html', { waitUntil: 'networkidle' });
   await p.waitForTimeout(900);

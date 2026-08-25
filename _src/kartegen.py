@@ -621,6 +621,9 @@ def build_records():
          + '<div class="nxt"><a href="%s/records/%s/"><div class="k">前の記録</div><div class="t">%s</div></a>'
            '<a href="%s/records/%s/"><div class="k">次の記録</div><div class="t">%s</div></a></div>' % (
              BASE, cid(prev), case_title(prev), BASE, cid(nxt), case_title(nxt))
+         + (('<div class="rel"><span class="k">この記録に出てくる言葉</span><div class="tags">%s</div></div>'
+             % ''.join('<a href="%s/words/%s/"><span>%s</span></a>' % (BASE, wslug(g), esc(g['term']))
+                       for g in _cterms(c))) if _cterms(c) else '')
          + '<div class="rel"><span class="k">この記録の使いかた</span><ul>'
            '<li><a href="%s/">18の質問に答えて</a>、自分に近い記録を探す</li>'
            '<li><a href="%s/words/">言葉の意味</a>で、出てきた用語を確かめる</li>'
@@ -721,6 +724,17 @@ def _wcases(g, n=3):
     for c in CASES:
         if k in json.dumps(c, ensure_ascii=False):
             out.append(c)
+            if len(out) >= n: break
+    return out
+
+def _cterms(c, n=8):
+    """この記録に出てくる言葉を探す（記録→言葉の逆引き。最大n語）"""
+    blob = json.dumps(c, ensure_ascii=False)
+    out = []
+    for g in GLOSS:
+        k = _wkey(g)
+        if len(k) >= 2 and k in blob:
+            out.append(g)
             if len(out) >= n: break
     return out
 

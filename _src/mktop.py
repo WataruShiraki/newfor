@@ -353,5 +353,48 @@ _i=s.index('var ARTS=')
 _j=s.index('];',_i)+2
 s=s[:_i]+'var ARTS='+json.dumps(ARTSJS,ensure_ascii=False)+';'+s[_j:]
 
+
+# ── 7. スタートアップ調達診断への導線 ──
+#
+# トップに「もう一つのデータセット」への入口を置きます。読む人がちがうので、
+# 帯を1本だけにして、記事一覧の手前に入れます。中の数は kartegen.py の実データから。
+
+import json as _json
+_KD = _json.load(open('karte/site_data.json', encoding='utf-8'))
+_NCASE = len(_KD['cases'])
+_NLIVE = sum(1 for c in _KD['cases'] if c.get('status_current') == '継続中')
+_NWORD = len(_KD['glossary'])
+BANNER = ('<section class="blk" id="shindan"><div class="wrap">'
+ '<a class="sdbn" href="/shindan/">'
+ '<span class="sdbn-l">'
+ '<span class="sdbn-k">NEWFOR ／ スタートアップ調達診断</span>'
+ '<span class="sdbn-t">その資金調達は、あなたに向いていますか。</span>'
+ '<span class="sdbn-d">向いているかどうか。やるなら、いま何が足りないか。'
+ '先に道を通った経営者%d人の記録から、あなたに近いものを探してお返しします。3分・全18問・登録なし。</span>'
+ '<span class="sdbn-f"><b>%d</b>人の記録　/　うち<b>%d</b>人がいま続けています　/　言葉の意味<b>%d</b>語</span>'
+ '</span>'
+ '<span class="sdbn-b">診断をはじめる →</span></a></div></section>') % (_NCASE, _NCASE, _NLIVE, _NWORD)
+BANCSS = ('<style>.sdbn{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;'
+ 'background:linear-gradient(150deg,rgba(198,62,8,.10),rgba(47,59,214,.09));'
+ 'border:1px solid rgba(198,62,8,.34);border-radius:20px;padding:28px 32px}'
+ '.sdbn:hover{border-color:#C63E08}'
+ '.sdbn-k{display:block;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.14em;color:#C63E08;font-weight:800}'
+ '.sdbn-t{display:block;font-size:clamp(19px,2.6vw,25px);font-weight:850;letter-spacing:-.035em;margin:10px 0 10px;line-height:1.5}'
+ '.sdbn-d{display:block;font-size:14.5px;line-height:1.95;color:var(--tx-2);max-width:44em}'
+ '.sdbn-f{display:block;font-size:12.5px;color:var(--tx-3);margin-top:12px;font-weight:600}'
+ '.sdbn-f b{color:#C63E08;font-size:15px}'
+ '.sdbn-b{background:#E8490F;color:#fff;font-weight:800;font-size:15px;padding:15px 26px;border-radius:12px;white-space:nowrap}'
+ '@media(max-width:800px){.sdbn{grid-template-columns:1fr}.sdbn-b{text-align:center}}</style>')
+
+if 'id="shindan"' in s:
+    _i = s.index('<section class="blk" id="shindan">')
+    _j = s.index('</section>', _i) + 10
+    s = s[:_i] + BANNER + s[_j:]
+else:
+    _a = s.index('<section class="blk" id="list">')
+    s = s[:_a] + BANNER + '\n\n' + s[_a:]
+if '.sdbn{' not in s:
+    s = s.replace('</head>', BANCSS + '</head>', 1)
+
 io.open(P,'w',encoding='utf-8').write(s)
 print('-> %s  %d社 / %d件 / 記事%d本 / 出典%d件'%(P,NCO,NBIZ,NART,NSRC))

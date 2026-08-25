@@ -539,6 +539,14 @@ def case_title(c):
 
 def cid(c): return c['case_id'].lower()
 
+def head_title(c, lim=34):
+    """検索結果に出す題。語の途中で切れないよう、句読点のうしろで切る。"""
+    t = re.sub('<[^>]+>', '', say(c.get('event_summary', '')).split('。')[0])
+    if len(t) <= lim: return t
+    cut = max(t.rfind('、', 0, lim + 1), t.rfind('。', 0, lim + 1))
+    if cut >= 14: return t[:cut]
+    return t[:lim] + '…'
+
 # ═══════════════════════ 先人の記録 ═══════════════════════
 def build_records():
     rows = ''
@@ -597,7 +605,7 @@ def build_records():
            '<li><a href="%s/stories/">読みもの</a>で、同じことが起きる筋を先に知る</li></ul></div>' % (BASE, BASE, BASE)
          + '</div>' + MISSION)
         w('records/%s/index.html' % cid(c), page(
-            '%s｜先人の記録 | NEWFOR スタートアップ調達診断' % re.sub('<[^>]+>', '', case_title(c))[:38],
+            '%s｜先人の記録 %s | NEWFOR スタートアップ調達診断' % (head_title(c), c['case_id']),
             esc(say(c.get('event_summary', ''))[:110]), '%s/records/%s/' % (BASE, cid(c)), body,
             og='og-shindan-r-%s.png' % cid(c)))
 

@@ -2,6 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
   "trailingSlash": true,
+  "rewrites": [
+    { "source": "/shindan/words/:slug/", "destination": "/shindan/words/:slug.html" }
+  ],
   "redirects": [
     { "source": "/reports", "destination": "/articles/", "permanent": true },
     { "source": "/reports/", "destination": "/articles/", "permanent": true },

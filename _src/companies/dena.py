@@ -4,7 +4,7 @@ slug='dena',
 name='DeNA',
 legal='株式会社ディー・エヌ・エー',
 ind='IT',
-article=None,
+article='dena-newbusiness',
 evsrc={
  '1999.11|オークション「ビッダーズ」を開始': ['https://dena.com/jp/company/history.html', 'DeNA 沿革'],
  '2004.03|モバオクを開始': ['https://dena.com/jp/company/history.html', 'DeNA 沿革'],

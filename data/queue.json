@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25",
+ "updated": "2026-08-26",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,96 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-26-rakuten-1",
+   "found": "2026-08-26",
+   "company": "楽天グループ",
+   "date": "2026.08",
+   "title": "プチプラアイテムを集めた新オンラインストア「楽天ラクヨコ」を開設",
+   "url": "https://corp.rakuten.co.jp/news/press/2026/0825_01.html",
+   "why": "若年層向けの独立した新しいオンラインストアを開設したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-26-itochu-1",
+   "found": "2026-08-26",
+   "company": "伊藤忠商事",
+   "date": "2026.08",
+   "title": "「アウトドアプロダクツ」中国パートナーの大為（蘇州）体育用品へ資本参画、持分法適用会社化",
+   "url": "https://www.itochu.co.jp/ja/news/press/2026/260826_2.html",
+   "why": "ライセンス契約から資本参画による共同経営体制へ移行したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-26-nec-1",
+   "found": "2026-08-26",
+   "company": "NEC",
+   "date": "2026.08",
+   "title": "NEC Orchestrating Future Fund、ヒューマノイドロボット「VEGA」開発の米Dexmate社へ出資",
+   "url": "https://prtimes.jp/main/html/rd/p/000001420.000078149.html",
+   "why": "CVCファンドを通じたフィジカルAIスタートアップへの新規出資のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-26-docomo-1",
+   "found": "2026-08-26",
+   "company": "NTTドコモ",
+   "date": "2026.08",
+   "title": "三菱地所と大手町・丸の内・有楽町エリアで「次世代スマートシティ」構築の連携に合意",
+   "url": "https://www.docomo.ne.jp/info/news_release/2026/08/24_00.html",
+   "why": "通信インフラを核とした新規まちづくり事業での業務提携合意のため（サービス提供は2027年度予定、重要度は要確認）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-26-docomo-2",
+   "found": "2026-08-26",
+   "company": "NTTドコモ",
+   "date": "2026.08",
+   "title": "DAZN・CARTA ZEROとdポイント会員基盤データを活用したターゲティング広告配信ソリューションの提供開始",
+   "url": "https://www.docomo.ne.jp/binary/pdf/info/news_release/topics_260825_x1.pdf",
+   "why": "3社連携による新しい広告配信ソリューションの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-26-sony-1",
+   "found": "2026-08-26",
+   "company": "ソニーグループ",
+   "date": "2026.08",
+   "title": "グループ会社ソニーネットワークコミュニケーションズ、ファイバーゲートと資本業務提携",
+   "url": "https://prtimes.jp/main/html/rd/p/000000078.000006908.html",
+   "why": "グループ会社による集合住宅向け光回線事業者への出資と新3ブランド体制でのサービス展開のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-26-mufg-1",
+   "found": "2026-08-26",
+   "company": "三菱UFJ FG",
+   "date": "2026.08",
+   "title": "富裕層向け新会員組織「エムット Excellent Club」を発表（2027年3月始動）",
+   "url": "https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260826-001_ja.pdf",
+   "why": "預かり資産を起点にした新しい富裕層向け会員サービスの立ち上げ発表のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-26-denso-1",
+   "found": "2026-08-26",
+   "company": "デンソー",
+   "date": "2026.08",
+   "title": "欧州電池規則対応「バッテリーパスポート」生成・管理サービスの提供を開始",
+   "url": "https://bizzine.jp/news/detail/13464",
+   "why": "ブロックチェーンを活用した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-26-sumitomocorp-1",
+   "found": "2026-08-26",
+   "company": "住友商事",
+   "date": "2026.08",
+   "title": "旭化成・ENEOS・JFEスチールなど6社でJOGMECと「先進的CCS事業」(岡山・水島エリア)の業務委託契約を締結",
+   "url": "https://chemical-news.com/2026/08/24/eneos%E3%81%AA%E3%81%A96%E7%A4%BE%E3%80%80jogmec%E3%81%A8%E3%80%8C%E5%85%88%E9%80%B2%E7%9A%84ccs%E4%BA%8B%E6%A5%AD%E3%80%8D%E3%81%AB%E4%BF%82%E3%82%8B%E6%A5%AD%E5%8B%99%E5%A7%94%E8%A8%97%E5%A5%91",
+   "why": "水島エリアでCO2の分離回収・船舶輸送を含む国内最大規模のCCSクラスター事業に着手する新規事業のため",
    "status": "new"
   }
  ]

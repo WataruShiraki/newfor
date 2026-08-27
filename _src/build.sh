@@ -51,6 +51,7 @@ python3 money.py          # 年表から「払った額」を抜き出す（/tmp
 python3 quiz.py           # トップの「今日の1問」を作る（/tmp/quiz.json）
 python3 mktop.py          # gh/index.html の中の数と一覧
 python3 mkcompidx.py      # gh/companies/index.html の中の数と一覧
+python3 newsgen.py        # gh/news/ 1件1ページ＋一覧（companies/*.py の年表から）
 
 python3 mkaff.py         # トップと企業DBの広告枠を、記事と同じ中身にそろえる
 python3 pickup.py        # ヘッダー下の「ピックアップ」帯（直近の投票が流れる）

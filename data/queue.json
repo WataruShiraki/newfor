@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25",
+ "updated": "2026-08-27",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,26 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-27-familymart-1",
+   "found": "2026-08-27",
+   "company": "ファミリーマート",
+   "date": "2026.08",
+   "title": "「ファミマでかんたん！ブックオフ買取」を全国約1万6000店で開始",
+   "url": "https://www.family.co.jp/company/news_releases/2026/20260819_01.html",
+   "why": "伊藤忠とブックオフGHDの資本業務提携を受け、ファミマ店舗をブックオフの宅配買取窓口とする新サービスを開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-27-tokiomarine-1",
+   "found": "2026-08-27",
+   "company": "東京海上HD",
+   "date": "2026.08",
+   "title": "豪保険大手サンコープの買収を検討と英FTが報道（時価総額約2.2兆円規模）",
+   "url": "https://news.yahoo.co.jp/articles/98947d80d9108677c5cb2d14f24d732e5d5c37c2",
+   "why": "実現すれば過去最大級となる買収の検討が英FTにより報じられたため（会社は公式コメントを差し控えており、確定した決定ではない点に留意）",
    "status": "new"
   }
  ]

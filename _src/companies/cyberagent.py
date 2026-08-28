@@ -6,6 +6,7 @@ legal='株式会社サイバーエージェント',
 ind='広告',
 article=None,
 evsrc={
+ '2026.08|GENDAとアニメ・IPで提携': ['https://www.cyberagent.co.jp/news/detail/id=33748', 'サイバーエージェント ニュース'],
  '1998.03|サイバーエージェント 創業': ['https://www.cyberagent.co.jp/corporate/history/', 'サイバーエージェント 沿革'],
  '2004.09|Ameba（アメーバブログ）開始': ['https://www.cyberagent.co.jp/corporate/history/', 'サイバーエージェント 沿革'],
  '2006.04|サイバー・バズ 設立': ['https://www.cyberbuzz.co.jp/company/history.html', 'サイバー・バズ 沿革'],
@@ -67,6 +68,7 @@ timeline=[
  ('2025.01','CA Soa 設立','1月10日に資本金5,000万円で設立したアニメ制作スタジオ',True),
  ('2025.11','サイバーグリップ 設立','11月4日に資本金1,500万円で設立。成果報酬型の広告運用に特化し、先行導入企業ではCVが117〜150%に改善した',True),
  ('2026.07','AI SCREAM 外部提供開始','2026年8月から企業向けに提供する生成AIクリエイティブ基盤。社内で約160万点を制作し、制作時間を約30%削減した',True),
+ ('2026.08','GENDAとアニメ・IPで提携','8月26日発表。アニメ&IP事業本部が、国内外で約14,000箇所の店舗・施設網を持つGENDAと提携。ポップアップ企画や商品企画、海外プロモーションを共同で進める。',True),
 ],
 sources=[
  ('サイバーエージェント 沿革','https://www.cyberagent.co.jp/corporate/history/'),

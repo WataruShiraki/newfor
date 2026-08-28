@@ -6,6 +6,7 @@ legal='富士フイルムホールディングス株式会社',
 ind='化学',
 article='fujifilm-newbusiness',
 evsrc={
+ '2026.08|ビジネスイノベーション事業のスピンオフを検討': ['https://holdings.fujifilm.com/ja/news/list/2170', '富士フイルムHD ニュース'],
  '2001.03|富士ゼロックスを連結子会社化': ['https://www.fujifilm.com/jp/ja/about/corporate/history', '富士フイルム 沿革'],
  '2004.11|米Arch Chemicalsの半導体材料部門を買収': ['https://holdings.fujifilm.com/ja/about/history', '富士フイルムホールディングス 沿革'],
  '2006.10|持株会社体制へ移行': ['https://www.fujifilm.com/jp/ja/about/corporate/history', '富士フイルム 沿革'],
@@ -27,6 +28,7 @@ evsrc={
  '2026.08|大鵬薬品とADC製造技術で提携': ['https://www.fujifilm.com/jp/ja/news/list/13804', '富士フイルム ニュース'],
 },
 timeline=[
+ ('2026.08','ビジネスイノベーション事業のスピンオフを検討','8月6日発表。連結売上高の約35%を占める同事業について、上場を前提に親会社が20%弱を残し他を株主へ分配するパーシャル・スピンオフを含む選択肢の検討を始めた。2〜3年後の実行を視野に置く。',True),
  ('2026.08','大鵬薬品とADC製造技術で提携','抗体薬物複合体の製造技術開発で戦略的パートナーシップを締結。CDMO事業の領域を広げる',True),
  ('2001.03','富士ゼロックスを連結子会社化','株式25%を追加取得して75%へ。ドキュメント事業を全社の柱に',True),
  ('2004.11','米Arch Chemicalsの半導体材料部門を買収','写真の化学技術の受け皿として半導体材料へ',True),

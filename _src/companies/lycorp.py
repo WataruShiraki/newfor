@@ -4,7 +4,7 @@ slug='lycorp',
 name='LINEヤフー',
 legal='LINEヤフー株式会社',
 ind='IT',
-article=None,
+article='lycorp-newbusiness',
 evsrc={
  '1996.01|ヤフー株式会社 設立': ['https://www.lycorp.co.jp/ja/company/history/yahoo/', 'LINEヤフー 沿革（ヤフー株式会社）'],
  '1999.09|ヤフオク・Yahoo!ショッピング開始': ['https://www.lycorp.co.jp/ja/company/history/yahoo/', 'LINEヤフー 沿革（ヤフー株式会社）'],

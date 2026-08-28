@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25",
+ "updated": "2026-08-28",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,36 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-28-toyota-1",
+   "found": "2026-08-28",
+   "company": "トヨタ自動車",
+   "date": "2026.08",
+   "title": "レクサス専用ヘリによる運航サービス「LEXUS Flight」を開始",
+   "url": "https://global.toyota/jp/newsroom/lexus/44704796.html",
+   "why": "グループ会社エアロトヨタが運航する専用ヘリで陸・海・空をつなぐ新サービスを開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-28-mitsubishi-1",
+   "found": "2026-08-28",
+   "company": "三菱商事",
+   "date": "2026.08",
+   "title": "リゾートトラスト子会社アドバンスト・メディカル・ケアと資本業務提携",
+   "url": "https://www.zaikei.co.jp/article/20260819/866523.html",
+   "why": "第三者割当増資を引き受け、医療・ウェルネス事業の海外展開で連携する資本提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-28-sumitomocorp-1",
+   "found": "2026-08-28",
+   "company": "住友商事",
+   "date": "2026.08",
+   "title": "豪車両リース大手FleetPartnersに買収提案（三井住友オートサービスと共同）",
+   "url": "https://www.nikkei.com/article/DGXZQOGM271JT0X20C26A8000000/",
+   "why": "三菱自動車出資先の豪州車両リース会社に対する企業連合での買収提案のため（非拘束的、続報要確認）",
    "status": "new"
   }
  ]

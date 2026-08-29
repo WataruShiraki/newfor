@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25",
+ "updated": "2026-08-29",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,136 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-itochu-1",
+   "found": "2026-08-29",
+   "company": "伊藤忠商事",
+   "date": "2026.08",
+   "title": "電通総研のTOBに賛同・応募を推奨、非公開化へ",
+   "url": "https://www.dentsusoken.com/news/release/2026/0828.html",
+   "why": "伊藤忠が電通総研株式を取得し非公開化を進める資本提携・買収案件のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-itochu-2",
+   "found": "2026-08-29",
+   "company": "伊藤忠商事",
+   "date": "2026.08",
+   "title": "「アウトドアプロダクツ」中国パートナー大為（蘇州）へ資本参画",
+   "url": "https://www.itochu.co.jp/ja/news/press/2026/260826_2.html",
+   "why": "中国事業パートナーの株式を取得し持分法適用会社化する出資案件のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-fujitsu-1",
+   "found": "2026-08-29",
+   "company": "富士通",
+   "date": "2026.08",
+   "title": "米GA-ASIと無人航空機システムの整備・運用体制構築で検討覚書を締結",
+   "url": "https://global.fujitsu/ja-JP/pr/news/2026/08/27-01",
+   "why": "防衛関連の無人機整備という新領域への進出に向けた業務提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-docomo-2",
+   "found": "2026-08-29",
+   "company": "NTTドコモ",
+   "date": "2026.08",
+   "title": "ドコモSMTBネット銀行、マネックス証券と連携し自動入金サービスを開始",
+   "url": "https://www.netbk.co.jp/contents/company/press/2026/0828_006281.html",
+   "why": "グループ銀行が証券会社との新たな連携サービスを開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-sony-1",
+   "found": "2026-08-29",
+   "company": "ソニーグループ",
+   "date": "2026.08",
+   "title": "ソニー・ミュージックエンタテインメント、ガンホーと資本業務提携し筆頭株主に",
+   "url": "https://www.sme.co.jp/pressrelease/news/detail/NEWS001975.html",
+   "why": "グループ会社が約286億円で株式を取得し筆頭株主となる資本業務提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-kddi-1",
+   "found": "2026-08-29",
+   "company": "KDDI",
+   "date": "2026.08",
+   "title": "スタートアップの海外展開を支援する「KDDI Beyond Borders Accelerator」を開始",
+   "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1127_4673.html",
+   "why": "新規のアクセラレータープログラムを開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-mufg-1",
+   "found": "2026-08-29",
+   "company": "三菱UFJ FG",
+   "date": "2026.08",
+   "title": "個人向けブランド「emot」でデジタル相続サービス「エムットそうぞく」等を開始",
+   "url": "https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260826-002_ja.pdf",
+   "why": "相続支援の新サービスと富裕層向け会員組織を新設したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-denso-1",
+   "found": "2026-08-29",
+   "company": "デンソー",
+   "date": "2026.08",
+   "title": "バッテリーパスポートサービスを開始",
+   "url": "https://response.jp/article/2026/08/27/415778.html",
+   "why": "欧州電池規則対応のブロックチェーン活用型トレーサビリティサービスを新たに開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-lycorp-1",
+   "found": "2026-08-29",
+   "company": "LINEヤフー",
+   "date": "2026.08",
+   "title": "AIエージェント「Agent i」を10月に単独アプリ化すると発表",
+   "url": "https://www.lycorp.co.jp/ja/news/release/020773/",
+   "why": "既存アプリ経由のAIサービスを独立した新アプリとして提供する計画を発表したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-sumitomocorp-1",
+   "found": "2026-08-29",
+   "company": "住友商事",
+   "date": "2026.08",
+   "title": "企業連合で豪フリートパートナーズに約930億円の買収提案",
+   "url": "https://www.nikkei.com/article/DGXZQOGM271JT0X20C26A8000000/",
+   "why": "住友三井オートサービスとの企業連合で豪州車両リース大手に買収提案を行ったため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-lawson-1",
+   "found": "2026-08-29",
+   "company": "ローソン",
+   "date": "2026.08",
+   "title": "初のトレーラーハウス型店舗「ローソンS海老名運動公園店」を開業",
+   "url": "https://www.nikkei.com/article/DGXZQOUC210CD0R20C26A8000000/",
+   "why": "低コスト・短期間出店や災害時活用を狙う新形態店舗のため（1店舗の実験段階、重要度は小さめ、要確認）",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-familymart-1",
+   "found": "2026-08-29",
+   "company": "ファミリーマート",
+   "date": "2026.08",
+   "title": "ブックオフと提携し「ファミマでかんたん！ブックオフ買取」を開始",
+   "url": "https://www.family.co.jp/company/news_releases/2026/20260819_01.html",
+   "why": "全国約1.6万店で中古品宅配買取の受付窓口となる新サービスを開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-29-jal-1",
+   "found": "2026-08-29",
+   "company": "日本航空",
+   "date": "2026.08",
+   "title": "霞ヶ関キャピタル系fav hospitality groupとマイル提携開始、ホテル開発事業へ共同出資",
+   "url": "https://press.jal.co.jp/ja/release/202608/009689.html",
+   "why": "JMB会員向け新サービス開始（マイル提携）と沖縄のホテル開発プロジェクトへの共同出資を発表したため",
    "status": "new"
   }
  ]

@@ -4,7 +4,7 @@ slug='mufg',
 name='三菱UFJ FG',
 legal='株式会社三菱UFJフィナンシャル・グループ',
 ind='金融',
-article=None,
+article='mufg-newbusiness',
 evsrc={
  '2008.10|モルガン・スタンレーへ出資': ['https://www.mufg.jp/dam/pressrelease/2008/pdf/pressrelease-20081013-001_ja.pdf', 'MUFG ニュースリリース'],
  '2013.07|タイ・アユタヤ銀行の買収を決定': ['https://www.mufg.jp/dam/pressrelease/2013/pdf/pressrelease-20130702-001_ja.pdf', 'MUFG ニュースリリース'],

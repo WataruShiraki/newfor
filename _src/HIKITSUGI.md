@@ -178,3 +178,56 @@ SNSに何かを書く前に、必ず先に読んでください。要点だけ�
 実際に起きたこと、著者Soichiroの実際の経歴、サイトを作る過程で起きたことの3つだけです。
 
 投稿ボタンは、必ずオーナーに文面を見せて確認を取ってから押します。
+
+---
+
+## GitHubへ上げるときの決まり（2026年8月28日 追記・実測）
+
+ブラウザ経由でのアップロードは、条件がはっきりしています。守らないと、
+コミットしたつもりで1件も入っていない、ということが起きます（実際に起きました）。
+
+### 1回のコミットは20ファイルまでにする
+
+「99ファイルまで」と前に書きましたが、**実際には40ファイルでも失敗します。**
+80ファイルで1回、40ファイルで1回、アップロード後の画面がエラーになりました。
+20ファイルなら、5回連続で安定して通りました。**20を上限にしてください。**
+
+### コミットボタンは、座標で押さない
+
+`find` で得た ref も、画面の座標も、当てになりません。ボタンが画面の外にあると、
+クリックしたことになっても何も起きません（これで3コミットを空振りしました）。
+**JavaScriptから直接押します。**
+
+```javascript
+const b=[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='Commit changes');
+b.scrollIntoView({block:'center'}); b.click();
+```
+
+### コミットメッセージも、JavaScriptで入れる
+
+`type` で日本語を打つと、文字が化けたり順番が入れ替わったりします
+（「記事」が「記䜢」になり、文の頭が末尾に回りました）。
+
+```javascript
+const i=[...document.querySelectorAll('input[type=text]')]
+  .find(x=>x.placeholder&&x.placeholder.includes('Add files via upload'));
+i.focus(); i.value='ここにメッセージ'; i.dispatchEvent(new Event('input',{bubbles:true}));
+```
+
+### 押したあと、通ったかを必ず確かめる
+
+`document.title` がリポジトリ名（「WataruShiraki/newfor: NEWFOR ─ …」）に
+変わったら成功です。`Upload files · …` のままなら、まだ通っていません。
+
+### 最後に、取りこぼしを数える
+
+全部のコミットが終わったら、必ずこれを実行してください。**0でなければ、
+どこかのコミットが空振りしています。**
+
+```bash
+cd /home/claude/gh && git fetch -q origin main && git reset -q origin/main
+git status --short | wc -l     # 0 でなければ、その分が未反映
+```
+
+`git fetch` だけでは足りません。`git reset origin/main` まで実行しないと、
+ローカルのHEADが古いままで、正しく比べられません。

@@ -154,6 +154,6 @@ sources=[
  ('ファーストリテイリング：子会社の合併およびキャビン事業再編（2010年7月22日）','https://www.fastretailing.com/jp/ir/news/1007221600.html'),
  ('NEWFOR：ファーストリテイリングの新規事業41件の記録','https://newfor.jp/companies/fastretailing/'),
 ],
-next=[('NEXT｜新規事業ヒストリー','2001年に建機へ付けた通信機が、24年後、被災地の地図になった','/articles/komatsu-newbusiness/'),
+next=[('NEXT｜新規事業ヒストリー','コマツが2001年に建機へ付けた通信機は、24年後、被災地の地図になった','/articles/komatsu-newbusiness/'),
       ('新規事業ヒストリー','あのメルカリも、初日は16品・約2万円だった。いま出品は40億品を超えた','/articles/mercari-newbusiness/')],
 )

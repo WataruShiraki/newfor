@@ -4,7 +4,7 @@ slug='lycorp-newbusiness', no='022',
 topics=['handoff', 'money', 'longrun'],   # 一覧の絞り込み用。_src/COMSPEC.md の10種類から選びます
 company='LINEヤフー', legal='LINEヤフー株式会社', ind='IT',
 title='LINEヤフーの新規事業39件｜会社は3回まとめ、育った事業は外に出した | NEWFOR',
-h1='会社の形は7年で3回まとめ、<br>いちばん育った事業は、<br>ナスダックへ出した',
+h1='LINEヤフーは7年で3回まとまり、<br>いちばん育った事業を、<br>ナスダックへ出した',
 desc='LINEヤフーが1996年から積んだ新規事業39件を公開情報から並べる。2019年Zホールディングス、2021年LINEとの統合、2023年LINEヤフー発足と会社の形を3回まとめる一方、2018年に設立したPayPayは2026年3月12日に米国ナスダックへ上場した。抱え込む事業と、外へ出す事業の分け方を読み解く。',
 dek='39件の記録を並べると、正反対の2つが同時に進んでいます。会社そのものは7年で3回まとめられ、その一方で、いちばん育った事業は自分の外へ出されています。抱えるものと、手放すものの線引きに、この会社の考え方が出ています。',
 forwho=[
@@ -134,6 +134,6 @@ sources=[
  ('LINEヤフー ニュースリリース','https://www.lycorp.co.jp/ja/news/release/'),
  ('NEWFOR：LINEヤフーの新規事業39件の記録','https://newfor.jp/companies/lycorp/'),
 ],
-next=[('NEXT｜新規事業ヒストリー','95億円で参入した球団が、14年4か月後、駅前の「街」につながった','/articles/dena-newbusiness/'),
+next=[('NEXT｜新規事業ヒストリー','DeNAが95億円で買った球団は、14年4か月後、駅前の「街」になった','/articles/dena-newbusiness/'),
       ('新規事業ヒストリー','ユニクロが組んだ相手は、糸の会社と、編み機の会社と、検索の会社だった','/articles/fastretailing-newbusiness/')],
 )

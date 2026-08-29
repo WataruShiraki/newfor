@@ -4,7 +4,7 @@ slug='rakuten',
 name='楽天グループ',
 legal='楽天グループ株式会社',
 ind='EC',
-article=None,
+article='rakuten-newbusiness',
 evsrc={
  '2026.08|新オンラインストア「楽天ラクヨコ」を開設': ['https://corp.rakuten.co.jp/news/press/2026/0825_01.html', '楽天グループ プレスリリース'],
  '1997.02|株式会社エム・ディー・エム 設立': ['https://corp.rakuten.co.jp/about/history.html', '楽天グループ 沿革'],

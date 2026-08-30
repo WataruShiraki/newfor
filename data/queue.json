@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25",
+ "updated": "2026-08-30",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,36 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-30-itochu-1",
+   "found": "2026-08-30",
+   "company": "伊藤忠商事",
+   "date": "2026.08",
+   "title": "電通総研へTOBを発表、合同会社VICを通じ非公開化へ",
+   "url": "https://www.dentsusoken.com/news/release/2026/0828.html",
+   "why": "伊藤忠80%・子会社IFP20%出資の合同会社VICが電通総研株式の公開買付けを行う買収のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-30-sony-1",
+   "found": "2026-08-30",
+   "company": "ソニーグループ",
+   "date": "2026.08",
+   "title": "ソニー・ミュージックエンタテインメント、ガンホーと資本業務提携し筆頭株主へ",
+   "url": "https://www.sme.co.jp/pressrelease/news/detail/NEWS001975.html",
+   "why": "グループ会社ソニー・ミュージックが約286億円でガンホー株式22.9%を取得し筆頭株主となる資本提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-30-sumitomocorp-1",
+   "found": "2026-08-30",
+   "company": "住友商事",
+   "date": "2026.08",
+   "title": "カナダTintina Minesへの出資を通じチリDos Amigos銅・金鉱山プロジェクトに参画",
+   "url": "https://www.sumitomocorp.com/ja/jp/news/topics/2026/group/20260828",
+   "why": "資源開発事業拡大に向けた海外鉱山プロジェクトへの新規出資参画のため",
    "status": "new"
   }
  ]

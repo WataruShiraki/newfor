@@ -59,6 +59,11 @@ python3 pickup.py        # ヘッダー下の「ピックアップ」帯（直�
 # ── いちばん最後。ページを作り直したあとでないと、タグが消えます ──
 python3 analytics.py      # Search Console の所有権確認タグ／GA4 の計測タグ
 
+# ── 中身が同じOGP画像は、作り直したぶんを捨てて公開中のものに戻す ──
+# og.js と pngquant は絵が同じでも毎回違うバイト列を出すため、
+# これをやらないと毎日157枚ぶんの差分が出てコミットが膨らみます（2026年8月29日に実測）。
+python3 pngkeep.py
+
 # ── 見張り ──
 python3 checkgen.py
 echo "=== build done ==="

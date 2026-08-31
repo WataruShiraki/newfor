@@ -4,7 +4,7 @@ slug='takeda',
 name='武田薬品工業',
 legal='武田薬品工業株式会社',
 ind='医薬',
-article=None,
+article='takeda-newbusiness',
 evsrc={
  '2008.04|米ミレニアムを買収': ['https://www.takeda.com/jp/who-we-are/company-information/history/', '武田薬品工業 沿革'],
  '2011.02|湘南研究所を竣工': ['https://www.takeda.com/jp/who-we-are/company-information/history/', '武田薬品工業 沿革'],

@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25",
+ "updated": "2026-08-31",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,26 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-31-itochu-1",
+   "found": "2026-08-31",
+   "company": "伊藤忠商事",
+   "date": "2026.08",
+   "title": "電通グループ子会社の電通総研にTOBを実施し、非公開化後に合弁会社化すると発表",
+   "url": "https://www.itochu.co.jp/ja/news/press/2026/260831_2.html",
+   "why": "電通総研株式を対象にTOBを行い非公開化した上で伊藤忠グループとの合弁会社とする、資本提携・買収にあたるため",
+   "status": "new"
+  },
+  {
+   "id": "2026-08-31-denso-1",
+   "found": "2026-08-31",
+   "company": "デンソー",
+   "date": "2026.08",
+   "title": "ヘッドアップディスプレイ(HUD)事業を日本精機へ譲渡",
+   "url": "https://response.jp/article/2026/08/31/415916.html",
+   "why": "国内外のHUD事業（開発・製造・販売）を事業譲渡契約により日本精機へ譲渡するため",
    "status": "new"
   }
  ]

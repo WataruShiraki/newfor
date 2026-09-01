@@ -380,115 +380,136 @@ footer .ln a{margin-right:15px}
 from afflinks import END as AFFEND, END_DEFAULT as AFFEND_DEFAULT
 
 AFF_JS = r'''
+
 /* ============================================================
    NEWFOR 広告枠
 
-   1行の説明では押されません。読む人が知りたいのは「自分に向いているか」。
-   だから1件ごとに、要点・本文・向いている人・気になるところ・事実の一覧を出します。
-   「気になるところ」は必ず出します。良い面だけ並べた瞬間に信用されなくなるからです。
+   【2026-09-01 作り直し】
+   わたるさんの指示:
+   > 「福利厚生JPとかOFFICELOVERSみたいなバナーを出す方がいいにきまってんだろ」
 
-   見た目のCSSはここから流し込みます。トップと企業DBは手書きHTMLで、
+   これまではテキストのボタンだけを並べていて、バナー画像を1枚も
+   使っていませんでした。A8でNEWFOR用（サイトID 003）に発行した
+   バナーに差し替えます。
+
+   ■ 数え方について、ここに書いておきます
+
+   A8のクリックは px.a8.net のURLが読み込まれた回数、
+   表示（imp）はバナー画像と1×1画像が読み込まれた回数で数えられます。
+   人が押したかどうかは見ていません。だから次の3つを守ります。
+
+     1. ひとつの枠から出すバナーは、必ず1枚だけ。
+        PC用とスマホ用を両方出して、片方をCSSで隠すことはしません。
+        隠しても画像の読み込みは起きるので、表示回数が二重になります。
+        （福利厚生JPで実際に起きました）
+        ここはJavaScriptで作っているので、画面の幅を見てから
+        1枚だけ選べます。
+
+     2. バナーと1×1画像は、枠が画面に入ったときに同時に入れます。
+        片方だけ先に読ませない。1枠 ＝ バナー1回 ＝ 1×1画像1回。
+
+     3. リンクのURLはページのHTMLに書かず、このJavaScriptの中で
+        組み立てます。HTMLに直接書くと、巡回ロボットがリンクを
+        たどってクリックとして数えられます。
+
+   見た目のCSSもここから入れます。トップと企業DBは手書きHTMLで、
    ページ側のCSSに新しい書き方が入っていないためです。
    ============================================================ */
-var ARROW='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
-var G=__AFFDATA__;
+var A = __AFFDATA__;
 
-(function(){
- if(document.getElementById('nf-aff-css'))return;
- var st=document.createElement('style'); st.id='nf-aff-css';
- st.textContent=[
- '.nfa,.nfa *{box-sizing:border-box}',
- '.nfa{display:block;border:1px solid rgba(47,59,214,.22);border-radius:18px;overflow:hidden;margin:40px 0;background:var(--surface,#fff)}',
- '.nfa-h{display:block;padding:16px 22px;background:#2F3BD6}',
- '.nfa-h .pr{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:4px;padding:2px 7px;margin-right:10px;vertical-align:2px}',
- '.nfa-h .t{font-size:16.5px;font-weight:800;letter-spacing:-.02em;color:#fff}',
- '.nfa-who{padding:12px 22px;font-size:12.5px;font-weight:700;color:#2A2266;background:rgba(47,59,214,.06);border-bottom:1px solid rgba(47,59,214,.12)}',
- '.nfa-lead{padding:16px 22px 4px;font-size:13.5px;line-height:1.95;color:var(--tx-2,#57536D)}',
- '.nfa-r{display:block;padding:22px;border-top:1px solid rgba(47,59,214,.12)}',
- '.nfa-r.top{background:rgba(224,74,12,.045)}',
- '.nfa-hd{display:flex;align-items:baseline;align-items:baseline;gap:10px;flex-wrap:wrap}',
- '.nfa-hd .rk{font-family:ui-monospace,Menlo,monospace;font-size:19px;font-weight:800;color:#E04A0C;min-width:20px}',
- '.nfa-hd .nm{font-size:18px;font-weight:800;letter-spacing:-.02em;color:var(--tx-1,#1A1730)}',
- '.nfa-hd .best{display:inline-block;font-size:10.5px;font-weight:800;color:#fff;background:#E04A0C;border-radius:5px;padding:3px 8px;margin-left:8px;vertical-align:2px}',
- '.nfa-catch{margin-top:8px;font-size:14.5px;font-weight:800;color:#2F3BD6;line-height:1.7}',
- '.nfa-body{margin-top:10px;font-size:13.5px;line-height:2;color:var(--tx-2,#57536D)}',
- '.nfa-body strong{color:var(--tx-1,#1A1730);font-weight:800}',
- '.nfa-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}',
- '@media(max-width:680px){.nfa-cols{grid-template-columns:1fr}}',
- '.nfa-box{border-radius:12px;padding:13px 15px;font-size:12.5px;line-height:1.85}',
- '.nfa-box b{display:block;font-size:12px;font-weight:800;margin-bottom:6px;letter-spacing:.02em}',
- '.nfa-box ul{margin:0;padding-left:17px}',
- '.nfa-box li{margin:3px 0}',
- '.nfa-fit{background:rgba(47,59,214,.06);color:#2A2266}',
- '.nfa-fit b{color:#2F3BD6}',
- '.nfa-care{background:rgba(224,74,12,.07);color:#5A3320}',
- '.nfa-care b{color:#B8400F}',
- '.nfa-spec{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0;border-top:1px solid rgba(47,59,214,.12);font-size:12.5px}',
- '.nfa-spec dt{padding:8px 14px 8px 0;font-weight:800;color:var(--tx-3,#8C8497);white-space:nowrap;border-bottom:1px solid rgba(47,59,214,.08)}',
- '.nfa-spec dd{padding:8px 0;margin:0;color:var(--tx-2,#57536D);border-bottom:1px solid rgba(47,59,214,.08)}',
- '.nfa-tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}',
- '.nfa-tg span{font-size:11px;color:var(--tx-2,#57536D);border:1px solid rgba(47,59,214,.2);border-radius:5px;padding:3px 9px}',
- '.nfa .nfa-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin-top:16px;width:100%;max-width:340px;background:#C6410B;color:#fff;font-size:14px;font-weight:800;text-decoration:none;border-radius:11px;padding:14px 20px}',
- '.nfa-cta:hover{background:#A83203}',
- '.nfa-f{padding:14px 22px;font-size:11.5px;line-height:1.8;color:var(--tx-3,#8C8497);background:rgba(47,59,214,.04);border-top:1px solid rgba(47,59,214,.12)}',
- '[data-theme="dark"] .nfa{background:var(--surface,#17141F);border-color:rgba(255,255,255,.12)}',
- '[data-theme="dark"] .nfa-h{background:#232030}',
- '[data-theme="dark"] .nfa-who{background:rgba(255,255,255,.05);color:#C9C2D6}',
- '[data-theme="dark"] .nfa-r.top{background:rgba(255,138,69,.07)}',
- '[data-theme="dark"] .nfa-fit{background:rgba(154,166,255,.1);color:#C7CDF7}',
- '[data-theme="dark"] .nfa-fit b{color:#9AA6FF}',
- '[data-theme="dark"] .nfa-care{background:rgba(255,138,69,.1);color:#EBC7B2}',
- '[data-theme="dark"] .nfa-care b{color:#FF8A45}',
- '[data-theme="dark"] .nfa-catch{color:#9AA6FF}'
- ].join('\n');
- document.head.appendChild(st);
+(function () {
+  if (document.getElementById('nf-aff-css')) return;
+  var st = document.createElement('style'); st.id = 'nf-aff-css';
+  st.textContent = [
+    '.nfa{display:block;margin:34px 0;padding:0;border:0;text-align:center}',
+    '.nfa-h{display:flex;align-items:flex-start;justify-content:center;gap:9px;margin:0 0 11px;flex-wrap:nowrap;max-width:620px;margin-left:auto;margin-right:auto}',
+    '.nfa-pr{flex:0 0 auto;margin-top:2px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:.14em;color:#6B7280;border:1px solid #D7D9E3;border-radius:3px;padding:1px 5px;line-height:1.6}',
+    '.nfa-lead{margin:0;font-size:13.5px;line-height:1.75;color:#3C4250;font-weight:650;text-align:left;letter-spacing:-.005em}',
+    '.nfa-a{display:inline-block;max-width:100%;line-height:0}',
+    '.nfa-a img{max-width:100%;height:auto;border:0;border-radius:6px}',
+    '.nfa-note{margin:10px auto 0;max-width:620px;font-size:11px;line-height:1.75;color:#8B90A0;text-align:left}',
+    '.nfa-px{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}',
+    '@media (max-width:640px){.nfa{margin:26px 0}.nfa-lead{font-size:13px}}',
+    '[data-theme="dark"] .nfa-lead{color:#C8CEDE}',
+    '[data-theme="dark"] .nfa-pr{color:#9AA1B4;border-color:#3A3F52}',
+    '[data-theme="dark"] .nfa-note{color:#7C8296}'
+  ].join('\n');
+  document.head.appendChild(st);
 })();
 
-var A8='https://px.a8.net/svt/ejp?a8mat=';
-var A8IMG='https://www13.a8.net/0.gif?a8mat=';
-function affLive(k){var g=G[k];if(!g)return null;
-  var it=g.items.filter(function(x){return x.mat&&x.mat.length>8});
-  return it.length?{g:g,items:it}:null;}
-/* 成果計測の1×1画像。A8の規定どおり、リンクと一緒に置きます */
-function px(m){return '<img border="0" width="1" height="1" src="'+A8IMG+m+'" alt="" loading="lazy">';}
-function b2(t){return String(t||'').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');}
-function li(a){return (a||[]).map(function(x){return '<li>'+x+'</li>'}).join('');}
-function affRow(it,i,cta){
-  return '<div class="nfa-r'+(i===0?' top':'')+'">'
-   +'<div class="nfa-hd"><span class="rk">'+(i+1)+'</span><span class="nm">'+it.n
-   +(it.best?'<span class="best">NEWFORのおすすめ</span>':'')+'</span></div>'
-   +'<div class="nfa-catch">'+it.catch+'</div>'
-   +'<div class="nfa-body">'+b2(it.body)+'</div>'
-   +'<div class="nfa-cols">'
-     +'<div class="nfa-box nfa-fit"><b>こんな方に向いています</b><ul>'+li(it.fit)+'</ul></div>'
-     +'<div class="nfa-box nfa-care"><b>気になるところ</b><ul>'+li(it.care)+'</ul></div>'
-   +'</div>'
-   +'<dl class="nfa-spec">'+(it.spec||[]).map(function(s){return '<dt>'+s[0]+'</dt><dd>'+s[1]+'</dd>'}).join('')+'</dl>'
-   +'<div class="nfa-tg">'+(it.t||[]).map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'
-   +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||cta)+ARROW+'</a>'
-   +px(it.mat)+'</div>';}
-function affBuild(el){
-  var live=affLive(el.getAttribute("data-aff")||"job");
-  if(!live){el.remove();return;}
-  el.innerHTML='<div class="nfa"><div class="nfa-h"><span class="pr">広告</span>'
-   +'<span class="t">'+live.g.title+'</span></div>'
-   +'<div class="nfa-who">'+live.g.who+'</div>'
-   +(live.g.lead?'<div class="nfa-lead">'+live.g.lead+'</div>':'')
-   +live.items.map(function(it,i){return affRow(it,i,live.g.cta)}).join('')
-   +'<div class="nfa-f">本枠は広告（アフィリエイトプログラムを含みます）。'
-   +'掲載内容は各社の公表情報にもとづくNEWFORの整理で、各社の公式見解ではありません。'
-   +'並び順は、この記事を読んでいる方との近さで決めており、報酬額では変えません。</div></div>';
+var A8CLICK = 'https://px.a8.net/svt/ejp?a8mat=';
+
+/* バナー画像のURL。A8がNEWFOR（wid=003）用に出しているものと同じ形です。 */
+function affBanner(b) {
+  return 'https://' + b.s + '/svt/bgt?aid=' + b.a + '&wid=003&eno=' + b.e + '&mid=' + b.m + '&mc=1';
 }
-function affMini(el){
-  var live=affLive(el.getAttribute("data-aff")||"pro");
-  if(!live){el.remove();return;}
-  var it=live.items[0];
-  el.innerHTML='<div class="affmini"><span class="bd"><span class="lead"><span class="pr">広告</span>'+live.g.who+'</span>'
-   +'<span class="nm">'+it.n+'</span><span class="ds">'+it.catch+'</span></span>'
-   +'<a class="nfa-cta" href="'+A8+it.mat+'" target="_blank" rel="nofollow sponsored noopener">'+(it.cta||live.g.cta)+ARROW+'</a>'
-   +px(it.mat)+'</div>';}
-Array.prototype.forEach.call(document.querySelectorAll(".affslot"),affBuild);
-Array.prototype.forEach.call(document.querySelectorAll(".affmini-slot"),affMini);
+/* 成果計測の1×1画像。A8の規定どおり、バナーと一緒に置きます。 */
+function affPixel(b) {
+  return 'https://' + b.p + '/0.gif?a8mat=' + b.t;
+}
+
+/* 同じページを読み直したときに、広告が入れ替わらないようにする。
+   URLの文字から数を作って、その数で選びます。くじ引きではなく、
+   出席番号のようなものです。 */
+function affHash(s) {
+  var x = 5381;
+  for (var i = 0; i < s.length; i++) { x = ((x << 5) + x + s.charCodeAt(i)) >>> 0; }
+  return x;
+}
+
+function affBuild(el) {
+  var key = el.getAttribute('data-aff') || 'biz';
+  var grp = A[key] || A.biz;
+  if (!grp || !grp.items || !grp.items.length) { el.remove(); return; }
+  var it = grp.items[affHash(location.pathname + '|' + key) % grp.items.length];
+  /* 画面の幅を見て、出すバナーを1枚だけ決める。両方は出しません。 */
+  var b = (it.wide && window.innerWidth >= 760) ? it.wide : it.sq;
+  if (!b || !b.t) { el.remove(); return; }
+
+  el.classList.add('nfa');
+  el.style.position = 'relative';
+  el.innerHTML =
+      '<div class="nfa-h"><span class="nfa-pr">広告</span>'
+    + '<p class="nfa-lead">' + it.lead + '</p></div>'
+    + '<a class="nfa-a" href="' + A8CLICK + b.t + '" target="_blank" rel="nofollow sponsored noopener"></a>'
+    + '<p class="nfa-note">この枠は広告です（アフィリエイトプログラムを含みます）。'
+    + 'バナーは広告主が配っているものをそのまま出しています。'
+    + '並び順は、このページを読んでいる方との近さで決めており、報酬額では変えません。</p>';
+
+  var a = el.querySelector('.nfa-a');
+  var done = false;
+  /* 枠が画面に入ってから、バナーと1×1画像を同時に入れる。
+     見ていない広告を「見た」と数えさせないため。 */
+  var show = function () {
+    if (done) return;
+    done = true;
+    var img = document.createElement('img');
+    img.setAttribute('border', '0');
+    img.width = b.w; img.height = b.h;
+    img.alt = ''; img.decoding = 'async';
+    img.src = affBanner(b);
+    a.appendChild(img);
+    var px = document.createElement('img');
+    px.setAttribute('border', '0');
+    px.className = 'nfa-px';
+    px.width = 1; px.height = 1; px.alt = '';
+    px.src = affPixel(b);
+    el.appendChild(px);
+  };
+  if (window.IntersectionObserver) {
+    var io = new IntersectionObserver(function (es) {
+      for (var i = 0; i < es.length; i++) {
+        if (es[i].isIntersecting) { show(); io.disconnect(); return; }
+      }
+    }, { rootMargin: '200px' });
+    io.observe(el);
+  } else {
+    show();
+  }
+}
+
+Array.prototype.forEach.call(document.querySelectorAll('.affslot, .affmini-slot'), affBuild);
+
 '''
 
 # 広告の中身は afflinks.py が持っています。ここで焼き込むと、

@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25",
+ "updated": "2026-09-01",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,46 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-01-itochu-1",
+   "found": "2026-09-01",
+   "company": "伊藤忠商事",
+   "date": "2026.08",
+   "title": "電通グループと戦略的提携、子会社の電通総研をTOBで非公開化へ",
+   "url": "https://www.itochu.co.jp/ja/news/press/2026/260831_2.html",
+   "why": "ITサービス・リテールメディア領域での協業に加え、電通総研株式を最大2152億円で公開買付けし非公開化するため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-01-mitsui-1",
+   "found": "2026-09-01",
+   "company": "三井物産",
+   "date": "2026.08",
+   "title": "Nutrinova社の株式を追加取得、持分法適用会社から連結子会社へ",
+   "url": "https://www.mitsui.com/jp/ja/release/2026/1254090_15330.html",
+   "why": "セラニーズ保有の追加19%株式（約152百万ドル）を取得し出資比率を89%へ引き上げ、連結子会社化するため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-01-nissan-1",
+   "found": "2026-09-01",
+   "company": "日産自動車",
+   "date": "2026.08",
+   "title": "ホンダと次世代SDVの中核ECU・車載OSを共同開発する契約を締結",
+   "url": "https://response.jp/article/2026/08/31/415942.html",
+   "why": "両社の次世代SDV向けにECUや車載OS・ミドルウェアを共通化する共同開発契約を締結したため（資本関係の記載はなし、要確認）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-01-honda-1",
+   "found": "2026-09-01",
+   "company": "本田技研工業",
+   "date": "2026.08",
+   "title": "日産と次世代SDVの中核ECU・車載OSを共同開発する契約を締結",
+   "url": "https://response.jp/article/2026/08/31/415942.html",
+   "why": "両社の次世代SDV向けにECUや車載OS・ミドルウェアを共通化する共同開発契約を締結したため（資本関係の記載はなし、要確認）",
    "status": "new"
   }
  ]

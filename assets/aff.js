@@ -126,4 +126,73 @@ function affBuild(el) {
   }
 }
 
+/* ============================================================
+   ★2026-09-02 1ページに3種類（メイン／サブ／誰でも）を出す
+
+   わたるさんの指示（全媒体で守るルール）:
+   > 「メインターゲット、サブターゲット、誰でも、みたいな感じで
+   >   3種類をアフィリ広告入れるってのを統一で守って欲しい」
+
+   これまでのNEWFORは1ページに枠が1つだけで、しかもその枠は記事の
+   いちばん下にありました。実測で、ページ全体13,768pxのうち12,029px
+   地点＝9割スクロールしないと出てきません。
+
+   ページのHTMLは1,292本あるので触りません。ここ（JavaScript）から
+   枠を2つ足して、記事の途中に置きます。
+
+   3つの分け方:
+     start（メイン）= これから始める人。会社をつくる・住所を借りる
+     run  （サブ）  = もう回している人。お金・カード・人手・お店
+     any  （誰でも）= 立場を問わない。学び直し・スキル
+   同じ広告主が1ページに2回出ないよう、3つのプールで中身を分けます。
+   （これまでは biz と job の中身がまったく同じでした）
+   ============================================================ */
+var _bi = (A.biz && A.biz.items) || [];
+var _pi = (A.pro && A.pro.items) || [];
+var _li = (A.learn && A.learn.items) || [];
+A.start = { items: _bi.slice(0, 3) };
+A.run = { items: _bi.slice(3).concat(_pi) };
+A.any = { items: _li.slice() };
+
+function affPoolOK(k) { return A[k] && A[k].items && A[k].items.length > 0; }
+
+/* 見出しの前に枠を入れる。ページの高さを見て、上から25%と55%の
+   あたりにいちばん近い見出しを選びます。文章の切れ目に入るので、
+   読んでいる途中で唐突に出てくることがありません。 */
+function affSpread() {
+  var slots = document.querySelectorAll(".affslot");
+  if (!slots.length) return;
+  if (affPoolOK("any")) slots[slots.length - 1].setAttribute("data-aff", "any");
+  if (slots.length > 1) return;
+  var main = document.querySelector("main") || document.body;
+  var hs = [];
+  var all = main.querySelectorAll("h2");
+  for (var i = 0; i < all.length; i++) { if (all[i].offsetHeight > 0) hs.push(all[i]); }
+  if (hs.length < 3) return;
+  var H = document.body.scrollHeight;
+  var used = [];
+  var near = function (ratio) {
+    var best = null, bd = 1e9;
+    for (var i = 1; i < hs.length; i++) {
+      if (used.indexOf(hs[i]) >= 0) continue;
+      var y = hs[i].getBoundingClientRect().top + (window.pageYOffset || 0);
+      var d = Math.abs(y - H * ratio);
+      if (d < bd) { bd = d; best = hs[i]; }
+    }
+    if (best) used.push(best);
+    return best;
+  };
+  var mk = function (key) {
+    var d = document.createElement("div");
+    d.className = "affslot";
+    d.setAttribute("data-aff", key);
+    return d;
+  };
+  var a = affPoolOK("start") ? near(0.25) : null;
+  var b = affPoolOK("run") ? near(0.55) : null;
+  if (b) b.parentNode.insertBefore(mk("run"), b);
+  if (a) a.parentNode.insertBefore(mk("start"), a);
+}
+affSpread();
+
 Array.prototype.forEach.call(document.querySelectorAll('.affslot, .affmini-slot'), affBuild);

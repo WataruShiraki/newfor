@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25",
+ "updated": "2026-09-02",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -329,6 +329,96 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-02-itochu-1",
+   "found": "2026-09-02",
+   "company": "伊藤忠商事",
+   "date": "2026.08",
+   "title": "電通総研へTOBを発表、最大2152億円・出資比率38.22%の資本業務提携",
+   "url": "https://www.itochu.co.jp/ja/news/press/2026/260831_2.html",
+   "why": "電通総研への株式公開買付け（TOB）による新たな資本提携のため（8月31日発表）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-02-dentsu-1",
+   "found": "2026-09-02",
+   "company": "電通グループ",
+   "date": "2026.08",
+   "title": "子会社の電通総研が伊藤忠商事のTOBを受け入れ非公開化へ",
+   "url": "https://www.itochu.co.jp/ja/news/press/2026/260831_2.html",
+   "why": "電通総研への資本提携（TOB）を伊藤忠グループと合意したため（8月31日発表、重要度は要確認）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-02-kddi-1",
+   "found": "2026-09-02",
+   "company": "KDDI",
+   "date": "2026.09",
+   "title": "三菱商事と合弁会社「クインタ」を設立、リテールメディア事業を開始",
+   "url": "https://newsroom.kddi.com/news/detail/kddi_nr_s-76_4692.html",
+   "why": "ローソン店舗のデジタルサイネージ等を活用する新会社を50%出資で設立したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-02-mitsubishi-1",
+   "found": "2026-09-02",
+   "company": "三菱商事",
+   "date": "2026.09",
+   "title": "KDDIと合弁会社「クインタ」を設立、リテールメディア事業を開始",
+   "url": "https://newsroom.kddi.com/news/detail/kddi_nr_s-76_4692.html",
+   "why": "ローソン店舗のデジタルサイネージ等を活用する新会社を50%出資で設立したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-02-cyberagent-1",
+   "found": "2026-09-02",
+   "company": "サイバーエージェント",
+   "date": "2026.09",
+   "title": "セブン-イレブン・電通との合弁会社「セブン-イレブン・アドコネクト」が事業開始",
+   "url": "https://kyodonewsprwire.jp/release/2026-06-11_4016336",
+   "why": "リテールメディア事業の合弁会社（サイバーエージェント10%出資）が9月1日付で事業を開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-02-sevenandi-1",
+   "found": "2026-09-02",
+   "company": "セブン&アイ",
+   "date": "2026.09",
+   "title": "電通・サイバーエージェントとの合弁会社「セブン-イレブン・アドコネクト」が事業開始",
+   "url": "https://kyodonewsprwire.jp/release/2026-06-11_4016336",
+   "why": "リテールメディア事業の合弁会社（セブン-イレブン・ジャパン80%出資）が9月1日付で事業を開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-02-mitsui-1",
+   "found": "2026-09-02",
+   "company": "三井物産",
+   "date": "2026.09",
+   "title": "オランダの人工甘味料会社ニュートリノバへ追加出資し連結子会社化",
+   "url": "https://www.mitsui.com/jp/ja/release/2026/1254090_15330.html",
+   "why": "出資比率を70%から89%に引き上げて連結子会社化する追加出資のため（約220億円）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-02-lycorp-1",
+   "found": "2026-09-02",
+   "company": "LINEヤフー",
+   "date": "2026.09",
+   "title": "ソフトバンクと「Yahoo!スマホ買取」の提供を開始",
+   "url": "https://news.yahoo.co.jp/articles/516b558fff6367ec6ccb070eb240981cea17b4f5",
+   "why": "通信キャリアを問わず利用できるスマホ買取サービスを両社共同で新規開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-02-softbank-1",
+   "found": "2026-09-02",
+   "company": "ソフトバンクグループ",
+   "date": "2026.09",
+   "title": "LINEヤフーと「Yahoo!スマホ買取」の提供を開始",
+   "url": "https://news.yahoo.co.jp/articles/516b558fff6367ec6ccb070eb240981cea17b4f5",
+   "why": "通信キャリアを問わず利用できるスマホ買取サービスを両社共同で新規開始したため",
    "status": "new"
   }
  ]

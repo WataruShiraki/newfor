@@ -55,7 +55,42 @@ var A = {"biz":{"items":[{"n":"会社設立の無料相談（経営サポート�
   document.head.appendChild(st);
 })();
 
-var A8CLICK = 'https://px.a8.net/svt/ejp?a8mat=';
+/* 【2026-09-03】クリックURLをHTMLに直書きしない（クローク方式）。
+
+   A8のクリックは px.a8.net のURLが読み込まれた回数で数えられます。
+   人が押したかどうかは見ていません。だから、ページのHTMLに px.a8.net を
+   そのまま書いておくと、巡回ロボットがリンクをたどるだけでクリックになります。
+   2026年8月は、これが原因で全サイト合計のクリックが1日3,000件を超えました。
+
+   たとえるなら、店の入口に「入った人を数える装置」を置いたつもりが、
+   実際には「ドアの前を通った人」まで数えていた状態です。
+
+   そこで、まず自分のサイトの中のURL（/about/#a8-◯◯）を書いておき、
+   人がマウスを動かす・画面に触れる・キーを押す・スクロールする、
+   そのどれかが起きてはじめて、本物のA8のURLに書き換えます。
+   巡回ロボットはこの操作をしないので、A8のURLを受け取れません。
+
+   福利厚生JP・OFFICELOVERS・年収JPと同じ作りです。
+   ★ASPを足すときは a8map に1行足すこと（ここだけ直せば全ページに効きます）。 */
+var A8CLICK = '/about/#a8-';
+var a8map = {
+  '#a8-': 'https://px.a8.net/svt/ejp?a8mat='   /* A8.net */
+};
+var a8done = false;
+function affA8Fix() {
+  a8done = true;
+  for (var mark in a8map) {
+    var list = document.querySelectorAll('a[href*="' + mark + '"]');
+    for (var i = 0; i < list.length; i++) {
+      var h = list[i].getAttribute('href') || '';
+      var p = h.split(mark)[1];
+      if (p) list[i].setAttribute('href', a8map[mark] + p);
+    }
+  }
+}
+['pointerdown', 'pointermove', 'touchstart', 'keydown', 'scroll', 'wheel'].forEach(function (ev) {
+  window.addEventListener(ev, affA8Fix, { once: true, passive: true });
+});
 
 /* バナー画像のURL。A8がNEWFOR（wid=003）用に出しているものと同じ形です。 */
 function affBanner(b) {
@@ -196,3 +231,6 @@ function affSpread() {
 affSpread();
 
 Array.prototype.forEach.call(document.querySelectorAll('.affslot, .affmini-slot'), affBuild);
+
+/* すでに人が動かしたあとに枠が作られた場合の取りこぼしを防ぐ */
+if (a8done) affA8Fix();

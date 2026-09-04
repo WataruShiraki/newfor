@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-02",
+ "updated": "2026-09-04",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -419,6 +419,76 @@
    "title": "LINEヤフーと「Yahoo!スマホ買取」の提供を開始",
    "url": "https://news.yahoo.co.jp/articles/516b558fff6367ec6ccb070eb240981cea17b4f5",
    "why": "通信キャリアを問わず利用できるスマホ買取サービスを両社共同で新規開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-04-mitsuifudosan-1",
+   "found": "2026-09-04",
+   "company": "三井不動産",
+   "date": "2026.08",
+   "title": "アクシル・キャピタルと共同でライフサイエンス特化型CVCファンド「三井リンクファンド」を新設",
+   "url": "https://www.mitsuifudosan.co.jp/corporate/news/2026/0831_01/",
+   "why": "総額70億円のライフサイエンス特化型CVCファンドを新たに組成したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-04-nec-1",
+   "found": "2026-09-04",
+   "company": "NEC",
+   "date": "2026.09",
+   "title": "三菱重工業と防衛力強化に向けた戦略的提携を締結",
+   "url": "https://jpn.nec.com/press/202609/20260902_04.html",
+   "why": "作戦計画・指揮統制システムや無人アセット等の領域で連携する戦略的提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-04-mhi-1",
+   "found": "2026-09-04",
+   "company": "三菱重工業",
+   "date": "2026.09",
+   "title": "NECと防衛力強化に向けた戦略的提携を締結",
+   "url": "https://jpn.nec.com/press/202609/20260902_04.html",
+   "why": "作戦計画・指揮統制システムや無人アセット等の領域で連携する戦略的提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-04-docomo-1",
+   "found": "2026-09-04",
+   "company": "NTTドコモ",
+   "date": "2026.09",
+   "title": "三井不動産・三井不動産ネットワークイノベーションと資本業務提携契約を締結",
+   "url": "https://www.docomo.ne.jp/info/news_release/2026/09/03_00.html",
+   "why": "モバイルインフラシェアリング促進を目的に第三者割当増資を引き受ける資本業務提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-04-mitsuifudosan-2",
+   "found": "2026-09-04",
+   "company": "三井不動産",
+   "date": "2026.09",
+   "title": "NTTドコモ・三井不動産ネットワークイノベーションと資本業務提携契約を締結",
+   "url": "https://www.docomo.ne.jp/info/news_release/2026/09/03_00.html",
+   "why": "モバイルインフラシェアリング促進を目的にNTTドコモから出資を受け入れる資本業務提携のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-04-mufg-1",
+   "found": "2026-09-04",
+   "company": "三菱UFJ FG",
+   "date": "2026.09",
+   "title": "ゴールドマン・サックスなど世界21金融機関とステーブルコイン事業の新会社設立へ",
+   "url": "https://news.yahoo.co.jp/articles/ef4e494909e99984d9c1746a70530e04064d2517",
+   "why": "米ドル建てステーブルコイン発行を支援する新会社を海外金融機関と共同設立するため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-04-dena-1",
+   "found": "2026-09-04",
+   "company": "DeNA",
+   "date": "2026.08",
+   "title": "新規事業創出に特化した子会社「BAKERU」を設立",
+   "url": "https://www.itmedia.co.jp/news/article/2609/02/2000001073/",
+   "why": "売上高100億円規模の事業をゼロから生み出すスタートアップスタジオ型子会社を新設したため",
    "status": "new"
   }
  ]

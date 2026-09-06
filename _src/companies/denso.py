@@ -4,7 +4,7 @@ slug='denso',
 name='デンソー',
 legal='株式会社デンソー',
 ind='輸送機器',
-article=None,
+article='denso-newbusiness',
 evsrc={
  '2006.03|米国に再保険子会社を設立': ['https://www.denso.com/jp/ja/news/newsroom/2006/060302-01/', 'デンソー ニュースリリース（2006年3月2日／ハワイ、資本金300万米ドル）'],
  '2008.12|TDモバイルの設立を発表': ['https://www.denso.com/jp/ja/news/newsroom/2008/081211-01/', 'デンソー ニュースリリース（2008年12月11日／資本金4.9億円、豊田通商51%・デンソー49%）'],

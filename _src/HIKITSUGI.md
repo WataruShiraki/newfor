@@ -334,3 +334,73 @@ window.scrollTo({ top: 15400, behavior: 'instant' });
    ── ws@offml.com のアカウントには、まだプロパティがありません。登録後、サイトマップを送ります。
 
 GA4のプロパティは OFFICEMILL アカウントの newfor.jp（測定ID `G-Y9N8CYZE61`）です。
+
+---
+
+# 2026年8月31日 追記
+
+## GitHubへ上げるときの、いちばん危ない手順ミス
+
+2026年8月31日、私（Claude）は**ファイル名を元に戻す仕掛けを入れ直すのを忘れて**、
+2回目のアップロードを始めてしまいました。コミット前に気づいて止めましたが、
+そのまま押していたら `news/202608-nec-1/index.html` になるはずのファイルが
+`news@202608-nec-1@index.html` という別物として、置き場所の一番上に20個できていました。
+
+**なぜ起きるか。** GitHubのアップロード画面は、ページを開き直すと
+JavaScriptで入れた仕掛け（`@` を `/` に戻すもの）が消えます。
+1回目に入れたから大丈夫、は通じません。
+
+**だから、1コミットごとに必ずこの順番でやります。**
+
+1. `https://github.com/WataruShiraki/newfor/upload/main` を開く
+2. **その直後に、必ず仕掛けを入れ直す**（下のコード）
+3. `find` で file input の ref を取る
+4. `file_upload` でファイルを渡す
+5. **押す前に確かめる。**`window.__nfnames` の件数が合っていて、
+   どれにも `@` が残っていないこと。1つでも残っていたら押さない
+6. コミットメッセージを JavaScript で入れて、`b.scrollIntoView(); b.click()`
+7. `git fetch && git log origin/main -1` で通ったか確認
+
+```js
+// 2 の仕掛け（毎回入れ直す）
+(function(){
+  const inp=document.querySelector('input[type=file]');
+  if(!inp) return 'no-input';
+  window.__nfnames=[];
+  if(inp.__nfhook) return 'already';
+  inp.__nfhook=1;
+  inp.addEventListener('change',function(){
+    try{
+      const fs=inp.files,out=[];
+      for(let i=0;i<fs.length;i++){
+        const f=fs[i],rel=f.name.split('@').join('/');
+        const nf=new File([f],rel,{type:f.type,lastModified:f.lastModified});
+        Object.defineProperty(nf,'name',{value:rel});
+        Object.defineProperty(nf,'webkitRelativePath',{value:rel});
+        out.push(nf);
+      }
+      const dt=new DataTransfer(); out.forEach(f=>dt.items.add(f));
+      inp.files=dt.files; window.__nfnames=out.map(f=>f.name);
+    }catch(e){window.__nferr=String(e);}
+  },true);
+  return 'hooked';
+})()
+```
+
+```js
+// 5 の確かめ方（これを通ってから、はじめてコミットを押す）
+const n = window.__nfnames || [];
+if (n.length !== 20 || n.some(x => x.includes('@'))) 'NG ' + n.length;
+else { /* ここでメッセージを入れて押す */ }
+```
+
+**最後に、置き場所全体も見ます。**
+`git ls-tree -r --name-only origin/main | grep '@'` が何も返さなければ正常です。
+
+## OGP画像の作り直しは、2026年8月30日に土台をそろえました
+
+毎ビルドで157枚のOGP画像が「変わった」と出ていた件は、原因が分かりました。
+くわしくは `_src/pngkeep.py` の冒頭に書いてあります。要点だけ書くと、
+**いまの作り方はブレていない。公開中の画像が昔の作り方で作られていた**、でした。
+8月30日に153枚を作り直して一度だけ上げたので、これ以降は差分が出ません。
+`build.sh` の最後に `pngkeep.py` を入れて、見張りとして残しています。

@@ -4,7 +4,7 @@ slug='persol',
 name='パーソルHD',
 legal='パーソルホールディングス株式会社',
 ind='人材',
-article=None,
+article='persol-newbusiness',
 evsrc={
  '2008.10|テンプホールディングスを設立': ['https://www.persol-group.co.jp/corporate/history/index.html', 'パーソルHD グループ沿革'],
  '2013.03|インテリジェンスを514億円で買収': ['https://maonline.jp/news/20130326a', 'M&A Online'],

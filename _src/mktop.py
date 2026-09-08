@@ -458,8 +458,16 @@ _put(WBANNER, ('<section class="blk" id="featured">', '<section class="blk" id="
 # 下の帯：調達診断（ランキングのあと、投票の手前まで下げます）
 _put(BANNER, ('<!-- ══ VOTE ══ -->', '<!-- ══ MISSION ══ -->'))
 
-if '.sdbn{' not in s:
-    s = s.replace('</head>', BANCSS + '</head>', 1)
+# 帯の見た目（CSS）。
+# 以前は「.sdbn{ が無ければ入れる」でした。そのため帯を増やしても、
+# 古いCSSが頭に残っているかぎり新しいぶんが入らず、
+# 用語集の帯が文字だけで出ました（2026年9月8日）。
+# 毎回、古いかたまりを外してから入れ直します。
+_o = s.find('<style>.sdbn{')
+if _o >= 0:
+    _c = s.index('</style>', _o) + 8
+    s = s[:_o] + s[_c:]
+s = s.replace('</head>', BANCSS + '</head>', 1)
 
 # ヘッダーのナビ。1画面目から用語集へ行けるようにします。
 # 以前はここが「調達診断」でした。看板を担当者向けに変えたので入れ替えます。

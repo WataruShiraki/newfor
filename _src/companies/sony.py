@@ -24,6 +24,7 @@ evsrc={
  '2024.12|KADOKAWA へ約500億円を追加出資': ['https://group.kadokawa.co.jp/information/media-download/1430/94c4da872fbad0e5/', 'KADOKAWA／ソニー 共同リリース（2024年12月19日）'],
  '2025.09|ソニーフィナンシャルグループ 再上場': ['https://www.sonyfg.co.jp/ja/news/article/250929_05.pdf', 'ソニーFG お知らせ'],
  '2026.04|Sony Innovation Fund 4 運用開始': ['https://www.sonyinnovationfund.com/jp/news/', 'Sony Innovation Fund ニュース（2026年4月）'],
+ '2026.08|TSMCと次世代イメージセンサーの合弁会社を設立へ': ['https://www.sony-semicon.com/ja/news/2026/2026081101.html', 'ソニーセミコンダクタソリューションズ ニュースリリース（2026年8月11日、TSMCと次世代イメージセンサーにおける合弁会社の設立に関する確定契約を締結。合弁会社名はAdvanced Vision Semiconductor Manufacturing株式会社、所在地は熊本県合志市。ソニーが約4,650億円、TSMCが約2,820億円を拠出予定で総額約7,470億円。高度な製造プロセス技術を採用したスマートフォン向けイメージセンサーの開発および製造を行い、2029年の量産開始を計画。ソニーが単独支配株主となる）'],
 },
 timeline=[
  ('2000','ソネット・エムスリー 設立','医師向けポータル。のちにエムスリーとして独立し、いまは持分法適用関連会社',True),
@@ -47,6 +48,7 @@ timeline=[
  ('2024.12','KADOKAWA へ約500億円を追加出資','議決権約10%で筆頭株主に。IPの海外展開で協業',True),
  ('2025.09','ソニーフィナンシャルグループ 再上場','日本初のパーシャル・スピンオフ。東証プライムへ',True),
  ('2026.04','Sony Innovation Fund 4 運用開始','200億円超を目標。SIF全体で850億円超の見込み',True),
+ ('2026.08','TSMCと次世代イメージセンサーの合弁会社を設立へ','熊本県合志市にAdvanced Vision Semiconductor Manufacturingを設立する確定契約を締結。ソニー約4,650億円とTSMC約2,820億円の計約7,470億円を拠出し、2029年の量産開始を計画する',True),
 ],
 sources=[
  ('Sony Acceleration Platform 公式サイト','https://sony-acceleration-platform.com/'),

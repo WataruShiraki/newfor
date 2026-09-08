@@ -4,7 +4,7 @@ slug='itochu',
 name='伊藤忠商事',
 legal='伊藤忠商事株式会社',
 ind='商社',
-article=None,
+article='itochu-newbusiness',
 evsrc={
  '2009.12|デサント株式を追加取得': ['https://www.itochu.co.jp/ja/news/press/2009/091221.html', '伊藤忠商事 プレスリリース'],
  '2011.06|コロンビアのDrummond炭鉱に出資': ['https://www.itochu.co.jp/ja/news/press/2011/110616_02.html', '伊藤忠商事 プレスリリース'],

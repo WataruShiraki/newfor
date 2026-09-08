@@ -457,10 +457,25 @@ listed
   mitsui / mufg / persol / rakuten / takeda /
   newbusiness-money-ranking / newbusiness-partners / newbusiness-words
 
-**直し方。** `gh/supabase/reaction_polls_20260908.sql` を作ってあります。
-Supabase の SQL Editor に貼って Run を押すだけです。
+**2026年9月8日、Supabase の SQL Editor で実行し、28記事すべてに入りました。
+この作業は終わっています。もう一度やる必要はありません。**
+
+使ったのは `gh/supabase/reaction_polls_20260908.sql` です。
 何度実行しても増えません（`on conflict do nothing`）。
-書き込みの鍵はサイトに置いていないので、ここはオーナーの操作が必要です。
+
+**次に同じことをするときの入り方。**
+Supabase の書き込みは、サイトに置いてある鍵ではできません。
+ブラウザで `https://supabase.com/dashboard/project/jakwntemjkwqwaqujffh/sql/new`
+を開き、「Continue with GitHub」で入ります（パスワードの入力はしません）。
+SQLを入れるときは、キーボードで打つと日本語が壊れるので、
+エディタの中身をJavaScriptで直接入れ替えます。
+
+```js
+// SQLはリポジトリのraw URLから取ってきて、Monacoエディタに入れる
+const t = await (await fetch('https://raw.githubusercontent.com/WataruShiraki/newfor/main/supabase/<ファイル名>.sql')).text();
+window.monaco.editor.getModels()[0].setValue(t);
+// このあと画面右上の Run を押す
+```
 
 **これから記事を1本作るたびに、この2つが要ります。**
 

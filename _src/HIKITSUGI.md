@@ -404,3 +404,67 @@ else { /* ここでメッセージを入れて押す */ }
 **いまの作り方はブレていない。公開中の画像が昔の作り方で作られていた**、でした。
 8月30日に153枚を作り直して一度だけ上げたので、これ以降は差分が出ません。
 `build.sh` の最後に `pngkeep.py` を入れて、見張りとして残しています。
+
+# 2026年9月8日 追記
+
+## GitHubのアップロードは「並び終わるまで待つ」
+
+2026年9月8日、20個のうち8個しか画面に並んでいないところで
+コミットを押してしまい、GitHubから **HTTP 400** が返ってきました。
+コミットは作られていません。押し直して通りました。私の判断ミスです。
+
+**なぜ起きるか。** `file_upload` でファイルを渡すと、その返事はすぐ返ってきます。
+でもGitHubは、そのあと1個ずつ裏で本体を送っています。
+送り終わっていないファイルがあるうちに「Commit changes」を押すと、
+GitHubは「中身の分からないファイルがある」と判断して400を返します。
+
+**たとえるなら。** 宅配便の伝票を20枚書き終えた時点では、荷物はまだ届いていません。
+20個ぜんぶ倉庫に着いてから「発送してください」と言う必要があります。
+
+**だから、押す前にこれを足します（8/31の手順の 5 と 6 のあいだ）。**
+
+```js
+// 画面に何個並んだかを数える。20個そろい、進捗バーが消えてから押す
+let listed = 0;
+for (let k = 0; k < 12; k++) {
+  await new Promise(s => setTimeout(s, 2500));
+  listed = (document.body.innerText.match(/news\/\d{6}-[a-z]+-\d\/index\.html/g) || []).length;
+  if (listed >= 20 && document.querySelectorAll('progress').length === 0) break;
+}
+listed
+```
+
+数える正規表現は、そのコミットに入れるファイルの形に合わせて変えてください
+（企業ページなら `companies\/[a-z]+\/index\.html`、画像なら `assets\/og-[a-z0-9-]+\.png`）。
+なお `Uploading files to newfor` はページの見出しなので、
+本文に "Uploading" があること自体は、まだ送っている印にはなりません。
+見るのは **並んだ件数** と **`<progress>` が0個** の2つです。
+
+## 記事下の「READERS' VOICE」が空っぽの記事が16本あります
+
+記事の下にある「ここまで読んだ、あなたへ」の箱は、
+選択肢を **Supabase の中** から読んでいます。リポジトリの中にはありません。
+入っていない記事は、見出しだけの空っぽの箱になります。
+
+2026年9月8日に数えたところ、28記事のうち **入っているのは12記事だけ** でした。
+
+入っている12件
+: docomo / kddi / sony / fujifilm / toyota / panasonic / mitsubishi / jreast /
+  sevenandi / recruit / ajinomoto / softbank
+
+入っていない16件
+: canon / dena / denso / fastretailing / komatsu / lycorp / mercari / mhi /
+  mitsui / mufg / persol / rakuten / takeda /
+  newbusiness-money-ranking / newbusiness-partners / newbusiness-words
+
+**直し方。** `gh/supabase/reaction_polls_20260908.sql` を作ってあります。
+Supabase の SQL Editor に貼って Run を押すだけです。
+何度実行しても増えません（`on conflict do nothing`）。
+書き込みの鍵はサイトに置いていないので、ここはオーナーの操作が必要です。
+
+**これから記事を1本作るたびに、この2つが要ります。**
+
+1. 記事の `.py` を作って `buildarticles.py` と `mkreports.py` に登録する
+2. `reaction-<スラッグ>` の問いと選択肢を Supabase に入れる
+
+2 を忘れると、その記事だけ空っぽの箱が出ます。

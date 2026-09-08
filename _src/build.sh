@@ -19,6 +19,7 @@ python3 buildarticles.py  # /articles/<slug>/        ← articles/a0*.py
 python3 assets.py
 node png.js
 python3 kartegen.py       # /shindan/ スタートアップ調達診断（OGPの材料も書き出します）
+python3 wordsgen.py       # /words/ 新規事業の言葉（1語1ページ）
 python3 ogspec.py       # OGP画像の中身を実データから組み立てる（og.js より先に）
 node og.js              # 全ページぶんのOGP画像 1200×630
 # OGP画像は1枚250KBほどになる。減色すると70KBほどまで落ちて、見た目は変わらない。
@@ -39,6 +40,11 @@ done
 for p in about ads privacy; do
   [ -f "dist/$p/index.html" ] && { mkdir -p "gh/$p"; cp "dist/$p/index.html" "gh/$p/index.html"; }
 done
+# 新規事業の言葉（/words/）
+for d in dist/words/*/; do
+  b=$(basename "$d"); mkdir -p "gh/words/$b"; cp "$d/index.html" "gh/words/$b/index.html"
+done
+[ -f dist/words/index.html ] && { mkdir -p gh/words; cp dist/words/index.html gh/words/index.html; }
 for f in llms.txt sitemap.xml robots.txt 404.html favicon.ico; do
   [ -f "dist/$f" ] && cp "dist/$f" "gh/$f"
 done

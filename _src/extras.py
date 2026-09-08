@@ -36,6 +36,9 @@ U+=[(p,'0.4','yearly') for p in ('/about/','/ads/','/privacy/')]
 import os as _os, json as _json
 if _os.path.exists('/tmp/shindan_urls.json'):
     U+=[tuple(x) for x in _json.load(open('/tmp/shindan_urls.json',encoding='utf-8'))]
+# 新規事業の言葉（wordsgen.py が書き出したもの）
+if _os.path.exists('/tmp/words_urls.json'):
+    U+=[tuple(x) for x in _json.load(open('/tmp/words_urls.json',encoding='utf-8'))]
 sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 sm+=['<url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>%s</changefreq><priority>%s</priority></url>'
      %(SITE,u,TODAY,f,p) for u,p,f in U]

@@ -100,6 +100,10 @@ for name,eye,ttl,sub in [
 if os.path.exists('/tmp/shindan_og.json'):
     P += json.load(open('/tmp/shindan_og.json', encoding='utf-8'))
 
+# ── 新規事業の言葉（/words/）── wordsgen.py が材料を書き出します
+if os.path.exists('/tmp/words_og.json'):
+    P += json.load(open('/tmp/words_og.json', encoding='utf-8'))
+
 io.open('/tmp/ogspec.json','w',encoding='utf-8').write(
     json.dumps(P,ensure_ascii=False,indent=1))
 print('OGPの中身を %d ページぶん組み立てました'%len(P))

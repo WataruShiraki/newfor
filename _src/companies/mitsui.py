@@ -4,7 +4,7 @@ slug='mitsui',
 name='三井物産',
 legal='三井物産株式会社',
 ind='商社',
-article=None,
+article='mitsui-newbusiness',
 evsrc={
  '2026.08|デンマークのe-メタノール、販売先を拡大': ['https://www.mitsui.com/jp/ja/release/2026/1253985_15330.html', '三井物産 リリース'],
  '2016.03|メルカリへ出資参画': ['https://www.mitsui.com/jp/ja/release/2016/1218614_8913.html', '三井物産 ニュースリリース'],

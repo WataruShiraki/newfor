@@ -113,7 +113,6 @@
   "use strict";
   var P = location.pathname;
   if (P.indexOf("/shindan") === 0) return;          /* 診断の中では出しません */
-  if (P.indexOf("/words") === 0) return;            /* 用語集の中では出しません */
 
   function ev(name, from) {
     if (typeof gtag === "function") { try { gtag("event", name, { from: from }); } catch (e) {} }
@@ -131,8 +130,11 @@
     else nav.appendChild(na);
   }
 
-  /* トップページには、すでに大きな帯があります */
+  /* ここから下は「本文の終わりの1枚」です。
+     トップにはすでに大きな帯があり、用語集の中では出す意味がないので、
+     ナビを足したあとに抜けます（先に抜けると、ナビにも出なくなります）。 */
   if (P === "/" || P === "/index.html") return;
+  if (P.indexOf("/words") === 0) return;
 
   /* ── 2. 本文の終わりに、次の一歩を1枚置く ── */
   var foot = document.querySelector("footer");

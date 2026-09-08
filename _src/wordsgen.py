@@ -40,6 +40,7 @@ import newsdata
 from pages import page
 
 SITE = 'https://newfor.jp'
+UPDATED = '2026年9月8日'
 
 
 def esc(t):
@@ -238,9 +239,9 @@ def case_list(x):
         % (it['slug'], esc(it['co'] + '　' + it['title']), esc(it['ym']), esc(it['co']))
         for it in cs)
     return ('<h2>この言葉が実際に出てくる記録</h2>'
-            '<p>NEWFORが公開情報から拾った%d件の中から、この言葉が出てくるものを新しい順に並べました。'
+            '<p>NEWFORが公開情報から拾った%s件の中から、この言葉が出てくるものを新しい順に並べました。'
             '意味だけ読むより、実際に使われている場面を見たほうが早く入ります。</p>'
-            '<ul class="cs">%s</ul>' % (len(ITEMS), li))
+            '<ul class="cs">%s</ul>' % ('{:,}'.format(len(ITEMS)), li))
 
 
 def see_also(x):
@@ -297,7 +298,7 @@ def build_pages():
              '%sとは？' % x['term'],
              x['short'],
              '<a href="/">NEWFOR</a> ／ <a href="/words/">新規事業の言葉</a> ／ %s' % esc(x['term']),
-             body)
+             body, updated=UPDATED)
 
 
 def build_index():
@@ -328,7 +329,7 @@ def build_index():
          '担当になった初日に、会議で意味の分からない言葉が出てきます。'
          'まず一行で、そのあとにもう少し詳しく。実際にその言葉が出てくる記録も付けました。',
          '<a href="/">NEWFOR</a> ／ 新規事業の言葉',
-         body)
+         body, updated=UPDATED)
 
 
 def _ogtitle(t):

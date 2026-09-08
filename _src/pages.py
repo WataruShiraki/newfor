@@ -60,7 +60,7 @@ footer a{margin-right:14px}
 .up{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--tx-3);letter-spacing:.04em;margin-top:34px}
 '''
 
-def page(path,title,desc,h1,lead,crumb,body,noindex=False,og=None):
+def page(path,title,desc,h1,lead,crumb,body,noindex=False,og=None,updated='2026年8月5日'):
     # OGP画像はページごとに1枚。ogspec.py が og-p-<name>.png を作ります。
     # 以前はぜんぶ og-top.png を指していて、SNSに貼るとどのページも同じ絵でした。
     ogname = og or ('p-'+(path.strip('/').replace('/','-') or 'top'))
@@ -112,7 +112,7 @@ def page(path,title,desc,h1,lead,crumb,body,noindex=False,og=None):
 </div>
 <main><div class="wrap">
 {body}
-<div class="up">最終更新：2026年8月5日</div>
+<div class="up">最終更新：{updated}</div>
 </div></main>
 <footer><div class="wrap">
   <p><a href="/">トップ</a><a href="/companies/">企業を探す</a><a href="/articles/">記事一覧</a><a href="/about/">運営者情報</a><a href="/ads/">広告について</a><a href="/privacy/">プライバシーポリシー</a></p>

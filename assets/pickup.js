@@ -102,28 +102,30 @@
 })();
 
 /* ============================================================
-   NEWFOR ─ 調達診断への導線
+   NEWFOR ─ 読み終えた方への「次の一歩」
 
    置く場所は2つ。ヘッダーのナビと、本文の終わりです。
-   記事・NEWS・企業ページから、玄関（診断）へ橋を架けます。
+   向ける先は「新規事業の言葉」。調達診断は、同じカードの
+   いちばん下に小さく1行だけ残しています。
    HTMLは1枚も書き換えません。直すのは、このファイル1本だけです。
    ============================================================ */
 (function () {
   "use strict";
   var P = location.pathname;
   if (P.indexOf("/shindan") === 0) return;          /* 診断の中では出しません */
+  if (P.indexOf("/words") === 0) return;            /* 用語集の中では出しません */
 
   function ev(name, from) {
     if (typeof gtag === "function") { try { gtag("event", name, { from: from }); } catch (e) {} }
   }
 
-  /* ── 1. ヘッダーのナビに「調達診断」を足す ── */
+  /* ── 1. ヘッダーのナビに「用語集」を足す ── */
   var nav = document.querySelector("header nav.main") || document.querySelector("header nav");
-  if (nav && !nav.querySelector('a[href="/shindan/"]')) {
+  if (nav && !nav.querySelector('a[href="/words/"]')) {
     var na = document.createElement("a");
-    na.href = "/shindan/";
-    na.textContent = "調達診断";
-    na.addEventListener("click", function () { ev("shindan_guide_click", "nav"); });
+    na.href = "/words/";
+    na.textContent = "用語集";
+    na.addEventListener("click", function () { ev("words_guide_click", "nav"); });
     var co = nav.querySelector('a[href="/companies/"]');
     if (co && co.parentNode === nav) nav.insertBefore(na, co.nextSibling);
     else nav.appendChild(na);
@@ -132,36 +134,44 @@
   /* トップページには、すでに大きな帯があります */
   if (P === "/" || P === "/index.html") return;
 
-  /* ── 2. 本文の終わりに、診断への1枚を置く ── */
+  /* ── 2. 本文の終わりに、次の一歩を1枚置く ── */
   var foot = document.querySelector("footer");
-  if (!foot || document.getElementById("nf-sd")) return;
+  if (!foot || document.getElementById("nf-nb")) return;
 
   /* 読んでいたものに合わせて、最初の一文だけ変えます */
-  var lead = "先に道を通った経営者の記録を、いま読んでいただきました。";
-  if (P.indexOf("/articles/") === 0)      lead = "先人が通った道を、いま読んでいただきました。";
-  else if (P.indexOf("/news/") === 0)     lead = "この1件を、いま読んでいただきました。";
-  else if (P.indexOf("/companies/") === 0) lead = "1社の年表を、いま見ていただきました。";
+  var lead = "先に進んだ人の記録を、いま読んでいただきました。";
+  if (P.indexOf("/articles/") === 0)       lead = "1社の年表を、いま読んでいただきました。";
+  else if (P.indexOf("/news/") === 0)      lead = "この1件を、いま読んでいただきました。";
+  else if (P.indexOf("/companies/") === 0) lead = "1社の記録を、いま見ていただきました。";
 
   var st = document.createElement("style");
-  st.id = "nf-sd-css";
-  st.textContent = "#nf-sd{max-width:780px;margin:44px auto 10px;padding:0 22px;box-sizing:border-box}#nf-sd .nf-sd-in{background:linear-gradient(180deg,#FFF6EF 0%,#FFFBF7 100%);border:1px solid rgba(224,74,12,.28);border-radius:16px;padding:26px 24px;box-shadow:0 1px 2px rgba(24,20,40,.05),0 14px 34px -22px rgba(224,74,12,.55)}#nf-sd .nf-sd-k{display:block;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.14em;color:#C63E08;font-weight:800}#nf-sd .nf-sd-t{margin:10px 0 10px;font-size:clamp(18px,2.4vw,23px);font-weight:850;letter-spacing:-.03em;line-height:1.55;color:#0C0A16}#nf-sd .nf-sd-d{margin:0 0 18px;font-size:14.5px;line-height:1.95;color:#403C55}#nf-sd .nf-sd-b{display:inline-flex;align-items:center;gap:8px;background:#E8490F;color:#fff;font-weight:800;font-size:15px;padding:14px 26px;border-radius:12px;text-decoration:none;box-shadow:0 10px 24px -12px rgba(232,73,15,.9)}#nf-sd .nf-sd-b:hover{background:#C63E08}#nf-sd .nf-sd-f{display:block;margin-top:13px;font-size:12.5px;color:#57536D;font-weight:600}#nf-sd .nf-sd-f b{color:#C63E08;font-size:14px}html[data-theme=\"dark\"] #nf-sd .nf-sd-in,[data-theme=\"dark\"] #nf-sd .nf-sd-in{background:linear-gradient(180deg,#1C1622 0%,#141019 100%);border-color:rgba(255,106,43,.34)}[data-theme=\"dark\"] #nf-sd .nf-sd-t{color:#F5F5F8}[data-theme=\"dark\"] #nf-sd .nf-sd-d{color:#CBCBD6}[data-theme=\"dark\"] #nf-sd .nf-sd-k{color:#FF6A2B}[data-theme=\"dark\"] #nf-sd .nf-sd-f{color:#95959F}[data-theme=\"dark\"] #nf-sd .nf-sd-f b{color:#FF6A2B}@media(max-width:640px){#nf-sd .nf-sd-in{padding:22px 18px}#nf-sd .nf-sd-b{width:100%;justify-content:center}}";
+  st.id = "nf-nb-css";
+  st.textContent = "#nf-nb{max-width:780px;margin:44px auto 10px;padding:0 22px;box-sizing:border-box}#nf-nb .nf-nb-in{background:linear-gradient(180deg,#F1F2FE 0%,#FAFAFF 100%);border:1px solid rgba(47,59,214,.26);border-radius:16px;padding:26px 24px;box-shadow:0 1px 2px rgba(24,20,40,.05),0 14px 34px -22px rgba(47,59,214,.55)}#nf-nb .nf-nb-k{display:block;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.14em;color:#2F3BD6;font-weight:800}#nf-nb .nf-nb-t{margin:10px 0 10px;font-size:clamp(18px,2.4vw,23px);font-weight:850;letter-spacing:-.03em;line-height:1.55;color:#0C0A16}#nf-nb .nf-nb-d{margin:0 0 18px;font-size:14.5px;line-height:1.95;color:#403C55}#nf-nb .nf-nb-b{display:inline-flex;align-items:center;gap:8px;background:#2F3BD6;color:#fff;font-weight:800;font-size:15px;padding:14px 26px;border-radius:12px;text-decoration:none;box-shadow:0 10px 24px -12px rgba(47,59,214,.9)}#nf-nb .nf-nb-b:hover{background:#212DBE}#nf-nb .nf-nb-s{display:block;margin-top:14px;font-size:13.5px;color:#403C55;font-weight:600}#nf-nb .nf-nb-s a{color:#2F3BD6;font-weight:800;text-decoration:none;margin-right:16px}#nf-nb .nf-nb-s a:hover{text-decoration:underline}#nf-nb .nf-nb-x{display:block;margin-top:16px;padding-top:14px;border-top:1px solid rgba(18,14,38,.12);font-size:12.5px;line-height:1.9;color:#57536D}#nf-nb .nf-nb-x a{color:#C63E08;font-weight:800;text-decoration:none}#nf-nb .nf-nb-x a:hover{text-decoration:underline}html[data-theme=\"dark\"] #nf-nb .nf-nb-in,[data-theme=\"dark\"] #nf-nb .nf-nb-in{background:linear-gradient(180deg,#15161F 0%,#101018 100%);border-color:rgba(124,140,255,.32)}[data-theme=\"dark\"] #nf-nb .nf-nb-t{color:#F5F5F8}[data-theme=\"dark\"] #nf-nb .nf-nb-d{color:#CBCBD6}[data-theme=\"dark\"] #nf-nb .nf-nb-k{color:#7C8CFF}[data-theme=\"dark\"] #nf-nb .nf-nb-b{background:#4A57E8}[data-theme=\"dark\"] #nf-nb .nf-nb-s{color:#CBCBD6}[data-theme=\"dark\"] #nf-nb .nf-nb-s a{color:#9BA4FF}[data-theme=\"dark\"] #nf-nb .nf-nb-x{color:#95959F;border-top-color:rgba(255,255,255,.12)}[data-theme=\"dark\"] #nf-nb .nf-nb-x a{color:#FF6A2B}@media(max-width:640px){#nf-nb .nf-nb-in{padding:22px 18px}#nf-nb .nf-nb-b{width:100%;justify-content:center}}";
   document.head.appendChild(st);
 
   var box = document.createElement("div");
-  box.id = "nf-sd";
+  box.id = "nf-nb";
   box.innerHTML =
-    '<div class="nf-sd-in">' +
-      '<span class="nf-sd-k">NEWFOR ／ スタートアップ調達診断</span>' +
-      '<p class="nf-sd-t">その資金調達は、あなたに向いていますか。</p>' +
-      '<p class="nf-sd-d">' + lead +
-        'つぎは、あなたの番です。向いているかどうか、やるなら、いま何が足りないか。' +
-        '先に道を通った経営者72人の記録から、あなたに近いものを探してお返しします。</p>' +
-      '<a class="nf-sd-b" href="/shindan/">3分の診断をはじめる →</a>' +
-      '<span class="nf-sd-f"><b>3分</b>・全<b>18</b>問・登録なし　/　先人の記録<b>72</b>件</span>' +
+    '<div class="nf-nb-in">' +
+      '<span class="nf-nb-k">NEWFOR ／ 新規事業の担当になった方へ</span>' +
+      '<p class="nf-nb-t">会議で出た言葉が、分からないまま進んでいませんか。</p>' +
+      '<p class="nf-nb-d">' + lead +
+        'のれん、カーブアウト、持分法、TOB、社内公募制度。' +
+        '担当になると出てくる言葉17語を、1語ずつ引けるようにしました。' +
+        '意味だけでなく、<b>その言葉が実際に出てくる公開情報の記録</b>も付けています。</p>' +
+      '<a class="nf-nb-b" href="/words/">言葉を引く →</a>' +
+      '<span class="nf-nb-s"><a href="/articles/">新規事業ヒストリー</a>' +
+        '<a href="/companies/">企業を探す</a><a href="/news/">新規事業NEWS</a></span>' +
+      '<span class="nf-nb-x">お金を集める側の方へ：' +
+        '<a href="/shindan/">スタートアップ調達診断</a>' +
+        '　3分・全18問・登録なし・先人の記録72件</span>' +
     '</div>';
   foot.parentNode.insertBefore(box, foot);
 
-  box.querySelector(".nf-sd-b").addEventListener("click", function () {
+  box.querySelector(".nf-nb-b").addEventListener("click", function () {
+    ev("words_guide_click", P.split("/")[1] || "other");
+  });
+  box.querySelector(".nf-nb-x a").addEventListener("click", function () {
     ev("shindan_guide_click", P.split("/")[1] || "other");
   });
 })();

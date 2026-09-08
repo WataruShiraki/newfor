@@ -57,7 +57,8 @@ def first_sentence(t,n=46):
 
 P=[]
 
-P.append(dict(f='og-top.png', eyebrow='新規事業ヒストリーメディア',
+# トップのOGP。2026年9月8日に、宛名を「担当になった人」へ向け直しました。
+P.append(dict(f='og-top.png', eyebrow='新規事業の担当になった、あなたへ',
   title='大企業の新規事業を<br>%d社%d件、年表にした。'%(NCO,TOT),
   sub='%d年から%d年まで。開始年・いまの状況・出典つきで1件ずつ。'%(LO,HI)))
 

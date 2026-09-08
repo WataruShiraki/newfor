@@ -354,21 +354,50 @@ _j=s.index('];',_i)+2
 s=s[:_i]+'var ARTS='+json.dumps(ARTSJS,ensure_ascii=False)+';'+s[_j:]
 
 
-# ── 7. スタートアップ調達診断への導線 ──
+# ── 7. 帯を2本。上は「新規事業の言葉」、下は「調達診断」 ──
 #
-# トップに「もう一つのデータセット」への入口を置きます。読む人がちがうので、
-# 帯を1本だけにして、記事一覧の手前に入れます。中の数は kartegen.py の実データから。
+# 2026年9月8日に、上下を入れ替えました。
+#
+# もともと、記事一覧の手前のいちばん良い場所には「スタートアップ調達診断」の
+# 帯が入っていました。けれど調達診断は、お金を集める創業者のためのものです。
+# トップに来る人の多くは、大企業で新規事業の担当になった人のほうでした。
+#
+# Search Console（2026年8月10日〜9月6日）で表示が付いていたのも
+# 「ポストモーテム 意味」「ピボットとは」「ssap 新規事業」で、
+# どれも担当者が最初に打つ言葉です。
+#
+# そこで、いちばん良い場所は「新規事業の言葉」に渡しました。
+# 調達診断は消していません。ランキングのあと、投票の手前に下げています。
 
 import json as _json
 _KD = _json.load(open('karte/site_data.json', encoding='utf-8'))
 _NCASE = len(_KD['cases'])
 _NLIVE = sum(1 for c in _KD['cases'] if c.get('status_current') == '継続中')
 _NWORD = len(_KD['glossary'])
+# 新規事業の言葉が何語あるか。wordsgen.py が書き出したものを読みます。
+try:
+    _WU = _json.load(open('/tmp/words_urls.json', encoding='utf-8'))
+    _NW = len([u for u in _WU if u[0] != '/words/'])
+except Exception:
+    _NW = 0
+
+WBANNER = ('<section class="blk" id="words"><div class="wrap">'
+ '<a class="wdbn" href="/words/">'
+ '<span class="wdbn-l">'
+ '<span class="wdbn-k">NEWFOR ／ 新規事業の言葉</span>'
+ '<span class="wdbn-t">会議で出た言葉、その場で引けますか。</span>'
+ '<span class="wdbn-d">のれん、カーブアウト、持分法、TOB、社内公募制度。'
+ '担当になると出てくる言葉を、1語ずつ。意味だけでなく、'
+ 'その言葉が実際に出てくる公開情報の記録も付けています。</span>'
+ '<span class="wdbn-f"><b>%d</b>語　/　用例は年表から自動で　/　お金を集める側の言葉は<b>%d</b>語</span>'
+ '</span>'
+ '<span class="wdbn-b">言葉を引く →</span></a></div></section>') % (_NW, _NWORD)
+
 BANNER = ('<section class="blk" id="shindan"><div class="wrap">'
  '<a class="sdbn" href="/shindan/">'
  '<span class="sdbn-l">'
  '<span class="sdbn-k">NEWFOR ／ スタートアップ調達診断</span>'
- '<span class="sdbn-t">その資金調達は、あなたに向いていますか。</span>'
+ '<span class="sdbn-t">お金を集める側の方へ。その資金調達は、あなたに向いていますか。</span>'
  '<span class="sdbn-d">向いているかどうか。やるなら、いま何が足りないか。'
  '先に道を通った経営者%d人の記録から、あなたに近いものを探してお返しします。3分・全18問・登録なし。</span>'
  '<span class="sdbn-f"><b>%d</b>人の記録　/　うち<b>%d</b>人がいま続けています　/　言葉の意味<b>%d</b>語</span>'
@@ -384,25 +413,58 @@ BANCSS = ('<style>.sdbn{display:grid;grid-template-columns:1fr auto;gap:26px;ali
  '.sdbn-f{display:block;font-size:12.5px;color:var(--tx-3);margin-top:12px;font-weight:600}'
  '.sdbn-f b{color:#C63E08;font-size:15px}'
  '.sdbn-b{background:#E8490F;color:#fff;font-weight:800;font-size:15px;padding:15px 26px;border-radius:12px;white-space:nowrap}'
- '@media(max-width:800px){.sdbn{grid-template-columns:1fr}.sdbn-b{text-align:center}}</style>')
+ '@media(max-width:800px){.sdbn{grid-template-columns:1fr}.sdbn-b{text-align:center}}'
+ '.wdbn{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;'
+ 'background:linear-gradient(150deg,rgba(47,59,214,.11),rgba(198,62,8,.06));'
+ 'border:1px solid rgba(47,59,214,.32);border-radius:20px;padding:28px 32px}'
+ '.wdbn:hover{border-color:#2F3BD6}'
+ '.wdbn-k{display:block;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.14em;color:#2F3BD6;font-weight:800}'
+ '.wdbn-t{display:block;font-size:clamp(19px,2.6vw,25px);font-weight:850;letter-spacing:-.035em;margin:10px 0 10px;line-height:1.5}'
+ '.wdbn-d{display:block;font-size:14.5px;line-height:1.95;color:var(--tx-2);max-width:44em}'
+ '.wdbn-f{display:block;font-size:12.5px;color:var(--tx-3);margin-top:12px;font-weight:600}'
+ '.wdbn-f b{color:#2F3BD6;font-size:15px}'
+ '.wdbn-b{background:#2F3BD6;color:#fff;font-weight:800;font-size:15px;padding:15px 26px;border-radius:12px;white-space:nowrap}'
+ '[data-theme="dark"] .wdbn-k,[data-theme="dark"] .wdbn-f b{color:#7C8CFF}'
+ '[data-theme="dark"] .wdbn-b{background:#4A57E8}'
+ '@media(max-width:800px){.wdbn{grid-template-columns:1fr}.wdbn-b{text-align:center}}</style>')
 
-# いまある導線をいったん外して、ヒーローのすぐ下（記事一覧より前）へ置き直す
-if 'id="shindan"' in s:
-    _i = s.index('<section class="blk" id="shindan">')
-    _j = s.index('</section>', _i) + 10
-    # 前後の空行ごと外す（外して入れ直すたびに空行が増えないように）
-    while _i > 0 and s[_i-1] == '\n': _i -= 1
-    while _j < len(s) and s[_j] == '\n': _j += 1
-    s = s[:_i] + '\n\n' + s[_j:]
-_anchor = None
-for _t in ('<section class="blk" id="featured">', '<section class="blk" id="list">'):
-    if _t in s: _anchor = _t; break
-_a = s.index(_anchor)
-s = s[:_a] + BANNER + '\n\n' + s[_a:]
+# いまある帯をいったん外して、決めた場所へ置き直します。
+# 外してから入れ直すのは、走らせるたびに帯が増えないようにするためです。
+def _pull(anchor_id):
+    global s
+    tag = '<section class="blk" id="%s">' % anchor_id
+    if tag not in s: return
+    i = s.index(tag); j = s.index('</section>', i) + 10
+    while i > 0 and s[i-1] == '\n': i -= 1
+    while j < len(s) and s[j] == '\n': j += 1
+    s = s[:i] + '\n\n' + s[j:]
+
+def _put(banner, anchors):
+    """anchors のうち、最初に見つかったかたまりの手前に入れます"""
+    global s
+    for t in anchors:
+        if t in s:
+            a = s.index(t)
+            s = s[:a] + banner + '\n\n' + s[a:]
+            return
+    raise SystemExit('帯を置く場所が見つかりません: %s' % anchors[0])
+
+_pull('shindan')
+_pull('words')
+
+# 上の帯：新規事業の言葉（記事一覧の手前。いちばん見られる場所です）
+_put(WBANNER, ('<section class="blk" id="featured">', '<section class="blk" id="list">'))
+
+# 下の帯：調達診断（ランキングのあと、投票の手前まで下げます）
+_put(BANNER, ('<!-- ══ VOTE ══ -->', '<!-- ══ MISSION ══ -->'))
+
 if '.sdbn{' not in s:
     s = s.replace('</head>', BANCSS + '</head>', 1)
-# ヘッダーのナビにも「調達診断」を出す（1画面目から行けるように）
-_nv = '<a href="/shindan/">調達診断</a>'
+
+# ヘッダーのナビ。1画面目から用語集へ行けるようにします。
+# 以前はここが「調達診断」でした。看板を担当者向けに変えたので入れ替えます。
+s = s.replace('<a href="/shindan/">調達診断</a>', '<a href="/words/">用語集</a>')
+_nv = '<a href="/words/">用語集</a>'
 if _nv not in s:
     s = s.replace('<a href="/companies/">企業を探す</a>',
                   '<a href="/companies/">企業を探す</a>\n      ' + _nv, 1)

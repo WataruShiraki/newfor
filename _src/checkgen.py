@@ -73,7 +73,9 @@ for p,label in [('gh/index.html','トップ'),('gh/companies/index.html','企業
     # 「10社近く」のような概数は、記録の数ではないので見ない
     # 「2,800社」のような大きい数の一部を、うっかり「800社」と読まないようにします。
     # 前に数字かカンマがあるものは、サイト全体の社数ではありません（2026年9月7日に実際に誤検出）。
-    for n in set(int(x) for x in re.findall(r'(?<![\d,])(\d{2,4})社(?!近く|ほど|程度|以上|未満|前後|余り)',head)):
+    # 「37社の設立を決めた」「86社の子会社」のように、NEWFORの掲載社数ではない言い方は数えません。
+    # これを外さないと、記事の中の他社の社数を、掲載社数のズレとして毎回報告してしまいます。
+    for n in set(int(x) for x in re.findall(r'(?<![\d,])(\d{2,4})社(?!近く|ほど|程度|以上|未満|前後|余り|の設立|の子会社|を設立|の顔ぶれ)',head)):
         if n!=NCO: bad.append('%s（%s）に「%d社」とあるが、いまは%d社'%(p,label,n,NCO))
     for n in set(int(x) for x in re.findall(r'(?<![\d,])(\d{3,5})件',head)):
         if n!=NBIZ: bad.append('%s（%s）に「%d件」とあるが、いまは%d件'%(p,label,n,NBIZ))

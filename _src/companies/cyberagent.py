@@ -4,7 +4,7 @@ slug='cyberagent',
 name='サイバーエージェント',
 legal='株式会社サイバーエージェント',
 ind='広告',
-article=None,
+article='cyberagent-newbusiness',
 evsrc={
  '2026.08|GENDAとアニメ・IPで提携': ['https://www.cyberagent.co.jp/news/detail/id=33748', 'サイバーエージェント ニュース'],
  '1998.03|サイバーエージェント 創業': ['https://www.cyberagent.co.jp/corporate/history/', 'サイバーエージェント 沿革'],

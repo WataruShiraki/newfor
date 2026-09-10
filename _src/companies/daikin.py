@@ -4,7 +4,7 @@ slug='daikin',
 name='ダイキン工業',
 legal='ダイキン工業株式会社',
 ind='電機',
-article=None,
+article='daikin-newbusiness',
 evsrc={
  '2026.08|設備点検DXのLiLzに出資': ['https://www.daikin.co.jp/press/2026/20260826', 'ダイキン工業 プレスリリース'],
  '2007.01|マレーシアOYL社を子会社化': ['https://www.daikin.co.jp/corporate/overview/summary/history/digest/modals/md_2006', 'ダイキン工業 沿革'],

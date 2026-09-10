@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-07",
+ "updated": "2026-09-10",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -509,6 +509,36 @@
    "title": "金融子会社ヤマトクレジットファイナンスの株式70%をノジマへ譲渡完了",
    "url": "https://www.nojima.co.jp/wp-content/uploads/2026/09/87d8abe3bb416becebdcc713451da2e2.pdf",
    "why": "決済・金融サービスを担う子会社の株式をノジマ傘下へ譲渡し完了したため（発表は5月14日、譲渡実行は9月1日）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-10-docomo-1",
+   "found": "2026-09-10",
+   "company": "NTTドコモ",
+   "date": "2026.09",
+   "title": "新規事業創出プログラム「docomo STARTUP」から「RebateX」がスピンアウト",
+   "url": "https://www.docomo.ne.jp/info/news_release/2026/09/01_00.html",
+   "why": "サプライチェーンのリベート計算を自動化するRebateXの運営会社トランスミュートテクノロジーズが9月1日付で事業を開始した新会社設立のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-10-fujifilm-1",
+   "found": "2026-09-10",
+   "company": "富士フイルム",
+   "date": "2026.09",
+   "title": "富士フイルムビジネスイノベーション、刷版材料の中国事業と一部地域の販売機能を譲渡",
+   "url": "https://www.release.tdnet.info/inbs/140120260902530867.pdf",
+   "why": "オフセット印刷用刷版材料の中国子会社FUJIFILM Printing Plate(China)の全株式と、日本・北米以外の地域における販売機能を中国のHuangshan Jinruitai Technologyへ譲渡する事業譲渡のため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-10-orix-1",
+   "found": "2026-09-10",
+   "company": "オリックス",
+   "date": "2026.09",
+   "title": "建設機械商社「泰平商事」の全株式を取得し買収",
+   "url": "https://www.orix.co.jp/grp/company/newsroom/newsrelease/260907_ORIXJ.html",
+   "why": "建設機械の販売・レンタルを手がける泰平商事および関係会社の全株式を取得する買収のため",
    "status": "new"
   }
  ]

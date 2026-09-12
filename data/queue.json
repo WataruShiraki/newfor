@@ -199,7 +199,7 @@
    "title": "カカクコム買収案の総額6900億円を表明、TOB価格を最大3640円に引き上げ",
    "url": "https://www.nikkei.com/article/DGXZQOUC036430T00C26A8000000/",
    "why": "米ベイン・キャピタルと組みカカクコムの非公開化TOB価格を引き上げ買収を進めているため",
-   "status": "new"
+   "status": "used"
   },
   {
    "id": "2026-08-15-kepco-1",
@@ -319,7 +319,7 @@
    "title": "独・スロバキアの製造子会社（車載電源等事業）を米投資会社連合へ株式譲渡",
    "url": "https://news.panasonic.com/jp/press/jn260818-1",
    "why": "パナソニック インダストリーの欧州製造子会社2社の株式を譲渡し、車載用電流遮断ユニットなどの事業を手放すため",
-   "status": "new"
+   "status": "used"
   },
   {
    "id": "2026-08-19-docomo-1",
@@ -510,6 +510,16 @@
    "url": "https://www.nojima.co.jp/wp-content/uploads/2026/09/87d8abe3bb416becebdcc713451da2e2.pdf",
    "why": "決済・金融サービスを担う子会社の株式をノジマ傘下へ譲渡し完了したため（発表は5月14日、譲渡実行は9月1日）",
    "status": "new"
+  },
+  {
+   "id": "2026-09-13-nintendo-1",
+   "found": "2026-09-13",
+   "company": "任天堂",
+   "date": "2026.09",
+   "title": "ゼルダの伝説 実写映画のタイトルと公開日が決定",
+   "url": "https://www.nintendo.co.jp/corporate/release/2026/260908.html",
+   "why": "実写映画のタイトルを『ゼルダの伝説』とし2027年4月30日の全世界公開を発表したため",
+   "status": "used"
   }
  ]
 }

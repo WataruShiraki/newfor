@@ -16,6 +16,7 @@ evsrc={
  '2022.07|Vieureka 営業開始': ['https://news.panasonic.com/jp/press/jn220607-1', 'パナソニック ニュースリリース（2022年6月7日）'],
  '2024.03|車載機器事業の持分をアポロへ': ['https://www.apollo.com/jp/ja/insights-news/press-releases/apollo-funds-announce-strategic-partnership-with-panasonic-automotive-systems-a-leading-global-supplier-of-advanced-in-vehicle-technologies', 'Apollo プレスリリース（2024年3月29日）'],
  '2025.07|カンザス電池工場 量産開始': ['https://news.panasonic.com/uploads/tmg_block_page_image/file/33905/jn250714-5-1.pdf', 'パナソニック エナジー ニュースリリース（2025年7月14日）'],
+ '2026.08|独・スロバキアの製造子会社を譲渡': ['https://news.panasonic.com/uploads/tmg_block_page_image/file/40248/jn260818-1-1.pdf', 'パナソニック インダストリー ニュースリリース（2026年8月18日、「当社ドイツ・スロバキア製造子会社の株式譲渡について」。パナソニック デバイス ヨーロッパ有限会社（ドイツ）とパナソニック デバイス スロバキア有限会社（スロバキア）の株式をMidas Atlantic Partnersへ譲渡する。対象は車載用電流遮断ユニット、車載用高電圧DC-DCコンバーター、調理家電・電動工具等向け電源、および無線モジュール関連事業。譲渡実行は2027年2月1日予定。金額・出資比率の記載なし）'],
 },
 timeline=[
  ('2016','ゲームチェンジャー・カタパルト 開始','社内公募型の新規事業創出プログラム。SXSWなどで試作を世に出す',True),
@@ -32,6 +33,7 @@ timeline=[
  ('2024.03','車載機器事業の持分をアポロへ','企業価値3,110億円。過半を移し、少数株は保有継続',False),
  ('2025.01','AIサービス「Umi」発表','家族のウェルネスをAIで支える。Panasonic Well本部は2026年3月に発展的解消の予定',False),
  ('2025.07','カンザス電池工場 量産開始','北米での車載電池の内製拠点。投資額は約40億ドルと報じられた',True),
+ ('2026.08','独・スロバキアの製造子会社を譲渡','パナソニック インダストリーの欧州製造子会社2社をMidas Atlantic Partnersへ譲渡する。車載用電流遮断ユニットや調理家電向け電源などの事業が対象で、実行は2027年2月1日の予定',False),
 ],
 sources=[
  ('パナソニック ニュースルーム','https://news.panasonic.com/jp/'),

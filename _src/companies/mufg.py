@@ -44,6 +44,7 @@ evsrc={
  '2026.02|アルテミスベンチャーズ事業開始': ['https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260203-001_ja.pdf', 'MUFG ニュースリリース'],
  '2026.03|エムットの資産形成新会社を設立へ': ['https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260324-001_ja.pdf', 'MUFG ニュースリリース'],
  '2026.05|Apps in ChatGPTで金融体験': ['https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260528-001_ja.pdf', 'MUFG ニュースリリース'],
+ '2026.09|米ドル建てステーブルコインの事業体に参加': ['https://www.bk.mufg.jp/news/news2026/pdf/news0902.pdf', '三菱UFJ銀行 ニュースリリース（2026年9月2日、「国際的な金融機関グループ21社は、このたび、ステーブルコインの発行と活用のための新たな事業体を2026年下期に設立することについて合意した」。参加金融機関には北米のBank of America、Capital One、Citi、Goldman Sachs、Wells Fargo、欧州のDeutsche Bank、Banco Santander、UBS、アジアの三菱UFJ銀行などが名を連ねる。クロスボーダー決済やデジタルアセット決済などでの活用を想定し、2027年上期のサービス開始をめざす。事業体の名称は今後決定次第公表する予定。出資額・比率の記載なし）'],
  '2026.05|Googleとの戦略的提携': ['https://www.mufg.jp/dam/pressrelease/2026/pdf/news-20260507-001_ja.pdf', 'MUFG ニュースリリース'],
 },
 timeline=[
@@ -86,6 +87,7 @@ timeline=[
  ('2026.03','エムットの資産形成新会社を設立へ','三菱UFJ eスマート証券とウェルスナビを2027年度中に経営統合。2026年度第1四半期をめどに中間持株会社を設立する',True),
  ('2026.05','Googleとの戦略的提携','リテール領域でAIエージェントを使う購買・決済支援などで協業。YouTube Premiumの3ヶ月無料提供なども実施する',True),
  ('2026.05','Apps in ChatGPTで金融体験','ChatGPT上で口座残高や取引明細を対話的に確認できるサービスを5月28日に開始。マネーツリーと共同で提供する',True),
+ ('2026.09','米ドル建てステーブルコインの事業体に参加','三菱UFJ銀行を含む国際的な金融機関グループ21社が、ステーブルコインの発行と活用のための事業体を2026年下期に設立することで合意。2027年上期のサービス開始をめざす',True),
 ],
 sources=[
  ('三菱UFJフィナンシャル・グループ ニュースリリース','https://www.mufg.jp/pressrelease/'),

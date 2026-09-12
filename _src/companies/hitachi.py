@@ -4,7 +4,7 @@ slug='hitachi',
 name='日立製作所',
 legal='株式会社日立製作所',
 ind='電機',
-article=None,
+article='hitachi-newbusiness',
 evsrc={
  '2012.11|英ホライズン・ニュークリア・パワー買収': ['https://www.hitachi.com/content/dam/hitachi/global/ja_jp/press/articles/2012/11/1126c/f_1126c.pdf', 'ホライズン・ニュークリア・パワー社の買収を完了（日立製作所 ニュースリリース 2012年11月26日）'],
  '2015.02|伊アンサルドSTS・アンサルドブレダ買収': ['https://www.hitachi.co.jp/New/cnews/month/2015/02/0224b.pdf', '日立がフィンメカニカ社の信号・車両部門を買収（日立製作所 ニュースリリース 2015年2月24日）'],

@@ -149,7 +149,7 @@
    "title": "ポイント交換基盤「ドットマネー事業」をGMOタウンWiFiへ譲渡",
    "url": "https://group.gmo/news/article/10146/",
    "why": "2026年8月10日付で事業譲受契約を締結し、ドットマネー事業を譲渡したため（事業の譲渡に該当）",
-   "status": "new"
+   "status": "used"
   },
   {
    "id": "2026-08-15-mitsubishi-1",
@@ -329,7 +329,7 @@
    "title": "グループ会社NTTドコモビジネス、エクサウィザーズと「クローズドAIエージェント」の提供開始",
    "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/0817.html",
    "why": "グループ会社NTTドコモビジネスがエクサウィザーズと共同開発した新サービスの提供開始のため",
-   "status": "new"
+   "status": "used"
   },
   {
    "id": "2026-09-02-itochu-1",
@@ -519,6 +519,16 @@
    "title": "ゼルダの伝説 実写映画のタイトルと公開日が決定",
    "url": "https://www.nintendo.co.jp/corporate/release/2026/260908.html",
    "why": "実写映画のタイトルを『ゼルダの伝説』とし2027年4月30日の全世界公開を発表したため",
+   "status": "used"
+  },
+  {
+   "id": "2026-09-14-honda-1",
+   "found": "2026-09-14",
+   "company": "本田技研工業",
+   "date": "2026.08",
+   "title": "日産と次世代SDVの共通化で共同開発契約を締結",
+   "url": "https://global.honda/jp/news/2026/c260831b.html",
+   "why": "複数のECUと車載OS・ミドルウェア・車両制御ソフトを共通化する共同開発契約を締結したため",
    "status": "used"
   }
  ]

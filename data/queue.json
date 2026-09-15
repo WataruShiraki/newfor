@@ -159,7 +159,7 @@
    "title": "ライズ・コンサルティング・グループと共同で「Mill-Box株式会社」を設立",
    "url": "https://prtimes.jp/main/html/rd/p/000000042.000058161.html",
    "why": "素材・建設産業向けデジタルサービスを担う新会社を出資比率80%で設立したため",
-   "status": "new"
+   "status": "used"
   },
   {
    "id": "2026-08-15-sevenandi-1",
@@ -529,6 +529,26 @@
    "title": "日産と次世代SDVの共通化で共同開発契約を締結",
    "url": "https://global.honda/jp/news/2026/c260831b.html",
    "why": "複数のECUと車載OS・ミドルウェア・車両制御ソフトを共通化する共同開発契約を締結したため",
+   "status": "used"
+  },
+  {
+   "id": "2026-09-15-murata-1",
+   "found": "2026-09-15",
+   "company": "村田製作所",
+   "date": "2026.09",
+   "title": "タイにEMI除去フィルタの新生産棟を建設",
+   "url": "https://corporate.murata.com/ja-jp/newsroom/news/company/general/2026/0901",
+   "why": "EMI除去フィルタの需要増に対応する約62億円の新生産棟建設のため",
+   "status": "used"
+  },
+  {
+   "id": "2026-09-15-marubeni-1",
+   "found": "2026-09-15",
+   "company": "丸紅",
+   "date": "2026.09",
+   "title": "カギケノリ由来製品の日本市場展開で戦略的パートナーシップ",
+   "url": "https://www.marubeni.com/jp/news/2026/group/00048.html",
+   "why": "丸紅イノベクシスがSeastock・日本甜菜製糖と契約を締結し新市場へ展開するため",
    "status": "used"
   }
  ]

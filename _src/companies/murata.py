@@ -4,7 +4,7 @@ slug='murata',
 name='村田製作所',
 legal='株式会社村田製作所',
 ind='電機',
-article=None,
+article='murata-newbusiness',
 evsrc={
  '2012.03|ルネサスのパワーアンプ事業を取得': ['https://corporate.murata.com/ja-jp/about/newsroom/news/company/general/2012/0301c', '村田製作所 ニュース'],
  '2014.12|米Peregrine Semiconductorを買収': ['https://corporate.murata.com/ja-jp/newsroom/news/company/general/2014/1215', '村田製作所 ニュース'],
@@ -39,6 +39,7 @@ evsrc={
  '2026.06|Xona社と低軌道衛星PNTで基本合意': ['https://corporate.murata.com/ja-jp/newsroom/news/company/general/2026/0603', '村田製作所 ニュース'],
  '2026.06|全73カテゴリの製品情報API提供': ['https://www.murata.com/ja-jp/news/other/other/2026/0625', '村田製作所 製品ニュース'],
  '2026.07|UWB位置検知システムを提供開始': ['https://www.murata.com/ja-jp/news/other/other/2026/0709', '村田製作所 製品ニュース'],
+ '2026.09|タイにEMI除去フィルタの新生産棟': ['https://corporate.murata.com/ja-jp/newsroom/news/company/general/2026/0901', '村田製作所 ニュース（2026年9月1日、タイのNorthern Region Industrial Estate, Lamphunにおいて、EMI除去フィルタの新生産棟を約62億円で建設すると発表。延床面積10,797㎡、2027年11月竣工予定。EMI除去フィルタの需要増加への対応に向け生産能力を拡充し、製品の安定供給に向けた生産・供給体制の構築を進める）'],
 },
 timeline=[
  ('2012.03','ルネサスのパワーアンプ事業を取得','ルネサスから携帯電話向けパワーアンプ事業を譲り受け、長野県小諸市に資本金1億円・従業員約500名の小諸村田製作所を設立し半導体開発体制を整えた。',True),
@@ -74,6 +75,7 @@ timeline=[
  ('2026.06','Xona社と低軌道衛星PNTで基本合意','米Xona Space Systemsと高度約500〜2,000kmの低軌道衛星を使う測位・時刻同期技術で基本合意し、データセンター向けなどの機会を探る。',True),
  ('2026.06','全73カテゴリの製品情報API提供','製品データベースの対象を3カテゴリから全73製品カテゴリへ広げ、外部システムから最新情報を取得できるAPIサービスの提供を始めた。',True),
  ('2026.07','UWB位置検知システムを提供開始','工場・物流向けに誤差1m以下で人や物を測位するUWBシステムの提供を開始。自社工場では100台を超える受信機を設置し実用稼働させている。',True),
+ ('2026.09','タイにEMI除去フィルタの新生産棟','9月1日発表。タイ・ランプーンの工業団地に約62億円を投じて新生産棟を建てる。延床面積10,797㎡、2027年11月の竣工予定で、EMI除去フィルタの需要増に備える',True),
 ],
 sources=[
  ('村田製作所 ニュース一覧','https://corporate.murata.com/ja-jp/newsroom/news'),

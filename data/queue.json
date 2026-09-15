@@ -550,6 +550,36 @@
    "url": "https://www.marubeni.com/jp/news/2026/group/00048.html",
    "why": "丸紅イノベクシスがSeastock・日本甜菜製糖と契約を締結し新市場へ展開するため",
    "status": "used"
+  },
+  {
+   "id": "2026-09-16-nissan-1",
+   "found": "2026-09-16",
+   "company": "日産自動車",
+   "date": "2026.09",
+   "title": "横浜市で自動運転モビリティサービスの実証実験",
+   "url": "https://global.nissannews.com/ja-JP/releases/260914-01-j",
+   "why": "自動運転車両10台・乗降地28か所へ規模を広げた実証のため",
+   "status": "used"
+  },
+  {
+   "id": "2026-09-16-toshiba-1",
+   "found": "2026-09-16",
+   "company": "東芝",
+   "date": "2026.07",
+   "title": "Prodroneと国産迎撃ドローンで技術連携",
+   "url": "https://www.global.toshiba/jp/news/infrastructure/2026/07/news-20260731-01.html",
+   "why": "防衛分野の国産迎撃ドローンで新たに技術連携を始めたため",
+   "status": "used"
+  },
+  {
+   "id": "2026-09-16-omron-1",
+   "found": "2026-09-16",
+   "company": "オムロン",
+   "date": "2026.07",
+   "title": "オムロン プロフェッショナルネクサスを設立",
+   "url": "https://www.omron.com/jp/ja/news/2026/07/c0701-3.html",
+   "why": "本社の高度専門業務を集約する新会社を設立したため",
+   "status": "used"
   }
  ]
 }

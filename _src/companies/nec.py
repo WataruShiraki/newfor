@@ -4,7 +4,7 @@ slug='nec',
 name='NEC',
 legal='日本電気株式会社',
 ind='IT',
-article=None,
+article='nec-newbusiness',
 evsrc={
  '2010.04|半導体事業をルネサスへ統合': ['https://jpn.nec.com/profile/corp/history.html', 'NEC 沿革'],
  '2011.01|パソコン事業でレノボと合弁': ['https://jpn.nec.com/profile/corp/history.html', 'NEC 沿革'],

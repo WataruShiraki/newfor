@@ -21,6 +21,7 @@ evsrc={
  '2024|Indeed PLUS（日本）リリース': ['https://recruit-holdings.com/ja/newsroom/20240131_0001/', 'リクルートHD ニュース（2024年1月31日／2024年1月30日提供開始）'],
  '2025.04|セグメント再編': ['https://recruit-holdings.com/ja/ir/library/upload/recruit_202603q4_earnings_jp/', 'リクルートHD 2026年3月期 決算短信'],
  '2025.07|GlassdoorをIndeedへ統合': ['https://recruit-holdings.com/ja/newsroom/20250711_0001/', 'リクルートHD ニュース（2025年7月11日／Indeed・Glassdoorで約1,300名の人員削減）'],
+ '2026.01|RGF International Recruitmentを譲渡': ['https://recruit-holdings.com/ja/newsroom/20260122_0001/', 'リクルートHD ニュース「孫会社の異動（株式譲渡）について」（2026年1月22日、アジアを中心とした人材紹介事業を営むRGF International Recruitment Holdings Limitedの836,224,386株・議決権所有割合100.00%を株式会社フルキャストホールディングスへ譲渡。譲渡価額609百万円、実行予定日2026年4月1日）'],
 },
 timeline=[
  ('2015.01','Peoplebank Holdings（豪）を子会社化','豪州のIT人材派遣会社',True),
@@ -39,6 +40,7 @@ timeline=[
  ('2024','Indeed PLUS（日本）リリース','国内求人メディアの原稿をIndeedに集約する仕組み',True),
  ('2025.04','セグメント再編','人材領域をHRテクノロジーへ移管。旧区分はMMTへ改称',True),
  ('2025.07','GlassdoorをIndeedへ統合','HRテクノロジー部門で約1,300人の体制見直しをあわせて発表',False),
+ ('2026.01','RGF International Recruitmentを譲渡','アジアを中心に人材紹介を手がける孫会社の全株式（836,224,386株、議決権所有割合100.00%）をフルキャストHDへ譲渡。譲渡価額609百万円、実行予定日は2026年4月1日',False),
 ],
 sources=[
  ('リクルートホールディングス 沿革','https://recruit-holdings.com/ja/about/history/'),

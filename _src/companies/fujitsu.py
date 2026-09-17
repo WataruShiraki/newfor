@@ -4,7 +4,7 @@ slug='fujitsu',
 name='富士通',
 legal='富士通株式会社',
 ind='IT',
-article=None,
+article='fujitsu-newbusiness',
 evsrc={
  '1999.10|富士通シーメンス・コンピュータズ設立': ['https://info.archives.global.fujitsu/jp/news/1999/Jun/17.html', '富士通 プレスリリース'],
  '2009.04|HDD事業を東芝へ譲渡': ['https://info.archives.global.fujitsu/jp/news/2009/04/30-8.html', '富士通 プレスリリース'],

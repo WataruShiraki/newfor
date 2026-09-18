@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-16",
+ "updated": "2026-09-18",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -619,6 +619,26 @@
    "title": "量子アプリ開発ソフト「Open Quantum Application Research Package」をオープンソースで一般公開",
    "url": "https://prtimes.jp/main/html/rd/p/000000610.000093942.html",
    "why": "量子アプリケーション開発を効率化する新ソフトウェアをオープンソースとして一般提供開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-18-jreast-1",
+   "found": "2026-09-18",
+   "company": "JR東日本",
+   "date": "2026.09",
+   "title": "伊藤忠と不動産事業を経営統合、新会社「JR東日本伊藤忠不動産開発」の発足を発表",
+   "url": "https://www.itochu.co.jp/ja/news/news/2026/260917.html",
+   "why": "JR東日本不動産と伊藤忠都市開発を10月1日付で経営統合する新会社（出資比率JR東日本60%・伊藤忠40%）の発足を発表したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-18-itochu-1",
+   "found": "2026-09-18",
+   "company": "伊藤忠商事",
+   "date": "2026.09",
+   "title": "JR東日本と不動産事業を経営統合、新会社「JR東日本伊藤忠不動産開発」の発足を発表",
+   "url": "https://www.itochu.co.jp/ja/news/news/2026/260917.html",
+   "why": "JR東日本不動産と伊藤忠都市開発を10月1日付で経営統合する新会社（出資比率JR東日本60%・伊藤忠40%）の発足を発表したため",
    "status": "new"
   }
  ]

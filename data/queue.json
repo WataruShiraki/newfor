@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-16",
+ "updated": "2026-09-19",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -619,6 +619,36 @@
    "title": "量子アプリ開発ソフト「Open Quantum Application Research Package」をオープンソースで一般公開",
    "url": "https://prtimes.jp/main/html/rd/p/000000610.000093942.html",
    "why": "量子アプリケーション開発を効率化する新ソフトウェアをオープンソースとして一般提供開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-19-jreast-1",
+   "found": "2026-09-19",
+   "company": "JR東日本",
+   "date": "2026.09",
+   "title": "伊藤忠商事と不動産新会社「JR東日本伊藤忠不動産開発」の発足内容（社名・ロゴ）を発表、10月1日始動へ",
+   "url": "https://www.itochu.co.jp/ja/news/news/2026/260917.html",
+   "why": "JR東日本60%・伊藤忠40%出資で、伊藤忠都市開発を存続会社としJR東日本不動産を吸収合併する新会社の設立にあたるため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-19-itochu-1",
+   "found": "2026-09-19",
+   "company": "伊藤忠商事",
+   "date": "2026.09",
+   "title": "JR東日本と不動産新会社「JR東日本伊藤忠不動産開発」の発足内容（社名・ロゴ）を発表、10月1日始動へ",
+   "url": "https://www.itochu.co.jp/ja/news/news/2026/260917.html",
+   "why": "JR東日本60%・伊藤忠40%出資で、伊藤忠都市開発を存続会社としJR東日本不動産を吸収合併する新会社の設立にあたるため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-19-daiwahouse-1",
+   "found": "2026-09-19",
+   "company": "大和ハウス工業",
+   "date": "2026.09",
+   "title": "英国の戸建住宅事業に初参入、ミラー・ホームズ持株会社に30%出資",
+   "url": "https://www.daiwahouse.co.jp/about/release/house/20260917141414.html",
+   "why": "英国ホームビルダーへの出資による新規海外事業参入のため（取得額700億円超とみられる海外M&Aとして過去最高額）",
    "status": "new"
   }
  ]

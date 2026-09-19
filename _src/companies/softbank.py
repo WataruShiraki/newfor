@@ -42,6 +42,7 @@ evsrc={
  '2025.11|NVIDIA株を全て譲渡': ['https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q2fy2025_01_ja.pdf', 'ソフトバンクG 2026年3月期 第2四半期決算短信'],
  '2026.03': ['https://about.paypay.ne.jp/pr/20260312/01/', 'PayPay プレスリリース'],
  '2026.03|純利益5兆22億円': ['https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q4fy2025_01_ja.pdf', 'ソフトバンクG 2026年3月期 決算短信'],
+ '2026.07|OpenAIへ100億米ドルの追加出資（2回目）': ['https://group.softbank/media/Project/sbg/sbg/news/press/2026/20260701/pdf/20260701_ja.pdf', 'ソフトバンクグループ プレスリリース（2026年7月1日、OpenAIへのセカンドトランシェとして100億米ドル／1兆6,273億円の追加出資を2026年7月1日に実行。想定為替レートは1米ドル＝162.73円。総額300億米ドルの追加出資のうちの2回目で、サードトランシェの100億米ドルは2026年10月1日（日本時間）に実行予定。OpenAI Group PBC株式の上場が合理的に見込まれる場合にはクロージング日が前倒しとなる可能性があると記載）'],
 },
 timeline=[
  ('1981.09','日本ソフトバンク 設立','24歳の孫正義氏がパソコン用ソフトの流通で創業。この事業はSB C&Sとしていまも続いている',True),
@@ -80,6 +81,7 @@ timeline=[
  ('2025.11','Ampere Computingの取得を完了','65億ドル。Arm系サーバー向けCPUの設計会社',True),
  ('2026.03','PayPayがNASDAQへ上場','公開価格1ADSあたり16ドル。上場後もグループの持分は90.7%',True),
  ('2026.03','純利益5兆22億円','日本企業として過去最高。ビジョン・ファンド事業が6兆4,446億円を出した',True),
+ ('2026.07','OpenAIへ100億米ドルの追加出資（2回目）','7月1日に実行。100億米ドル、1兆6,273億円（1米ドル＝162.73円）。総額300億米ドルの追加出資のうち2回目で、3回目の100億米ドルは2026年10月1日に実行する予定',True),
 ],
 sources=[
  ('ソフトバンクグループ 2026年3月期 決算資料（IR）','https://group.softbank/ir/financials/financial_reports'),

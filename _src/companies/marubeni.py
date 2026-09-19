@@ -4,7 +4,7 @@ slug='marubeni',
 name='丸紅',
 legal='丸紅株式会社',
 ind='商社',
-article=None,
+article='marubeni-newbusiness',
 evsrc={
  '2026.08|データ分析基盤 MAIDOA AI ASSIST を提供開始': ['https://www.marubeni.com/jp/news/2026/group/00041.html', '丸紅 ニュースリリース'],
  '2012.03|英シージャックスを共同買収': ['https://www.marubeni.com/jp/dbps_data/news/2012/120319.html', '丸紅 ニュースリリース'],

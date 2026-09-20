@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-16",
+ "updated": "2026-09-20",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -619,6 +619,46 @@
    "title": "量子アプリ開発ソフト「Open Quantum Application Research Package」をオープンソースで一般公開",
    "url": "https://prtimes.jp/main/html/rd/p/000000610.000093942.html",
    "why": "量子アプリケーション開発を効率化する新ソフトウェアをオープンソースとして一般提供開始したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-20-jreast-1",
+   "found": "2026-09-20",
+   "company": "JR東日本",
+   "date": "2026.09",
+   "title": "伊藤忠商事と不動産新会社「JR東日本伊藤忠不動産開発」を10月1日に設立へ",
+   "url": "https://www.itochu.co.jp/ja/news/news/2026/260917.html",
+   "why": "JR東日本不動産と伊藤忠都市開発を経営統合し、出資比率6対4（JR東60%）の新会社を設立するため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-20-itochu-1",
+   "found": "2026-09-20",
+   "company": "伊藤忠商事",
+   "date": "2026.09",
+   "title": "JR東日本と不動産新会社「JR東日本伊藤忠不動産開発」を10月1日に設立へ",
+   "url": "https://www.itochu.co.jp/ja/news/news/2026/260917.html",
+   "why": "JR東日本不動産と伊藤忠都市開発を経営統合し、出資比率6対4（伊藤忠40%）の新会社を設立するため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-20-honda-1",
+   "found": "2026-09-20",
+   "company": "本田技研工業",
+   "date": "2026.09",
+   "title": "レアアース不使用磁石を開発する米Niron Magneticsへ出資",
+   "url": "https://response.jp/article/2026/09/14/416535.html",
+   "why": "Honda Xcelerator Venturesを通じた新興企業への出資のため（金額非開示）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-20-marubeni-1",
+   "found": "2026-09-20",
+   "company": "丸紅",
+   "date": "2026.09",
+   "title": "出資先PubteXが出版業界向け「注文流通ソリューション」を始動、10月に物流実行開始",
+   "url": "https://prtimes.jp/main/html/rd/p/000000018.000153364.html",
+   "why": "丸紅が34.8%出資する出版流通会社PubteXによる新サービス開始のため（間接出資先の事業、重要度は要確認）",
    "status": "new"
   }
  ]

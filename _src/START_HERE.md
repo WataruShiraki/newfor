@@ -3,7 +3,7 @@
 **新しいチャットで最初に読むファイルです。**
 このファイルの手順どおりに進めれば、その日のノルマを最後まで出せます。
 
-最終更新：2026年9月23日（記事#040 資生堂まで公開済み）
+最終更新：2026年9月23日（記事#041 三菱電機まで公開済み）
 
 ---
 
@@ -52,7 +52,7 @@ git clone https://github.com/WataruShiraki/newfor gh
 cp -r gh/_src/. /home/claude/
 git -C gh config user.name  "Claude"
 git -C gh config user.email "noreply@anthropic.com"
-npm install playwright        # png.js / og.js が使います（Chromiumは導入済み）
+apt-get install -y pngquant   # ★必須。無いとOGP画像239枚が全部差分になり、上げ物が62MBになります（2026-09-23）
 ```
 
 **`gh/_src/` は生成プログラムの手動コピーです。** `cp -r gh/_src/. /home/claude/` で
@@ -66,7 +66,7 @@ cd /home/claude && ls build.sh && ls articles/*.py | wc -l && ls companies/*.py 
 ```
 
 必要な道具（たいていは最初から入っています）：
-`python3` / `node` / `npm` / `git` / `pngquant`（なくても動きます） /
+`python3` / `node` / `npm` / `git` / **`pngquant`（必須。無ければ apt-get で入れる）** /
 Python の `PIL` `bs4` `requests` `lxml` / 日本語フォント（Noto）
 
 ---
@@ -129,7 +129,7 @@ for n,slug,nm,art,last in sorted(rows,key=lambda r:r[4])[:8]:
 EOF
 ```
 
-**2026年9月23日時点で記事がない会社**：三菱電機25件、オムロン22件、三井不動産22件、キリンHD22件、東芝20件、住友商事20件、ANA20件。
+**2026年9月23日時点で記事がない会社**：オムロン22件、三井不動産22件、キリンHD22件、東芝20件、住友商事20件、ANA20件。
 
 角度（記事の切り口）は、**年表を読んで自分で見つけてください。** これまでの例：
 
@@ -170,7 +170,7 @@ EOF
 
 ### ④ 記事ファイルを書く
 
-`articles/aNNN_<slug>.py` に作ります。いちばん新しい記事（いまは `a040_shiseido.py`）を
+`articles/aNNN_<slug>.py` に作ります。いちばん新しい記事（いまは `a041_mitsubishielectric.py`）を
 **そのまま読んで、同じ形で**書くのが確実です。
 
 必要な項目：
@@ -199,7 +199,7 @@ s=s.replace('chart=None,',cb,1).replace('timeline=None,',tb,1)
 
 ```python
 # buildarticles.py と mkreports.py の MODS に追加
-s.replace("'a040_shiseido'","'a040_shiseido','a041_xxxx'",1)
+s.replace("'a041_mitsubishielectric'","'a041_mitsubishielectric','a042_xxxx'",1)
 # companies/<slug>.py の article=None, を article='<slug>-newbusiness', に
 ```
 
@@ -436,13 +436,13 @@ sleep 95   # Vercel の反映を待つ
 
 ## 4. いまの状態（2026年9月23日）
 
-- 収録企業 **44社** ／ 年表 **1,303件** ／ 記事 **40本**（最新 #040 資生堂）
+- 収録企業 **44社** ／ 年表 **1,306件** ／ 記事 **41本**（最新 #041 三菱電機）
 - リポジトリ：`https://github.com/WataruShiraki/newfor`（Vercelが自動で公開します）
 - サイト：`https://newfor.jp`
 
 ### 記事がまだない会社（年表の大きい順）
 
-三菱電機25、オムロン22、三井不動産22、キリンHD22、東芝20、住友商事20、ANA20
+オムロン22、三井不動産22、キリンHD22、東芝20、住友商事20、ANA20
 
 ### 積み残している仕事
 

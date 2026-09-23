@@ -44,6 +44,7 @@
 <url><loc>https://newfor.jp/articles/nec-newbusiness/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://newfor.jp/articles/marubeni-newbusiness/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://newfor.jp/articles/shiseido-newbusiness/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://newfor.jp/articles/mitsubishielectric-newbusiness/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://newfor.jp/companies/mhi/</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://newfor.jp/companies/mercari/</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://newfor.jp/companies/canon/</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -86,8 +87,8 @@
 <url><loc>https://newfor.jp/companies/sevenandi/</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://newfor.jp/companies/jreast/</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://newfor.jp/companies/mitsubishi/</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://newfor.jp/companies/panasonic/</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://newfor.jp/companies/toyota/</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://newfor.jp/companies/panasonic/</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://newfor.jp/news/2026/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/2025/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/2024/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -149,6 +150,7 @@
 <url><loc>https://newfor.jp/news/202608-nissan-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202608-itochu-2/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202608-mitsuifudosan-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+<url><loc>https://newfor.jp/news/202608-toyota-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202608-nec-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202608-jreast-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202608-fujitsu-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
@@ -214,6 +216,7 @@
 <url><loc>https://newfor.jp/news/202606-nintendo-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202606-mercari-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202606-daikin-3/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+<url><loc>https://newfor.jp/news/202606-recruit-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202606-murata-2/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202606-murata-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202606-marubeni-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
@@ -223,6 +226,7 @@
 <url><loc>https://newfor.jp/news/202605-mufg-2/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202605-daikin-2/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202605-daikin-3/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+<url><loc>https://newfor.jp/news/202605-recruit-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202605-nec-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202605-daikin-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 <url><loc>https://newfor.jp/news/202605-mufg-1/</loc><lastmod>2026-08-06</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>

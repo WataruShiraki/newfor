@@ -4,7 +4,7 @@ slug='mitsubishielectric',
 name='三菱電機',
 legal='三菱電機株式会社',
 ind='電機',
-article=None,
+article='mitsubishielectric-newbusiness',
 evsrc={
  '2002.10|DRAM事業をエルピーダへ譲渡': ['https://www.itmedia.co.jp/news/0210/03/njbt_07.html', 'ITmedia'],
  '2003.10|東芝と合弁でTMEICを設立': ['https://www.tmeic.co.jp/corporate/outline/', 'TMEIC 会社概要'],

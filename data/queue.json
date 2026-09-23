@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-20",
+ "updated": "2026-09-23",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -659,6 +659,36 @@
    "title": "出資先PubteXが出版業界向け「注文流通ソリューション」を始動、10月に物流実行開始",
    "url": "https://prtimes.jp/main/html/rd/p/000000018.000153364.html",
    "why": "丸紅が34.8%出資する出版流通会社PubteXによる新サービス開始のため（間接出資先の事業、重要度は要確認）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-23-softbank-1",
+   "found": "2026-09-23",
+   "company": "ソフトバンクグループ",
+   "date": "2026.09",
+   "title": "傘下データセンター会社SBエナジーへエヌビディアが追加出資、累計30億ドルに",
+   "url": "https://s.kabutan.jp/news/n202609220030/",
+   "why": "米上場を控えるSBエナジーへエヌビディアが15億ドルを追加出資し資本提携を拡大したため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-23-softbank-2",
+   "found": "2026-09-23",
+   "company": "ソフトバンクグループ",
+   "date": "2026.09",
+   "title": "米DigitalBridgeの買収、規制当局の承認を取得し完了へ",
+   "url": "https://www.nikkei.com/article/DGXZQOUC230UL0T20C26A9000000/",
+   "why": "2025年12月合意のデジタルインフラ投資会社買収が規制当局の承認を得て完了段階に入ったため",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-23-hitachi-1",
+   "found": "2026-09-23",
+   "company": "日立製作所",
+   "date": "2026.09",
+   "title": "OKIとのATM生産統合を公正取引委員会が承認、10月に新会社始動へ",
+   "url": "https://news.yahoo.co.jp/articles/dbf44f18b4a8935708c238e3db6d778241ead10a",
+   "why": "ATM等自動化機器事業をOKIと統合する計画が独禁法上の承認を得て新会社設立に進むため",
    "status": "new"
   }
  ]

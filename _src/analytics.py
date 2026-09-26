@@ -12,6 +12,8 @@ GSC='ILi3j4478KpGhXmwH0D77jZKrsfjs0yBBHuS9ZnjljE'   # Search Console 所有権�
 GA4='G-Y9N8CYZE61'   # Googleアナリティクス（GA4）の測定ID
 
 VERIFY='<meta name="google-site-verification" content="%s">'%GSC
+# アドセンスの確認タグ（2026-09-26 アフィリエイトをやめてアドセンスへ切り替え）
+ADSENSE='<meta name="google-adsense-account" content="ca-pub-1379037925480740">'
 GTAG=(('<!-- Googleアナリティクス -->\n'
  '<script async src="https://www.googletagmanager.com/gtag/js?id=%s"></script>\n'
  '<script>\n'
@@ -37,6 +39,10 @@ for f in sorted(set(glob.glob('dist/**/*.html',recursive=True)+glob.glob('gh/**/
         s=re.sub(r'<meta name="google-site-verification"[^>]*>',VERIFY,s)
     else:
         i=s.find('</head>'); s=s[:i]+VERIFY+'\n'+s[i:]; nv+=1
+
+    # ── アドセンスの確認タグ ──
+    if 'google-adsense-account' not in s:
+        i=s.find('</head>'); s=s[:i]+ADSENSE+'\n'+s[i:]
 
     # ── 計測タグ ──
     if GA4:

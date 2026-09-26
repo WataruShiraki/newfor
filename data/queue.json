@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-24",
+ "updated": "2026-09-26",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -699,6 +699,66 @@
    "title": "フィリピン財閥アヤラ・コーポレーションへ追加出資、持分法適用会社へ",
    "url": "https://www.mitsubishicorp.com/jp/ja/news/release/2026/20260921001.html",
    "why": "議決権ベースの出資比率を現行の5.4%から20%（経済的持分は4.7%から15%）へ高める約1200億円の追加出資を発表し、持分法適用会社とする資本提携拡大のため（9月21日発表）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-26-fujifilm-1",
+   "found": "2026-09-26",
+   "company": "富士フイルム",
+   "date": "2026.09",
+   "title": "富士フイルムBI、刷版材料の生産・販売事業を中国大手へ譲渡",
+   "url": "https://www.pjl.co.jp/news/enterprise/2026/09/20276.html",
+   "why": "日本・北米を除く地域の刷版材料事業を中国メーカーへ譲渡する契約のため（9月9日発表、事業譲渡に該当）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-26-cyberagent-1",
+   "found": "2026-09-26",
+   "company": "サイバーエージェント",
+   "date": "2026.08",
+   "title": "GENDAとアニメ・IPマーケティング強化でパートナーシップ締結",
+   "url": "https://www.cyberagent.co.jp/news/detail/id=33748",
+   "why": "GENDAの国内外約1万4000拠点を活用したアニメ・IPマーケティングの新たな業務提携のため（8月26日発表）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-26-mufg-1",
+   "found": "2026-09-26",
+   "company": "三菱UFJ FG",
+   "date": "2026.09",
+   "title": "デジタル銀行が銀行免許取得、「三菱UFJエムット銀行」に商号変更しサービス名は「エムットバンク」に",
+   "url": "https://www.watch.impress.co.jp/docs/news/2142949.html",
+   "why": "新設のデジタル銀行子会社が銀行業免許を取得し2027年1-3月のサービス開始が確定したため（9月24日発表、新会社の事業開始に該当）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-26-jal-1",
+   "found": "2026-09-26",
+   "company": "日本航空",
+   "date": "2026.09",
+   "title": "大韓航空と戦略的パートナーシップを締結、持株会社の韓進KAL株式を取得",
+   "url": "https://press.jal.co.jp/ja/release/202609/009702.html",
+   "why": "大韓航空との提携拡大に加え持株会社株式を取得する資本提携のため（9月3日発表）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-26-mhi-1",
+   "found": "2026-09-26",
+   "company": "三菱重工業",
+   "date": "2026.08",
+   "title": "Preferred Networksと資本業務提携、100億円出資",
+   "url": "https://www.risktaisaku.com/articles/-/115359",
+   "why": "防衛・インフラ向け国産AI技術の共同開発を目的とした資本業務提携のため（8月31日発表）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-26-orix-1",
+   "found": "2026-09-26",
+   "company": "オリックス",
+   "date": "2026.09",
+   "title": "建設機械商社「泰平商事」の全株式を取得",
+   "url": "https://www.orix.co.jp/grp/company/newsroom/newsrelease/260907_ORIXJ.html",
+   "why": "建設機械のリース・アセットマネジメント事業拡大を目的とした買収のため（9月7日発表）",
    "status": "new"
   }
  ]

@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-26",
+ "updated": "2026-09-27",
  "items": [
   {
    "id": "2026-08-06-itochu-1",
@@ -759,6 +759,26 @@
    "title": "建設機械商社「泰平商事」の全株式を取得",
    "url": "https://www.orix.co.jp/grp/company/newsroom/newsrelease/260907_ORIXJ.html",
    "why": "建設機械のリース・アセットマネジメント事業拡大を目的とした買収のため（9月7日発表）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-27-fujifilm-2",
+   "found": "2026-09-27",
+   "company": "富士フイルム",
+   "date": "2026.09",
+   "title": "タタ・エレクトロニクスとインドでの半導体材料エコシステム構築に向けた協力に合意",
+   "url": "https://www.fujifilm.com/jp/ja/news/list/12367",
+   "why": "インドでの半導体材料の生産体制・供給網構築に向けた新たな事業提携のため（9月17日発表）",
+   "status": "new"
+  },
+  {
+   "id": "2026-09-27-sumitomo-chem-2",
+   "found": "2026-09-27",
+   "company": "住友化学",
+   "date": "2026.09",
+   "title": "タタ・エレクトロニクスと半導体材料の協業検討に関する覚書を締結",
+   "url": "https://www.sumitomo-chem.co.jp/news/detail/20260919.html",
+   "why": "インド国内での半導体用ケミカル拠点設置を含む新規事業領域への協業検討のため（9月19日発表）",
    "status": "new"
   }
  ]

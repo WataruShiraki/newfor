@@ -959,3 +959,16 @@ KPI：25件／2024年4月以降20件／1,400百万米ドル／883百万米ドル
 - 作業場所: /home/claude/nf2（_src を展開し、gh は git clone した /home/claude/newfor へのリンク。build.sh の cd を /home/claude/nf2 に変えて実行。この変更は gh/_src/build.sh には入れていない）
 - 差分の整理: pngquant が入れられず、OGP画像は新規2枚以外を元に戻した。adsense meta 1行だけの差分（770件）も含めていない。data/queue.json は GitHub 側のまま
 - 現在地: 52社／1,524件／55本
+
+## 2026-10-11 記事#056 ヤマトHD（53社目を新しく収録）＋ニュース3件
+
+- watchlist.json の「候補」から**ヤマトHD（slug: yamato）を53社目として新しく収録**した。会社ファイル `companies/yamato.py`（年表17件・すべてヤマトホールディングス自身のニュースリリース）を新規作成。業種ラベルは新しく「物流」。watchlist.json の yamato を「記録あり」に
+- 記事 /articles/yamato-newbusiness/ 「ヤマトHDの17件は、すべてスタートアップやファンドへの出資。2024年8月に動き出したKIF 2号が10件」。角度＝通り道で分けると KIF 2号10・1号ファンドの追加出資4・ほかのファンドへの出資3（追加出資は合計5件）
+- KPI: 記録17件／KIF 2号10件／ほかのファンド3件／KURONEKO Innovation Fundの総額130億円（2024年10月の発表）
+- ★金額の記載がないもの: 17件すべて（個別の出資額はどの発表にも書かれていない）
+- ★1号ファンドの最初の出資（2020年12月のYours）は2024年8月の発表の中の記述だけで確認。当時の発表は年表に入れていない
+- 出典の取り方: yamato-hd.co.jp の /news/newsrelease.json（全年のリリース一覧が JSON で取れる）を Chrome で読み、タイトルに「出資」を含むヤマトホールディングスの発表34件から2024年2月以降の17件を選び、同じ origin で各リリースの HTML を fetch して本文を読んだ
+- ニュース3件（新しく収録した会社なので他社記事の件数ズレは出ない）: 2026.04 韓国WATTに出資 → /news/202604-yamato-1/ ／ 2026.08 JIJに出資 → /news/202608-yamato-1/ ／ 2026.10 Oceanに出資 → /news/202610-yamato-1/
+- 作業場所: /home/claude/nf2（_src を展開し、gh は /home/claude/newfor へのリンク。build.sh の cd を /home/claude/nf2 に変えて実行）。★playwright は /opt/pw-browsers の chromium-1194 に合う 1.56.1 を nf2 に入れた（1.47 だと「Old Headless mode has been removed」で落ちる）
+- 差分の整理: OGP画像は新規2枚以外を元に戻した。adsense meta 1行だけの差分（756件）も含めていない
+- 現在地: 53社／1,541件／56本
